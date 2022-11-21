@@ -1,0 +1,233 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	.other-person{
+		border-top:1px solid #f1f3f7; 
+	}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购</span> > <span>供应商管理</span> > <span class="comtitle_cur">我的供应商</span>
+    </div>
+    <h3 class="formname">供应商详情</h3>
+    <div class="gysinfo">
+    	<div class="gys_logo"><img src="images/logo_gys.png"></div>
+        <div class="gys_zl">
+        	<h5><span>[EC10002] 广东琪琪电子商务有限公司</span><em class="bd_no">未绑定</em><em class="ico_dx" title="短信收款">短信收款</em></h5>
+            <p class="contact-person">联系人：<span>张慧欣</span></p>                    
+            <p ><img src="images/link_info_cell.gif" width="25px"  class="mr5"  /><label class="mr30" style="position:relative;top:-6px;">183 8283 3833</label><img src="images/link_info_tel.gif" width="25px"  class="mr10" /><label class="mr30" style="position:relative;top:-6px;">027-85495078</label><img src="images/link_info_qq.gif" width="25px"  class="mr10" /><label style="position:relative;top:-6px;">14100916</label></p>
+            <p>联系地址：<span>广东省广州市天河区科韵路16号信</span></p>    
+            <p>是否首要联系人：<span>是</span></p>
+            <p class="ywy">
+              <label class="mr30">采购业务员：<span>李浩</span></label><label class="mr30">所属机构：<span></span></label>
+              广东分公司</p>
+            <p class="ywy other-person">其他联系人：<a href="#d">黄丽玲</a><span style="padding:0 15px;">|</span><a href="#d">陈妍</a><span style="padding:0 15px;">|</span><a href="#d">马明本</a></p>
+    
+        </div>
+        <div class="bzbox">
+        	<div class="l_h30">备注：</div>
+            <div class="bzdiv" style="height:45px;">暂无备注</div>
+            <div class="l_h30">操作日志：</div>
+            <div class="bzdiv">绑定申请已被“深圳市南山区丁冰家用电器店”取消，取消理由：我们在该地区已有一级客户 [2014-06-17 12:23:24]</div>
+
+        </div>
+    </div>
+    <div class="datainfo">
+    	<span>期初余额信息 : <b class="f_red">0</b></span>
+        <label class="mr30">余额日期：2015-02-01</label>
+        <label class="mr30">期初应付余额：<b class="f_red">500,000.00</b></label>
+        <!-- <label>期初预付余额：<b class="f_red">100,000.00</b></label> -->
+    </div>
+    <div class="datainfo">
+    	<span>交易信息统计：</span>
+        <label class="mr30">订单总数：<b class="f_red">5</b></label>
+        <label class="mr30">订单总金额：<b class="f_red">137,076.00</b></label>
+        <label class="mr30">已支付总金额：<b class="f_gray">24,880.00</b></label>
+        <label class="mr30">未支付总金额：<b class="f_red">112,196.00</b></label>
+    </div>
+    
+    <h3 class="tabname">销售政策</h3>
+    <div class="tabinfo"></div>
+    <div class="tablemain mt30">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>计量单位</th>
+                    <th>单价（元）</th>
+<!--                    <th>销售价（元）</th>
+-->                    <th>账期起算日</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>5463456453</td>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM <img src="images/icon_16.png"></td>
+                    <td>白色、青玉兰</td>
+                    <td>部</td>
+                    <td>2488.00</td>
+<!--                    <td>3,800.00</td>
+-->                    <td>发货日</td>
+                </tr>
+            	<tr>
+                    <td>544343</td>
+                    <td>三星（SAMSUNG）Galaxy S3 I9308 3G手机 (云石白) TD-SCDMA/GSM</td>
+                    <td>白色、青玉兰</td>
+                    <td>部</td>
+                    <td>2796.00</td>
+<!--                    <td>-</td>
+-->                    <td>发货日</td>
+                </tr>
+            	<tr>
+                    <td>465463543</td>
+                    <td>华为 荣耀3 outdoor 3G手机（白色）WCDMA/GSM <img src="images/icon_16.png"></td>
+                    <td>云白石</td>
+                    <td>部</td>
+                    <td>1888.00</td>
+<!--                    <td>4,400.00</td>
+-->                    <td>发货日</td>
+
+                </tr>
+            	<tr>
+                    <td>778227</td>
+                    <td>诺基亚（NOKIA）Lumia 920T 3G手机（黄色）TD-SCDMA/GSM <img src="images/icon_16.png"></td>
+                    <td>白色、黄色、红色、黑色</td>
+                    <td>部</td>
+                    <td>2599.00</td>
+<!--                    <td>5,600.00</td>
+-->                    <td>发货日</td>
+
+                </tr>
+            	<tr>
+                    <td>517592</td>
+                    <td>诺基亚（NOKIA）1010 GSM手机（黑色）双卡双待</td>
+                    <td>灰黑色、红色</td>
+                    <td>台</td>
+                    <td>219.00</td>
+<!--                    <td>-</td>
+-->                    <td>发货日</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="f_r mr20"><input type="button" value="返 回" class="closebtn"  onclick="javascript:history.go(-1)"></div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+//其他联系人
+
+$(function(){
+	var phone = ['138 2680 3995','150 0766 8655','136 5308 8024','158 3545 8585'];
+	var tel = ['020-54876475','022-96472452','010-96654314','027-85495078'];
+	var qq =['35840548','54872244','54878782','14100916'];
+	var address = ['广东省广州市越秀区','河南省开封市','广东省中山市','湖北省武汉市汉阳区彭家岭366号万通工业园18号楼'];
+	var isvip = ['否','否','否','是'];
+	var seller = ['陈胜','万东','陈思思','李彦斌'];
+	var ogn = ['XXXX','DDDD','IIII','AAAA'];
+
+	$('.other-person a').click(function() {
+	var name = $(this).html();
+	var name1 = $('.contact-person span').html();
+	$('.contact-person span').html(name);
+	$(this).html(name1);
+
+	if($('.contact-person span').html() == '黄丽玲'){
+		$('.contact-person').next().find('label:eq(0)').html(phone[0]);
+		$('.contact-person').next().find('label:eq(1)').html(tel[0]);
+		$('.contact-person').next().find('label:eq(2)').html(qq[0]);
+		$('.contact-person').next().next().find('span').html(address[0]);
+		$('.contact-person').next().next().next().find('span').html(isvip[0]);
+		$('.contact-person').next().next().next().next().find('span:eq(0)').html(seller[0]);
+		$('.contact-person').next().next().next().next().find('span:eq(1)').html(ogn[0]);
+
+	} else if($('.contact-person span').html() == '陈妍'){
+		$('.contact-person').next().find('label:eq(0)').html(phone[1]);
+		$('.contact-person').next().find('label:eq(1)').html(tel[1]);
+		$('.contact-person').next().find('label:eq(2)').html(qq[1]);
+		$('.contact-person').next().next().find('span').html(address[1]);
+		$('.contact-person').next().next().next().find('span').html(isvip[1]);
+		$('.contact-person').next().next().next().next().find('span:eq(0)').html(seller[1]);
+		$('.contact-person').next().next().next().next().find('span:eq(1)').html(ogn[1]);
+
+
+	} else if($('.contact-person span').html() == '马明本'){
+		$('.contact-person').next().find('label:eq(0)').html(phone[2]);
+		$('.contact-person').next().find('label:eq(1)').html(tel[2]);
+		$('.contact-person').next().find('label:eq(2)').html(qq[2]);
+		$('.contact-person').next().next().find('span').html(address[2]);
+		$('.contact-person').next().next().next().find('span').html(isvip[2]);
+		$('.contact-person').next().next().next().next().find('span:eq(0)').html(seller[2]);
+		$('.contact-person').next().next().next().next().find('span:eq(1)').html(ogn[2]);
+
+
+	} else{
+		$('.contact-person').next().find('label:eq(0)').html(phone[3]);
+		$('.contact-person').next().find('label:eq(1)').html(tel[3]);
+		$('.contact-person').next().find('label:eq(2)').html(qq[3]);
+		$('.contact-person').next().next().find('span').html(address[3]);
+		$('.contact-person').next().next().next().find('span').html(isvip[3]);
+		$('.contact-person').next().next().next().next().find('span:eq(0)').html(seller[3]);
+		$('.contact-person').next().next().next().next().find('span:eq(1)').html(ogn[3]);
+
+
+	}
+	});
+
+	
+
+
+
+})
+</script>
+</html>

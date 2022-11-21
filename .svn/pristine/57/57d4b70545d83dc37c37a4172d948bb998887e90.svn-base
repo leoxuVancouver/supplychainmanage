@@ -1,0 +1,117 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.cp{ cursor:pointer;}
+.tablestyle1{ width:(100%-2)px; border:1px solid #f1f3f7;}
+.tablemain span{ display:inline-block; margin:10px 0 10px 30px; }
+.tablemain table{ margin-left:40px;}
+.tablemain table thead th{ text-align:left;}
+.tablemain table tbody{ display:inline-block; margin-left:20px;}
+.tablemain table tbody tr td{ padding:10px;}
+.tablemain table tbody tr td span{ display:inline-block; margin:0; color:red;}
+.tablemain table tbody tr td a:hover{ text-decoration:none; color:red;}
+.tablemain table tbody tr td a em{ display:none;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>个人设置</span> > <span class="comtitle_cur">个人信息修改</span>
+    </div>
+    <h3 class="formname">电子邮箱修改</h3> 
+    <div class="formmain">
+        <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+            <tbody>
+                <tr>
+                    <th><em class="redico">*</em>所属机构：</th>
+                    <td>21*********1@163.com</td>
+                </tr>
+            	<tr>
+                	<th><span>*</span>新的电子邮箱：</th>
+                    <td><input type="text" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><span>*</span>验证码：</th>
+                    <td><input type="text" class="inputstyle"><a class="cp"><img src="images/vcode.png" alt="点击更换" title="看不清，换一张" />换一张</a></td>
+                </tr>
+                <tr>
+                	<th></th>
+                    <td><input type="button" value="提 交" class="surebtn1 mr20" id="btntj"></td>
+                </tr>
+            </tbody>
+		</table>     
+	</div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>电子邮箱修改成功。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:提交*/
+$("#btntj").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	$("#close_tj,.closebtn").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+	});	
+	updateRowBgColor();
+	$(".surebtn").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		location.href= '系统管理-个人信息-个人账户信息.html';
+	});	
+});
+
+$('#change1').mouseover(function(){
+	$('#em1').show();});
+$('#change1').mouseout(function(){
+	$('#em1').hide();});
+$('#change2').mouseover(function(){
+	$('#em2').show();});
+$('#change2').mouseout(function(){
+	$('#em2').hide();});
+</script>
+</html>

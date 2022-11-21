@@ -1,0 +1,111 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    .toptips p.noticeBtn{ padding-left: 340px; padding-top: 10px;}
+    .toptips p.noticeBtn a{ color: #fff; width: 100px; height: 30px; border-radius: 3px;
+     line-height: 30px; float: left; display: block; background: #0066b3;}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购</span> > <span>订单管理</span> > <span class="comtitle_cur">建立订单</span>
+    </div>
+    <div class="toptips">
+    	<h4 style=" margin-left:30px;">订单提交成功，已发送给您的供应商确认。</h4>
+        <p>
+        </p><p><span>您可以:</span>
+            <a href="采购-建立订单.html">继续建立订单</a><a href="采购-订单列表.html">查看订单列表</a><a href="#">确认订单</a><a href="#" >提醒发货</a>
+        </p>
+    </div>
+    <h3 class="tabname"><span class="l0">结算方式：先货后款</span>采购订单<span class="r0">订单号：20150817001</span></h3>     
+    <div class="tabinfo">
+    	<p>
+            <span class="f_l">供应商名称：广东琪琪电子商务有限公司</span>
+            <span class="f_r">订单日期：2015-11-25 09:00:00</span>
+        </p>
+    </div>
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th width="60">序号</th>
+                    <th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>单价（元）</th>
+                    <th>计量单位</th>
+                    <th>数量</th>
+                    <th>合计（元）</th>
+                </tr>
+             </thead>
+            <tbody>
+            	<tr>
+                    <td>1</td>
+                    <td>5463456453</td>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>白色,黑色</td> 
+                    <td>2,488.00</td>
+                    <td>台</td>
+                    <td>10</td>
+                    <td>24,880.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ddinfo noborder">
+    	<div class="f_l">
+            <table>
+                <tbody>
+                <tr>
+                    <th>备注：</th>
+                    <td><input type="text" class="inputstyle w320" readonly  ></td>
+                </tr>
+                <!-- <tr>
+                    <th><em class="red">*</em>复核人：</th>
+                    <td>罗宾[华南区 广州分公司 销售部]</td>
+                </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <div class="f_r">
+            <ul>
+                <li><label>商品总金额：</label><span>24,880.00</span></li>
+                <li><label>费用：</label><span>0.00</span></li>
+                <li><label>订单金额：</label><span>24,880.00</span></li>
+            </ul>
+       </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+</script>
+</html>

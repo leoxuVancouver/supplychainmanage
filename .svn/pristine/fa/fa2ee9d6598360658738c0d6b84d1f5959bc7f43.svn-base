@@ -1,0 +1,107 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购管理</span> > <span>供应商</span> > <span class="comtitle_cur">商业信用</span>
+    </div>
+    <h3 class="formname">商业信用额度管理</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th width="139"><em class="redico">*</em>收款方：</th>
+                    <td>湖北百歌电子商务有限公司</td>
+                </tr>
+                <tr id="hideline" class="hide" style="display: table-row;">
+                    <th>已用额度（元）：</th>
+                    <td><strong class="f_red f_16">2,000.00</strong>  元 </td>
+                </tr>
+                <tr>
+                    <th><em class="redico">*</em>本次还款金额：</th>
+                    <td><input type="text" class="inputstyle" value="" style="width:300px; margin-right:0" id="Digits" name="Digits" onkeyup="www_zzjs_net.value=convertCurrency(Digits.value);">元　<input id="www_zzjs_net" name="www_zzjs_net" size="38" class="f_red ml10" disabled="disabled" style="border:none; background:none;"></td>
+                </tr>
+                <tr>
+                    <th style="line-height:51px" valign="top">备注：</th>
+                    <td style="padding-top:3px">
+                        <textarea rows="3" class="inputstyle" style="width:600px; height:auto"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                	<th></th>
+                    <td>
+                    	<input type="button" value="确 认" class="surebtn1 mr20" id="btntj">
+        				<input type="button" value="返 回" class="closebtn1" onClick="javascript:history.go(-1)">
+                    </td>
+                </tr>	
+            </tbody>
+    	</table>
+    </div>  
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您将确认支付<i id="print_sr" class="f_red">0.00</i>元！</h4>
+        <p>一旦确认，您的账户将把钱支付到对方账户。</p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+/*确认还款*/
+$("#btntj").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	var _this =$("#Digits")
+	var jg = _this.val();
+	$("#print_sr").html(jg);
+	//alert(jg)
+});
+$("#close_tj,.closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tj_pop").hide();
+	
+});	
+updateRowBgColor();
+$(".surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tj_pop").hide();
+	location.href= '财务-收银台.html';
+});	
+</script>
+</html>

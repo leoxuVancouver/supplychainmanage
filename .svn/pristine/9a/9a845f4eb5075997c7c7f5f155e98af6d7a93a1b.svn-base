@@ -1,0 +1,234 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">善付通</a> > <a href="javascript:void(0)">销售</a> >  <a href="javascript:void(0)">添加客户</a></div>
+    <div class="quick_titile">
+        <span class="purico">添加客户</span>
+    </div>
+    <div class="othertitle mt30"><span>基本信息</span></div>
+    <div class="tablemain">
+    	<table class="tablestyle2" width="100%">
+            <tbody>
+                <tr>
+                    <th><em class="redico">*</em>客户用户名：</th>
+                    <td><input type="text" class="inputstyle" value="" style="width:300px; margin-right:10px"><label><a href="###" class="blue">检测</a></label></td>
+                    <td rowspan="5" class="td_r add_kh" style="padding-left:40px">
+                        <h4>客户添加并绑定成功后您将可与该客户实现交易信息在线协同。</h4>
+                        <p>1、客户用户名：客户在善付通的用户名，由客户提供。录入客户用户名后系统将自动提交与该客户的绑定申请。</p>
+                        <p>2、客户代码：为该客户在贵公司ERP中设定的内部唯一识别代码，若不一致则无法与贵公司ERP中的订单关联；填写后识别码将不可修改。</p>
+                        <p>3、余额日期、期初应收余额、期初预收余额：填写后将不可修改。</p>
+                        <p>4、设置组织机构后，仅该机构及具备该数据可见权限的操作员才能对该客户进行编辑、建立订单等操作。</p>
+                        <p>5、设置业务员后，仅该业务员及具备该数据可见权限的操作员才能对该供应商进行建立订单操作。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="158"><em class="redico">*</em>客户名称：</th>
+                    <td width="458"><input type="text" class="inputstyle" value="" style="width:300px"></td>
+                    
+                </tr>
+             
+                <tr>
+                    <th>客户代码：</th>
+                    <td><input type="text" class="inputstyle" value="" style="width:300px"></td>
+                </tr>
+                <tr>
+                    <th>所属机构：</th>
+                    <td>
+                    	<input type="text" disabled="" class="inputstyle" value="" readonly style="margin-right:0; width:300px;">
+                        <input type="button" value="选择" class="btn_com">
+                    </td>
+                </tr>
+                <tr>
+                    <th>销售业务员：</th>
+                    <td>
+                        <input type="text"  class="inputstyle" value=""  style="margin-right:0; width:300px;">
+                    </td>
+                </tr>
+                 <tr>
+                    <th>商业信用额度：</th>
+                    <td>
+                        <input type="text"  class="inputstyle" value=""  style="margin-right:0; width:300px;">
+                    </td>
+                </tr>
+                <!--<tr>
+                    <th>业务员：</th>
+                    <td>
+                        <select class="selectstyle" style="width:302px;">
+                            <option>请选择</option>
+                            <option>李彦斌</option>
+                            <option>李思琳</option>
+                        </select>
+                    </td>
+                </tr>-->	
+            </tbody>
+    	</table>
+    </div>
+    
+    
+    <div class="othertitle mt30"><span>期初余额信息</span></div>
+    <div class="tablemain">
+    	<table class="tablestyle2" width="100%">
+            <tbody>
+                <tr>
+                    <th width="158">余额日期：</th>
+                    <td>
+                    	<input type="text" class="inputstyle" style="margin-right:0; width:300px;">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <select class="selectstyle" style="margin-right:0; font-weight:bold; width:120px">
+                            <option>期初应收余额</option>
+                            <option>期初预收余额</option>
+                        </select>：
+                    </th>
+                    <td>
+                    	<input type="text" class="inputstyle" style="width:300px;">
+                    </td>
+                </tr>	
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <div class="tablemain mt30">
+    	<p class="tabletitle">联系人信息</p>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                	<th width="40">姓名</th>
+                    <th>手机号码</th>
+                    <th>固定电话</th>
+                    <th>QQ号码</th>
+                    <th>联系地址：</th>
+                    <th>是否首要联系人</th>
+            	</tr>
+        	</thead>
+            <tbody>
+            	<tr>
+                	<td><input type="text" value="" class="inputstyle"></td>
+                	<td><input type="text" value="" class="inputstyle"></td>
+                	<td><input type="text" value="" class="inputstyle"></td>
+                	<td><input type="text" value="" class="inputstyle"></td>
+                	<td><input type="text" value="" class="inputstyle" style="width:320px"></td>
+                	<td><input name="" type="checkbox" value="" checked></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ddinfo">
+        <div class="f_l"><input type="button" class="addlinebtn" id="addRow" value="增加行" /></div>
+    </div>
+    <div class="fhinfo">
+        <div class="mt10 ml10">
+            <div align="left">
+			<label style="width:50px; text-align:left; text-indent:0">备注：</label>
+            <textarea rows="3" class="inputstyle" style="width:700px; height:auto;"></textarea>
+            <p class="f_gray" style="margin:-10px 0 10px 50px">最多200字</p>
+			</div>
+        </div>
+        <div class="adminline">
+            <span class="mr30">录入人：管理员</span><span>2015-05-25</span>
+        </div>
+    </div>
+    
+    <div style="margin-left:1045px;"><input type="button" value="提 交" class="surebtn" id="btn_tj"></div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+
+<div id="tj_pop" class="popstyle" style="min-height: inherit; top: 30%; width:460px; margin-left:-230px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="secctext">
+        	<p class="suc_t">资料编辑成功！</p>
+            <p class="f_gray mt5">客户资料已经成功保存。</p>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr10" id="btntj" value="确定">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+/*增加一行*/
+$('#addRow').on('click', function () {
+	var $tbody = $('.madetable tbody');
+	$tbody.append('<tr>' +
+		'<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle" style="width:320px"></td>' +
+		'<td><input name="" type="checkbox" value="" checked></td>' +
+	'</tr>');
+	
+	
+   // refreshRowBgColor();
+	updateRowBgColor();
+});	
+
+
+//
+$("#btn_tj").on('click', function () {
+	$(".mask").show().height($(document).height());
+	$("#tj_pop").show();
+	$("#close_tj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btntj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		location.href= '销售-客户列表.html';
+	});	
+});
+</script>
+</html>

@@ -1,0 +1,756 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<link href="style/jquery.bigautocomplete.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+.inputline td .inputstyle{text-align:center;} 
+.tablemain .tablestyle tbody tr td .inputstyle.border {text-align:center;}
+.tablemain .tablestyle tbody tr td .inputstyle{text-align:center;}
+.bzheight{height:56px;}
+.ddinfo img{ vertical-align: middle; cursor: pointer;}
+</style>
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+  <div class="comtitle">
+    <span>销售</span> > <span>订单管理</span> > 
+    <span class="comtitle_cur">建立订单</span> 
+  </div>
+  <div class="tabbox">
+    <ul>
+      <li class="cur"><a href="销售-建立订单.html" style="font-size:14px; font-weight: bolder;">单笔录入</a></li>
+<li><a href="销售-导入订单.html" style="font-size:14px; font-weight: bolder;">批量导入</a></li>
+    </ul>
+  </div>
+  <h3 class="tabname">销售订单</h3>
+  <div class="tabinfo">
+    <p>
+      <label class="p_r"> <em class="redico">*</em><span style="font-size:12px; font-weight:bold;">客户名称：</span>
+        <input name="text" type="text" class="inputstyle w320" id="support_name">
+        <img src="images/input_select.png" class="p_a_select" id="sel_shoper"> </label>
+      <!--<label id="xhhk" class="settleMethod hide">
+            	<img src="images/xhhk.png" title="先货后款订单">
+                <span>先货后款</span>
+                <span class="accPeriod">
+                    <span>账期：发货后<b id="day">&nbsp;30&nbsp;</b>天
+                    </span>
+                </span>
+            </label>-->
+      <label class="f_r">订单号：DBX281892472</label>
+    </p>
+    <div id="bbbb" class="showdate hide">结算方式：先货后款 <span>账期：发货后<b id="day">&nbsp;30&nbsp;</b>天</span></div>
+    <!--
+        <p class="nameinfo">
+        	<span id="shoper">
+            	<em class="shoperdm">代码：2014060905</em>
+                <label class="ml10">当前预收款余额：<b class="f_red mr10">1,000.00</b> 当前未核销结算金额合计：<b class="f_red mr10">1,000.00</b> 可用商业信用额度：<b class="f_red">1,000.00</b>
+                </label>
+            </span>
+        </p>
+        -->
+  </div>
+  <div class="tablemain">
+      <table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+          <thead>
+              <th width="60px">序号</th>
+                <th><em class="redico">*</em>商品编码</th>
+                <th><em class="redico">*</em>商品名称</th>
+                <th>型号</th>
+                <th>计量单位</th>
+                <th><em class="redico">*</em>单价（元）</th>
+                <th><em class="redico">*</em>数量</th>
+                <th>合计（元）</th>
+                <th class="hide"></th> 
+                <!-- <th>商品描述</th> -->
+             </thead>
+            <tbody id="mybody" class="mybodys">
+              <tr>
+                    <td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle" id="prodcode"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" id="prodname" value="" /></td>
+                    <td><input type="text" class="inputstyle" id="prodstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" id="produnit" value="" /></td>
+                    <td><input type="text" class="inputstyle price" id="prodprice" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <a class="min">-</a>
+                        <input type="text" class="inputstyle border number" id="prodnum" value=""/>
+                        <a class="add">+</a>
+                    </td>
+                    <td><input type="text" class="inputstyle total" id="prodtotal" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>2</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle price" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <a class="min">-</a>
+                        <input type="text" class="inputstyle border number" value=""/>
+                        <a class="add">+</a>
+                    </td>
+                    <td><input type="text" class="inputstyle total" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>3</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle price" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <a class="min">-</a>
+                        <input type="text" class="inputstyle border number" value=""/>
+                        <a class="add">+</a>
+                    </td>
+                    <td><input type="text" class="inputstyle total" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>4</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle price" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <a class="min">-</a>
+                        <input type="text" class="inputstyle border number" value=""/>
+                        <a class="add">+</a>
+                    </td>
+                    <td><input type="text" class="inputstyle total" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr delay="false">
+                    <td><img src="images/input_add.png" id="addRow" alt="addRow"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="hide"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  <div class="ddinfo">
+     <div class="f_l ">
+           <span  style="padding-right:10px;"><lable>业务员：</lable><input type="text" value="" id="peper_name" class="inputstyle ">
+           <img src="images/input_change.png" id="sel_peper" style=" margin-left:-40px;" ></span>
+        <span id="telshow">
+        <lable>经办人：</lable><input type="text" id="names" value="" class="inputstyle ">
+         <lable>经办人联系方式：</lable><input type="text" id="tel" value="" class="inputstyle">
+        </span>
+        <div style="padding-left:6px; margin-top:10px;">
+            <lable>备 注：</lable>
+           <input type="text" class="inputstyle bzheight" style="width:520px;">
+           
+        </div>
+        </div>
+        <div class="f_r">
+            <ul>
+                <li><label>商品总金额：</label><span id="total" class="subtotal">0.00</span></li>
+                <li><label>金额调整项：</label><input type="text"  value="0.00" onfocus="if(value=='0.00'){value=''}" onblur="if(value==''){value='0.00'}" class="inputstyle" style="color:red" title="输入订单附加费用，如运费等"/></li>
+                <li><label>订单金额：</label><span class="f_red subtotal" id="dindan">0.00</span></li>
+            </ul>
+       </div>
+    </div>
+    <div class="f_r">
+      <!--<input name="" type="checkbox" value="" id="checksave">
+        <label id="damotext">保存为订单模板</label>-->
+        <span style="color:#A3A3A3; width:1000px; display:inline-block;"><!--操作备注：采购订单成功提交后，需等待供应商确认才能生效，然后才能操作付款或收货。<--></span>
+        <input type="text" class="inputstyle hide" id="damoname">
+      <input type="button" value="提 交" id="tj" class="surebtn ml20 mr20">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+<div class="mask"></div>
+<!--选择供应商-->
+<div id="shoper_pop" class="popstyle">
+    <h3>客户列表<a href="javascript:void(0)" id="close_shoper">close</a></h3>
+    <div class="tablemain popmain">
+        <div class="topsearch">
+            <label>客户名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>客户代码：</label>
+            <input type="text" class="inputstyle" value="">
+            <input type="button" class="btn_search" value="搜索">
+      </div>
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>客户名称</th>
+                    <th>客户登录名</th>
+                    <th>客户代码</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="radio" name="support_radio" checked="checked" class="f_l ml20" /><span>广州恒远公司</span></td>
+                    <td>g***y</td>
+                    <td>qq001</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  class="f_l ml20" /><span>深圳龙马科技</span></td>
+                    <td>s***m</td>
+                    <td>qq002</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  class="f_l ml20" /><span>成都成华茂盛有限公司</span></td>
+                    <td>c***m</td>
+                    <td>qq003</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  class="f_l ml20" /><span>佛山市卓越有限公司</span></td> 
+                    <td>f***y</td>
+                    <td>qq004</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  class="f_l ml20" /><span>佛山市力豪有限公司</span></td>
+                    <td>f***h</td>
+                    <td>qq005</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+      
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage" style="margin:0 5px"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnshoper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshoper2"  value="关闭">
+    </div>
+</div>
+
+<!--选择商品（数量和列表的数量一样。选择商品的时候应该是不用输入数量，选择完之后再填写数量）-->
+<div id="shop_pop" class="popstyle">
+    <h3>商品列表<a href="javascript:void(0)" id="close_shop">close</a></h3>
+    <div class="tablemain popmain">
+        <div class="topsearch">
+            <label>商品名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>商品编码：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>商品条码：</label>
+            <input type="text" class="inputstyle" value="">
+            <input type="button" class="btn_search" value="搜索">
+        </div>
+
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="60">数量</th>
+          <th width="120">商品编码</th>
+          <th width="150">商品名称</th>
+                    <th width="120">型号</th>
+          <th width="150">商品描述</th>
+          <th width="60">计量单位</th>
+          <th width="100">结算方式</th>
+          <th width="80">账期起算日</th>
+          <th width="60">账期（天）</th>
+                    <th width="80">单价（元）</th>
+          <th width="120">商品条码</th>
+                </tr>
+            </thead>
+            <tbody id="demobody">
+        <tr>
+                    <!--<td><input type="radio" name="list_radio" checked="checked" /></td>-->
+                    <td><input type="text" class="inputstyle w60"/></td>
+                    <td>5463456453</td>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>白色,黑色</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>2,488.00</td>
+                    <td>6905463456453</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio" checked="checked" /></td>-->
+                    <td><input type="text" class="inputstyle w60"/></td>
+                    <td>544343</td>
+                    <td width="180px">三星（SAMSUNG）Galaxy S3 I9308 3G手机 (云石白) TD-SCDMA/GSM</td>
+                    <td>白色,青玉蓝</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>4,000.00</td>
+                    <td>6905464564563</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio" /></td>-->
+                    <td><input type="text" class="inputstyle w60" /></td>
+                    <td>465463543</td>
+                    <td>华为 荣耀3 outdoor 3G手机（白色）WCDMA/GSM</td>
+                    <td>云石白</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>1,888.00</td>
+                    <td>6905465463543</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio"  /></td>-->
+                    <td><input type="text" class="inputstyle w60" /></td>
+                    <td>778227</td>
+                    <td>诺基亚（NOKIA）Lumia 920T 3G手机（黄色）TD-SCDMA/GSM</td>
+                    <td>白色,黄色,红色,黑色,蓝色</td>
+                    <td></td>
+                    <td>部</td>
+          <td>先货后款</td>
+          <td>发货日</td>
+                    <td>30</td>
+                    <td>2,599.00</td>
+                    <td>6905463778227</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio"  /></td>-->
+                    <td><input type="text" class="inputstyle w60" /></td>
+                    <td>517592</td>
+                    <td>诺基亚（NOKIA）1010 GSM手机（黑色）双卡双待</td>
+                    <td>灰黑色,红色</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>219.00</td>
+                    <td>6905463517592</td>
+                </tr>
+        </table>
+
+    </div>
+    <div class="page">
+        <a id="prev1" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a id="next1" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage1" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnshop1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshop2"   value="关闭">
+    </div>
+</div>
+
+
+<!--选择核销人员-->
+<div id="peper_pop" class="popstyle" style="display:none">
+    <h3>核销人员列表<a href="javascript:void(0)" id="close_peper">close</a></h3>
+    <div class="popmain" style="padding:0">
+    	<iframe src="选择核销人员.html" style="height:424px; width:800px; border:none; overflow:hidden"></iframe>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5"  id="btnpeper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnpeper2"   value="关闭">
+    </div>
+</div>
+<!--提交-->
+<div id="chehui_pop" class="popstyle popstyle_small">
+    <h3>错误信息<a href="javascript:void(0)" id="close_chehui">close</a></h3>
+    <div class="popmain_short">
+      <img src="images/ico_erro.png" alt="success">
+        <h4>客户名称、商品、数量不能为空！</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnchehui1" value="确定">
+       <!-- <input type="button" class="closebtn mr10" id="btnchehui2" value="关闭"><-->
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script src="js/jquery.bigautocomplete.js"></script>
+<script>
+
+	$(document).ready(function(){
+		//显示商品列表前五行
+		var showNumber=new Array(0,1,2,3,4);
+		$("#demobody tr").hide();
+			for(i=0;i<showNumber.length;i++){
+			$("#demobody tr:eq("+showNumber[i]+")").show();
+		}
+		//默认翻页样式
+		$('#pno1').addClass('btnpage');
+		$('#pno2').addClass('btnpage2');
+	});
+/*选择商品翻页效果*/
+	$("#pno1").on('click', function () {
+		//显示商品列表前五行
+		var showNumber=new Array(0,1,2,3,4);
+		
+		$("#demobody tr").hide();
+			for(i=0;i<showNumber.length;i++){
+			$("#demobody tr:eq("+showNumber[i]+")").show();
+		}
+		//翻页1按钮样式
+		$('#pno1').removeClass();
+		$('#pno1').addClass('btnpage');
+		$('#pno2').removeClass();
+		$('#pno2').addClass('btnpage2');
+	});
+	
+	$("#pno2").on('click', function () {
+		//显示商品列表前五行
+		var showNumber=new Array(5,6,7,8,9);
+		
+		$("#demobody tr").hide();
+			for(i=0;i<showNumber.length;i++){
+			$("#demobody tr:eq("+showNumber[i]+")").show();
+		}
+		//翻页2按钮样式
+		$('#pno1').removeClass();
+		$('#pno1').addClass('btnpage2');
+		$('#pno2').removeClass();
+		$('#pno2').addClass('btnpage');
+	});
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	/*alert( $(".tablestyle").length)*/
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+//选择商户
+$("#sel_shoper").on('click', function () {
+	$(".mask").show().height($(document).height());
+	$('#names').val('李浩');
+    $('#tel').val('18382833833');
+	//弹框绝对居中（position:fixed）
+	$("#shoper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shoper_pop").css("height")))/2+"px");
+	$("#shoper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shoper_pop").css("width")))/2+"px");
+	$("#close_shoper,#btnshoper2").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+	});	
+	updateRowBgColor();
+	$("#btnshoper1").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		$("#shoper").show();
+		$("#shoper").prev().hide();
+		$(".nameinfo").show();
+		var td = $("input[name='support_radio']:checked").parent().parent().children();
+		var name= td.eq(0).children("span").html();
+		var code= td.eq(1).html();
+		$("#shoper").find('.shoperdm').html("代码："+code);
+		$("#support_name").val(name);
+		$("#sel_shoper").show();
+		
+	});	
+});
+
+/*显示结算方式*/
+$("#btnshop1").on('click', function () {
+	var objVal = $("#demobody .inputstyle");
+	for(var i=0;i<objVal.length;i++){
+		if(objVal[i].value != NaN){
+			$('#xhhk').show();
+		}
+	}
+});
+/*选择商品*/
+var btn
+$("#mybody").delegate('.selshop','click', function () {
+	var _this = $(this);
+	btn = _this;
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#shop_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shop_pop").css("height")))/2+"px");
+	$("#shop_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shop_pop").css("width")))/2+"px");
+	$("#close_shop,#btnshop2,#btnshop1").on('click', function () {
+		$(".mask").hide();
+		$("#shop_pop").hide();
+	});	
+	updateRowBgColor();
+	$(".showdate").show();
+});
+
+$("#btnshop1").on('click', function (e) {
+  var _this = btn;
+  var _input = _this.prev();
+  var _parent = _this.parent();
+  var td =null;
+  //= $("input[name='list_radio']:checked").parent().siblings();
+  var flag = false;
+  $("#demobody input[type=text]").each(function(index, element) {
+    var val = $(this).val();
+    if(val.length>0){
+      td = $(this).parent().siblings();
+      var code= td.eq(0).html();
+      var name= td.eq(1).html();
+      var xh= td.eq(2).html();
+      var dw= td.eq(4).html();
+      var price= td.eq(8).html();
+      if(flag){
+        var _nextTr = _parent.parent();
+        var tr = '<tr>'
+                    tr+='<td class="p_r"><span>3</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>';
+                    tr+='<td><input type="text" class="inputstyle" value="'+code+'" /><img src="images/input_change.png" class="selshop f_r" ></td>';
+                    tr+='<td><input type="text"  class="inputstyle " value="'+name+'"  /></td>';
+                    tr+='<td><input type="text"  class="inputstyle " value="'+xh+'"  /></td>';
+                    tr+='<td><input type="text"  class="inputstyle " value="'+dw+'"  /></td>';
+                    tr+='<td><input type="text"  class="inputstyle price" style="text-align:right;" value="'+price+'"/></td>';
+          var price = price.replace(",",'');
+          var n_price = (parseInt(price)*parseInt(val)).toFixed(2);
+                    tr+='<td><a class="min">-</a><input type="text" value="'+val+'" class="inputstyle border number"/><a class="add">+</a></td>';
+                    tr+='<td><input type="text"  class="inputstyle total" value="'+formatCurrency(n_price)+'"  style="text-align:right;" /></td>';
+                    tr+='</tr>';
+          _nextTr.after($(tr));
+          updateRowBgColor();
+          btn.parents('tbody').find('tr').each(function(i){
+            $(this).find('td:eq(0)').find('span').html(i+1);
+          })
+           setTotal();
+      }else{
+        flag=true;
+        var _thisTd = _parent.siblings();
+        _thisTd.find(".inputstyle").removeClass("hide");
+        _thisTd.eq(1).find('input').val(name);
+        _thisTd.eq(2).find('input').val(xh);
+                _thisTd.eq(3).find('input').val(dw);
+                _thisTd.eq(5).find('input').val(val);
+                _thisTd.eq(4).find('input').val(price);
+                var price = price.replace(",",'');
+              _thisTd.eq(6).find('input').val(formatCurrency((parseInt(price)*parseInt(val)).toFixed(2)));
+              _input.removeClass("hide").val(code);
+              setTotal(); 
+          }
+        } 
+    });
+}); 
+
+
+//选择核销人员
+$("#sel_peper").on('click', function () {
+	var _this = $(".selshop");
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#peper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#peper_pop").css("height")))/2+"px");
+	$("#peper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#peper_pop").css("width")))/2+"px");
+	$("#close_peper,#btnpeper2").on('click', function () {
+		$(".mask").hide();
+		$("#peper_pop").hide();
+	});	
+	$("#btnpeper1").on('click', function () {
+		$(".mask").hide();
+		$("#peper_pop").hide();
+		$("#peper_name").val("张德慧");
+	});	
+});
+
+
+
+/*增加一行*/
+$('#addRow').on('click', function () {
+  var $tbody = $(".madetable tbody")
+  var $addRow_tr = $("#addRow").parent("td").parent("tr");
+  $addRow_tr.before('<tr>' +
+    '<td class="p_r">' + '<span>'+($tbody.find('tr').length) +'</span>'+'<img src="images/ico_sc.gif" class="sc" title="删除" />'+'</td>' +
+    '<td><input type="text" value="" class="inputstyle " /><img src="images/input_change.png" class="selshop f_r" ></td>' +
+    '<td><input type="text" class="inputstyle " value=""  /></td>' +
+    '<td><input type="text" class="inputstyle " value=""  /></td>' +
+        '<td><input type="text" class="inputstyle price" value="" style="text-align:right;"/></td>' +
+    '<td><input type="text" class="inputstyle " value="" /></td>' +
+    '<td><a class="min">-</a><input type="text" class="inputstyle border number"/><a class="add">+</a></td>' +
+    '<td><input type="text" class="inputstyle total"/></td>' +
+    '<td class="hide"></td>'+
+  '</tr>');
+
+});
+
+
+$(document).on('click','.sc',function(){
+	var tbody = $(this).parents('tbody')
+	$(this).parents('tr').remove();
+	updateRowBgColor();
+	tbody.find('tr').each(function(i){
+		$(this).find('td:eq(0)').find('span').html(i+1);
+	})
+})
+
+
+$("#checksave").click(function() {
+	var _this = $("#checksave");
+	//$("#checksave").attr("checked",false);
+	if ($("#checksave").prop("checked")) {
+		_this.next().html('请输入订单模板名称：');
+		$("#damoname").show();
+	}else{
+		_this.next().html('保存为订单模板');
+		$("#damoname").hide();
+	}
+});
+/*提交*/
+$("#tj").bind("click",function(){
+ 
+  if($("#support_name").val() =="" || $("#prodcode").val() =="" || $("#prodnum").val() ==""){
+    var _this = $(this);
+    $(".mask").show().height($(document).height());
+    //弹框绝对居中（position:fixed）
+    $("#chehui_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#chehui_pop").css("height")))/2+"px");
+    $("#chehui_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#chehui_pop").css("width")))/2+"px");
+    
+  $("#close_chehui,#btnchehui1,#btnchehui2").bind('click', function () {
+    $(".mask").hide();
+    $("#chehui_pop").hide();
+    
+  })}else{
+       window.location.href= "销售-建立订单-提交成功.html";
+      };  
+})
+
+
+/** 
+ * 将数值四舍五入(保留2位小数)后格式化成金额形式 
+ * @param num 数值(Number或者String) 
+ * @return 金额格式的字符串,如'1,234,567.45' 
+ * @type String 
+ */  
+function formatCurrency(num) {  
+    num = num.toString().replace(/\$|\,/g,'');  
+    if(isNaN(num))  
+    num = "0";  
+    sign = (num == (num = Math.abs(num)));  
+    num = Math.floor(num*100+0.50000000001);  
+    cents = num%100;  
+    num = Math.floor(num/100).toString();  
+    if(cents<10)  
+    cents = "0" + cents;  
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)  
+    num = num.substring(0,num.length-(4*i+3))+','+  
+    num.substring(num.length-(4*i+3));  
+    return (((sign)?'':'-') + num + '.' + cents);  
+} 
+
+$('#mybody td').eq(4).css({'text-align':'right'});
+
+//加
+$(document).on("click",".add",function (){
+    var t=$(this).parent().parent().find('input.number');
+    t.val(parseInt(t.val())+1);
+    if(isNaN(t.val())){
+        t.val(1);
+    }
+    subtotal(t)
+});
+//减
+$(document).on("click",".min",function (){ 
+    var t=$(this).parent().parent().find('input.number'); 
+    t.val(parseInt(t.val())-1);
+    if(parseInt(t.val())<=0 || isNaN(t.val())){ 
+        t.val(1);
+    }
+    subtotal(t);
+});
+
+//文本款输入事件
+$('input[class*=number]').keyup(function(){
+    var t=$(this);
+    t.val(parseInt(t.val()));
+    if (isNaN(t.val()) || parseInt(t.val()) <= 0) {
+        t.val(1);
+    }
+    if (t.val(parseInt(t.val())) != t.val()) {
+        t.val(parseInt(t.val()));
+    }
+    subtotal(t);
+});
+
+$('input[class*=price]').keyup(function(){
+    var t=$(this).val();
+    t = formatCurrency(t.toFixed(2))
+});
+
+//单个商品总价格
+function subtotal(sum){
+    var subtotal=0;
+    var price = sum.parent().parent().find('.price').val();
+    var price = price.replace(",",'');
+    subtotal=parseFloat(price)*parseInt(sum.val());
+    sum.parent().parent().find('.total').val(formatCurrency(subtotal.toFixed(2)));
+    setTotal();
+}
+//总商品价格
+function setTotal() {
+    var s = 0;
+    $("input.total").each(function(index) {
+        var valString = $(this).val();
+        var valString = valString.replace(",",'');
+        s += parseInt(valString);
+    });
+    $(".subtotal").text(formatCurrency(s.toFixed(2)));
+};
+setTotal();
+
+$.each($('input[class*=number]'),function(i,t){
+    subtotal($(t));
+})
+</script>
+	<script type="text/javascript">
+		$(function(){	
+			$("#support_name").bigAutocomplete({
+				data:[{
+					title:"广州恒远公司"},{
+					title:"深圳龙马科技"},{
+					title:"成都成华茂盛有限公司"},{
+					title:"佛山市卓越有限公司"},{
+					title:"佛山市力豪有限公司"}],
+					callback:function(data){
+			}});
+			
+			$("#prodcode").bigAutocomplete({
+				width:120,
+				data:[{
+					title:"5463456453",code:"苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM",style:"白色,黑色",dw:"部",price:"2,488.00",num:"1",total:"2,488.00"},{
+					title:"544343",code:"三星（SAMSUNG）Galaxy S3 I9308 3G手机 (云石白) TD-SCDMA/GSM",style:"白色,青玉蓝",dw:"部",price:"4,000.00",num:"1",total:"4,000.00"},{
+					title:"465463543",code:"华为 荣耀3 outdoor 3G手机（白色）WCDMA/GSM",style:"云石白",dw:"部",price:"1,888.00",num:"1",total:"1,888.00"},{
+					title:"778227",code:"诺基亚（NOKIA）Lumia 920T 3G手机（黄色）TD-SCDMA/GSM",style:"白色,黄色,红色,黑色,蓝色	",dw:"部",price:"2,599.00",num:"1",total:"2,599.00"},{
+					title:"517592",code:"诺基亚（NOKIA）1010 GSM手机（黑色）双卡双待",style:"灰黑色,红色",dw:"部",price:"219.00",num:"1",total:"219.00"}],
+					callback:function(data){
+				//alert(data.code);
+				$("#prodcode").val(data.title);
+				$("#prodname").val(data.code);
+				$("#prodstyle").val(data.style);
+				$("#produnit").val(data.dw);
+				$("#prodprice").val(data.price);
+				$("#prodnum").val(data.num);
+				$("#prodtotal").val(data.total);
+				
+			}});
+		})
+	</script>
+</html>

@@ -1,0 +1,128 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "3"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购管理</span> > <span>付款</span> > <span class="comtitle_cur">订单付款</span>
+    </div>
+    <h3 class="tabname">订单合并付款（3笔订单）</h3>
+    <div class="tabinfo">
+    	<p>
+        	<label class="f_l">收款方:湖北百歌电子商务有限公司</label>
+        </p>
+    </div>
+    <div>
+    	<div class="tablemain">
+            <table class="tablestyle" border="0" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>订单号</th>
+                        <th>发货单号</th>
+                        <th>发货金额（元）</th>
+                        <th>费用金额（元）</th>
+                        <th>本次支付金额（元）</th>
+                        <th>到期付款日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="javascript:void(0)" class="blue">2014060810240090</a></td>
+                        <td>684353558</td>
+                        <td>1,000.00</td>
+                        <td>100.00</td>
+                        <td>1,100.00</td>
+                        <td>2015-12-15</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:void(0)" class="blue">2014060810240120</a></td>
+                        <td>684353539</td>
+                        <td>1,000.00</td>
+                        <td>100.00</td>
+                        <td>1,100.00</td>
+                        <td>2015-12-15</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:void(0)" class="blue">2014060810124991</a></td>
+                        <td>684353550</td>
+                        <td>1,100.00</td>
+                        <td>100.00</td>
+                        <td>1,200.00</td>
+                        <td>2015-12-15</td>
+                    </tr>
+                </tbody>
+            </table>
+    	</div>
+    </div>
+    <div class="ddinfo">
+        <div class="f_l mt10">
+            <table>
+                <tbody>
+                <tr>
+                    <td>备注：</td>
+                    <td><input type="text" class="inputstyle w320"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="f_r">
+            <ul>
+                <li><label>本次付款金额：</label><span><strong>3,400.00元</strong></span></li>
+            </ul>
+       </div>
+    </div>
+    <div class="f_r mr20">
+    	<input type="button" value="确认付款" class="surebtn" onclick="location.href= '财务-收银台.html'">
+        <input type="button" value="返 回" class="closebtn ml10" onclick="javascript:history.go(-1)">
+    </div>
+    
+    
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+$(function(){
+    $("#btninfo").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideshopinfo").slideUp();
+        } else {
+            $this.addClass("more_up").text("收起详情");
+            $(".hideshopinfo").slideDown();
+        }
+    });
+})
+
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+</html>

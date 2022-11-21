@@ -1,0 +1,238 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "3"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>财务</span> > <span>采购结算</span> > <span class="comtitle_cur">预付款核销</span>
+    </div>
+    <h3 class="tabname">预付款核销</h3> 
+    <div class="tabinfo">
+    	<p><em class="redico">*</em>
+            <label>供应商名称：</label>
+            <select class="selectstyle" style="width:250px; margin-right:0" id="selec_com">
+                <option>请选择</option>
+				<option>广东琪琪电子商务有限公司</option>
+				<option>金蜜蜂有限公司</option>
+                <option>湖北百歌电子商务有限公司</option>
+                <option>海尔集团电子商务有限公司</option>
+                <option>湖北光大电子商务有限公司</option>
+                <option>深圳市南山区高客数码电器商行</option>
+            </select>
+        </p>
+    </div> 
+    <div class="hidemain hide">
+        <div class="tablemain">
+            <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+                <thead>
+                    <tr>
+                        <th width="40"></th>
+                        <th width="200">订单号</th>			
+                        <th>订单日期</th>
+                        <th>订单金额（元）</th>
+                        <th>已发货金额（元）</th>
+                        <th>已付金额（元）</th>
+                        <th>未付金额（元）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="checkbox" class="checkbox"></td>
+                        <td><a href="javascript:void(0)" class="blue">20150817001</a></td>
+                        <td>2015/8/17</td>
+                        <td>24880.00</td>
+                        <td>24880.00</td>
+                        <td>24880.00</td>
+                        <td class="money">0</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="checkbox" class="checkbox"></td>
+                        <td><a href="javascript:void(0)" class="blue">20150817002</a></td>
+                        <td>2015/8/17</td>
+                        <td>4976.00</td>
+                        <td>4976.00</td>
+                        <td>0</td>
+                        <td class="money">4976.00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="checkbox" class="checkbox"></td>
+                        <td><a href="javascript:void(0)" class="blue">20150817004</a></td>
+                        <td>2015/8/17</td>
+                        <td>52840.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="money">52840.00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="checkbox" class="checkbox"></td>
+                        <td><a href="javascript:void(0)" class="blue">20150718001</a></td>
+                        <td>2015/8/18</td>
+                        <td>26420.00</td>
+                        <td>26420.00</td>
+                        <td>0</td>
+                        <td class="money">26420.00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="checkbox" class="checkbox"></td>
+                        <td><a href="javascript:void(0)" class="blue">20150718002</a></td>
+                        <td>2015/8/18</td>
+                        <td>27960.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="money">27960.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    	<div class="ddinfo">
+        	<div class="f_l mt10">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>备注：</th>
+                            <td><input type="text" class="inputstyle w320"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="f_r">
+                <ul>
+                    <li><label>当前预付款余额：</label><span>0.00元</span></li>
+                    <li><label>本次核销金额合计：</label><span class="f_red count">0.00</span></li>
+                </ul>
+           </div>
+    	</div>
+    	<div class="f_r mr20"><input type="button" value="提 交" class="closebtn_nohover" id="tjbtn" disabled></div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>预付款核销成功提交，核销总金额为：<span class="money1" style=" color:red; padding-right:10px;"></span>请等待对方确认!</h4>
+        <p style="color:#333;">您可以在<a href="财务-预付款核销.html">核销记录</a>里面查询你所提交的订单。</p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr10" id="btntj1" value="确定"  >
+    </div>
+</div>
+
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+//下拉
+$("#selec_com").change(function(){ 
+	if(this.selectedIndex == 0){
+		$("#hidemain").slideDown();
+		$("#tjbtn").removeClass("surebtn").addClass("closebtn_nohover"); //按钮变化;
+		$("#tjbtn").prop('disabled',true);
+	}
+	else{
+		$(".hidemain").slideDown();
+		$("#tjbtn").addClass("surebtn").removeClass("closebtn_nohover"); //按钮变化;
+		$("#tjbtn").prop('disabled',false);
+	}
+})
+
+
+$(".checkbox").click(function(){
+	var price = Number($(this).parents('tr:eq(0)').find(".money").text().replace(",",''));
+	var count = Number($('.count').text().replace(",",''));
+	if($(this).prop('checked')){
+		count+=price;
+		$('.count').text(formatCurrency(count));
+	}else{
+		count-=price;
+		$('.count').text(count);
+	}
+})
+
+//提交
+$("#tjbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+    $('.money1').text($('.count').text());
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	$("#close_tj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		
+	});	
+	$("#btntj1").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		location.href= '财务-预付款核销.html';
+	});	
+	updateRowBgColor();
+})
+
+
+/** 
+ * 将数值四舍五入(保留2位小数)后格式化成金额形式 
+ * 
+ * @param num 数值(Number或者String) 
+ * @return 金额格式的字符串,如'1,234,567.45' 
+ * @type String 
+ */  
+function formatCurrency(num) {  
+    num = num.toString().replace(/\$|\,/g,'');  
+    if(isNaN(num))  
+    num = "0";  
+    sign = (num == (num = Math.abs(num)));  
+    num = Math.floor(num*100+0.50000000001);  
+    cents = num%100;  
+    num = Math.floor(num/100).toString();  
+    if(cents<10)  
+    cents = "0" + cents;  
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)  
+    num = num.substring(0,num.length-(4*i+3))+','+  
+    num.substring(num.length-(4*i+3));  
+    return (((sign)?'':'-') + num + '.' + cents);  
+}  
+</script>
+</html>

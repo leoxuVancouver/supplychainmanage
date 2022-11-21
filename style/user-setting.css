@@ -1,0 +1,63 @@
+.input_account { width: 196px; height: 25px; padding: 0 5px; border: 1px solid #a3a3a3; line-height: 25px; color: #74685f; font-family: 'SimSun'; }
+.btn_submit { width: 100px; height: 28px; background: url(../images/user-setting/btn_fb.jpg) no-repeat; border: 0; font-family: 'SimSun'; cursor: pointer; color: #fff; font-size: 14px; font-weight: bold; }
+.btn_submit_140 { width: 140px; height: 28px; background: url(../images/user-setting/btn_submit_140.jpg) no-repeat; border: 0; font-family: 'SimSun'; cursor: pointer; color: #fff; font-size: 14px; font-weight: bold; }
+.input_cancel { display: inline-block; width: 88px; height: 30px; margin-left:16px; border: 0; background: url(../images/user-setting/btn_flash.png) no-repeat; text-align: center; font: bold 14px/30px SimSun; color: #fff; cursor: pointer; }
+.input_sure { display: inline-block; width: 88px; height: 30px; margin-right: 10px; border: 0; background: url(../images/user-setting/btn_qd.jpg) no-repeat; text-align: center; font: bold 14px/30px SimSun; color: #fff; cursor: pointer; }
+
+/*TAB*/
+.tab_nav { z-index:99; height: 35px; margin: 15px 0; padding-left: 15px; background: url(../images/bg_tab_main.jpg) repeat-x left bottom; }
+.tab_nav li { position: relative; float: left; width: 102px; height: 27px; margin: 0 15px -1px 0; padding: 5px 0 1px; border:1px solid #ddd; border-bottom:0px solid #13A1ED; /*line-height: 27px;*/line-height: 24px; text-align: center; cursor: pointer; font-weight: bold;  }
+.tab_nav li.cur { height: 33px; padding: 0; background-color:#13A1ED; background-position: 0 -33px; border:1px solid #13A1ED; line-height: 33px; border-bottom:0px solid #13A1ED; }
+.tab_nav li a { color:#000;}
+.tab_nav li.cur a { color:#fff;}
+.tab_nav li a:hover { text-decoration: none; }
+/* modify success(public)*/
+#modify_success { display:none;}
+.prompt { height: 60px; line-height: 60px; padding:20px; text-align: center; font-size: 20px; font-family: 'Microsoft YaHei'; color: #06c; }
+.prompt_img { display: inline-block; width: 50px; height: 48px; background: url('../images/user-setting/ok_img.gif') no-repeat; vertical-align: middle; }
+.prompt_label { margin-left: 16px; vertical-align: middle; }
+.prompt_div { min-height: 30px; }
+.prompt_btn{text-align: center; padding-bottom:100px;}
+/* modify password */
+.modify-div { margin:20px 60px;}
+.modify-div th { font-weight:normal; color:#000; text-align:right;}
+.modify-div tr th,.modify-div tr td { padding:6px 0; height:25px;}
+.modify-div .link-midify a{ padding-left:14px; color:#0071BC; cursor:pointer;}
+.modify-div .link-midify1 a{ padding-left:38px; color:#0071BC;}
+.modify-div .link-midify a:hover,.modify-div .link-midify1 a:hover{ color:#F60;}
+.modify-div .red { color:#FD0100;}
+.modify-div .err { background: #FFF8E4 url(../images/user-setting/error.png) no-repeat 5px center; border: 1px solid #FFCE81; position: relative; left: 10px; padding: 5px 6px 5px 26px; color: #666666; display: none; }
+.modify-div .safety-level ul li { float:left; width:105px; height:14px; text-align:center; border-left: 1px solid #fff; border-right: 1px solid #BEBEBE; border-bottom: 1px solid #BEBEBE; background:#EBEBEB; padding:2px 0;}
+.modify-div .hint { position:relative; left:18px;}
+.modify-div .hint a{ color:#06F; cursor:pointer;}
+.modify-div .hint a:hover{ color:#F60;}
+/*softKeyboard*/
+#softkeyboard { position:absolute; left:0px; top:0px; width:400px; border-radius:2px; z-index:180; display:none;}
+.softkeyboard { width: 56px; height: 18px; margin-left: 8px; border-radius:2px; background: url(../images/user-setting/soft_keyboard.gif) no-repeat; }
+.btn_letter {BORDER:rgb(181, 173, 241) 1px solid; border-radius:2px; PADDING-RIGHT: 1px; PADDING-LEFT: 2px;FONT-SIZE: 12px; CURSOR: pointer;PADDING-TOP: 1px;  width:25px; height:20px; background:#FFC;}
+.btn_letter1 {BORDER:rgb(181, 173, 241) 1px solid; border-radius:2px; PADDING-RIGHT: 1px; PADDING-LEFT: 2px;FONT-SIZE: 12px; CURSOR: pointer;PADDING-TOP: 1px; width:25px; height:20px; background:#FF9;}
+.btn_num {BORDER:rgb(181, 173, 241) 1px solid; border-radius:2px; width:25px; PADDING-RIGHT: 1px;  PADDING-LEFT: 2px; FONT-SIZE: 12px; CURSOR: pointer; PADDING-TOP: 1px; height:20px;}
+.btn_letter:hover,.btn_num:hover{ background:#FF9;}
+.btn_letter1:hover{ background:#FF6;}
+.table_title { height:26px;padding-top: 3px;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#B2DEF7, EndColorStr=#7AB7DA);}
+.softkeyboard:hover { cursor: pointer;}
+.b_s td input{text-transform:uppercase;}
+/*商城账户管理*/
+.err_account_title { height: 68px; margin: 10px 16px 30px 16px; padding: 8px 0 0 12px; background: #ffffdd; border: 1px solid #f3d8a0; }
+.err_account_title p { line-height: 20px; }
+.epaybtn_mall, .epaybtn_switch { background-image: url(../images/user-setting/btn_success.png); background-repeat: no-repeat; width: 114px; height: 34px; line-height: 34px; border: none; color: #fff; font-size: 14px; text-align: center; font-weight: bold; display: block; float: left; cursor: pointer; }
+.epaybtn_switch { background-position: 0px -37px;}
+.epaybtnBox { overflow: hidden; width: 760px; }
+.epaybtnBox a { color: #fff; text-decoration: none; }
+.epaybtnBox a:hover { color: #fff; text-decoration: none; }
+.epaybtnBox span { font-size: 12px; margin: 4px 0 0 0px; float: left; color: #333; background: #ffffdc; border: 1px solid #f2d497; height: 26px; line-height: 26px; padding: 0 6px; border-left: none; }
+.cico { float: left; margin-top: 4px; margin-left: 10px; }
+
+
+.info p { color: #6e6e6e; line-height:18px; }
+.info p em { color: #0000FF; font-style: normal; }
+.muban { color: #0071BC; text-decoration: none; }
+.muban:hover { color: #FF6600; }
+.upload_img_con { height: 120px; width: 120px; border: 1px solid #cccccc; background: url(../images/user-setting/upload_bg.gif); }
+.upload_img_con_btn { padding-top: 6px; }
+.upload_img_con_btn input { width: 42px; height: 22px; }

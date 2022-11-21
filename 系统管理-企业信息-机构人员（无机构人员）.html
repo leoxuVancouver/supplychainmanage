@@ -1,0 +1,215 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#main{ width:100%; height:auto; margin-top:20px;}
+#main .table_nav{ width:19%; min-height:300px; height:auto;float:left;}
+#main #table{ width:80%; height:auto; float:right;}
+#main .table_nav .table_nav_main{ width:100%; height:100%; margin:10px; }
+#main .table_nav .table_nav_main li{ margin: 20px 0; cursor:pointer;}
+.table_nav_main ul li span:hover,
+.bgcolor{ background:#1693f0; color:#FFF; padding:0 3px; display:inline-block;}
+.treebtn{ display:inline-block; width:31px; height:16px; background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.closing{ background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.err { background: #FFF8E4 url(images/error.png) no-repeat 5px center; border: 1px solid #FFCE81; padding: 2px 6px 2px 26px; color: #666666; }
+.cp{ cursor:pointer;}
+.choose{ color:#0066b3; cursor:pointer; font-weight:bold}
+.choose:hover{ text-decoration:none; color:#06F; }
+body{}
+/*组织机构图按钮*/
+#add_org { display:inline-block; width:16px; height:16px; line-height:45px; margin-left:50px; cursor:pointer; background:url(images/u29.png) 50% 50% no-repeat;}
+#change_org { display:inline-block; width:16px; height:16px; line-height:45px; cursor:pointer; background:url(images/u25.png) 50% 50% no-repeat;}
+#delete_org { display:inline-block; width:16px; height:16px; line-height:45px; cursor:pointer; background:url(images/u27.png) 50% 50% no-repeat;}
+
+#addOrg_choose .toptips div ul li{ cursor:pointer;}
+#addOrg_choose ul li span:hover,
+#changeOrg_choose ul li span:hover{ background:#1693f0; color:#FFF; padding:0 3px; display:inline-block;}
+
+/*增加机构,修改机构*/
+#addOrg ul,#changeOrg ul { text-align:left;}
+#addOrg ul li input,#changeOrg ul li input { width: 160px; background:#FFF; border:1px solid #0066b3;}
+#addOrg ul li textarea,#changeOrg ul li textarea { width:160px; height:60px; background:#fff; border:1px solid #0066b3; vertical-align:top;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div class="mask" style="display: block;"></div>
+<!--无供应商弹窗-->
+<div id="shoper_pop" class="popstyle" style="display: block;left: 50%;margin-left: -140px; top: 50%;margin-top: -150px;width: auto;">
+    <h3 style="background-color:#f0f0f0;color:#333;">温馨提示<a href="javascript:void(0)" id="close_shoper">close</a></h3>
+    <div class="popmain_short popmain_short_padding" style="background:none;border:none;padding:0 50px;">
+        <img src="images/ico_error.png" alt="sure">
+        <h4>该机构下暂时没有员工。</h4>
+    </div>
+    <!--<div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnshoper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshoper2"  value="关闭">
+    </div>-->
+</div>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>企业设置</span> > <span class="comtitle_cur">机构与员工管理</span>
+    </div>
+    <div id="main">
+    	<div class="table_nav">
+        	<h3 class="tabname">组织机构图<a id="add_org" title="增加子机构"></a><a id="change_org" title="修改机构"></a><a id="delete_org" title="删除机构"></a></h3>
+            <div class="tabinfo">
+            
+            </div>
+            <div class="table_nav_main mt30"> 
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <div id="table">
+            <h3 class="tabname">员工列表<a class="add_user add_dd">添加员工</a></h3> 
+            <div class="tablemain">
+            	<div class="topsearch">
+                    <label>用户名：</label>
+                    <input type="text" class="inputstyle" value="" />
+                    <label>姓名：</label>
+                    <input type="text" class="inputstyle" value="" />                 
+                    <input type="button" class="btn_search" value="搜索" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+<div id="addOrg" class="popstyle popstyle_small">
+    <h3>增加子机构<a href="javascript:void(0)" class="close">close</a></h3>
+    <div class="popmain">
+        <ul class="t_a_l">
+            <li class="mb10">
+            	<label><span class="red">*</span>所属机构: <input type="text" disabled /> </label>
+                <a id="add_org_choose" class="choose">选择</a>
+                <span id="aerr_org" class="err hide">
+            </li>
+            <li class="mb10">
+                <label><span class="red">*</span>机构名称: <input type="text"/></label>
+                <span id="aerr_name" class="err hide">
+            </li>
+            <li class="mb10">
+                <label style=" margin-right:28px;"><span class="red">*</span>描述:</label>
+                <textarea></textarea>
+            </li>
+        </ul>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+<div id="changeOrg_choose" class="popstyle popstyle_small">
+    <h3>机构选择<a href="javascript:void(0)" class="close1">close</a></h3>
+    <div class="popmain">
+    	<div style="height:auto"> 
+            <ul>
+            	<li><div class="treebtn"></div><span> 湖北中艺电子有限公司</span>
+                	<ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华南区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80 cp"><div class="treebtn"></div><span> 广东分公司</span>
+                                	<ul class="m10">
+                                    	<li class="cp"><span>销售部</span></li>
+                                        <li class="cp"><span>财务部</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华东区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80 cp"><div class="treebtn"></div><span> 上海分公司</span>
+                                	<ul class="m10">
+                                    	<li class="cp"><span>销售部</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="取消">
+    </div>
+</div>
+
+
+<div id="del_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" class="close">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您确认要删除吗？</h4>    
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+<div id="set_pop" class="popstyle popstyle_small">
+    <h3>分配岗位<a href="javascript:void(0)" class="close">close</a></h3>
+    <div class="popmain">
+    	<div style="height:auto">
+            <table class="ml50 t_a_l">
+            	<tbody>
+                    <tr class="h60">
+                        <th align="right">采购：</th>
+                        <td class="noborder">
+                            <label><input type="checkbox" name="checkbox" class="checkbox">采购主管</label>
+                            <label><input type="checkbox" name="checkbox" class="checkbox">采购业务员</label>
+                            <label><input type="checkbox" name="checkbox" class="checkbox">采购结算</label>
+                            <label><input type="checkbox" name="checkbox" class="checkbox">收货</label>
+                        </td>
+                    </tr>
+                    <tr class="h60">
+                        <th align="right">销售：</th>
+                        <td class="noborder">
+                            <label><input type="checkbox" name="checkbox" class="checkbox">销售主管</label>
+                            <label><input type="checkbox" name="checkbox" class="checkbox">业务员</label>
+                            <label><input type="checkbox" name="checkbox" class="checkbox">销售结算</label>
+                            <label><input type="checkbox" name="checkbox" class="checkbox">发货</label>
+                        </td>
+                    </tr>
+                </tbody>
+    		</table>
+        </div>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+
+
+	$(".mask,#close_shoper").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		
+	});	
+
+</script>
+</html>

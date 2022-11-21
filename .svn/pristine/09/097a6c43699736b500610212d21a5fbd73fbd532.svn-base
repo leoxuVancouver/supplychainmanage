@@ -1,0 +1,89 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.info_box{ border:1px #f2d497 solid; padding:10px; margin:10px;}
+.kt{ display:inline-block; width:114px; height:35px; color:#FFF; line-height:35px; text-align:center; background:url(images/btn_success.png) no-repeat 0 0; cursor:pointer;}
+.jh{ display:inline-block; width:114px; height:35px; color:#FFF; line-height:35px; text-align:center; background:url(images/btn_success.png) no-repeat 0 -36px; cursor:pointer}
+.kt:hover,.jh:hover{ color:#FFF; text-decoration:none; font-weight:bold; }
+.intro{ display:inline-block; vertical-align:central;height:28px; background:url(images/3ico.png) no-repeat 0 50%; text-indent:6px;}
+.intro span{display:inline-block;  border: 1px solid #f2d497; border-left:none; font-size:12px; line-height:28px; padding:0 6px; }
+</style>
+</head>
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>功能开通</span> > <span class="comtitle_cur">商城账户开通</span>
+    </div>
+    <h3 class="formname">商城账户开通</h3>
+    <div class="tablemain">
+    	<div class="info">
+            <div class="info_box">
+                <p><b>1、商城账户为从事电子商务交易的商户提供快速、安全的网络支付手段和资金结算、清算、托管和信贷等服务。</b></p>
+                <p><b>2、电子商务平台的在线交易是以商城账户为基础的，您需要尽快开商城账户以保证交易的顺利完成。</b></p>
+            </div>
+            <table>
+            	<thead><th colspan="2" class="t_a_l">如果您还没有商城账户，<b>点击下面开通</b></th></thead>
+                <tbody>
+                	<tr><td width="150px" class="t_a_r"><a class="kt m10" onClick="window.open('系统管理-商城账户管理-开通账户.html')">开通商城账户</a></td><td class="intro m10"><span>适用于未开通商城账户的会员</span></td></tr>
+                    <tr><td width="150px" class="t_a_r"><a class="jh m10" onClick="window.open('系统管理-商城账户管理-激活账户.html')">激活商城账户</a></td><td class="intro m10"><span>适用于建行网点开通商城账户的会员首次使用商城账户</span></td></tr>
+                </tbody>
+            </table>
+    	</div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tg_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: -230px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="toptips toptips_pop_20">
+    	<h4>企业资料提交成功。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+
+
+
+/*弹出框:确认*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#tg_pop").show();
+	
+	var _this =$("#Digits")
+	var jg = _this.val();
+	$("#print_sr").html(jg);
+	//alert(jg)
+	$("#close_tg,.closebtn").on('click', function () {
+		$(".mask").hide();
+		$("#tg_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$(".surebtn").on('click', function () {
+		$(".mask").hide();
+		$("#tg_pop").hide();
+		location.href= '系统管理-企业信息-企业资料完善.html';
+	});	
+});
+
+</script>
+</html>

@@ -1,0 +1,25 @@
+.tabs {width:145px; height:41px; text-align:center; font-size:16px;line-height:41px ; font-weight:bold;color:#fff; float:left; margin-left:22px; clear:both; background:url(../images/user-setting/tabs.gif) no-repeat;}
+.tabsLine { width:997px; height:0; float:left; border-bottom:3px solid #2c7ebd; }
+
+.qyXplain {width:450px; height:32px; line-height:32px; font-size:14px; float:left; background:url(../images/user-setting/oktip.gif) no-repeat 25px center; padding-left:49px;}
+.qyXplain1 {width:430px; height:32px; line-height:32px; font-size:14px; float:left; background:url(../images/user-setting/oktip.gif) no-repeat 43px center; padding-left:68px;}
+
+.btngo button, .btngo1 button { width:123px; height:33px; color:#fff; font-size:14px; font-weight:bold; border:none;cursor:pointer; background:url(../images/user-setting/btn.gif) no-repeat; }
+
+.userinfo {width:997px; height:46px; float:left; background:#e2e2e2 url(../images/user-setting/jt.gif) no-repeat 10px center; text-indent:43px; line-height:46px; font-size:16px; color:#555;}
+.slogan { width:997px; height:30px; float:left; padding:20px 0; text-align:center; background:url(../../images/0001/slogan.png) no-repeat center center; }
+
+.paypic1 {width:80px; height:50px; padding:15px 0; float:left; text-align:center; background:url(../images/user-setting/Pay.jpg) no-repeat center center}
+.paypic2 {width:80px; height:50px; padding:15px 0; float:left; text-align:center; background:url(../images/user-setting/Pay.jpg) no-repeat center center}
+.paypic3 {width:80px; height:50px; padding:15px 0; float:left; text-align:center; background:url(../images/user-setting/Pay.jpg) no-repeat center center}
+.SCZHKT_GRWY_01_line li.SCZHKT_GRWY_01_now{color:#3288cb;}
+.SCZHKT_GRWY_01_line_firststep {height:42px;padding-left:80px; background:url(../../images/0001/SCZHKT_3LC01.png) no-repeat center center}
+.SCZHKT_GRWY_01_line_secondstep {height:42px;padding-left:80px; background:url(../../images/0001/SCZHKT_3LC02.png) no-repeat center center}
+.SCZHKT_GRWY_01_line_thirdstep {height:42px;padding-left:80px; background:url(../../images/0001/SCZHKT_3LC03.png) no-repeat center center}
+
+/*----------Bottom-----------*/
+.CCBBottom{ height:65px;  text-align:center; margin:15px auto 0px auto; border-top:3px solid #2c7ebd;font-family:"宋体";font-size:12px;}
+
+
+
+

@@ -1,0 +1,168 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>企业设置</span> > <span class="comtitle_cur">岗位设置</span>
+    </div>
+    <h3 class="tabname">岗位列表<a class="add_job add_dd">添加岗位</a></h3>
+    <div class="tabinfo">
+    
+    </div>
+    <div class="tablemain mt30">
+        <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+            <thead>
+                <tr>
+                    <th width="160">岗位名称</th>
+                    <th>岗位描述</th>
+                    <th width="160">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>采购主管</td>
+                    <td>负责对供应商信息管理及建立绑定关系，并跟进采购业务（订单）信息的岗位。</td>
+                    <td><a class="change inputbtn">修改</a><a class="delete inputbtn">删除</a><a class="set inputbtn" style="
+    margin-right: 85px;
+">设置权限</a></td>
+                </tr>
+                <tr>
+                    <td>销售主管</td>
+                    <td>负责对客户信息管理及建立绑定关系，分配客户管辖权及设置销售政策，进行商品信息管理并分配销售机构及业务员，并跟进销售业务（订单）信息的岗位。</td>
+                    <td><a class="change inputbtn">修改</a><a class="delete inputbtn">删除</a><a class="set inputbtn" style="
+    margin-right: 85px;
+">设置权限</a></td>
+                </tr>
+                <tr>
+                    <td>采购结算</td>
+                    <td>负责采购结算相关业务处理。</td>
+                    <td><a class="change inputbtn">修改</a><a class="delete inputbtn">删除</a><a class="set inputbtn" style="
+    margin-right: 85px;
+">设置权限</a></td>
+                </tr>
+                <tr>
+                    <td>销售结算</td>
+                    <td>负责销售结算相关业务处理。</td>
+                    <td><a class="change inputbtn">修改</a><a class="delete inputbtn">删除</a><a class="set inputbtn" style="
+    margin-right: 85px;
+">设置权限</a></td>
+                </tr>
+                <tr>
+                    <td>销售业务员</td>
+                    <td>负责对客户信息管理，并跟进销售业务（订单）信息的岗位。</td>
+                    <td><a class="change inputbtn">修改</a><a class="delete inputbtn">删除</a><a class="set inputbtn" style="
+    margin-right: 85px;
+">设置权限</a></td>
+                </tr>
+                <tr>
+                    <td>采购员</td>
+                    <td>负责对供应商信息管理，并跟进采购业务（订单）信息的岗位。</td>
+                    <td><a class="change inputbtn">修改</a><a class="delete inputbtn">删除</a><a class="set inputbtn" style="
+    margin-right: 85px;
+">设置权限</a></td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+<div id="del_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" class="close">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您确认要删除该岗位吗？</h4>    
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="delete_gw" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+
+/*修改岗位页面*/
+$(".change").click(function () {
+		location.href= '系统管理-企业信息-岗位管理-修改岗位.html';
+});
+
+
+/*添加岗位页面*/
+$(".add_job").click(function () {
+		location.href= '系统管理-企业信息-岗位管理-添加岗位.html';
+});
+
+
+/*岗位权限设置页面*/
+$(".set").click(function () {
+		location.href= '系统管理-企业信息-岗位管理-设置权限.html';
+});
+
+
+/*弹出框:删除*/
+$(".delete").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#del_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#del_pop").css("height")))/2+"px");
+	$("#del_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#del_pop").css("width")))/2+"px");
+
+	$("#del_pop .close,#del_pop .closebtn").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();	
+	});	
+	updateRowBgColor();
+	var own=$(this)
+	$("#del_pop .surebtn").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		own.parent("td").parent("tr").remove();
+		updateRowBgColor();
+	});	
+});
+
+</script>
+</html>

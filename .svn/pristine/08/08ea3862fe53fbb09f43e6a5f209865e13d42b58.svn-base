@@ -1,0 +1,177 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">复核管理</a> > <a href="javascript:void(0)">销售复核</a> > <a href="javascript:void(0)">销售政策复核</a></div>
+    <div class="quick_titile">
+        <span class="purico">销售政策复核</span>
+    </div>
+    <div class="topsearch">
+    	<p>
+            <span style="padding-left:15px"></span><label class="label_6">客户名称/代码：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label class="label_6">商品名称/编号：</label>
+            <input type="text" class="inputstyle" value="" />
+            <input type="button" class="btn_search" value="搜索" />
+            <span class="more_condition more_down">更多条件</span>
+        </p>
+        <p class="hideseach">
+        		<span style="padding-left:15px"></span><label class="label_4">所属机构：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label class="label_4">搜索业务员：</label>
+            <input type="text" class="inputstyle" value="" />
+        </p>
+    </div>
+    
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th>客户名称/代码</th>
+                    <th>所属机构/业务员</th>
+                    <th>商品名称/编码</th>
+                    <th>型号</th>
+                    <th>销售价</th>
+                    <th>操作员</th>
+                    <th>设置时间</th>
+                    <th width="100">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>深圳市南山区丁冰家用电器店/2014060905</td>
+                    <td>销售部/cg001</td>
+                    <td>海尔无氟变频柜式空调/pd2014080907</td>
+                    <td>BCD-220E3C</td>
+                    <td>1,800.00</td>
+                    <td>张三</td>
+                    <td>2015-02-10</td>
+                    <td><a id="btntg" class="inputbtnA">通过</a><span style="padding-left:15px;"></span><a id="btnth" class="inputbtnA">退回</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <a id="prev" href="" class="nor">上一页</a>
+            <span>1</span>
+            <a id="next" href="" class="nor">下一页</a>
+            <em>共1页</em>
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tg_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: 450px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="secctext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:51px;font-weight:bold;">销售政策复核成功。</p>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+<div id="th_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: 450px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_th">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="whytext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:35px;font-weight:bold;">您确认要退回吗？</p>
+            
+        </div>
+        <div style="padding:10px; ;background:#F2F9FF;">
+            <table style="margin:0">
+                    <tbody>
+                        <tr>
+                            <td width="75"  style="text-align:right; vertical-align:top">退回原因：</td>
+                            <td><textarea style="height:75px; width:300px;"></textarea></td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:通过*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#tg_pop").show();
+});	
+$("#tg_pop #close_tg,#tg_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	
+});	
+$("#tg_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	location.href= '复核管理-销售复核-销售政策复核.html';
+});	
+
+
+/*弹出框:退回*/
+$("#btnth").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#th_pop").show();
+});	
+$("#th_pop #close_th,#th_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+	
+});	
+$("#th_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+	location.href= '复核管理-销售复核-销售政策复核.html';
+});	
+
+</script>
+</html>

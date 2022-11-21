@@ -1,0 +1,247 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>财务</span> > <span>采购结算</span> > <span>预付款核销</span> > <span class="comtitle_cur">核销记录</span>
+    </div>
+    <h3 class="tabname">核销记录<a href="财务-预付款核销-新增.html" class="add_dd">新增核销</a></h3> 
+    <div class="tablemain">
+    	<div class="topsearch">
+            <label>核销流水号：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>供应商名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>核销日期：</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text" >
+            <input type="button" class="btn_search" value="搜索">
+            <span class="more_condition more_down">更多条件</span>
+            <p class="hideseach">
+            <label>状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>待复核</option>
+                    <option>复核不通过</option>
+                    <option>待确认</option>
+                    <option>已确认</option>
+                    <option>已拒绝</option>
+                </select>
+            </p>
+        </div>
+        <style type="text/css">
+            .tablestyle tr td:nth-child(4){ text-align: right;}
+        </style>
+        
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                	<th width="200">核销流水号</th>
+                    <th>供应商名称</th>
+                    <th>核销日期</th>
+                    <th>核销金额（元）</th>
+                    <th>状态</th>
+                    <th width="100">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">20150817009</a></td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td>2015-11-25 14:40</td>
+                    <td>100,000.00</td>
+                    <td>已确认 <!--<img src="images/ico-tips.png" class="img_ico" title="当前预收款余额不足">--></td>
+                    <td>
+                        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+                    </td>
+                </tr>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">20150817008</a></td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>2015-08-18 14:45</td>
+					<td>12,940.00</td>
+                    <td>已确认</td>
+                    <td>
+                        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+                    </td>
+                </tr>
+            	<!--<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014060810240094</a></td>
+                    <td>湖北光大电子商务有限公司</td>
+                    <td>2015-05-13 11:45:30</td>
+                    <td>150,000.00</td>
+                    <td>待确认</td>
+                    <td></td>
+                </tr>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014061016040158</a></td>
+                    <td>深圳市南山区高客数码电器商行</td>
+                    <td>2015-05-10 12:45:30</td>
+                    <td>50,000.00</td>
+                    <td>待确认</td>
+                    <td></td>
+                </tr>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014061016040147</a></td>
+                    <td>深圳市南山区龙跃信息有限公司</td>
+                    <td>2015-05-05 12:45:30</td>
+                    <td>50,000.00</td>
+                    <td>复核不通过</td>
+                    <td><a href="javascript:void(0)" class="inputbtn delbtn">删除</a></td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <p style="padding-left:10px;color: red;float: left;">目前，您拥有：2笔已确认订单。</p>
+    <div class="page">
+        
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a> 
+        
+    </div>
+    <div class="f_r mr20">
+    	<input type="button" class="closebtn" value="返 回" onClick="javascript:history.go(-1)">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="del_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您确定要删除该记录吗?</p>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr10" id="btndel1" value="确定">
+    </div>
+</div>
+</body>
+</html>
+<script type="text/template" id="tpl1">
+<div class="popstyle" style="width:auto; border:none; min-height:inherit; position:initial; margin:0; top:0; left:0; display:block">
+    <div class="printtitle">
+        <p>付款方：</p>
+        <h5>湖北中亿电子有限公司-收款单</h5>
+        <p><span class="f_l ml10">收款单号：<strong>2014060810240091</strong></span><span class="f_r mr10">收款日期：2015-05-10</span></p>
+    </div>
+    <div class="tablemain">
+        <table class="tablestyle2 print" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>金额</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>2,480.00</td>
+                    <td>白色,黑色</td>
+                    <td>10</td>
+                    <td>24,800.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="打印" onclick="window.print();">
+        <input type="button" class="closebtn mr10" value="取消"  onclick="window.close();">
+    </div>
+</div>
+</script>
+
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+//打印
+$('.dy_btn').on('click', function (e) {
+    printHtml($('#tpl1').html(), $('#print_style').html());
+    e.preventDefault();
+});
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+//删除
+$(".delbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#del_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#del_pop").css("height")))/2+"px");
+	$("#del_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#del_pop").css("width")))/2+"px");
+	$("#close_del,#btndel2").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		
+	});	
+	$("#btndel1").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		_this.parents('tr').remove();
+	});	
+	updateRowBgColor();
+})
+function printHtml(html, style) {
+    var iWidth = 1024;                          //弹出窗口的宽度;
+    var iHeight = 385;                        //弹出窗口的高度;
+    var iTop = (window.screen.availHeight-30-iHeight)/2;       //获得窗口的垂直位置;
+    var iLeft = (window.screen.availWidth-10-iWidth)/2;           //获得窗口的水平位置;
+    var params = 'height='+iHeight+',width='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no';
+    var mywindow = window.open('', 'newwindow', params);
+    mywindow.document.write('<html><head><title>打印</title>');
+    /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+    mywindow.document.write('<link href="style/css.css" rel="stylesheet" type="text/css">');
+    mywindow.document.write('</head><body>');
+    mywindow.document.write(html);
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10
+    //mywindow.print();
+    //mywindow.close();
+    return true;
+}
+</script>
+

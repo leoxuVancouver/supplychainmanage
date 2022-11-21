@@ -1,0 +1,394 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#changeOrg_choose ul li span {  padding: 2px 5px; display:inline-block;}
+#changeOrg_choose ul li span:hover{ background:#0066b3; color:#FFF;}
+.treebtn{ display:inline-block; width:31px; height:16px; background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.closing{ background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.err { background: #FFF8E4 url(images/error.png) no-repeat 5px center; border: 1px solid #FFCE81; padding: 2px 6px 2px 26px; color: #666666; }
+.bgcolor{ background:#0066b3; color:#FFF;}
+.cp{ cursor:pointer;}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售</span> > <span>客户</span> > <span class="comtitle_cur">我的客户</span>
+    </div>
+	<h3 class="tabname">我的客户</h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+            <label>客户名称：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label>联系人信息：</label>
+            <input type="text" class="inputstyle" placeholder="联系人姓名或手机号码" />
+            <label>绑定状态：</label>
+            <select class="selectstyle">
+                <option>全部</option>
+                <option>未绑定</option>
+                <option>已绑定</option>
+                <option>待确认</option>
+            </select>
+            <input type="button" class="btn_search" value="搜索" />
+            <span class="more_condition more_down">更多条件</span>
+            <p class="hideseach">
+            <label>业务员：</label>
+                <input type="text" class="inputstyle" value="" />
+            </p>
+        </div>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+        				<th>客户代码</th>
+            		<th>客户名称</th>
+                <th>首要联系人姓名</th>
+                <th>手机号</th>
+                <th>所属机构</th>
+                <th>业务员</th>
+                <th>绑定状态</th>
+                <th width="80">绑定时间</th>
+                <th width="160">操作</th>
+            </thead>
+            <tbody>
+			
+            	<tr>
+            				<td>qq001</td>
+                    <td class="t_a_l"><a href="销售-客户详情.html" class="blue">广州恒远公司</a> <img src="images/ico-tips.png" class="img_ico" title="我发出的绑定申请"></td>
+                    <td>张慧欣</td>
+                    <td>158 2688 9595</td>
+                    <td>广东分公司</td>
+                    <td>李彦斌</td>
+                    <td>未绑定
+                        <img src="images/ico-tips2.png" class="img_ico" title="绑定申请已被“广州恒远公司”取消，取消理由：我司已有固定的供应商建立长久合作"></td>
+                    <td></td>
+                    <td>
+                    	<a href="销售-编辑客户.html" class="inputbtn">编辑信息</a>
+                    	<a href="javascript:void(0)" class="inputbtn btnshoperinfo" >申请绑定</a>
+                    	<a href="销售-修改销售政策.html" class="inputbtn" style="
+    margin-right: 85px;
+">设置政策</a>
+                    	<!-- <a href="javascript:void(0)" class="inputbtn sel_peper">设置业务员</a> -->
+                    </td>
+                </tr>
+            	<tr>
+            				<td>qq002</td>
+                    <td class="t_a_l"><a href="javascript:void(0)" class="blue">深圳龙马科技</a> <img src="images/ico-tips.png" class="img_ico" title="我发出的绑定申请"></td>
+                    <td>李红梅</td>
+                    <td>158 5445 2020</td>
+                    <td>广东分公司</td>
+                    <td>王心如</td>
+                    <td>待确认</td>
+                    <td></td>
+                    <td>
+                    	<a href="销售-编辑客户.html" class="inputbtn">编辑信息</a>
+                    	<a href="javascript:void(0)" class="inputbtn "  style="color:grey;">申请绑定</a>
+                    	<a href="javascript:void(0)" class="inputbtn" style="
+    margin-right: 85px;
+">设置政策</a>
+                    	<!-- <a href="javascript:void(0)" class="inputbtn sel_peper">设置业务员</a> -->
+                    </td>
+                </tr>
+            	<tr>
+            				<td>qq003</td>
+                    <td class="t_a_l"><a href="javascript:void(0)" class="blue">成都成华茂盛有限公司</a><img src="images/ico-tips.png" class="img_ico" title="我发出的绑定申请"></td>
+                    <td>王丽英</td>
+                    <td>133 6586 1245</td>
+                    <td>广东分公司</td>
+                    <td>李梅</td>
+                    <td>待确认</td>
+                    <td></td>
+                    <td>
+                    	<a href="销售-编辑客户.html" class="inputbtn">编辑信息</a>
+                    	<a href="javascript:void(0)" class="inputbtn " style="color:grey;">申请绑定</a>
+                    	<a href="javascript:void(0)" class="inputbtn" style="
+    margin-right: 85px;
+">设置政策</a>
+                    	<!-- <a href="javascript:void(0)" class="inputbtn sel_peper">设置业务员</a> -->
+                    </td>
+                </tr>
+            	<tr>
+            				<td>qq004</td>
+                    <td class="t_a_l"><a href="javascript:void(0)" class="blue">佛山市卓越有限公司</a></td>
+                    <td>龙红静</td>
+                    <td>189 5566 1242</td>
+                    <td>广东分公司</td>
+                    <td>凌斌</td>
+                    <td>已绑定</td>
+                    <td>2015-05-19 12:12:32</td>
+                    <td>
+                    	<a href="销售-编辑客户.html" class="inputbtn">编辑信息</a>
+                    	<a href="javascript:void(0)" class="inputbtn btnqx">取消绑定</a>
+                    	<a href="javascript:void(0)" class="inputbtn" style="
+    margin-right: 85px;
+">设置政策</a>
+                    	<!-- <a href="javascript:void(0)" class="inputbtn sel_peper">设置业务员</a> -->
+                    </td>
+                </tr>
+            	<tr>
+            				<td>qq005</td>
+                    <td class="t_a_l"><a href="javascript:void(0)" class="blue">佛山市力豪有限公司</a></td>
+                    <td>刘丹</td>
+                    <td>131 2520 5960</td>
+                    <td>广东分公司</td>
+                    <td>杨军</td>
+                    <td>已绑定</td>
+                    <td>2015-05-19 12:12:32</td>
+                    <td>
+                    	<a href="销售-编辑客户.html" class="inputbtn">编辑信息</a>
+                    	<a href="javascript:void(0)" class="inputbtn btnqx">取消绑定</a>
+                    	<a href="javascript:void(0)" class="inputbtn" style="
+    margin-right: 85px;
+">设置政策</a>
+                    	<!-- <a href="javascript:void(0)" class="inputbtn sel_peper">设置业务员</a> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin:10px 0 0 10px;color: #333;">您拥有5家客户，未绑定的客户1家，待确认绑定的客户2家，已绑定关系的客户2家</div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+    
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div> 
+    
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+<!--供应商信息-->
+<div id="shoperinfo" class="popstyle">
+    <h3>客户信息<a href="javascript:void(0)" id="close_shoper">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle2" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+            	<th width="240">客户名称：</th>
+                <td><input type="text" disabled="" class="inputstyle" value="湖北百歌电子商务有限公司" readonly style="width:300px;"></td>
+            </tr>
+            <tr>
+            	<th>客户用户名：</th>
+                <td><input type="text" class="inputstyle" value="2014060905" style="width:300px;"></td>
+            </tr>
+            <tr>
+            	<th>客户代码：</th>
+                <td><input type="text" class="inputstyle" value="hr2014060905" style="width:300px;"><p class="f_12">请您录入该客户在贵公司ERP中设定的内部唯一识别代码。</p></td>
+            </tr>
+            <tr>
+            	<th>所属机构：</th>
+                <td>
+                <input type="text" disabled="" class="inputstyle" value="总部 华南区 广州分公司" readonly style="margin-right:0; width:300px;">
+                <img src="images/formmain_select.png" class="change_org_choose f_r c_p mr160">
+                    
+                        <!-- <input type="text" disabled="" class="inputstyle w320" value="" readonly>
+                        <span class="formmain_tip"></span>
+                        <span class="formmain_tipcon"><span>设置组织机构后，仅该机构及具备该数据可见权限的操作员才能对该客户进行编辑、建立订单等操作。</span></span>
+                        <img src="images/formmain_select.png" class="p_a_select3" id="sel_shoper">   -->
+                   
+
+                </td>
+            </tr>
+            <tr>
+            	<th>余额日期：</th>
+                <td><input type="text" class="inputstyle" value="2015-05-30"  style="width:300px;"></td>
+            </tr>
+            <tr>
+            	<th>期初应收余额：</th>
+                <td><input type="text" class="inputstyle"  style="width:300px;"></td>
+            </tr>
+            <tr>
+            	<th>期初预收余额：</th>
+                <td><input type="text" class="inputstyle"  style="width:300px;"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr10" id="btnshoperinfo1"  value="确认绑定">
+        <!--<input type="button" class="closebtn mr10" id="btnshoperinfo2"  value="关闭">-->
+    </div>
+</div>
+<!--机构选择-->
+<div id="changeOrg_choose" class="popstyle popstyle_small">
+    <h3>机构选择<a href="javascript:void(0)" class="close1">close</a></h3>
+    <div class="popmain">
+    	<div style="height:auto"> 
+            <ul class="ml20">
+            	<li><div class="treebtn"></div><span> 湖北中艺电子有限公司</span>
+                	<ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华南区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml50 cp"><span> 广东分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华东区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml50 cp"><span> 上海分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="取消">
+    </div>
+</div>
+
+<!--取消绑定-->
+<div id="del_pop" class="popstyle">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="popmain_tall">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您确认要取消与供应商：<span style="font-size:20px;">湖北欢尚集团电器有限公司 </span>的绑定关系？</h4>
+        <p>提示：如果确认取消与供应商的绑定关系，需输入取消原因，取消后绑定关系不能恢复。</p>
+    </div>
+    <div class="addbz">
+        <p><em class="redico">*</em><label>取消原因：</label><span><textarea cols="80" rows="5" style="width:660px;"></textarea></span></p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndel1" value="确定">
+        <input type="button" class="closebtn mr10" id="btndel2" value="关闭">
+    </div>
+</div>
+
+<div id="peper_pop" class="popstyle">
+    <h3>业务员列表<a href="javascript:void(0)" id="close_peper">close</a></h3>
+    <div class="popmain" style="padding:0">
+    	<iframe src="选择核销人员.html" style="height:424px; width:800px; border:none; overflow:hidden"></iframe>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnpeper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnpeper2"   value="关闭">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+//申请绑定A
+$(".btnshoperinfo").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#shoperinfo").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shoperinfo").css("height")))/2+"px");
+	$("#shoperinfo").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shoperinfo").css("width")))/2+"px");
+});
+$("#close_shoper,#btnshoperinfo2").on('click', function () {
+	$(".mask").hide();
+	$("#shoperinfo").hide();
+	
+});	
+updateRowBgColor();
+$("#btnshoperinfo1").on('click', function () {
+	$(".mask").hide();
+	$("#shoperinfo").hide();
+});	
+
+/*弹出框:修改机构_机构选择*/
+$(".change_org_choose").click(function () {
+	//弹框绝对居中（position:fixed）
+	$("#changeOrg_choose").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#changeOrg_choose").css("height")))/2+"px");
+	$("#changeOrg_choose").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#changeOrg_choose").css("width")))/2+"px");
+});
+$("#changeOrg_choose .close1,#changeOrg_choose .closebtn1").on('click', function () {
+	$("#changeOrg_choose").hide();
+});	
+$("#changeOrg_choose .surebtn1").on('click', function () {
+	$("#changeOrg_choose").hide();
+});	
+$("#changeOrg_choose").on("click","span",function(){
+	var treenodes=$('#changeOrg_choose span');
+	for(var n=0;n<treenodes.length;n++){
+	treenodes[n].className="";	
+	this.className="bgcolor";
+	}	
+	
+})
+
+
+//取消绑定
+$(".btnqx").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#del_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#del_pop").css("height")))/2+"px");
+	$("#del_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#del_pop").css("width")))/2+"px");
+});
+$("#close_del,#btndel2").on('click', function () {
+	$(".mask").hide();
+	$("#del_pop").hide();
+	
+});	
+updateRowBgColor();
+$("#btndel1").on('click', function () {
+	$(".mask").hide();
+	$("#del_pop").hide();
+});	
+
+
+
+//选择业务员
+$(".sel_peper").on('click', function () {
+	var _this = $(".selshop");
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#peper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#peper_pop").css("height")))/2+"px");
+	$("#peper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#peper_pop").css("width")))/2+"px");
+});
+$("#close_peper,#btnpeper2").on('click', function () {
+	$(".mask").hide();
+	$("#peper_pop").hide();
+});	
+$("#btnpeper1").on('click', function () {
+	$(".mask").hide();
+	$("#peper_pop").hide();
+	$(".namebox").show();
+});	
+
+
+
+</script>
+</html>

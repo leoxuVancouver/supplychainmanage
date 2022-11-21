@@ -1,0 +1,178 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "4"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>收发货</span> > <span>收货</span> > <span class="comtitle_cur">收货登记</span>
+    </div>
+    <h3 class="formname">物流信息</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                	<th>发货单号：</th>
+                    <td class="w200">1201673344042</td>
+                    <th>发货时间：</th>
+                    <td>2015-12-15</td>  
+                </tr>
+                <tr>
+                	<th>物流公司：</th>
+                    <td class="w200">顺丰快递</td>
+                    <th>发货备注：</th>
+                    <td>-</td>  
+                </tr>
+                <tr>
+                	<th>物流单号：</th>
+                    <td>768978397433</td>
+                </tr>
+            </tbody>
+    	</table>	
+    </div>
+    <h3 class="tabname">商品发货信息</h3>
+    <div class="tabinfo">
+    
+    </div>
+    <div class="tablemain mt30">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>采购数量</th>
+                    <th>已发货数量</th>
+                    <th>现收货数量</th>
+                    <th>单价（元）</th>
+                    <th>合计（元）</th>
+                </tr>
+             </thead>
+            <tbody>
+            	<tr>
+                	<th colspan="8" class="t_a_l pl15">
+                    	<label>订单号: <a href="采购-我的订单-订单详情.html" class="blue">2014060810240090</a></label>
+                    </th>
+                </tr>
+                <tr>
+                    <td>5463456453</td>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>白色,黑色</td> 
+                    <td>2
+</td>
+                    <td>2</td>
+                    <td><a class="arrow_down">&nbsp;</a><input type="text" class="inputstyle border" value="0" style="width:80px; text-align:center"><a class="arrow_up">&nbsp;</a></td>
+                    <td>24880.00</td>
+                    <td>49760.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ddinfo">
+    	<div class="f_l mt10">
+            <table>
+                <tbody>
+                <tr>
+                    <th><em class="redico">*</em> 收货日期：</th>
+                    <td><input class="Wdate bor_c" onClick="WdatePicker({skin: 'whyGreen'})" type="text"></td>
+                </tr>
+                <tr>
+                    <th>收货备注：</th>
+                    <td><textarea rows="3" class="inputstyle bor_c" style="width:300px; height:auto"></textarea>
+                        <br>
+                        <b class="l_h30 f_red">最多200个字</b>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="f_r">
+            <ul>
+                <li><label>订单金额：</label><span>49760.00</span></li>
+                <li><label>发货金额：</label><span class="f_16 f_red"><strong>49760.00</strong></span></li>
+            </ul>
+       </div>
+    </div>
+    <div align="center" class="mb20">
+    	<input type="button" value="确认收货" class="surebtn mr20" onClick="location.href= '收发货-收货登记-收货成功.html'">
+        <input type="button" value="返 回" class="closebtn" onClick="javascript:history.go(-1)">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+
+$(".tablestyle").on("blur", ".inputstyle", function (event) {
+	calculatingRowSum($(this));
+	calculatingTotalSum();
+	event.preventDefault();
+}).on("keyup keydown", ".inputstyle", function () {
+	var val = this.value;
+	this.value = val.replace(/\D*/g, "");
+}).on("click", ".arrow_down", function (event) {
+	var $input = $(this).next();
+	if ($input.val() <= 0) {
+		return;
+	}
+	$input.val($input.val() * 1 - 1);
+	calculatingRowSum($input);
+	calculatingTotalSum();
+	event.preventDefault();
+}).on("click", ".arrow_up", function (event) {
+	var $input = $(this).prev();
+	$input.val($input.val() * 1 + 1);
+	calculatingRowSum($input);
+	calculatingTotalSum();
+	event.preventDefault();
+});
+
+
+
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+</html>

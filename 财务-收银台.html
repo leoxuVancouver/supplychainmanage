@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>收银台</title>
+	<link href="style/css.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		*{ margin: 0px; padding: 0px;}
+		body{ font-family: "Microsoft YaHei";}
+		a{ text-decoration: none;}
+		em{ font-style: normal; color: #e00; font-weight: bold;font-family: "宋体";}
+		img{ border: 0; vertical-align: top;}
+		.warp{ width: 980px; margin: 0 auto;}
+		.header{ height: 80px; border-bottom: 4px solid #e00;}
+		.header h1{ float: left; width: 571px;}
+		.header h1 img{ margin-top: 20px;}
+		.header .info{ text-align: right;}
+		.header p{ font-size: 13px; margin-top: 20px;}
+		.header p em{ margin-right: 10px; font-size: 14px;}
+		.header a{ width: 146px; height: 32px; line-height: 32px; text-align: center; background: url(images/quit-btn.png); display: inline-block; color: #fff; font-size: 13px;}
+		.head-info{ height: 54px; border: 2px solid #fff7de; position: relative; margin-top: 8px; padding: 5px;font-size: 14px;}
+		.head-info p span{ padding-left: 100px;  }
+		.head-info em{ font-size: 24px; font-family: "宋体"; }
+		.head-info a{ text-decoration: none; margin-left: 10px;}
+		.head-info span.xq{ width: 86px; height: 21px; background: url(images/xq-bg.png); display: inline-block; position: absolute; bottom: -6px; right: 10px;}
+		.head-info span.xq a{ color: #fff; padding-left: 18px; font-size: 12px;}
+		.main{ margin-top: 15px; border: 2px solid #b5b5b5; padding: 10px;}
+		.item{ height: 85px; border-bottom: 1px dashed #c5c5c5; margin-top: 10px;}
+		.item p{ height: 35px; line-height: 35px; padding-top: 20px; color: #666; padding-left: 20px;}
+		.item input{ margin-right: 10px;}
+		.item p a{ display: inline-block; width: 124px; height: 33px; background: url(images/pay-btn.png); line-height: 33px; text-align: center; color: #fff; font-size: 13px;}
+		.item  span{ margin-left: 20px;}
+		.payList{ list-style: none;}
+		.payList li{height: 85px; border-bottom: 1px solid #c5c5c5; margin-top: 10px; padding: 0 20px;}
+		.payList li.active{ border: 2px solid #f1b822; height: 81px;}
+		.payList li p{ height: 35px; line-height: 35px; padding-top: 20px; color: #666;}
+		.payList li p span{ float: right; display: none;}
+		.payList li p em{ color: #e00;font-weight: bold; font-style: normal;}
+		.payList li img{ border: 1px solid #c5c5c5; margin-left: 10px; margin-right: 10px;}
+		.foot{ height: 64px; border-top: 4px solid #0071bc; margin-top: 15px;}
+		.foot_l{ float: left; width:640px; height:64px; padding-left:30px;  background:url(images/foot_ico2.png) no-repeat 0 10px;}
+		.foot_l span{ margin-right:40px;}
+		.foot_l img{ float:left; padding-right:20px;}
+		.foot_l p{ color: #999; font-size:13px; line-height:26px;}
+		.foot_r{ float: right;width:270px; text-align: right;}
+		.foot_r a{ font-size: 13px; text-decoration: none; margin-left: 10px; color: #0071bc;}
+		 #pop-pay{ display: none; background: #f7f7f6; width: 420px; height: 220px; border: 6px solid rgba(0,0,0,0.2);position:fixed; z-index:110;}
+		#pop-pay h3{ background: #eff4fb; border-bottom: 1px solid #cedff0; height: 32px; line-height: 32px; font-size: 16px; padding-left: 20px;}
+		#pop-pay h3 img{ margin-top: 6px; float: right; margin-right: 10px;}
+		.popmain input{ width: 100px; height: 28px;}
+		.popmain lable{ font-weight: bold; }
+		.popmain p{font-size: 15px; margin-bottom: 20px;}
+		.popmain p img{ vertical-align: middle;}
+		.popmain a{width: 104px; text-align: center; height: 32px; background:url(images/renew.png); display: inline-block; line-height: 30px;}
+		.button{ text-align: center;}
+		.button input{ width: 90px; height: 31px; background: url(images/btnsure.png); color: #fff; border: none; font-size: 13px; cursor: pointer;}
+	
+		/*弹窗样式*/
+		.mask { display: none; width: 100%; height: 100%; position: absolute;top: 0; left: 0;
+		z-index: 100; opacity: 0.5; filter: alpha(opacity=50); background: #000; }
+	/*头部*/
+	</style>
+</head>
+<body>
+<div class="warp">
+	<div class="header">
+		<h1><img src="images/logo.png"></h1>
+		<div class="info">
+			<a href="javascript:window.opener=null;window.open('','_self');window.close();">安全退出</a>
+			<p><em>陈*奋</em>欢迎您使用商城账户！</p>
+		</div>
+	</div>
+	<div class="head-info">
+		<p>善融商务 | 善付通<span>广东琪琪电子商务有限公司</span></p>
+		<p style=" text-align: right; padding-right: 70px;"><em color="red">24,880.00</em>元 <a href="#">刷新</a></p>	
+		<span class="xq"><a href="#">查看详情</a></span>
+	</div>
+	<div class="main">
+		<div class="item">
+			<p><input type="checkbox" id="check_all" checked="checked">商城账户支付<span>可用余额：<em>10,000,000.00</em>元</span></p>
+		</div>
+		<ul class="payList">
+			<li>
+				<p><input type="radio" name="pay"><img src="images/pay-1.png">企业网银支付<span>支付：<em>24,880.00</em>元</span></p>
+			</li>
+			<li>
+				<p><input type="radio" name="pay"><img src="images/pay-1.png">网银支付/账号支付<span>支付：<em>24,880.00</em>元</span></p>
+			</li>
+			<li>
+				<p><input type="radio" name="pay"><img src="images/pay-2.png">银联在线支付<span>支付：<em>24,880.00</em>元</span></p>
+			</li>
+		</ul>
+		<div class="item">
+			<p style=" text-align: center"><a id="btnsure" href="javascript:void(0)">确认支付</a></p>
+		</div>
+	</div>
+	<div class="foot">
+		<div class="foot_l">
+            <p><span>&copy;版权所有&nbsp;中国建设银行版权所有&nbsp;&nbsp;京ICP备&nbsp;13030780号</span><span>京公网安备：110102000450</span></p>
+            <p><span>总行地址：中国北京西城区金融大街25号</span><span>邮编：100033</span><span>手机网站：m.ccb.com</span></p>
+        </div>
+        <div class="foot_r">
+			<a href="#">网站声明</a>
+			<a href="#">联系我们</a>
+			<a href="#">网站地图</a>
+			<a href="#">友情链接</a>
+        </div>
+	</div>
+</div>
+<div id="pop-pay">
+	<h3>确认支付<img src="images/close.png" id="closed" alt=""></h3>
+	<div class="popmain">
+		<p>
+		<img src="images/phone.png" alt="">
+		<lable>短信验证码：</lable>
+		<input type="text" id="vcode" />
+		<a href="javascript:;" class="send1" onclick="sends.send();">发送验证码</a></p>
+		<p>我行已向您后四位为<span>6192</span>的手机发送验证码，请及时输入，
+			如未收到短信，请点击“重新获取验证码”。
+		</p>
+	</div>
+	<div class="button">
+        <input type="button" id="btnok" value="确定">
+    </div>
+</div>
+<div class="mask"></div>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('input:radio').each(function(){
+		$(this).click(function(){
+			if(this.checked){
+				$(this).parent().parent().addClass("active").siblings().removeClass("active").find("span").hide();
+				$(this).parent().find("span").show();
+				$("#check_all").attr("checked", false);
+			}
+		});
+	});
+	// 全选
+	$("#check_all").click(function(){
+		if(this.checked){    
+	        $('input:radio').attr("checked", false);   
+			$('input:radio').parent().find("span").hide().parent().parent().removeClass("active");
+	    }else{    
+	        $('input:radio').attr("checked", true); 
+	    }  
+	});
+});
+
+
+
+/*提交*/
+$("#btnsure").bind("click",function(){
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#pop-pay").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#pop-pay").css("height")))/2+"px");
+	$("#pop-pay").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#pop-pay").css("width")))/2+"px");
+	$("#closed").bind('click', function () {
+		$(".mask").hide();
+		$("#pop-pay").hide();
+	})
+	$("#btnok").bind('click', function () {
+		var vcode = $('#vcode').val();
+		if (vcode ==""){
+			$('#vcode').focus();
+		}else{
+			$(".mask").hide();
+			$("#pop-pay").hide();
+			 window.location.href= "财务-收银台-付款成功.html";
+		}
+	})
+
+})
+</script>
+</body>
+</html>

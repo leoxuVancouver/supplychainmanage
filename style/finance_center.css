@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*融资中心 start*********************************************************************************************************************/
+.finance_center {
+	width:100%;
+	height:auto;
+	min-width:1160px;
+	margin: 0 auto; 
+	background:#FFF; 
+} 
+/*融资额度*/
+.finance_limit {
+	width:100%;
+	height:280px;
+	position:relative;
+	background:url(../images/finance_limit_bg.png) 0 0 no-repeat;
+	background-size:cover;
+}
+.finance_limit>ul {
+	position:absolute;
+	top:30px;
+	left:840px;
+}
+.f_limit_show {
+	display:block;
+	width:297px;
+	height:154px;
+	text-align:center;
+	margin-bottom:10px;
+	background:url(../images/f_limit_show_bg.png) 0 0 no-repeat;
+}
+.f_limit_show>span {
+	display:inline-block;
+	margin-top:30px;
+	font-size:24px;
+	color:#333;
+}
+.f_limit_show>span>strong {
+	display:inline-block;
+	margin-top:10px;
+	font-size:48px;
+	color:#e58436;
+}
+.f_limit_btn {
+	display:block;
+	width:240px;
+	height:66px;
+	text-align:center;
+	margin-left:29px;
+	background:url(../images/f_limit_btn_bg.png) 0 0 no-repeat;
+}
+.f_limit_btn>a,
+.f_limit_btn>a:hover {
+	display:block;
+	font-size:30px;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:700;
+	line-height:66px;
+	cursor:pointer;
+}
+
+/*融资产品*/
+.finance_pro {
+	width:1160px;
+	height:260px;
+	margin: 15px auto;
+	margin-bottom:0;/*body背景为灰色，使不出现灰色条*/
+	padding-bottom:20px;
+}
+.f_pro_left {
+	width:220px;
+	height:auto;
+	float:left;
+}
+.f_pro_left>ul>.yingshou {
+	didplay:block;
+	width:218px;
+	height:128px;
+	text-align:center;
+	border:1px #e6e6e6 solid;
+	border-bottom:1px #e6e6e6 dashed; 
+}
+.f_pro_left>ul>.yingfu {
+	didplay:block;
+	width:218px;
+	height:129px;
+	text-align:center;
+	border:1px #e6e6e6 solid;
+	border-top:0; 
+}
+.f_pro_left>ul>li>span {
+	display:inline-block;
+	margin-top:30px;
+	font-size:18px;
+	color:#333;
+	font-weight:700;
+}
+.f_pro_left>ul>li>span>strong {
+	display:inline-block;
+	margin-top:10px;
+	font-size:28px;
+	color:#e58436;
+	font-weight:700;
+}
+.f_pro_right {
+	width:913px;
+	height:100%;
+	float:right;
+}
+.f_pro_right h3 {
+	font-size:24px;
+	line-height:1.5em;
+	color:#1a1a1a;
+	font-weight:700;
+	border-bottom:2px #ccc solid;
+}
+.f_pro_right h3 a {
+	float:right;
+	font-size:14px;
+	color:#ffba00;
+	font-weight:400;
+	text-decoration:none;
+	cursor:pointer;
+}
+.f_pro_right h3 a:hover {
+	color:#feda78;
+	text-decoration:none;
+}
+
+.f_pro_right div {
+	position:relative;
+	display:inline-block;
+	width:242px;
+	height:200px;
+	border-radius:10px;
+	border:1px #e6e6e6 solid;
+	text-align:center;
+	padding:10px 20px 0;
+	margin:10px 0 0 110px;
+}
+.f_pro_right div:hover {
+	background:#e6e6e6;
+}
+.f_pro_right div>a,
+.f_pro_right div>a:hover {
+	text-decoration:none;
+}
+.f_pro_right div>a>ul>li>span,
+.f_pro_right div>a:hover>ul>li>span {
+	display:block;
+	margin-top:15px;
+	font-size:14px;
+	text-decoration:none;
+	color:#808080;
+	font-weight:400;
+}
+.f_pro_right div>a>ul>li>strong,
+.f_pro_right div>a:hover>ul>li>strong {
+	position:absolute;
+	bottom:0;
+	left:0;
+	border-radius:0 0 10px 10px;
+	display:block;
+	width:100%;
+	height:50px;
+	font-size:24px;
+	line-height:50px;
+	color:#FFF;
+	text-decoration:none;
+}
+.f_pro_right .yingshouhuo>a>ul>li>strong {
+	background:#61d0f2;
+}
+.f_pro_right .dingdanhuo>a>ul>li>strong {
+	background:#99f261;
+}
+/*融资中心 end*********************************************************************************************************************/
+
+

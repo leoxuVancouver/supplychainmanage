@@ -1,0 +1,67 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+h3 { margin-left:20px; line-height:50px; font-size:14px; color:#000;}
+.num_change { margin-left:20px;}
+.num_change li { width:600px; height:80px; border:1px solid #f6fafd; line-height:80px; 
+		text-indent:80px; color:#333; font-size:16px;}
+.num_change .num_change1 { background: #fff url(images/num_change_bg1.png) 20px 50% no-repeat; margin-bottom:20px; }
+.num_change .num_change2 { background: #fff url(images/num_change_bg2.png) 20px 50% no-repeat; }
+.num_change li:hover { background-color:#f6fafd;}
+.num_change li input { float:right; margin-right:20px;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>个人设置</span> > <span class="comtitle_cur">个人信息修改</span>
+        <strong>温馨提示：此手机号用于找回密码，确认收货和使用商城账户余额等操作。</strong>
+    </div>
+    <h3>原手机号码：<span class="red">135****8989</span>，您可以通过以下方法修改：</h3>
+    <ul class="num_change">
+    	<li class="num_change1">通过验证网银盾修改<input type="button" class="surebtn" value="进入修改"></li>
+        <li class="num_change2">通过原手机号码接收短信验证修改<input type="button" class="surebtn" value="进入修改"></li>
+    </ul>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+$('#change1').mouseover(function(){
+	$('#em1').show();});
+$('#change1').mouseout(function(){
+	$('#em1').hide();});
+$('#change2').mouseover(function(){
+	$('#em2').show();});
+$('#change2').mouseout(function(){
+	$('#em2').hide();});
+</script>
+</html>

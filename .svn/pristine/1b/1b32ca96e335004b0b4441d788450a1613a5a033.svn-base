@@ -1,0 +1,110 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售</span> > <span>商品管理</span> > <span class="comtitle_cur">我的商品</span>
+        <strong>添加商品成功后您可将该商品与外部系统（ERP）进行数据协同。</strong>
+    </div>
+    <h3 class="formname">基本信息</h3>
+    <div class="formmain">
+    	<table class="tablestyle2" width="100%" height="285">
+            <tbody>
+                <tr>
+                    <th><em class="redico">*</em>商品编码：</th>
+                    <td class="p_r">
+                    	<input type="text" class="inputstyle w320" value="5463456453">
+                    	<span class="formmain_tip"></span>
+                        <span class="formmain_tipcon"><span>商品编码：作为商品唯一标识存在于系统（必填项），与外部系统（ERP）相同时为同一款商品，不同时为新增商品。</span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th><em class="redico">*</em>商品名称：</th>
+                    <td><input type="text" class="inputstyle w320" value="苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM"></td>
+                </tr>
+                <tr>
+                    <th>商品型号：</th>
+                    <td><input type="text" class="inputstyle w320" value="白色,黑色"></td>
+                </tr>
+                <tr>
+                    <th><em class="redico">*</em>计量单位：</th>
+                    <td><input type="text" class="inputstyle w320" value="部"></td>
+                </tr>
+                <tr>
+                    <th valign="top" class="l_h50">商品描述：</th>
+                    <td>
+                        <textarea rows="3" class="inputstyle mt10" style="width:300px; height:auto"></textarea>
+                        <br /><b class="l_h30 f_red">最多200个字</b>
+                    </td>
+                </tr>
+                <tr>
+                	<th></th>
+                    <td>
+                    	<input type="button" value="提 交" class="surebtn" onclick="location.href= '销售-商品列表.html'">
+        				<input type="button" value="返 回" class="closebtn" onClick="javascript:history.go(-1)">
+                    </td>
+                </tr>		
+            </tbody>
+    	</table>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+/*显示提示内容*/
+$(".formmain_tip").hover(
+	function(){$(this).next().fadeIn(1500).stop(true,true);},
+	function(){$(this).next().fadeOut(1500);}
+);
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+
+
+</script>
+</html>

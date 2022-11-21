@@ -1,0 +1,313 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售</span> > <span>客户</span> > <span class="comtitle_cur">设置销售政策</span>
+    </div>
+    <h3 class="tabname">销售政策</h3>
+    <div class="tabinfo">
+    	<p><em class="redico">*</em>
+            <label>客户：</label>
+            <input type="text" class="inputstyle w320" id="support_name" value="[2014060905] 深圳市南山区丁冰家用电器店">
+        </p>
+    </div>
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th width="60">序号</th>
+                    <th width="280">商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>单价（元）</th>
+                    <th>销售价（元）</th>
+                </tr>
+             </thead>
+            <tbody id="mybody">
+            	<tr>
+                	<td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="pd2014060907" class="inputstyle" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled class="inputstyle" value="卡萨帝冰箱 BCD-356W" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle" value="BCD-220E3C" readonly /></td> 
+                    <td><input type="text" disabled class="inputstyle" value="4,000.00" readonly /></td>
+                    <td><input type="text" class="inputstyle" value="3,700.00" style="width:200px" /></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>2</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="pd2123060217" class="inputstyle" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled class="inputstyle" value="65寸LED超高清彩电" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle" value="BCD-220E3C" readonly /></td> 
+                    <td><input type="text" disabled class="inputstyle" value="4,200.00" readonly /></td>
+                    <td><input type="text" class="inputstyle" value="4,000.00" style="width:200px" /></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>3</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td> 
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>
+                    <td><input type="text" class="inputstyle hide" style="width:200px" /></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>4</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td> 
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>
+                    <td><input type="text" class="inputstyle hide" style="width:200px" /></td>
+                </tr>
+                <tr>
+                    <td><img src="images/input_add.png" id="addRow" alt="addRow"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="f_r mr20"><input type="button" value="提 交" class="surebtn" id="btn_tj"></div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+
+<!--选择商品（数量和列表的数量一样。选择商品的时候应该是不用输入数量，选择完之后再填写数量）-->
+<div id="shop_pop" class="popstyle">
+    <h3>商品列表<a href="javascript:void(0)" id="close_shop">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="40"></th>					
+                    <th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>单位</th>
+                    <th>单价（元）</th>
+                </tr>
+            </thead>
+            <tbody id="demobody">
+                <tr>
+                    <td><input type="radio" name="list_radio" checked="checked" /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2014060907</td>
+                    <td>卡萨帝冰箱 BCD-356W</td>
+                    <td>BCD-220E3C</td>
+                    <td>个</td>
+                    <td>4,000.00</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio" /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2123060217</td>
+                    <td>65寸LED超高清彩电</td>
+                    <td>BCD-220E3C</td>
+                    <td>个</td>
+                    <td>4,200.00</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2014231110</td>
+                    <td>美的电冰箱 MDK-2312</td>
+                    <td>MDK-2312</td>
+                    <td>个</td>
+                    <td>4,500.00</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2215515658</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-24023C</td>
+                    <td>个</td>
+                    <td>6,000.00</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2014062322</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-24023C</td>
+                    <td>个</td>
+                    <td>6,000.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnshop1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshop2"   value="关闭">
+    </div>
+</div>
+
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>销售政策设置成功！</h4>
+        <p>销售政策已成功保存，您可以在客户列表里面查看销售政策详情。</p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr10" id="btntj" value="确定">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+
+
+//选择商品
+var btn;
+$("#mybody").on('click',".selshop", function () {
+	var _this = $(this);
+	btn = _this;
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#shop_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shop_pop").css("height")))/2+"px");
+	$("#shop_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shop_pop").css("width")))/2+"px");
+});	
+	$("#close_shop,#btnshop2,#btnshop1").on('click', function () {
+		$(".mask").hide();
+		$("#shop_pop").hide();
+	});	
+	updateRowBgColor();
+	
+
+
+$("#btnshop1").on('click', function (e) {
+	var _this = btn;
+	var _input = _this.prev();
+	var _parent = _this.parent();
+	var td = $("input[name='list_radio']:checked").parent().siblings();
+	var cp_name= td.eq(0).html();
+	var code= td.eq(1).html();
+	var lx_name= td.eq(2).html();
+	var callno= td.eq(3).html();
+	var jg= td.eq(4).html();
+	//var dtail= td.eq(5).text();
+	
+	//_parent.html(code);
+	
+	var _thisTd = _parent.siblings();
+	_thisTd.find(".inputstyle").removeClass("hide");
+	_thisTd.eq(1).find('input').val(code);
+	_thisTd.eq(2).find('input').val(lx_name);
+	_thisTd.eq(3).find('input').val(jg);
+	_thisTd.eq(4).find('input').val();
+	/*_thisTd.eq(5).find('input').val();
+	_thisTd.eq(6).find('input').val();*/
+	_input.removeClass("hide").val();
+	_input.val(cp_name);
+
+});	
+
+
+
+//提交
+$("#btn_tj").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	$("#close_tj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btntj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		location.href= '销售-客户列表.html';
+	});	
+});
+
+//删除一行
+$(document).on('click','.sc',function(){
+	var tbody = $(this).parents('tbody')
+	$(this).parents('tr').remove();
+	updateRowBgColor();
+	tbody.find('tr').each(function(i){
+		$(this).find('td:eq(0)').find('span').html(i+1);
+	})
+});
+
+/*增加一行*/
+$('#addRow').on('click', function () {
+	var $tbody = $('.madetable tbody');
+	var $addRow_tr = $("#addRow").parent("td").parent("tr");
+	$addRow_tr.before('<tr>' + 
+		'<td class="p_r">' + '<span>'+($tbody.find('tr').length) +'</span>'+'<img src="images/ico_sc.gif" class="sc" title="删除" />'+'</td>' +
+		'<td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>' +
+		'<td><input type="text" class="inputstyle hide" style="width:200px" /></td>' +
+	'</tr>');
+   // refreshRowBgColor();
+	updateRowBgColor();
+});	
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/** 
+ * 将数值四舍五入(保留2位小数)后格式化成金额形式 
+ * 
+ * @param num 数值(Number或者String) 
+ * @return 金额格式的字符串,如'1,234,567.45' 
+ * @type String 
+ */  
+function formatCurrency(num) {  
+    num = num.toString().replace(/\$|\,/g,'');  
+    if(isNaN(num))  
+    num = "0";  
+    sign = (num == (num = Math.abs(num)));  
+    num = Math.floor(num*100+0.50000000001);  
+    cents = num%100;  
+    num = Math.floor(num/100).toString();  
+    if(cents<10)  
+    cents = "0" + cents;  
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)  
+    num = num.substring(0,num.length-(4*i+3))+','+  
+    num.substring(num.length-(4*i+3));  
+    return (((sign)?'':'-') + num + '.' + cents);  
+}  
+</script>
+</html>

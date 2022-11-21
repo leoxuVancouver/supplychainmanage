@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>激活商城账户</title>
+	<!--<script src="/V5/js/ccbsoftkeyboard.js" language="javascript"></script>
+	<script src="/V5/js/Addtioncode.js" language="javascript"></script>
+	<script src="/V5/js/tx/PWDSTRENGTH.js" language="javascript"></script>
+	<script src="/V5/js/ccb5.js" language="javascript"></script>-->
+    <script src="js/jquery-1.6.2.min.js"></script>
+	<style type="text/css">
+		<!--
+		a:link {
+			text-decoration: none;
+		}
+		a:visited {
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		a:active {
+			text-decoration: none;
+		}
+		.STYLE1 {color: #3AB400}
+		.STYLE2 {color: #FF0000}		
+		-->
+    </style>
+	<link type="text/css" rel="stylesheet" href="style/mall_activate.css"/>
+<script language="javascript">	
+function checkSubmitValue(){
+	var companyEAccNoVal = $("#company_eacc_no");
+	if(companyEAccNoVal.value==null||companyEAccNoVal.value.trim()==""){
+		alert("商城账户号不能为空！");
+		return false;
+	}  
+	return true;
+}
+function send(){
+	if(!checkSubmitValue()){
+		return false;
+	}
+	$("reg-submit-i").className='CCBButtonFont6Dis';
+	$("reg-submit-i").disabled = true;
+	return true;
+}
+
+function accountFormat(obj){
+		var value = '';
+		var number = '1234567890';
+		for(var i=0;i<obj.value.length;i++){
+			if(number.indexOf(obj.value.charAt(i))>=0){
+				if(value.length==4||value.length==9||value.length==14||value.length==19||value.length==24||value.length==29||value.length==34){
+					value = value+' ';
+				}
+				if(value.length==37){
+					break;
+				}
+				value = value+obj.value.charAt(i);
+			}
+		}
+		obj.value = value;
+	}
+
+function init(){
+	//若账户名字符串太长，截取前面
+	var accountName = "JAMES";
+	if(accountName.length>13){
+		accountName = accountName.substring(0,13)+"...";
+		document.getElementById('accountName').innerHTML=accountName;
+	}
+}
+function winClose(){self.close();}
+</script>
+</head>
+<body onLoad = "init()">
+<div class="CCBContianer">
+	<div class="CCBHender">
+		<div class="CCBHenderTool">
+			<div class="CCBHenderToolLogoFont">激活</div>
+			<div class="CCBHenderToolBox">
+				<div class="CCBHenderToolMenu">
+					<div class="CCBHenderToolMenuL"></div>
+              			<div class="CCBHenderToolMenuC CCBWhiteLink"><a href="#" onClick="winClose()">安全退出</a></div>
+              			<div class="CCBHenderToolMenuR"></div> 
+				</div>
+				<div class="CCBHenderTool95533"><span id = "accountName" class="CCBFont14px CCBFontRed CCBFontBold">JAMES</span>，欢迎您使用商城账户!</div>					
+			</div>
+		</div>
+		<div class="CCBHender1thMenuNofont">
+		</div>
+		<div class="CCBHender2thMenu">
+			<ul>
+				<li><span class="CCBFontBold CCBGray">激活流程：</span><span class="CCBFontRed CCBFontBold"> 1.填写资料 </span> >  2.资料验证  >  3.激活结果</li>
+			</ul>
+		</div>
+		<div class="CCBHenderUnderLine"></div>
+	</div>
+	<div class="CCBMain">
+		<div class="CCBSuccessTips">
+	  	  	<span class="CCBFont14px CCBFontBold">
+				柜面开通的客户必须激活才能使用商城账户。
+			</span>
+			<br />
+         	激活过程中会向您在柜面开通时登记的手机号码发送短信验证码，请您注意查收。
+			
+       	</div>
+		<form id="jhform" name="jhform" method="post" action="/epay/EPAYMainB1L1?CCB_IBSVersion=V5&SERVLET_NAME=EPAYMainB1L1" onsubmit="return send();">
+		  <div class="CCBSpaceTop10px">
+					<div class="CCBTableHead">
+						<span class="headLeft">填写资料</span><span class="headRight"></span>
+					</div>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="CCBTableOutside">
+					  <tr>
+					    <td width="150" align="right" class="CCBFontBold">
+					    	<span class="CCBFontRed">*</span> 商城账户号:
+					    </td>
+					    <td >
+                            <input id="company_eacc_no" name="company_eacc_no" class="CCBInputStyle" type="text" style="width:200px;"  maxlength="30" value=""/>
+                            <span class="CCBFont12px">请填写柜面商城账户开户打印凭条显示的商城账户号</span>
+			            </td>
+				      </tr>
+					  <tr>
+					    <td>&nbsp;</td>
+                        <td>
+                        	<div class="ButtonAreaNoLine_Left">
+	                          	<input id="reg-submit-i" type="submit" class="CCBButton CCBButtonRedFont6"  onmouseover="this.className='CCBButtonRedFont6Mouse'" onmouseout="this.className='CCBButtonRedFont6'"  value="下一步" />
+                        	</div>
+                        </td>
+					  </tr>
+					</table>
+		  </div>
+			<input type="hidden" name="TXCODE" id="TXCODE" value="EP1221" />
+			<input type="hidden" name="TRANSID" id="TRANSID" value="201405291130212231063" />
+			<input type="hidden" name="MERCHANTID" id="MERCHANTID" value="0001" />
+			<input type="hidden" name="MALLUSERID" id="MALLUSERID" value="MALLUSERID=ccbhyy&SYS_TIME=20140529112951&SYS_ID=130010000000002&SIGN=4e7be8988e69a9d9f1b155478d0256a97d3cbf4ce6959e61d0b3091c5152067291c78d0fa7e97c80bd005e352cd1d7f6a78b4b77a62867f270a508741892c8c22e2d54f5d4b9e90f2ae68f70dabb9fced748aac0578f7a75ab66842f77b82906f4aec236c8e455719d37c6fdfba1f88eb90ab977be4355bbd684e6fbd59ddb37" />
+			<input type="hidden" name="USERTYPE" id="USERTYPE" value="2" />
+			<input type="hidden" name="SYS_ID" id="SYS_ID" value="0001" />
+			<input type="hidden" name="RTURL" id="RTURL" value="http://mall.ccb.com/epay/edesksignreturn.php" />
+			<input type="hidden" name="realName" id="realName" value="JAMES" />
+			<input type="hidden" name="EXPAND" id="EXPAND" value="" />
+			<input type="hidden" name="ENCODEMALLCUSTID" id="ENCODEMALLCUSTID" value="MALLCUSTID=116096893&SYS_TIME=20140529112951&SYS_ID=130010000000002&SIGN=05af8a3fb05328a6531a35e7b9caab7fbb11554dbff0eefa63ba62a5e796d8af9185b85ebb3283cc22d5bfe93d575dbccffa33e12d058f8d0e9cbce5436720c3cbe0efbf89ab0dc5c528faa2588b474e363b952c2df57903e1ce5d8348be69081f6bee7810ceb9681ebe1a03a08f0f8520f2f39dd306236200e5bc0819403772" />
+		</form>
+	</div>
+	<div style="clear:both"></div>
+	
+<div class="CCBBottom">
+	<div class="CCBBottomLeftImg">
+		<a
+			href="###"
+			target="_blank"><img src="images/user-setting/pft_icon_left.png"
+				border="0" width="27" height="32" /> </a>
+	</div>
+	<div class="CCBBottomLeft font_gray">
+		&copy;版权所有&nbsp;中国建设银行版权所有 京ICP备 13030780号&nbsp;&nbsp;&nbsp;&nbsp;京公网安备 110102000450
+		<br />
+		总行地址：中国北京西城区金融大街25号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮编：100033&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机网站：m.ccb.com
+	</div>
+	<div class="CCBBottomRight">
+		<a href="###">网站声明</a>&nbsp;&nbsp;
+		<a href="###">联系我们</a>&nbsp;&nbsp;
+		<a href="###">网站地图</a>&nbsp;&nbsp;
+		<a href="###">友情链接</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

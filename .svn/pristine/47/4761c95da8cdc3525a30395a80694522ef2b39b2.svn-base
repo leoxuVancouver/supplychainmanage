@@ -1,0 +1,466 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.popstyle{
+    width: auto;
+}
+.popmain_short_padding{
+    padding: 0 50px;
+}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售</span> > <span>订单管理</span> > <span class="comtitle_cur">建立订单</span>
+    </div>
+    <div class="tabbox">
+    	<ul>
+            <li class="cur"><a href="采购-建立订单.html">单笔录入</a></li>
+            <li><a href="采购-导入订单.html">批量导入</a></li>
+        </ul>
+    </div>
+    <h3 class="tabname">采购订单<span class="r0"> &lt;使用 <a href="javascript:void(0)">订单模板</a> 快速下单&gt; </span></h3>
+    <div class="tabinfo">
+    	<p>
+        	<em class="redico">*</em>
+            <label class="p_r">
+            	<span>客户：</span>
+            	<input type="text" class="inputstyle w320" id="support_name">
+                <img src="images/input_select.png" class="p_a_select" id="sel_shoper">
+            </label>
+            <label id="xhhk" class="settleMethod hide">
+            	<img src="images/xhhk.png" title="先货后款订单">
+                <span>先货后款</span>
+                <span class="accPeriod">
+                    <span>账期：发货后<b id="day">&nbsp;30&nbsp;</b>天
+                    </span>
+                </span>
+            </label>
+            <label id="xkhh" class="settleMethod hide">
+            	<img src="images/xkhh.png" title="先款后货订单">
+                <span>先款后货</span>
+            </label>
+            <label class="f_r">订单号：DBX281892472</label>
+        </p>
+        <p class="nameinfo ml30">
+        	<span id="shoper">
+            	<em class="shoperdm">代码：2014060905</em>
+                <label class="ml10">当前预付款余额：<b class="f_red mr10">1,000.00</b> 当前未核销结算金额合计：<b class="f_red mr10">1,000.00</b></label>
+            </span>
+        </p>
+    </div>
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<th width="60">序号</th>
+                <th>商品编码</th>
+                <th>商品名称</th>
+                <th>型号</th>
+                <th>单价（元）</th>
+                <th>数量</th>
+                <th>合计（元）</th>
+                <th class="hide"></th> <!--账期显示在上面，此处多一列隐藏-->
+                <th>商品描述</th>
+             </thead>
+            <tbody id="mybody">
+            	<tr>
+                    <td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td> 
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td><input type="text" value="" class="inputstyle border hide" style="width:120px" /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td class="hide"></td>  <!--账期显示在上面，此处多一列隐藏-->
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>2</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td> 
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td><input type="text" value="" class="inputstyle border hide" style="width:120px" /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td class="hide"></td>  <!--账期显示在上面，此处多一列隐藏-->
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>3</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td> 
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td><input type="text" value="" class="inputstyle border hide" style="width:120px" /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td class="hide"></td>  <!--账期显示在上面，此处多一列隐藏-->
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>4</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td> 
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td><input type="text" value="" class="inputstyle border hide" style="width:120px" /></td>
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly style="width:120px" /></td>
+                    <td class="hide"></td>  <!--账期显示在上面，此处多一列隐藏-->
+                    <td><input type="text" disabled value="" class="inputstyle hide" readonly /></td>
+                </tr>
+                <tr>
+                    <td><img src="images/input_add.png" id="addRow" alt="addRow"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="hide"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ddinfo">
+    	<div class="f_l mt10">
+            <table>
+                <tbody>
+                <tr>
+                    <th>备注：</th>
+                    <td><input type="text" class="inputstyle w320"></td>
+                </tr>
+                <tr>
+                    <th><em class="redico">*</em>请选择复核人：</th>
+                    <td class="p_r">
+                    	<input type="text" value="" id="peper_name" class="inputstyle w320">
+                        <img src="images/input_select.png" class="p_a_select2" id="sel_peper">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pricelist f_r">
+            <ul>
+                <li><label>商品总金额（元）：</label><span>0.00</span></li>
+                <li class="p_r"><label>费用（元）：</label>
+                	<input type="text" value="" class="inputstyle bor_c" />
+                	<span class="formmain_tip"></span>
+                    <span class="formmain_tipcon" style="left:-35px;top:-47px;"><span style="color:#333;">可录入正负数，正数代表订单附加费用，负数代表订单优惠费用。</span></span>
+                </li>
+                <li><label>订单金额（元）：</label><span class="f_red">0.00</span></li>
+            </ul>
+       </div>
+    </div>
+    <div class="f_r">
+    	<input name="" type="checkbox" value="" id="checksave">
+        <label id="damotext">保存为订单模板</label>
+        <input type="text" class="inputstyle hide" id="damoname">
+    	<input type="button" value="提 交" class="surebtn ml20 mr20"  onclick="location.href= '采购-建立订单-提交成功.html'">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<!--无供应商弹窗-->
+<div id="shoper_pop" class="popstyle">
+    <h3>供应商列表<a href="javascript:void(0)" id="close_shoper">close</a></h3>
+    <div class="popmain_short popmain_short_padding">
+        <img src="images/ico_error.png" alt="sure">
+        <h4>您尚未绑定任何客户，请先<a href="销售-新增客户.html" style="color:#2a83c7">新增客户</a>。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnshoper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshoper2"  value="关闭">
+    </div>
+</div>
+
+<!--选择商品（数量和列表的数量一样。选择商品的时候应该是不用输入数量，选择完之后再填写数量）-->
+<div id="shop_pop" class="popstyle">
+    <h3>商品列表<a href="javascript:void(0)" id="close_shop">close</a></h3>
+    <div class="popmain_short popmain_short_padding">
+        <img src="images/ico_error.png" alt="sure">
+        <h4>您尚未对该客户分配商品采购权限，请先<a style="color:#2a83c7" href="销售-修改销售政策.html">设置销售政策</a>，或手工输入商品信息。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnshop1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshop2"   value="关闭">
+    </div>
+</div>
+
+<!--选择核销人员-->
+<div id="peper_pop" class="popstyle">
+    <h3>核销人员列表<a href="javascript:void(0)" id="close_peper">close</a></h3>
+    <div class="popmain_short popmain_short_padding">
+        <img src="images/ico_error.png" alt="sure">
+        <h4>没有符合条件的员工，请联系管理员<a style="color:#2a83c7" href="系统管理-企业信息-机构人员-添加用户.html">添加员工</a>。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnpeper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnpeper2"   value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+//选择商户
+$("#sel_shoper").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#shoper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shoper_pop").css("height")))/2+"px");
+	$("#shoper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shoper_pop").css("width")))/2+"px");
+	$("#close_shoper,#btnshoper2").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+//显示内容		
+		$(".formmain_tip").hover(
+	function(){$(this).next().fadeIn(1500).stop(true,true);},
+	function(){$(this).next().fadeOut(1500);}
+);
+		
+	});	
+	updateRowBgColor();
+	$("#btnshoper1").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		$("#shoper").show();
+		$("#shoper").prev().hide();
+		$(".nameinfo").show();
+		var td = $("input[name='support_radio']:checked").parent().parent().children();
+		var name= td.eq(0).children("span").html();
+		var code= td.eq(1).html();
+		$("#shoper").find('.shoperdm').html("代码："+code);
+		$("#support_name").val(name);
+		$("#sel_shoper").show();
+		
+	});	
+});
+
+/*显示结算方式*/
+$("#btnshop1").on('click', function () {
+	var objVal = $("#demobody .inputstyle");
+	for(var i=0;i<objVal.length;i++){
+		if(objVal[i].value){
+			$('#xhhk').show();
+			/*var selection=$("#demobody tr td select")[0];
+			var val=selection.options[selection.options.selectedIndex].value;
+			var objVal = $("#demobody .inputstyle");
+				if(val==2){
+					$("#xhhk").show();
+					$("#xkhh").hide();
+				}
+				if(val==1){
+					$("#xhhk").hide();
+					$("#xkhh").show();
+				}	*/
+			
+					}
+				}
+});
+//改变结算方式输出账期值
+/*function changeWay(){
+var selection=$("#demobody tr td select")[0];
+var val=selection.options[selection.options.selectedIndex].value;
+var objVal = $("#demobody .inputstyle");
+	if(val==2){
+		$("#demobody tr td")[7].innerHTML="30";
+	}
+	if(val==1){
+		$("#demobody tr td")[7].innerHTML="_";
+	}	
+
+}
+*/
+
+
+
+//选择商品
+var btn
+$("#mybody").delegate('.selshop','click', function () {
+	var _this = $(this);
+	btn = _this;
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#shop_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shop_pop").css("height")))/2+"px");
+	$("#shop_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shop_pop").css("width")))/2+"px");
+	$("#close_shop,#btnshop2,#btnshop1").on('click', function () {
+		$(".mask").hide();
+		$("#shop_pop").hide();
+	});	
+	updateRowBgColor();
+	
+});
+
+$("#btnshop1").on('click', function (e) {
+	var _this = btn;
+	var _input = _this.prev();
+	var _parent = _this.parent();
+	var td =null;
+	//= $("input[name='list_radio']:checked").parent().siblings();
+	var flag = false;
+	$("#demobody input[type=text]").each(function(index, element) {
+		var val = $(this).val();
+		if(val.length>0){
+			td = $(this).parent().siblings();
+			var code= td.eq(0).html();
+			var name= td.eq(1).html();
+			var xh= td.eq(2).html();
+			var dw= td.eq(3).html();
+			var price= td.eq(4).html();
+			var dtail= td.eq(8).text();//选择商品增加3列
+			if(flag){
+				var _nextTr = _parent.parent();
+				
+				var tr = '<tr>'
+                    tr+='<td class="p_r"><span>3</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>';
+                    tr+='<td><input type="text"  class="inputstyle"  value="'+code+'"/><img src="images/input_change.png" class="selshop f_r" ></td>';
+                    tr+='<td><input type="text" disabled class="inputstyle " value="'+name+'" readonly title="'+name+'" /></td>';
+                    tr+='<td><input type="text" disabled class="inputstyle " value="'+xh+'" readonly /></td> ';
+                    tr+='<td><input type="text" disabled class="inputstyle " value="'+price+'" readonly style="width:120px" /></td>';
+					var price = price.replace(",",'');
+					var n_price = (parseInt(price)*parseInt(val)).toFixed(2);
+                    tr+='<td><input type="text" value="'+val+'" class="inputstyle border " style="width:120px" /></td>';
+                    tr+='<td><input type="text" disabled class="inputstyle " value="'+formatCurrency(n_price)+'" readonly style="width:120px" /></td>';
+                    tr+='<td><input type="text" disabled class="inputstyle " value="'+dtail+'" readonly /></td></tr>';
+					_nextTr.after($(tr));
+					updateRowBgColor();
+					btn.parents('tbody').find('tr').each(function(i){
+						$(this).find('td:eq(0)').find('span').html(i+1);
+					})
+                
+			
+			}else{
+				flag=true;
+				var _thisTd = _parent.siblings();
+				_thisTd.find(".inputstyle").removeClass("hide");
+				_thisTd.eq(1).find('input').val(name);
+				_thisTd.eq(1).find('input').attr("title",name);//字段过长时省略号显示，鼠标经过显示title
+				_thisTd.eq(2).find('input').val(xh);
+				_thisTd.eq(3).find('input').val(price);
+				var price = price.replace(",",'');
+				_thisTd.eq(4).find('input').val(val);
+				_thisTd.eq(5).find('input').val(formatCurrency((parseInt(price)*parseInt(val)).toFixed(2)));
+				_thisTd.eq(6).find('input').val(dtail);
+				_input.removeClass("hide").val(code);
+				}
+			
+		}	
+    });
+});	
+
+//选择核销人员
+$("#sel_peper").on('click', function () {
+	var _this = $(".selshop");
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#peper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#peper_pop").css("height")))/2+"px");
+	$("#peper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#peper_pop").css("width")))/2+"px");
+	$("#close_peper,#btnpeper2").on('click', function () {
+		$(".mask").hide();
+		$("#peper_pop").hide();
+	});	
+	$("#btnpeper1").on('click', function () {
+		$(".mask").hide();
+		$("#peper_pop").hide();
+		// $("#peper_name").val("华南区-广州分公司-销售部-罗宾");
+	});	
+});
+
+
+
+/*增加一行*/
+$('#addRow').on('click', function () {
+	var $tbody = $('.madetable tbody');
+	var $addRow_tr = $("#addRow").parent("td").parent("tr");
+	$addRow_tr.before('<tr>' + 
+		'<td class="p_r">' + '<span>'+($tbody.find('tr').length) +'</span>'+'<img src="images/ico_sc.gif" class="sc" title="删除" />'+'</td>' +
+		'<td><input type="text" value="" class="inputstyle hide" /><img src="images/input_change.png" class="selshop f_r" ></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly style="width:120px" /></td>' +
+		'<td><input type="text" class="inputstyle border hide" style="width:120px" /></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly style="width:120px" /></td>' +
+		'<td class="hide"></td>'+<!--账期显示在上面，此处多一列隐藏-->
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>' +
+	'</tr>');
+   // refreshRowBgColor();
+	updateRowBgColor();
+});	
+
+
+$(document).on('click','.sc',function(){
+	var tbody = $(this).parents('tbody')
+	$(this).parents('tr').remove();
+	updateRowBgColor();
+	tbody.find('tr').each(function(i){
+		$(this).find('td:eq(0)').find('span').html(i+1);
+	})
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*保存为订单模板*/
+$("#checksave").click(function() {
+	var _this = $("#checksave");
+	//$("#checksave").attr("checked",false);
+	if ($("#checksave").prop("checked")) {
+		_this.next().html('请输入订单模板名称：');
+		$("#damoname").show();
+	}else{
+		_this.next().html('保存为订单模板');
+		$("#damoname").hide();
+	}
+});
+/*显示提示内容*/
+$(".formmain_tip").hover(
+	function(){$(this).next().fadeIn(1500).stop(true,true);},
+	function(){$(this).next().fadeOut(1500);}
+);
+
+/** 
+ * 将数值四舍五入(保留2位小数)后格式化成金额形式 
+ * 
+ * @param num 数值(Number或者String) 
+ * @return 金额格式的字符串,如'1,234,567.45' 
+ * @type String 
+ */  
+function formatCurrency(num) {  
+    num = num.toString().replace(/\$|\,/g,'');  
+    if(isNaN(num))  
+    num = "0";  
+    sign = (num == (num = Math.abs(num)));  
+    num = Math.floor(num*100+0.50000000001);  
+    cents = num%100;  
+    num = Math.floor(num/100).toString();  
+    if(cents<10)  
+    cents = "0" + cents;  
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)  
+    num = num.substring(0,num.length-(4*i+3))+','+  
+    num.substring(num.length-(4*i+3));  
+    return (((sign)?'':'-') + num + '.' + cents);  
+}  
+</script>
+</html>

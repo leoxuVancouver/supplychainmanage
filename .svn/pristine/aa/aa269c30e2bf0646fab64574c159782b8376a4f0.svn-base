@@ -1,0 +1,143 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>企业设置</span> > <span class="comtitle_cur">复核业务参数</span>
+    </div>
+    <h3 class="tabname">复核业务参数</h3>
+    <div class="tabinfo">
+    
+    </div>
+    <div class="tablemain mt30">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th colspan="2">采购复核</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td width="400px">采购订单复核</td>
+                    <td><form><label for="yes1">开启</label><input type="radio" name="radio1" id="yes1" />
+                    		  <label for="no1">关闭</label><input type="radio" name="radio1" id="no1" checked  />
+                    </form></td>
+                </tr>
+                <tr>
+                    <td width="400px">预付款核销复核</td>
+                    <td><form><label for="yes2">开启</label><input type="radio" name="radio2" id="yes2" />
+                    		  <label for="no2">关闭</label><input type="radio" name="radio2" id="no2" checked  />
+                    </form></td>
+                </tr>
+                <tr>
+                    <td width="400px">预付款复核</td>
+                    <td><form><label for="yes2">开启</label><input type="radio" name="radio2" id="yes2" />
+                              <label for="no2">关闭</label><input type="radio" name="radio2" id="no2" checked  />
+                    </form></td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th colspan="2">销售复核</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td width="400px">销售订单复核</td>
+                    <td><form><label for="yes3">开启</label><input type="radio" name="radio3" id="yes3" />
+                    		  <label for="no3">关闭</label><input type="radio" name="radio3" id="no3" checked  />
+                    </form></td>
+                </tr>
+                <tr>
+                    <td width="400px">销售政策复核</td>
+                    <td><form><label for="yes4">开启</label><input type="radio" name="radio4" id="yes4" />
+                    		  <label for="no4">关闭</label><input type="radio" name="radio4" id="no4" checked  />
+                    </form></td>
+                </tr>
+                <tr>
+                    <td width="400px">发货登记复核</td>
+                    <td><form><label for="yes5">开启</label><input type="radio" name="radio5" id="yes5" />
+                    		  <label for="no5">关闭</label><input type="radio" name="radio5" id="no5" checked  />
+                    </form></td>
+                </tr>
+                <tr>
+                    <td width="400px">预收款调整复核</td>
+                    <td><form><label for="yes6">开启</label><input type="radio" name="radio6" id="yes6" />
+                    		  <label for="no6">关闭</label><input type="radio" name="radio6" id="no6" checked  />
+                    </form></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="f_r mr20">
+        	<input type="button" value="确 认" class="surebtn" id="btntg">
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tg_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>业务参数复核成功。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:确认*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tg_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tg_pop").css("height")))/2+"px");
+	$("#tg_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tg_pop").css("width")))/2+"px");
+});
+$("#tg_pop #close_tg,#tg_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	
+});	
+$("#tg_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+});	
+
+
+</script>
+</html>

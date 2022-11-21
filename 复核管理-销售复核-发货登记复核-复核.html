@@ -1,0 +1,170 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "7"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">善付通</a> > <a href="javascript:void(0)">复核管理</a> > <a href="javascript:void(0)">发货登记复核</a></div>
+    <div class="quick_titile">
+        <span class="purico">发货单详情</span>
+    </div>
+    <h4 class="top_p" style="font-size:16px; padding:0 0 10px 20px;margin-top:20px">发货信息</h4>
+    <div class="mycasetop">
+    	<p class="top_p">发货单号“<strong>18440594</strong>”于2014-06-17由“<strong>顺丰物流</strong>”承运，物流单号为：<strong>778237261872</strong><span class="f_r f_14 mr30"> </span></p> 
+    </div>
+    
+    <h4 class="top_p" style="font-size:16px; padding:0 0 10px 20px">订单号<strong style="color:red">：2014060810240093</strong></h4> 
+    <div class="tablemain mb20">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle" style="margin-bottom:40px">
+        	<thead>
+            	<tr>
+                    <th>商品信息</th>
+                    <th>发货数量</th>
+                    <th>商品单价（元）</th>
+                    <th>发货金额（元）</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td width="500"><p>卡萨帝冰箱 BCD-356W</p>
+						<p><span><b>商品编码：</b>pd2014060907</span><span><b>型号：</b>BCD-220E3C</span></p></td>
+                    <td>20</td>
+                    <td>4,000.00</td>
+                    <td>80,000.00</td>
+                </tr> 
+            </tbody>
+        </table>
+    <h4 class="top_p" style="font-size:16px; padding:0 0 10px 20px">订单号<strong style="color:red">：2014060810240094</strong></h4> 
+    <div class="tablemain mb20">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th>商品信息</th>
+                    <th>发货数量</th>
+                    <th>商品单价（元）</th>
+                    <th>发货金额（元）</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td width="500"><p>卡萨帝冰箱 BCD-356W</p>
+						<p><span><b>商品编码：</b>pd2014060907</span><span><b>型号：</b>BCD-220E3C</span></p></td>
+                    <td>20</td>
+                    <td>4,000.00</td>
+                    <td>80,000.00</td>
+                </tr> 
+            </tbody>
+        </table>
+        <div class="page">
+            <a id="prev" href="" class="nor">上一页</a>
+            <span>1</span>
+            <a id="next" href="" class="nor">下一页</a>
+            <em>共1页</em>
+        </div>
+    </div>
+   
+     <div align="center"><input type="button" value="通 过" class="surebtn mr20" id="btntg"><input type="button" value="退 回" class="backbtn mr20" id="btnth"><input type="button" value="返 回" class="closebtn" onclick="javascript:history.go(-1)"></div>
+</div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tg_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: -230px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="secctext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:51px">订单复核成功。</p>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+<div id="th_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: -230px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_th">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="whytext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:51px">您确认要退回该订单吗？</p>
+            
+        </div>
+        <div style="padding:10px; ;background:#F2F9FF;">
+            <table style="margin:0">
+                    <tbody>
+                        <tr>
+                            <td width="75"  style="text-align:right; vertical-align:top">退回原因：</td>
+                            <td><textarea style="height:75px; width:300px;"></textarea></td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:通过*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#tg_pop").show();
+});	
+$("#tg_pop #close_tg,#tg_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+});	
+$("#tg_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	location.href= '复核管理-销售复核-发货登记复核.html';
+});	
+
+
+/*弹出框:退回*/
+$("#btnth").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#th_pop").show();
+});	
+$("#th_pop #close_th,#th_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+	
+});	
+$("#th_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+	location.href= '复核管理-销售复核-发货登记复核.html';
+});	
+
+</script>
+</html>

@@ -1,0 +1,170 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "7"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">复核管理</a> > <a href="javascript:void(0)">销售复核</a> > <a href="javascript:void(0)">预收款调整复核</a></div>
+    <div class="quick_titile">
+        <span class="purico">预收款调整复核</span>
+    </div>
+    <div class="topsearch">
+    	<p>
+            <span style="padding-left:15px"></span><label class="label_4">客户代码：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label class="label_4">客户名称：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label class="label_4">调整日期：</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <input type="button" class="btn_search" value="搜索" />
+        </p>
+    </div>
+    
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th width="220">流水号</th>
+                    <th>客户名称</th>
+                    <th width="120">调整日期</th>
+                    <th width="120">调整金额</th>
+                    <th width="180">备注</th>
+                    <th width="120">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>2014060810240090</td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>2015-12-15</td>
+                    <td>1,000.00</td>
+                    <td>2015-12-15，期初调整</td>
+                    <td><a id="btntg" class="inputbtnA">通过</a><span style="padding-left:15px;"><a id="btnth" class="inputbtnA">退回</a></td>
+                </tr>
+                <tr>
+                    <td>2014060810240091</td>
+                    <td>湖北美满集团电器有限公司</td>
+                    <td>2015-12-15</td>
+                    <td>2,000.00</td>
+                    <td></td>
+                    <td><a class="inputbtnA">通过</a><span style="padding-left:15px;"><a class="inputbtnA">退回</a></td>
+                </tr>
+                <tr>
+                    <td>2014060810240092</td>
+                    <td>湖北乐麦电器有限公司</td>
+                    <td>2015-12-15</td>
+                    <td>4,000.00</td>
+                    <td></td>
+                    <td><a class="inputbtnA">通过</a><span style="padding-left:15px;"><a class="inputbtnA">退回</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <a id="prev" href="" class="nor">上一页</a>
+            <span>1</span>
+            <a id="next" href="" class="nor">下一页</a>
+            <em>共1页</em>
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tg_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: 450px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="secctext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:51px;font-weight:bold;">预收款调整复核成功。</p>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+<div id="th_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: 450px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_th">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="whytext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:35px;font-weight:bold;">您确认要退回吗？</p>
+        </div>
+        <div style="padding:10px; ;background:#F2F9FF;">
+            <table style="margin:0">
+                    <tbody>
+                        <tr>
+                            <td width="75"  style="text-align:right; vertical-align:top">退回原因：</td>
+                            <td><textarea style="height:75px; width:300px;"></textarea></td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:通过*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#tg_pop").show();
+});	
+$("#tg_pop #close_tg,#tg_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+});	
+$("#tg_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	location.href= '复核管理-销售复核-发货登记复核.html';
+});	
+
+/*弹出框:退回*/
+$("#btnth").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#th_pop").show();
+});	
+$("#th_pop #close_th,#th_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+	
+});	
+$("#th_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+	location.href= '复核管理-销售复核-发货登记复核.html';
+});	
+
+</script>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>开通商城账户</title>
+<link href="style/FEP1201_public.css" type="text/css" rel="stylesheet" />
+
+<link href="style/FEP1201_0001.css" type="text/css" rel="stylesheet" />
+
+<script language="javascript">
+
+function autoSubmit(){
+	var authFlag = "0"; //实名认证标识
+	if(authFlag == "1"){
+		personCCBNextPage();
+	}
+}
+
+//初始化页面
+function init(){
+	var authFlag = "0"; //实名认证标识
+	if(authFlag != "1"){
+		mainDiv.style.display="";
+	}
+	//若账户名字符串太长，截取前面
+	var accountName = "JAMES";
+	if(accountName.length>=14){
+		accountName = accountName.substring(0,10)+"...";
+		document.getElementById('accountName').innerHTML=accountName;
+	}
+	
+	var userStatus = "0"; //用户是否已开通
+
+	var companyDivHead = document.getElementById('companyDivHead');
+	var companyDiv = document.getElementById('companyDiv');//企业页面div
+	var personalEnterDiv = document.getElementById('personalEnterDiv');//企业页面div
+	var personalDiv = document.getElementById('personalDiv');//个人页面div
+	var successDiv = document.getElementById('successDiv');//已经开通的div
+	var sloganId = document.getElementById('sloganId');//
+	var paygoId = document.getElementById('paygoId');
+
+	var custType = "4";
+	var merchantIdVar = "0001";
+
+	if(custType=="7"||custType=="8"||custType=="9"){
+		document.getElementById('personCCBTips').innerHTML="使用建行活期账户（含卡、折）开通";
+	}
+	
+	if(userStatus==1){
+		//显示用户已经开通的页面,隐藏个人页面div\企业页面div
+		companyDivHead.style.display = "none";
+		companyDiv.style.display = "none";
+		personalEnterDiv.style.display="none";
+		personalDiv.style.display = "none";
+		successDiv.style.display = "";
+		supplyInfoDiv.style.display = "none";
+		sloganId.style.display = "none";
+		paygoId.style.display = "none";
+		
+		
+		//document.getElementById('firstStep').className = "";
+		//document.getElementById('flowStep').className = "CCBFontRed CCBFontBold";
+		
+	}else{
+		//把用户已经开通的页面div隐藏
+		successDiv.style.display = "none";
+		//下面显示个人或者企业的div页面
+		var userType1 = "ShowAll"; //USERTYPE为 0,7,8,9 或者11
+		var userType2 = "1"; //USERTYPE为4,5,6
+		var userType3 = ""; //USERTYPE为1,2,3或者10
+		
+
+		if("1"==userType2){    //USERTYPE为4,5,6   
+			companyDivHead.style.display = "";
+			companyDiv.style.display = "";
+			personalEnterDiv.style.display="none";
+			personalDiv.style.display = "none";
+			if(custType == "4" && merchantIdVar=="0001"){
+				supplyInfoDiv.style.display = "";
+			}else{
+				supplyInfoDiv.style.display = "none";
+			}
+			
+		}else if("ShowAll"==userType1){   //USERTYPE为  0,7,8,9
+			companyDivHead.style.display = "";
+			companyDiv.style.display = "";
+			personalEnterDiv.style.display="";
+			personalDiv.style.display = "none";
+			supplyInfoDiv.style.display = "none";
+
+		}else if("ShowOther"==userType1){//USERTYPE为 11
+			companyDivHead.style.display = "";
+			companyDiv.style.display = "";
+			personalEnterDiv.style.display="";
+			personalDiv.style.display = "none";
+			supplyInfoDiv.style.display = "none";
+			
+		}else if("ShowPerAll"==userType3){//USERTYPE为1,2,3
+			companyDivHead.style.display = "none";
+			companyDiv.style.display = "none";
+			personalEnterDiv.style.display="none";
+			personalDiv.style.display = "";
+			supplyInfoDiv.style.display = "none";
+			
+		}else{//USERTYPE为10
+			companyDivHead.style.display = "none";
+			companyDiv.style.display = "none";
+			personalEnterDiv.style.display="none";
+			personalDiv.style.display = "";
+			supplyInfoDiv.style.display = "none";
+		}
+		
+	}
+}
+
+//个人开通
+function personCCBNextPage(){
+	document.getElementById("TXCODE").value="EP1215";
+	document.getElementById("jhform").submit();
+}
+function personOtherBankNextPage(){
+	document.getElementById("TXCODE").value="EP1202";
+	document.getElementById("jhform").submit();
+}
+
+//企业开通
+function company1NextPage(){
+	if(confirm("请插入您的主管盾或确认数字证书已就绪")){
+	     document.getElementById("TXCODE").value="EP1212";
+	     document.getElementById("jhform").submit();
+	}else{
+	      return false;
+	}
+}
+
+function company2NextPage(){
+	document.getElementById("TXCODE").value="EP1206";
+	document.getElementById("jhform").submit();
+}
+
+function enterPerson(){
+	document.getElementById('companyDivHead').style.display = "none";
+	document.getElementById('companyDiv').style.display = "none";
+	document.getElementById('personalEnterDiv').style.display="none";
+	document.getElementById('personalDiv').style.display = "";
+	document.getElementById('successDiv').style.display = "none";
+	document.getElementById('supplyInfoDiv').style.display = "none";
+}
+
+//登录商城账户
+function logonEpay(){
+	 document.getElementById("TXCODE").value="EP0016";
+	 document.getElementById("jhform").submit();
+}
+
+</script>
+
+</head>
+
+<body onload="init();">
+	<div id="mainDiv" class="CCBContianer" style="display: none">
+		<div class="SCZHKT_Top">
+			<div class="SCZHKT_TopImg"><img src="images/user-setting/CCBLogoFont.jpg" /></div>
+		    <div class="SCZHKT_TopText"><p><span  id="accountName" >JAMES</span>，欢迎您使用商城账户！</p></div>
+		</div>
+		<div class="middle">
+			<div  id="companyDivHead">
+				<div class="tabs"></div>
+			    <div class="tabsLine"></div>
+		    </div>
+		    <div class="qyccb" id="companyDiv">
+		    	<div class="qyccbLeft liney">
+		        	<div class="qyUser"><img src="images/user-setting/qyother.gif" /> 我是建行企业网银高级版客户</div>
+		            <div class="qyXplain">通过建行企业网银高级版开通</div>
+		            <div class="btngo">
+		            	<button onclick=""></button>
+		            </div>  
+		        </div>
+		        <div class="qyccbRight">
+		        	<div class="qyUser1"><img src="images/user-setting/qyother.gif" /> 我是他行企业客户</div>
+		            <div class="qyXplain1">使用其他银行企业结算账户开通</div>
+		            <div class="btngo1">
+		            	<button onclick=""></button>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="userinfo"  id="personalEnterDiv" >您也可以使用个人的银行账户<span class="rgb03c"><a href="#" style="font-size:16px;" onclick="enterPerson();">开通商城账户</a></span></div>
+		    <div class="userinfo" id="supplyInfoDiv" >个体工商户<span class="rgb03c"><a href="善付通商户会员中心-完善善付通商户资料.html" style="font-size:16px;" >完善会员资料</a></span>并通过审核后，也可以使用个人的银行账户开通商城账户。</div>
+		    <div  id="personalDiv">
+			    <div class="tabs">个人商城账户</div>
+			    <div class="tabsLine"></div>
+			    <div class="qyccb1">
+			    	<div class="qyccbLeft1 liney">
+			        	<div class="qyUser"><img src="/V5/images/public/grccb.png" /> 我有建行账户</div>
+			            <div class="qyXplain" id = "personCCBTips">使用建行活期账户（含卡、折）/信用卡开通</div>
+			            <div class="qyXplain">使用建行个人网银开通</div>
+			            <div class="btngo">
+			            	<button onclick="personCCBNextPage();">现在开通</button>
+			            </div>
+			        </div>
+			        <div class="qyccbRight1">
+			        	<div class="qyUser1"><img src="/V5/images/public/grnouser.png" /> 我没有建行账户</div>
+			            <div class="qyXplain1">使用其他银行活期账户（含卡、折）开通</div>
+			            <div class="qyXplain2"></div>
+			            <div class="btngo1">
+			            	<button  onclick="personOtherBankNextPage();">现在开通</button>
+			            </div>
+			        </div>
+			    </div>
+		    </div>
+		    <div class="SCZHKT_GRWY_01" id="successDiv" >
+			    <div class="CCBBottom" style="height:5px">
+			    </div>
+		       	<div class="SCZHKT_GRWY_01_main">
+			    	<table border="0" cellspacing="0" cellpadding="0" >
+			        	<tr>
+			            	<td style="padding-left:100px;padding-top:20px; margin-bottom:10px;"><img src="/V5/images/public/SCZHKT_IconRight.png" /></td>
+			                <td><p class="SCZHKT_GRWY_01_mainPBRed">恭喜，您的商城账户已经开通啦！</p></td>
+			            </tr>
+			            <tr>
+			            	<td> </td>
+			                <td>
+			                	<p class="SCZHKT_GRWY_01_mainPSGray">看看我的商城账户。<a href="javascript:logonEpay();" style="font-size:14px;">立即进入</a></p>
+			                    <p class="SCZHKT_GRWY_01_mainPSGray">您也可以开始您的购物旅程。<a href="http://mall.ccb.com" style="font-size:14px;">立即购物</a> </p>
+			                </td>
+			            </tr>
+			        </table>
+			    </div>
+		    </div>
+  	      	<div id="sloganId" class="slogan"></div>
+		    <div id="paygoId" class="paygo">
+		    	<div class="paysafety"><div class="paypic1"></div><div class="paytitle">安全购物保障</div><div class="safetyinfo">为买卖双方提供担保，保障购物安全。</div></div>
+		        <div class="paysafety"><div class="paypic2"></div><div class="paytitle">灵活支付方式</div><div class="safetyinfo">提供余额支付、快捷支付、贷款支付等方式；<br />支持多家银行在线支付。</div></div>
+		        <div class="paysafety"><div class="paypic3"></div><div class="paytitle">特色金融服务</div><div class="safetyinfo">为商城账户资金计算利息；<br />提供在线融资等服务。</div></div>
+		    </div> 
+		</div>
+		<div style="clear:both"></div>
+		
+<div class="CCBBottom">
+	<div class="CCBBottomLeftImg">
+		<a
+			href="###"
+			target="_blank"><img src="images/user-setting/pft_icon_left.png"
+				border="0" width="27" height="32" /> </a>
+	</div>
+	<div class="CCBBottomLeft font_gray">
+		&copy;版权所有&nbsp;中国建设银行版权所有 京ICP备 13030780号&nbsp;&nbsp;&nbsp;&nbsp;京公网安备 110102000450
+		<br />
+		总行地址：中国北京西城区金融大街25号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮编：100033&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机网站：m.ccb.com
+	</div>
+	<div class="CCBBottomRight">
+		<a href="###">网站声明</a>&nbsp;&nbsp;
+		<a href="###">联系我们</a>&nbsp;&nbsp;
+		<a href="###">网站地图</a>&nbsp;&nbsp;
+		<a href="###">友情链接</a>
+	</div>
+</div>
+	</div>
+	
+	<form name="jhform" id="jhform" action="/epay/EPAYMainB1L1?CCB_IBSVersion=V5&SERVLET_NAME=EPAYMainB1L1" method="post">
+    <input type="hidden" name="TXCODE"    id="TXCODE" value=""/>
+    <input type="hidden" name="TRANSID"    id="TRANSID" value="201405290953242229761"/>
+    <input type="hidden" name="MERCHANTID" id="MERCHANTID" value="0001"/>
+    <input type="hidden" name="POSID"      id="POSID" value="000000001"/>
+    <input type="hidden" name="RTURL"      id="RTURL" value="http://mall.ccb.com/epay/regreturn.php"/>
+    <input type="hidden" name="MALLUSERID" id="MALLUSERID" value="ccbhyy"/>
+    <input type="hidden" name="SIGNSOURCE" id="SIGNSOURCE" value="0"/>
+    <input type="hidden" name="NAME"       id="NAME" value="JAMES"/>
+    <input type="hidden" name="MOBILE"     id="MOBILE" value="18502074845"/>
+    <input type="hidden" name="EMAIL"      id="EMAIL" value="755911277@qq.com"/>
+    <input type="hidden" name="ADDRESS"     id="ADDRESS" value=""/>
+    <input type="hidden" name="ID_TYPE_CODE"      id="ID_TYPE_CODE" value=""/>
+    <input type="hidden" name="ID_NUMBER"      id="ID_NUMBER" value=""/>
+    <input type="hidden" name="LICENCENO"      id="LICENCENO" value=""/>
+    <input type="hidden" name="COMPANYCODE"      id="COMPANYCODE" value=""/>
+    <input type="hidden" name="CONTACTOR"      id="CONTACTOR" value=""/>
+    
+    
+    <input type="hidden" name="PHONE"      id="PHONE" value="18502074845"/>
+    <input type="hidden" name="POST"      id="POST" value=""/>
+    <input type="hidden" name="USERTYPE"      id="USERTYPE" value="4"/>
+    <input type="hidden" name="EXPAND"      id="EXPAND" value=""/>
+    <input type="hidden" name="WITCHTYPE"      id="WITCHTYPE" value="all"/>
+    
+    <input type="hidden" name="BACKURL"      id="BACKURL" value="http://mall.ccb.com"/>
+    <input type="hidden" name="LOGONSTR" id="LOGONSTR" value="ylQZnF9G57hX3l1pMwfMHBWT5A9ue1kWYryx4jXB%2CfIhKFcK5EC4spMKEds2E%2Ffe4%2CjmYu%2C5rsPG%0APHmCRJfrpFMaabjq%2FBzy5YIcODhfBFoQiat5S6uBj2u5vGvoTFPBlUp2L6V8wWKcRAlTls8GeBCJ%0Aq3lLq4GPa7m8a%2ChMU8GVSnYvpXzBYn1f%2C1asCKwG6DVOol0s%2C4BGfx9eUlPZZiqKzPmDMEtqIHRL%0A3tF2S9wwHhuXzBkjVZrH0%2CofzHfWoD2cc4TyivZvC4uW3Js9fLKiQC8qqJEf8vXAt28VB%2FB596q6%0Aslyjre0I5DIKYCrHvVBklyTwJdVJb1erw14MTMg015nPur4LZn%2F8aFaVAWqQpCOY5CJoElH0TdDd%0AIE7P12w2a7cnZ2u5S3%2Co8isKyxsVoQmVRR0oWqS8fkDwxYsdKyNyrThlOfL1wLdvFQfwFTRyXRgs%0AiueR0b86EgwfQ6bH8TFmrHrLnlyttV5R15Z5PAnX%2CgHwY0iclqTJLxBjgN6HWBRgc7fj9SjWF5Ws%0A%2Fzq4emiWnWUiov7aPQKehWBl%2FupzOqZELUIQuB9%2FF0dsYr3rnXF3pxsQPzh7fHjNQIP5z%2CFfoibH%0A67WmmnKZhb5zVSllncRbOKJ5ygEHIATu7vYL%2CtOUbfg5EfuoGK8jgiRPO4cqSzvGte5AP9S5PORS%0APalUSQhJJ2LP723YY64pstMTuA4GSY6jcmJw%2FtgcFbJcS4%2FPAmN1x1zlpPveWcrhD4pVmmT2Mdjo%0AB8CM956flVZ8Nj4ZIpZBnBVar20Xvz6N3gmOm%2FrktSz%2CdNMgHHjP96X60t0MVfaqVN7BPTV6EBkv%0AY1h6DyMRRXKoESmHrlL7J33%2CpNQOM0Eyq44kwCERrAcgkpTD8dy0hWwKegO5QGJTkTzrDoP573Sr%0Aq1x69bOGEhXOl3NheayDOCjmzlNMz5iedBFShsz%2FznRu4lf3O8iS%2C6Wofi7tfCQXWwOjdfBR16jQ%0AxIzXCvenr9QNY6GmuwPA4b2KJ3DPYay4ee%2C2VEQdooliXLU%3D           0001" />
+    <input type="hidden" id="SYS_ID" name="SYS_ID"  value = "0001" />
+    <input type="hidden" id="PAYFLAG" name="PAYFLAG"  value = "" />
+    <input type="hidden" id="CONTACTORTYPE" name="CONTACTORTYPE"  value = "00" />
+    <input type="hidden" id="CONTACTORCARD_TYPE" name="CONTACTORCARD_TYPE"  value = "01" />
+    <input type="hidden" id="CONTACTORCARD" name="CONTACTORCARD"  value = "" />
+    <input type="hidden" id="ENTPSIZE" name="ENTPSIZE"  value = "" />
+    <input type="hidden" id="RGSTCURTYPE" name="RGSTCURTYPE"  value = "" />
+    <input type="hidden" id="RGSTAMT" name="RGSTAMT"  value = "0" />
+    <input type="hidden" id="AUTHFLAG" name="AUTHFLAG"  value = "0" />
+    <input type="hidden" id="MALLCUSTID" name="MALLCUSTID"  value = "116096893" />
+   	<input type="hidden" name="PRIVEBANKURL" id="PRIVEBANKURL"  value = "https://ibsbjstar.ccb.com.cn/app/V5/CN/STY1/login_epay.jsp?ccbParam=TXTYPE%3DEPAY%2CF_TXCODE%3D520513%2CTRANSID%3D201405290953242229761%2CMERCHANTID%3D0001%2CRTURL%3Dhttp%253A%252F%252Fmall.ccb.com%252Fepay%252Fregreturn.php%2CMALLUSERID%3Dccbhyy%2CMOBILE%3D18502074845%2CEMAIL%3D755911277%2540qq.com%2CNAME%3D1111%2CEXPAND%3D%2CLOGONTYPE%3D1%2CLOGONACCNO%3D%2CBACKURL%3Dhttp%253A%252F%252Fmall.ccb.com%2CIS_INDI_BUSI%3D%2CAUTHFLAG%3D0%2CMALLCUSTID%3D116096893%2CSIGN%3D3aeb2c22cbe00d8b10632bc32c8455eec0bcd1f87fba08872cf76d46f1ced4820bcc6e921844e9e18e04a8b3e1d10b4a379b56c5c2cc4238534dfe074cef4903a7aa968b123ef065f315e5e504770837c179b4c2198a309ab2dfbbfe861ee818f774682dac219aaf3fd187f1387b9bce0c9f592671d5cdeb408632095cb6c987"  />
+  </form>
+  
+</body>
+</html>
+<script language="javascript">
+autoSubmit();
+</script>

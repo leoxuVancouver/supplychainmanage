@@ -1,0 +1,149 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "7"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">复核管理</a> > <a href="javascript:void(0)">采购复核</a> > <a href="javascript:void(0)">预付款核销复核</a></div>
+    <div class="quick_titile">
+        <span class="purico">预付款核销复核</span>
+    </div>
+    <div class="mycasetop" style="margin-top:20px">
+    	<p class="top_p">核销流水号：<strong>2014060810240090</strong><strong style="padding-left:20px;color:#008100; font-weight: normal">待复核</strong><span class="f_r f_14">核销日期：2015-02-10</span><span class="f_r f_14 mr30"> </span></p>
+        <p class="sec_p">客户名称：<strong class="top-p mr20"  style="font-size:16px" >湖北百歌电子商务有限公司</strong></p>
+        <p class="sec_p" >核销金额合计：<strong class="top-p mr20" style="font-size:16px">10,000.00（元）</strong></p>
+    </div>
+    
+    <h4 class="top_p" style="font-size:16px; padding:0 0 10px 20px">订单列表</h4> 
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th>订单号</th>
+                    <th>订单日期</th>
+                    <th>结算金额</th>
+                    <th>核销金额</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>2014060810240093</td>
+                    <td>2015-03-03</td>
+                    <td>10,000.00</td>
+                    <td>10,000.00</td>
+                </tr> 
+            </tbody>
+        </table>
+        <div class="page">
+            <a id="prev" href="" class="nor">上一页</a>
+            <span>1</span>
+            <a id="next" href="" class="nor">下一页</a>
+            <em>共1页</em>
+        </div>
+    </div>
+   
+     <div align="center"><input type="button" value="通 过" class="surebtn mr20" id="btntg"><input type="button" value="退 回" class="backbtn mr20" id="btnth"><input type="button" value="返 回" class="closebtn" onclick="javascript:history.go(-1)"></div>
+</div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tg_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: 450px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="secctext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:51px">订单复核成功。</p>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+<div id="th_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: -230px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_th">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="whytext" style="height:auto">
+            <p class="f_gray mt5" style="line-height:51px">您确认要退回该订单吗？</p>
+            
+        </div>
+        <div style="padding:10px; ;background:#F2F9FF;">
+            <table style="margin:0">
+                    <tbody>
+                        <tr>
+                            <td width="75"  style="text-align:right; vertical-align:top">退回原因：</td>
+                            <td><textarea style="height:75px; width:300px;"></textarea></td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:通过*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#tg_pop").show();
+});	
+$("#tg_pop #close_tg,#tg_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+});	
+$("#tg_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	location.href= '复核管理-采购复核-预付款核销复核.html';
+});	
+
+
+/*弹出框:退回*/
+$("#btnth").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#th_pop").show();
+});	
+$("#th_pop #close_th,#th_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+});	
+$("#th_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#th_pop").hide();
+	location.href= '复核管理-采购复核-预付款核销复核.html';
+});	
+
+
+</script>
+</html>

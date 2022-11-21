@@ -1,0 +1,7 @@
+@import url("jquery.ui.core.css");
+@import url("jquery.ui.datepicker.css");
+.date_show{
+	width:260px;
+	overflow:hidden;
+	margin:5px 0 0;
+}

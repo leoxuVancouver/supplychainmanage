@@ -1,0 +1,429 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">善付通</a> > <a href="javascript:void(0)">销售管理</a> > <a href="javascript:void(0)">销售商品库</a></div>
+    <div class="quick_titile">
+        <span class="purico">设置销售政策</span>
+    </div>
+    <div class="tabinfo">
+    	<p><em class="redico">*</em>
+            <label>客户：</label>
+            <input name="" type="text" class="inputstyle" id="support_name" value="" style="width:350px; margin-right:0"><input type="button" value="选择" class="btn_com" id="sel_shoper" style="">
+            
+        </p>
+        <!--<p class="nameinfo" style="display:none;">
+        	<span class="" id="shoper">所属机构：总部 华南区 广东分公司 销售部</span>
+        </p>-->
+    </div>
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<th width="5%">序号</th>
+                <th width="25%">商品编码</th>
+                <th width="25%">商品名称</th>
+                <th width="15%">型号</th>
+                <th width="18%">结算方式</th>
+                <th width="12%" style="position:relative; text-indent:30px;">账期（天）<img src="images/xhhk.png" style="width:26px; height:26px;  position:absolute; left:10px; top:5px" title="账期天数大于0的商品为先货后款商品，账期起计日为发货后。"></th> 
+             </thead>
+            <tbody id="mybody">
+            	<tr>
+                    <td><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" style="width:200px" /><input type="button" class="btn_com selshop" value="选择" id="1" /></td>
+                    <td><input type="text" disabled class="inputstyle hide" style="width:230px"  value="" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td> 
+                    <td><select onChange="changeWay(this)" class="inputstyle hide"><option value="1" selected>先款后货</option><option class="sel_opt" value="2">先货后款</option></select></td>
+                    <td><input type="text" class="inputstyle hide" style="width:100px" /></td>
+                </tr>
+                <tr>
+                    <td><span>2</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" style="width:200px" /><input type="button" class="btn_com selshop" value="选择" id="2" /></td>
+                    <td><input type="text" disabled class="inputstyle hide" style="width:230px" value="" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td> 
+                    <td><select onChange="changeWay(this)" class="inputstyle hide"><option value="1" selected>先款后货</option><option value="2">先货后款</option></select></td>
+                    <td><input type="text" class="inputstyle hide" style="width:100px" /></td>
+                </tr>
+                <tr>
+                    <td><span>3</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" style="width:200px" /><input type="button" class="btn_com selshop" value="选择" id="3"/></td>
+                    <td><input type="text" disabled class="inputstyle hide" style="width:230px" value="" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td> 
+                    <td><select onChange="changeWay(this)" class="inputstyle hide"><option value="1" selected>先款后货</option><option value="2">先货后款</option></select></td>
+                    <td><input type="text" class="inputstyle hide" style="width:100px" /></td>
+                </tr>
+                <tr>
+                    <td><span>4</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" style="width:200px" /><input type="button" class="btn_com selshop" value="选择" id="4"/></td>
+                    <td><input type="text" disabled class="inputstyle hide" style="width:230px" value="" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td> 
+                    <td><select onChange="changeWay(this)" class="inputstyle hide"><option value="1" selected>先款后货</option><option value="2">先货后款</option></select></td>
+                    <td><input type="text" class="inputstyle hide" style="width:100px" /></td>
+                </tr>
+                <tr>
+                    <td><span>5</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle hide" style="width:200px" /><input type="button" class="btn_com selshop" value="选择" id="5"/></td>
+                    <td><input type="text" disabled class="inputstyle hide" style="width:230px" value="" readonly /></td>
+                    <td><input type="text" disabled class="inputstyle hide" value="" readonly /></td> 
+                    <td><select onChange="changeWay(this)" class="inputstyle hide"><option value="1" selected>先款后货</option><option value="2">先货后款</option></select></td>
+                    <td><input type="text" class="inputstyle hide" style="width:100px" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ddinfo">
+        <div class="f_l"><input type="button" class="addlinebtn" id="addRow" value="增加行" /></div>
+    </div>
+    <div align="center"><input type="button" value="提 交" class="surebtn" id="btn_tj"></div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<!--选择供应商-->
+<div id="shoper_pop" class="popstyle" style="display:none">
+    <h3>客户列表<a href="javascript:void(0)" id="close_shoper">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="40"></th>
+                    <th>客户名称</th>
+                    <th>客户代码</th>
+                </tr>
+            </thead>
+            <tbody id="demobody">
+                <tr>
+                    <td><input type="radio" name="support_radio" checked="checked" /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>深圳市南山区丁冰家用电器店</td>
+                    <td>2014060905</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>深圳市生活汇贸易发展有限公司</td>
+                    <td>2014060904</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>深圳市南山区方艇家用电器商行</td>
+                    <td>2014012454</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>福建省闽宝电子商务有限公司</td>
+                    <td>2014060902</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>珠海市金正电器有限公司</td>
+                    <td>2014060924</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="###" class="nor">上一页</a>
+        <span>1</span>
+        <a id="next" href="###" class="nor">下一页</a>
+        <em>共1页</em>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnshoper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshoper2"  value="关闭">
+    </div>
+</div>
+
+<!--选择商品（数量和列表的数量一样。选择商品的时候应该是不用输入数量，选择完之后再填写数量）-->
+<div id="shop_pop" class="popstyle" style="display:none">
+    <h3>商品列表<a href="javascript:void(0)" id="close_shop">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>					
+                    <th colspan="2" width="100">商品编码</th>
+                    <th width="250">商品名称</th>
+                    <th>型号</th>
+                    <th>单价（元）</th>
+                    <th>商品描述</th>
+                </tr>
+            </thead>
+            <tbody id="demobody">
+                <tr>
+                    <td><input type="radio" name="list_radio" checked="checked" /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2014060907</td>
+                    <td>卡萨帝冰箱 BCD-356W</td>
+                    <td>BCD-220E3C</td>
+                    <td>4,000.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio" /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2123060217</td>
+                    <td>65寸LED超高清彩电</td>
+                    <td>BCD-220E3C</td>
+                    <td>4,200.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2014231110</td>
+                    <td>美的电冰箱 MDK-2312</td>
+                    <td>MDK-2312</td>
+                    <td>4,500.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2215515658</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-24023C</td>
+                    <td>6,000.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="list_radio"  /></td>
+                    <!--<td><input type="text" class="inputstyle" style="width:60px" /></td>-->
+                    <td>pd2014062322</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-24023C</td>
+                    <td>6,000.00</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="###" class="nor">上一页</a>
+        <span>1</span>
+        <a id="next" href="###" class="nor">下一页</a>
+        <em>共1页</em>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnshop1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshop2"   value="关闭">
+    </div>
+</div>
+
+<div id="tj_pop" class="popstyle" style="min-height: inherit; top: 30%; width:460px; margin-left:-230px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="secctext" style="height:auto">
+        	<p class="suc_t">销售政策设置成功！</p>
+            <p class="f_gray mt5">在客户列表点击查看政策可以了解该客户的销售政策信息。</p>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr10" id="btntj" value="确定">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+//选择商户
+$("#sel_shoper").on('click', function () {
+	$(".mask").show().height($(document).height());
+	$("#shoper_pop").show();
+	$("#close_shoper,#btnshoper2").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btnshoper1").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		$("#shoper").show();
+		$("#shoper").prev().hide();
+		$(".nameinfo").show();
+		var td = $("input[name='support_radio']:checked").parent().siblings();
+		var name= td.eq(0).html();
+		var code= td.eq(1).html();
+		$("#shoper").find('.shoperdm').html("代码："+code);
+		$("#support_name").val('['+code+']'+' ' + name);
+		$("#sel_shoper").show();
+		
+	});	
+});
+
+//选择客户
+var btn
+/*bug：新增行点击选择无效
+$(".selshop").on('click', function () {
+	var _this = $(this);
+	btn = _this;
+	$(".mask").show().height($(document).height());;
+	$("#shop_pop").show();
+	$("#close_shop,#btnshop2,#btnshop1").on('click', function () {
+		$(".mask").hide();
+		$("#shop_pop").hide();
+	});	
+	updateRowBgColor();
+	
+});*/
+$("#mybody").delegate('.selshop','click', function () {
+	var _this = $(this);
+	btn = _this;
+	$(".mask").show().height($(document).height());;
+	$("#shop_pop").show();
+	$("#close_shop,#btnshop2,#btnshop1").on('click', function () {
+		$(".mask").hide();
+		$("#shop_pop").hide();
+	});	
+	updateRowBgColor();
+	
+});
+
+$("#btnshop1").on('click', function (e) {
+	var _this = btn;
+	var _input = _this.prev();
+	var _parent = _this.parent();
+	var td = $("input[name='list_radio']:checked").parent().siblings();
+	var cp_name= td.eq(0).html();
+	var code= td.eq(1).html();
+	var lx_name= td.eq(2).html();
+	var callno= td.eq(3).html();
+	var jg= td.eq(4).html();
+	//var dtail= td.eq(5).text();
+	
+	//_parent.html(code);
+	
+	var _thisTd = _parent.siblings();
+	_thisTd.find(".inputstyle").removeClass("hide");
+	_thisTd.eq(1).find('input').val(code);//商品名称
+	_thisTd.eq(2).find('input').val(lx_name);//商品型号
+	_input.val(cp_name);//商品编码
+	_input.removeClass("hide").val();
+	_thisTd.last().children().addClass("hide")
+	/*_thisTd.eq(3).find('input').val(jg);*/
+	/*_thisTd.eq(4).find('input').val();
+	_thisTd.eq(5).find('input').val();
+	_thisTd.eq(6).find('input').val();*/
+	/*var way_xhhk=_thisTd.find(".way_xhhk").index(this);
+    alert(way_xhhk);*/
+});	
+
+//选择结算方式
+
+function changeWay(obj){
+	var val=$(obj).val()
+    if(val==2){
+	$(obj).parent().next().children().show();
+	$(obj).parent().next().children().focus();
+	}
+	if(val==1){
+	$(obj).parent().next().children().hide();
+	}
+}
+$("#mybody").delegate("select","change",function(obj){
+	var val=$(obj).val()
+    if(val==2){
+	$(obj).parent().next().children().show();
+	$(obj).parent().next().children().focus();
+	}
+	if(val==1){
+	$(obj).parent().next().children().hide();
+	}
+});
+//提交
+$("#btn_tj").on('click', function () {
+	$(".mask").show().height($(document).height());
+	$("#tj_pop").show();
+	$("#close_tj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btntj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		location.href= '销售-客户列表.html';
+	});	
+});
+
+
+
+/*增加一行*/
+
+$('#addRow').on('click', function () {
+	var $tbody = $('.madetable tbody');
+	$tbody.append('<tr>'+
+		'<td>'+'<span>'+($tbody.find('tr').length + 1) +'</span>'+'<img src="images/ico_sc.gif" class="sc" title="删除" />'+'</td>' +
+		'<td><input type="text" value="" class="inputstyle hide" style="width:200px" /><input type="button" class="btn_com selshop" value="选择" /></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" style="width:230px" value="" readonly /></td>' +
+		'<td><input type="text" disabled class="inputstyle hide" value="" readonly /></td>' +
+		'<td><select onchange="changeWay(this)" class="inputstyle hide"><option value="1" selected>先款后货</option><option value="2">先货后款</option></select></td>' +
+		'<td><input type="text" class="inputstyle hide" style="width:100px" /></td>' +
+	'</tr>');
+   // refreshRowBgColor();
+	updateRowBgColor();
+	
+});	
+
+
+$(document).on('click','.sc',function(){
+	var tbody = $(this).parents('tbody')
+	$(this).parents('tr').remove();
+	updateRowBgColor();
+	tbody.find('tr').each(function(i){
+		$(this).find('td:eq(0)').find('span').html(i+1);
+	})
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/** 
+ * 将数值四舍五入(保留2位小数)后格式化成金额形式 
+ * 
+ * @param num 数值(Number或者String) 
+ * @return 金额格式的字符串,如'1,234,567.45' 
+ * @type String 
+ */  
+function formatCurrency(num) {  
+    num = num.toString().replace(/\$|\,/g,'');  
+    if(isNaN(num))  
+    num = "0";  
+    sign = (num == (num = Math.abs(num)));  
+    num = Math.floor(num*100+0.50000000001);  
+    cents = num%100;  
+    num = Math.floor(num/100).toString();  
+    if(cents<10)  
+    cents = "0" + cents;  
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)  
+    num = num.substring(0,num.length-(4*i+3))+','+  
+    num.substring(num.length-(4*i+3));  
+    return (((sign)?'':'-') + num + '.' + cents);  
+}  
+</script>
+</html>

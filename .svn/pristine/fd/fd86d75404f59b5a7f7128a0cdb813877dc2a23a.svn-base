@@ -1,0 +1,178 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售</span> > <span>商品管理</span> > <span class="comtitle_cur">我的商品</span>
+    </div>
+    <h3 class="tabname">销售政策</h3>
+    <div class="tabinfo">
+    	<p>
+        	<span class="f_l">
+            	<label>商品编码：5463456453</label>
+            	<label>商品名称：苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</label>
+            	<label>型号：白色,黑色</label>
+            </span>
+        </p>
+    </div>
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<th>客户代码</th>
+                <th>客户名称</th>
+                <th>单价</th>
+                <th>销售价</th>
+                <th>结算方式</th>
+                <th>账期起算日</th>
+                <th>账期（天）</th>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>gzhy</td>
+                    <td>广州恒远公司</td>
+                    <td>2588.00</td>
+                    <td>2,488.00</td>
+                    <td>先款后货</td>
+                    <td>收货日</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>szlm</td>
+                    <td>深圳龙马科技</td>
+                    <td>2,588.00</td>
+                    <td>2,488.00</td>
+                    <td>先款后货</td>
+                    <td>收货日</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>cdhm</td>
+                    <td>成都成华茂盛有限公司</td>
+                    <td>2,588.00</td>
+                    <td>2,488.00</td>
+                    <td>先货后款</td>
+                    <td>收货日</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>fszy</td>
+                    <td>佛山市卓越有限公司</td>
+                    <td>2,588.00</td>
+                    <td>2,588.00</td>
+                    <td>先款后货</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>fslh</td>
+                    <td>佛山市力豪有限公司</td>
+                    <td>2,588.00</td>
+                    <td>2,588.00</td>
+                    <td>先款后货</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+       
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="f_r mr20">
+        <input type="button" value="返 回" class="closebtn" onClick="javascript:history.go(-1)">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+
+<!--删除商品-->
+<div id="del_pop" class="popstyle" style="display:none; min-height:inherit; top:30%">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="whytext">
+        	<p class="suc_t">您确定要删除该商品？</p>
+            <p class="f_gray mt5 f_red">提示：如果确认要删除该商品，需要输入删除原因，商品删除后不能恢复。</p>
+        </div>
+    </div>
+    <div class="addbz">
+        <p><em class="redico">*</em><label>删除原因：</label><span><textarea cols="80" rows="5" style="width:660px;"></textarea></span></p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndel1" value="确定">
+        <input type="button" class="closebtn mr10" id="btndel2" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+
+//取消订单
+$(".delbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	$("#del_pop").show();
+	$("#close_del,#btndel2").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		
+	});	
+	$("#btndel1").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		_this.parents('tr').remove();
+		updateRowBgColor();
+	});	
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+
+</script>
+</html>

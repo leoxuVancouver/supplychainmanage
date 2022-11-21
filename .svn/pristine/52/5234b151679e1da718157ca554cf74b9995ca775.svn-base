@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/cors.js"></script>
+<script>
+    new Cors().insertToParent({
+        selectors: '#header_html',
+        data_listener: function (data) {
+            var data = JSON.parse(data),
+            $li = $(".nav_list").children("li").eq(data.index);
+			$li_a = $li.children("a");
+        	$li_a.addClass("nav_on");
+        }
+    });
+</script>
+<div id="header_html">
+	<div id="user_info">
+    	<div class="user_info_mid">
+        	<span class="f_l">
+                <a href="javascript:;">建行首页</a>
+                <a href="javascript:;">在线ERP</a> 
+                <a href="javascript:;"></a>            
+            </span>
+            <span class="f_r">
+                <a href="javascript:;">广州恒远公司</a>
+                <a href="javascript:;">客服热线：95533 #056</a>
+                <a href="login.html">退出</a>            
+            </span>        
+        </div>
+    </div>
+    <div id="nav">
+    	<ul class="nav_list">
+        	<li class="index">
+            	<a href="index.html">首页</a>
+            </li>
+            <li class="procure">	
+            	<a href="javascript:void(0)">采购</a>
+                <div class="nav_box">
+                    <dl >
+                        <dt>供应商管理</dt>
+                        <dd><a href="采购-供应商列表.html">我的供应商</a></dd>
+                    </dl>
+                    <dl style="height:85px">
+                        <dt>订单管理</dt>
+                        <dd><a href="采购-建立订单.html">建立订单</a></dd>
+                        <dd><a href="采购-订单列表.html">我的订单</a></dd>
+                    </dl>
+                    
+                </div>
+            </li>
+            <li class="sale">
+            	<a href="javascript:void(0)">销售</a>
+                <div class="nav_box">
+                    <dl style="height:115px">
+                        <dt>商品管理</dt> 
+                        <dd><a href="销售-添加商品.html">添加商品</a></dd>
+                        <dd><a href="销售-商品列表.html">我的商品</a></dd>
+                    </dl> 
+                    <dl style="height:115px">
+                    	<dt>订单管理</dt>
+                        <dd><a href="销售-建立订单.html">建立订单</a></dd>
+                        <dd><a href="销售-订单列表.html">我的订单</a></dd>
+                    </dl>
+                    <dl style="height:115px">
+                    	<dt>客户</dt>
+                        <dd><a href="销售-新增客户.html">添加客户</a></dd>
+                        <dd><a href="销售-客户列表.html">我的客户</a></dd>
+                        <dd><a href="财务-销售结算-商业信用额度.html">设置销售政策</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="caiwu">
+            	<a href="javascript:void(0)">财务</a>
+                <div class="nav_box">
+                    <dl>
+                    	<dt>采购结算</dt>
+                        <dd><a href="财务-预付货款.html">预付货款</a></dd>
+                        <dd><a href="财务-预付款余额.html">预付款查询</a></dd>
+                        <dd><a href="财务-预付款核销-新增.html">预付款核销</a></dd>
+                        <dd><a href="财务-预付款调整.html">预付款调整</a></dd>
+                        <dd><a href="财务-订单付款（先款后货）.html">订单付款</a></dd>
+                        <dd><a href="财务-付款查询.html">付款查询</a></dd>
+                        <dd><a href="财务-应付查询.html">应付查询</a></dd>
+                        <dd><a href="财务-短信支付签约.html">开通短信支付</a></dd>
+                    </dl>
+                    <dl class="mr0">
+                    	<dt>销售结算</dt>
+                        <dd><a href="财务-预收款余额.html">预收款查询</a></dd>
+                        <dd><a href="财务-预收款核销.html">预收款核销</a></dd>
+                        <dd><a href="财务-预收款调整.html">预收款调整</a></dd>
+                        <dd><a href="财务-收款查询.html">收款查询</a></dd>
+                        <dd><a href="财务-短信收款.html">短信收款</a></dd>
+                        <dd><a href="财务-应收查询.html">应收查询</a></dd>
+                        <dd><a href="销售-我的订单.html">确认结清</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="fahuo">
+            	<a href="javascript:void(0)">收发货</a>
+                <div class="nav_box">
+                    <dl>
+                        <dt>发货</dt>
+                        <dd><a href="收发货-发货登记.html">发货登记</a></dd>
+                        <dd><a href="收发货-发货单查询.html">发货单查询</a></dd>
+                    </dl>
+                    <dl class="mr0">
+                        <dt>收货</dt>
+                        <dd><a href="收发货-收货登记.html">收货登记</a></dd>
+                        <dd><a href="采购-我的订单-订单详情.html">确认收清</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="datas">
+                <a href="javascript:void(0)">数据分析</a>
+                <div class="nav_box">
+                    <dl class="tworows">
+                        <dt>采购分析</dt>
+                        <dd><a href="数据分析-采购分析-订单执行数据.html">订单执行数据</a></dd>
+                        <dd><a href="数据管理-采购分析-采购量.html">采购量数据</a></dd>
+                        <dd><a href="数据管理-采购分析-员工业绩.html">业绩数据</a></dd> 
+                    </dl>
+                    <dl class="tworows">
+                        <dt>销售分析</dt>
+                        <dd><a href="数据分析-销售分析-订单执行数据.html">订单执行数据</a></dd>
+                        <dd><a href="数据管理-销售分析-销售量.html">销售量数据</a></dd>
+                        <dd><a href="数据管理-销售分析-员工业绩.html">业绩数据</a></dd> 
+                    </dl>
+                </div>
+            </li>
+            <li class="system">
+            	<a href="javascript:void(0)">系统管理</a>
+                <div class="nav_box">
+                    <dl style="height:175px">
+                        <dt>业务参数</dt>
+                        <dd><a href="系统管理-业务参数-复核业务参数.html">复核业务参数</a></dd>                        
+                    </dl>
+                    <dl style="height:175px">
+                        <dt>企业信息</dt>   
+                        <dd><a href="系统管理-企业信息-企业资料完善.html" >企业资料完善</a></dd>
+                        <dd><a href="系统管理-企业信息-商城账户管理.html">商城账户管理</a></dd>
+                        <dd><a href="系统管理-企业信息-机构人员.html">机构人员</a></dd>
+                        <dd><a href="系统管理-企业信息-岗位管理.html">岗位管理</a></dd>
+                        <dd><a href="系统管理-企业信息-核心会员申请.html">核心会员申请</a></dd>
+                    </dl>
+                    <dl style="height:145px">
+                        <dt>个人信息</dt>
+                        <dd><a href="系统管理-个人信息-修改密码.html">修改密码</a></dd>
+                        <dd><a href="系统管理-个人信息-修改手机号码.html">修改手机号码</a></dd>
+                        <dd><a href="系统管理-个人信息-修改电子邮箱.html">修改电子邮箱</a></dd>
+                    </dl>
+                    <dl style="height:145px">
+                        <dt>消息中心</dt>
+                        <dd><a href="javascript:void(0)">业务信息提醒</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="check">
+                <a href="javascript:void(0)">复核管理</a>
+                <div class="nav_box">
+                    <dl style="height:145px">
+                        <dt>采购复核</dt>
+                        <dd><a href="复核管理-采购复核-采购订单复核.html">采购订单复核</a></dd>
+                        <dd><a href="复核管理-采购复核-预付款核销复核.html">预付款核销复核</a></dd>
+                        <dd><a href="采购-订单列表.html">确认收清复核</a></dd>                       
+                    </dl>
+                    <dl >
+                        <dt>销售复核</dt>   
+                        <dd><a href="复核管理-销售复核-销售订单复核.html">销售订单复核</a></dd>
+                        <dd><a href="复核管理-销售复核-销售政策复核.html">销售政策复核</a></dd>
+                        <dd><a href="复核管理-销售复核-预收款调整复核.html">预收款调整复核</a></dd>
+                        <dd><a href="销售-订单列表.html">确认结清复核</a></dd>          
+                    </dl>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="sidebtn">
+        <ul>
+        	<li><a href="javascript:void(0)"><img src="images/sidebtn1.png" alt="sidebtn1" /><span class="sidebtn1">善学堂</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/sidebtn2.png" alt="sidebtn2" /><span>日历<br />备忘录</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/sidebtn3.png" alt="sidebtn3" /><span>在线<br />客服</span></a></li>
+        </ul>
+    </div>
+</div>

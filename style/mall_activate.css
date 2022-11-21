@@ -1,0 +1,293 @@
+/*---------------------------
+  FUNCTION: EPAY-DEMO 
+    WRITER: QIUJINGSHENG
+      DATE: 2012-06-11 
+  ---------------------------*/
+ 
+Body,ul,li,span,input,select{ padding:0px; margin:0px;}
+Body,table,input,select,li,div,i{ font-size:12px; font-family:"ËÎÌå"; color:#555555;}
+a{ color:#0071BC; text-decoration:none;}
+a:hover{ color:#0071BC; text-decoration:underline; }
+a img {border-bottom: 0px;border-left: 0px;border-top: 0px;border-right: 0px;}
+.bottons3,
+.bottons3{background-position:center -75px;color: #000;  width:60px; height:25px; line-height:25px;}
+.bottons3
+	{
+	background: url(../../images/member_button.gif) no-repeat center 0;
+	height: 25px;
+	text-align: center;
+	/*display: block;*/
+	line-height: 25px;
+	margin: 5px auto 5px auto;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: normal;
+	border: 0;
+}
+.bottons3 {
+	background-position: center -175px;
+	height: 20px;
+	width: 100px !important;
+	color: #fff;
+	line-height: 20px;
+	margin: 0;
+}
+.integral ul li .bottons3 { display:inline-block;}
+
+.mobilecode { display:none; width:200px !important;}
+.CCBSpaceTop10px{margin-top:10px;}
+.CCBGray{color:#999999;}
+.CCBFont14px{font-size:14px;}
+.CCBFont24px{font-size:24px;}
+.CCBFont23px{font-size:23px;}
+.CCBFont12px{font-size:12px;}
+.CCBFont12pxGreen{font-size:12px;color:#38B549;}
+.CCBFontBold{ font-weight:bold;}
+.CCBFontRed{ color:#D7371F;}
+.CCBMoneyGreen{ color:#38B549; font-weight:bold;}
+.CCBAlignLelf{ text-align:left; text-indent:10px;}
+.CCBMoney{ color:#D7371F; font-size:16px; font-weight:bold;}
+.CCBInputStyle{ height:20px; line-height:20px; padding:0px 0px 0px 3px; border:1px solid #ACACAC; margin-left:10px;}
+.CCBWhiteLink{}
+.CCBWhiteLink a{ color:#FFFFFF; text-decoration:none;}
+.CCBWhiteLink a:hover{ color:#FFFFFF; text-decoration:underline;}
+.CCBGrayLink a{ color:#464646; text-decoration:none;}
+.CCBGrayLink a:hover{ color:#464646; text-decoration:underline;}
+.CCBContianer{ width:997px; margin:0px auto; background:#FFFFFF;}
+.TIPSHOW{display:none;font-size:12px;width:250px;padding:5px;padding-left:15px;padding-right:15px;margin-top:-5px;}
+.ERRTIPSHOW{display:none;font-size:12px;color:red;width:250px;padding:5px;padding-left:40px;padding-right:15px;margin-top:-5px;background:url(../../images/u43_normal_1.png) no-repeat;}
+
+/*----------Header-----------*/
+.CCBHender{ width:997px; height:auto;}
+.CCBHenderTool{ height:85px;}
+.CCBHenderToolLogo{height:85px; width:620px; background:url(../../images/CCBLogo.jpg) no-repeat; float:left; }
+.CCBHenderToolLogoFont{height:50px; width:160px; background:url(../images/user-setting/CCBLogoFont.jpg) no-repeat; float:left; font-size:25px; font-weight:bold; padding-left:460px; padding-top:35px; }
+.CCBHenderToolBox{height:85px; width:377px; float:left; }
+.CCBHenderToolMenu{height:31px; width:377px;}
+.CCBHenderToolMenuL{height:31px; width:50px; background:url(../images/user-setting/CCBHenderToolMenu.jpg) right -31px no-repeat; float:right;}
+.CCBHenderToolMenuC{height:31px; line-height:31px; color:#fff; background:url(../images/user-setting/CCBHenderToolMenu.jpg) repeat-x; float:right;}
+.CCBHenderToolMenuR{height:31px; width:50px; background:url(../images/user-setting/CCBHenderToolMenu.jpg) left -31px no-repeat; float:right;}
+.CCBHenderTool95533{height:54px; line-height:54px; text-align:right; padding:0px 28px 0px 0px;}
+
+/*----------Menu-----------*/
+.CCBHender1thMenu{ height:37px; line-height:37px;  width:997px; background:url(../../images/CCBHeadMenu.jpg) 0px 0px no-repeat;}
+.CCBHender1thMenuNofont{ height:10px; line-height:10px; font-size:0px;  width:997px; background:url(../images/user-setting/CCBHeadMenu.jpg) 0px 0px no-repeat;}
+.CCBHender1thMenuTab{ height:37px; width:687px; float:left;}
+.CCBHender1thMenu ul{ margin:0px 5px;}
+.CCBHender1thMenu ul li{ list-style:none; font-size:14px; font-weight:bold; float:left;}
+.CCBHender1thMenuFont4{ width:92px; color:#FFFFFF; text-align:center; }
+.CCBHender1thMenuFont4ON{ width:92px; text-align:center; background:url(../../images/CCBHender1thMenu.jpg) -122px 0px no-repeat;}
+.CCBHender1thMenuFont4Mouse{ width:92px; color:#FFFFFF; text-align:center; background:url(../../images/CCBHender1thMenu.jpg) -342px 0px no-repeat; cursor:pointer;}
+.CCBHender1thMenuFont6{ width:122px; color:#FFFFFF; text-align:center;}
+.CCBHender1thMenuFont6ON{ width:122px; text-align:center; background:url(../../images/CCBHender1thMenu.jpg) 0px 0px no-repeat;}
+.CCBHender1thMenuFont6Mouse{ width:122px; color:#FFFFFF; text-align:center; background:url(../../images/CCBHender1thMenu.jpg) -220px 0px no-repeat; cursor:pointer;}
+.CCBHender1thMenuLine{ height:37px; width:6px; font-size:0px; background:url(../../images/CCBHender1thMenu.jpg) -214px 0px no-repeat;}
+.CCBHender1thMenuLink{ height:37px; width:310px; float:left;}
+.CCBHender1thMenuB2C{ height:37px; width:151px; float:left; margin-left:1px; background:url(../../images/CCBHender1thMenu.jpg) -434px 0px no-repeat; cursor:pointer;}
+.CCBHender1thMenuB2B{ height:37px; width:151px; float:left; margin-left:1px; background:url(../../images/CCBHender1thMenu.jpg) -585px 0px no-repeat; cursor:pointer;}
+.CCBHender1thMenuB2CON{ height:37px; width:151px; float:left; margin-left:1px; background:url(../../images/CCBHender1thMenu.jpg) -736px 0px no-repeat; cursor:pointer;}
+.CCBHender1thMenuB2BON{ height:37px; width:151px; float:left; margin-left:1px; background:url(../../images/CCBHender1thMenu.jpg) -887px 0px no-repeat; cursor:pointer;}
+.CCBHender2thMenu{ height:38px; background:url(../images/user-setting/CCBHeadMenu.jpg) 0px -37px no-repeat;}
+.CCBHender2thMenu ul{ margin:0px 15px;}
+.CCBHender2thMenu ul li{ height:38px; margin:0px 5px; line-height:38px; list-style:none; float:left; }
+.CCBHenderUnderLine{ height:10px; font-size:0px; background:url(../../images/CCBHeadMenu.jpg) 0px -75px no-repeat;}
+.CCBHenderUnderLineNew{ height:20px;}
+.CCBHender2thMenuNew1{ height:38px;margin-top:20px; background:url(../../images/kaitong_step1.png) no-repeat;}
+.CCBHender2thMenuNew2{ height:38px;margin-top:20px; background:url(../../images/kaitong_step2.png) no-repeat;}
+.CCBHender2thMenuNew3{ height:38px;margin-top:20px; background:url(../../images/kaitong_step3.png) no-repeat;}
+
+.CCBHenderStep1{height:38px;line-height:38px;font-size:18px;font-weight:bold;margin-left:90px}
+.CCBHenderStep2{height:38px;line-height:38px;font-size:18px;font-weight:bold;margin-left:230px}
+.CCBHenderStep3{height:38px;line-height:38px;font-size:18px;font-weight:bold;margin-left:240px}
+.CCBHenderPreviousStep{color:#1476d0;}
+.CCBHenderNowStep{color:white;}
+.CCBHenderNextStep{color:#3f3f3f;}
+/*----------Main-----------*/
+.CCBMain{ clear:both; }
+.CCBMainLeft{ width:240px; margin-right:10px; float:left; }
+.CCBLeftPerson{ height:168px; border:1px solid #D7D7D7; background:#FBFBFB;}
+.CCBLeftPersonInfo{ height:92px; padding:10px; border-bottom:1px solid #D7D7D7;}
+.CCBLeftPersonInfoBody{ float:left; margin-left:10px;}
+.CCBLeftPersonInfoBody ul{}
+.CCBLeftPersonInfoBody ul li{ list-style:none; line-height:23px;}
+.CCBLeftPersonPic{ width:80px; height:80px; background:#FFFFFF; border:1px solid #EBEBEB; padding:5px; float:left; }
+.CCBLeftPersonOperation{ height:32px; padding:11px 0px; width:238px; text-align:center; background:#F9F9F9;}
+
+/*----------ListTips-----------*/
+.CCBListTips{ clear:both; font-size:14px; line-height:24px; padding:13px 10px; font-size:14px; background:#FFFAF4; border:1px solid #FAAD83;}
+
+/*----------NormalTips-----------*/
+.CCBNormalTips{ clear:both; font-size:12px; line-height:24px;  padding:25px 10px 25px 120px;  background:#FFFAF4 url(../../images/tahangzhucetishi.png) 30px center no-repeat; border:1px solid #FAAD83;}
+
+/*----------SuccessTips-----------*/
+.CCBSuccessTips{ clear:both; font-size:12px; line-height:24px;  padding:25px 10px 25px 120px;  background:#FFFAF4 url(../images/user-setting/CCBSuccessTips.gif) left center no-repeat; border:1px solid #FAAD83;}
+.CCBSuccessTipsNew{ height:160px;clear:both; line-height:35px; padding:40px 20px 25px 20px;  background:#deefff url(../../images/CCBSuccessBG.png) right center no-repeat; border:1px solid #8dbfed;}
+.CCBSuccessTipsNew a{ color:red; font-size:15px; font-family:"Î¢ÈíÑÅºÚ";padding-left: 10px;}
+.CCBSuccessSpanNew{ padding-left:40px;padding-top:10px;}
+.CCBSuccessIMGNew{padding-left:60px;padding-top:10px;}
+
+/*----------FailTips-----------*/
+.CCBFailTips{ clear:both; font-size:12px; line-height:24px; padding:25px 10px 25px 120px;  background:#FFFAF4 url(../../images/CCBFailTips.gif) left center no-repeat; border:1px solid #FAAD83;}
+.CCBFailTipsNew{ height:120px;clear:both; line-height:35px; padding:40px 20px 25px 20px;  background:#deefff url(../../images/CCBFailBG.png) right center no-repeat; border:1px solid #8dbfed;}
+.CCBFailSpanNew{ padding-left:40px;padding-top:10px;}
+/*----------FuncList-----------*/
+.CCBFuncList{ text-align:left;}
+.CCBFuncList ul{ margin:5px 10px;}
+.CCBFuncList ul li{ list-style:none; line-height:38px; height:38px;}
+.CCBFuncListLi{ border-bottom:1px dotted #EBEBEB;}
+.CCBFuncListLiMouse{ border-bottom:1px dotted #ACACAC; background:url(../../images/CCBIconList.gif) right bottom no-repeat;}
+.CCBFuncIcon1{ height:34px; font-size:14px; padding-left:38px; display:block; background:url(../../images/CCBIconList.gif) -7px -6px no-repeat; cursor:pointer;}
+.CCBFuncIcon2{ height:34px; font-size:14px; padding-left:38px; display:block; background:url(../../images/CCBIconList.gif) -7px -54px no-repeat; cursor:pointer;}
+.CCBFuncIcon3{ height:34px; font-size:14px; padding-left:38px; display:block; background:url(../../images/CCBIconList.gif) -7px -102px no-repeat; cursor:pointer;}
+.CCBFuncIcon4{ height:34px; font-size:14px; padding-left:38px; display:block; background:url(../../images/CCBIconList.gif) -7px -150px no-repeat; cursor:pointer;}
+.CCBFuncIcon5{ height:34px; font-size:14px; padding-left:38px; display:block; background:url(../../images/CCBIconList.gif) -7px -198px no-repeat; cursor:pointer;}
+.CCBFuncIcon6{ height:34px; font-size:14px; padding-left:38px; display:block; background:url(../../images/CCBIconList.gif) -7px -246px no-repeat; cursor:pointer;}
+.CCBFuncListSetting{ height:33px; width:20px; display:block; background:url(../../images/CCBIconListSetting.gif) 0px 0px no-repeat; cursor:pointer;}
+.CCBFuncListSettingMouse{ height:33px; width:20px; display:block; background:url(../../images/CCBIconListSetting.gif) 0px -33px no-repeat; cursor:pointer;}
+.CCBMainRight{ width:747px; float:left; }
+
+/*----------Table-----------*/
+.CCBTable{ border:1px solid #D7D7D7; border-top:none; color:#333333; border-bottom:none; font-size:12px; text-align:center;}
+.CCBTableHead{ height:33px; line-height:33px; background:url(../images/user-setting/CCBTableHead.jpg) repeat-x;}
+.CCBTableHead .headLeft{ height:33px; border-left:1px solid #D7D7D7; line-height:33px; padding-left:10px; display:block; float:left; font-weight:bold; font-size:14px;}
+.CCBTableHead .headRight{ width:40px; border-right:1px solid #D7D7D7; height:33px; float:right; text-align:right; padding-right:10px; font-size:12px; font-weight:bold;}
+.CCBTableHeadSFont{ font-size:12px; font-weight:normal;}
+.CCBTable th{ background:#F9F9F9; border-bottom:1px solid #EBEBEB;  height:33px; line-height:33px;}
+.CCBTable td{ border-bottom:1px solid #EBEBEB; height:33px; line-height:33px;}
+
+
+.CCBTable_list{ border:1px solid #D7D7D7; border-top:none; color:#333333; border-bottom:none; font-size:12px; text-align:center;}
+.CCBTable_list th{ background:#F9F9F9; border-bottom:1px solid #EBEBEB;  height:33px; line-height:33px;}
+.CCBTable_list td{ border-bottom:1px solid #EBEBEB; height:33px; line-height:33px;}
+
+
+.CCBTablePage{ height:24px; line-height:24px; padding:6px 10px 6px 10px; background:#F6F7F6;}
+.CCBTablePagePic{ float:left; text-align:left;}
+.CCBTablePageList{ float:right; text-align:right;}
+
+
+.CCBReundTable{ border:1px solid #D7D7D7; border-top:none; color:#333333; border-bottom:none; font-size:12px; text-align:left;}
+.CCBReundTable th{ background:#F9F9F9; border-bottom:1px solid #EBEBEB;  height:33px; line-height:33px;}
+.CCBReundTable td{ border-bottom:1px solid #EBEBEB; height:33px; line-height:33px; text-indent:10px;}
+
+.CCBTableOutside{ border:1px solid #D7D7D7; border-top:none; color:#333333; border-bottom:none; font-size:14px; text-align:left; text-indent:10px;}
+.CCBTableOutside th{ background:#F9F9F9; border-bottom:1px solid #EBEBEB; height:33px; line-height:33px; text-indent:10px; }
+.CCBTableOutside td{ border-bottom:1px solid #EBEBEB; line-height:22px;  height:33px; line-height:33px; text-indent:10px;}
+
+.CCBTableOutsideNew{ border:0px solid #D7D7D7; border-top:none; color:#333333; font-size:14px; text-align:left; text-indent:10px;}
+.CCBTableOutsideNew th{ background:#F9F9F9; border-bottom:1px solid #EBEBEB; height:33px; line-height:33px; text-indent:10px; }
+.CCBTableOutsideNew td{ border-bottom:none; line-height:22px;  height:33px; line-height:33px; text-indent:10px;}
+
+
+/*----------PayTable-----------*/
+.CCBPayTable{ border:1px solid #D7D7D7; border-top:none; color:#333333; border-bottom:none; font-size:12px; text-align:left;}
+.CCBPayTable th{ background:#F9F9F9; border-bottom:1px solid #EBEBEB;  height:33px; line-height:33px;  text-indent:10px;}
+.CCBPayTable td{ border-bottom:1px solid #EBEBEB; height:33px; line-height:33px; padding:10px 0px; text-indent:10px;}
+
+/*----------OrderTable-----------*/
+.OrderTable{ background:#FFFBD4; border:none; text-align:left;}
+.OrderTable td{ border:none; font-size:14px; line-height:22px; padding:10px 0px;}
+
+
+/*----------Bottom-----------*/
+.CCBBottom{ height:65px;  text-align:center; margin:15px auto 0px auto; border-top:3px solid #0071BC;}
+.CCBBottomLeft{ width:500px; line-height:20px; margin-top:15px; float:left;}
+.font_gray{	color: #919191;	text-align:left; width:500px; float:left; margin-top:10px; margin-left:5px;}
+.CCBBottomLeftImg{ width:30px; line-height:20px; margin-top:15px; float:left; background:url(../../images/CCBBottomCopyRight.gif) no-repeat;}
+.CCBBottomRight{ width:250px; line-height:20px; margin-top:10px; text-align:right; float:right;}
+.CCBBottomRight a{ color:#0071BC; text-decoration:none;}
+.CCBBottomRight a:hover{ color:#0071BC; text-decoration:underline;}
+
+/*----------Button-----------*/
+.CCBButtonRedFont6{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:104px; height:32px; background:url(../images/user-setting/CCBButton.gif) 0px 0px no-repeat; }
+.CCBButtonBlueFont6{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:104px; height:32px; background:url(../images/user-setting/CCBButton.gif) 0px -32px no-repeat;}
+.CCBButtonRedFont6Mouse{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:104px; height:32px; background:url(../images/user-setting/CCBButton.gif) -104px 0px no-repeat; }
+.CCBButtonBlueFont6Mouse{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:104px; height:32px; background:url(../images/user-setting/CCBButton.gif) -104px -32px no-repeat;}
+.CCBButtonRedFont9{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:164px; height:32px; background:url(../../images/CCBButton.gif) -208px 0px no-repeat; }
+.CCBButtonBlueFont9{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:164px; height:32px; background:url(../../images/CCBButton.gif) -208px -32px no-repeat;}
+.CCBButtonRedFont9Mouse{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:164px; height:32px; background:url(../../images/CCBButton.gif) -372px 0px no-repeat; }
+.CCBButtonBlueFont9Mouse{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:164px; height:32px; background:url(../../images/CCBButton.gif) -372px -32px no-repeat;}
+.CCBButtonFont6Dis{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:104px; height:32px; background:url(../../images/CCBButton.gif) -536px -32px no-repeat;}
+.CCBButtonFont9Dis{ font-size:14px; font-weight:bold; color:#FFFFFF; border:none; cursor:pointer; margin:0px 2px; width:164px; height:32px; background:url(../../images/CCBButton.gif) -536px 0px no-repeat;}
+
+/*----------ButtonArea-----------*/
+.ButtonArea{ clear:both; border-top:1px solid #EBEBEB; padding:20px 0px; margin:0px 10px; text-align:center;}
+
+/*----------ButtonAreaNoLine-----------*/
+.ButtonAreaNoLine{ clear:both; padding:20px 0px; margin:0px 10px; text-align:center;}
+.ButtonAreaNoLineNew{ clear:both; padding-top:30px; padding-left: 120px; margin:0px 10px; text-align:center;}
+
+/*----------Help-----------*/
+.CCBHelp{ border-top:3px solid #D9371C; padding:10px 10px 0px 10px;}
+.CCBHelpTittle{ font-weight:bold; font-size:14px;}
+.CCBHelpList{}
+.CCBHelpList ul{ margin:5px 0px;}
+.CCBHelpList ul li{ list-style:none; line-height:22px;}
+
+/*----------HelpMore-----------*/
+.CCBHelpMore{ text-align:left;}
+.CCBHelpMore ul{ margin:5px 10px;}
+.CCBHelpMore ul li{ list-style:none; line-height:24px;}
+
+/*----------PayWay-----------*/
+.CCBPayWay{ clear:both;}
+.CCBPayWay ul{ clear:both; margin:15px 0px; height:40px;}
+.CCBPayWay ul li{ list-style:none; float:left; margin-left:10px;}
+.CCBPayWayRadio{ margin-top:10px; float:left;}
+.CCBPayWay ul li span{ margin-left:25px;}
+.CCBPayWayIconCCBEbank{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) 0px 0px no-repeat;}
+.CCBPayWayIconCCBEpay{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -192px 0px no-repeat; }
+.CCBPayWayIconNY{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -384px 0px no-repeat; }
+.CCBPayWayIconGS{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -576px 0px no-repeat; }
+.CCBPayWayIconJT{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) 0px -38px no-repeat; }
+.CCBPayWayIconZX{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -192px -38px no-repeat;}
+.CCBPayWayIconZG{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -384px -38px no-repeat; }
+.CCBPayWayIconGD{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -576px -38px no-repeat;}
+.CCBPayWayIconZS{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) 0px -76px no-repeat; }
+.CCBPayWayIconSFZ{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -192px -76px no-repeat; }
+.CCBPayWayIconPF{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -384px -76px no-repeat; }
+.CCBPayWayIconMS{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -576px -76px no-repeat;}
+.CCBPayWayIconXY{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) 0px -114px no-repeat;}
+.CCBPayWayIconQTMouse{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -192px -114px no-repeat;}
+.CCBPayWayIconGF{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -384px -114px no-repeat; }
+.CCBPayWayIconQT{  display:block; width:192px; height:38px; background:url(../../images/CCBPayWay.jpg) -576px -114px no-repeat; }
+
+
+
+
+.CCBRegPerson{ width:493px; margin-right:10px; float:left; }
+.CCBRegCompany{ width:494px; float:left; }
+.CCBRegPSimple{ width:493px; margin:0px auto;}
+.CCBRegCSimple{ width:494px; margin:0px auto;}
+.CCBRegPersonHead{ height:135px; border:1px solid #D7D7D7; border-bottom:3px; padding:15px 10px 0px 10px; background:url(../../images/CCBRegHeadPic.jpg) right top no-repeat;}
+.CCBRegCompanyHead{ height:135px; border:1px solid #D7D7D7; border-bottom:3px; padding:15px 10px 0px 10px; background:url(../../images/CCBRegHeadPic.jpg) right bottom no-repeat;}
+
+.CCBRegPersonNew{ width:498px; margin-right:-1px; float:left; }
+.CCBRegCompanyNew{ width:499px; float:left; }
+.CCBRegPersonNewHead{ height:250px; border:1px solid #D7D7D7;  padding:30px 0px 0px 30px; background:url(../../images/companyEbankGB.png) 20px 35px no-repeat;}
+.CCBRegCompanyNewHead{ height:250px; border:1px solid #D7D7D7;  padding:30px 0px 0px 30px; background:url(../../images/companyOtherBankGB.png) 20px 35px no-repeat;}
+
+
+.CCBRegTable{ border:1px solid #D7D7D7; border-top:none; color:#333333; border-bottom:none; font-size:12px; }
+.CCBRegTable th{ background:#F9F9F9; border-bottom:1px solid #EBEBEB; font-size:16px; height:48px; line-height:48px; text-align:left; text-indent:10px;}
+.CCBRegTable td{ border-bottom:1px solid #EBEBEB; height:48px; line-height:48px; text-indent:10px;}
+.CCBInputStyleDis{ height:20px; line-height:20px; padding:0px 0px 0px 3px; border:1px solid #ACACAC; background:#EFEFEF; margin-left:10px; }
+.CCBRegTableMouseClick{ background:#F9F9F9;}
+/*----------ButtonAreaNoLine_Left-----------*/
+.ButtonAreaNoLine_Left{ clear:both; padding:20px 0px;  text-align:left;}
+.ButtonAreaNoLine_center{ clear:both; padding:20px 0px;  text-align:center;}
+
+.nonccbBankTitle{float:left;height:192px;width:591px;position:relative; background:url(../../images/nonCCBBankBG.bmp) no-repeat;}
+.ccbBankTitle {height:180px;width:405px;float:left; position:relative; background:url(../../images/CCBBankBG.jpg) no-repeat;}
+.ccbBankTitle .bt3 a {position:absolute; margin:20px 0 0 40px; width:148px; height:46px; background:url(../../images/bt2.png) no-repeat; line-height:46px; text-align:center;font-size:16px;font-weight:bold;color:#FFF; text-decoration:none;}
+.ccbBankTitle .bt3 a:hover {background:url(../../images/bt2-1.png) no-repeat;}
+.nonccbBankFrame{border:10px solid #b4d3f0;}
+
+.mm { width:586px; height:247px; position:relative; float:left; display:block; background:url(../../images/1_05.jpg) no-repeat}
+.mm:hover { background:url(../../images/hover_03.jpg) no-repeat}
+.mm .bt1 a{ position:absolute; margin:50px 0 0 35px; width:148px; height:46px; background:url(../../images/bt1.png) no-repeat; line-height:46px; text-align:center;font-size:16px;font-weight:bold;color:#FFF; text-decoration:none;}
+.mm .bt1 a:hover{background:url(../../images/bt1-1.png) no-repeat;}
+.nn { width:382px; height:245px; float:left; margin-left:25px;position:relative; border:1px solid #f3d18a;background:#fff4de;}
+.nn:hover { background:#f1f1b3}
+.nn .bt2 a {position:absolute; margin:50px 0 0 35px; width:148px; height:46px; background:url(../../images/bt1.png) no-repeat; line-height:46px; text-align:center;font-size:16px;font-weight:bold;color:#FFF; text-decoration:none;}
+.nn .bt2 a:hover { background:url(../../images/bt1-1.png) no-repeat;}

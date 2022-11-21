@@ -1,0 +1,456 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.choose{ display:inline-block; width:48px; height:30px; line-height:30px; color:#fff; text-align:center; font-size:14px; cursor:pointer; background:#00c3df; border-radius:0 4px 4px 0;}
+.choose:hover{ text-decoration:none; color:#fff; }
+#changeOrg_choose ul li span {  padding: 2px 5px; display:inline-block;}
+#changeOrg_choose ul li span:hover{ background:#0066b3; color:#FFF;}
+.treebtn{ display:inline-block; width:31px; height:16px; background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.closing{ background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.err { background: #FFF8E4 url(images/error.png) no-repeat 5px center; border: 1px solid #FFCE81; padding: 2px 6px 2px 26px; color: #666666; }
+.bgcolor{ background:#0066b3; color:#FFF;}
+.cp{ cursor:pointer;}
+
+.cur{ background:url(../images/ico.png) no-repeat -386px -415px; color:#fff;}
+.upload{ border:1px solid #f1f3f7; }
+.step{ width:100%; height:45px; line-height:45px; text-indent:20px; background:#fbfbfb; border-bottom:1px solid #d9d9d9;}
+.step span{ margin-right:10px;}
+.stepdiv{ margin:10px; padding:10px; border:1px #00CCFF solid; }
+.stepdiv p{ padding:10px;}
+.stepdiv p a,
+.stepdiv p a:hover{ font-size:16px; display:inline-block; text-decoration:none;}
+em{ display:none;}
+.tablestyle tbody tr { height:50px;}
+.inputfile { display:inline-block; width:48px; height:30px; opacity:0;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>企业设置</span> > <span class="comtitle_cur">机构与员工管理</span>
+    </div>
+	<div class="tabbox bor_t">
+    	<ul>
+            <li class="cur"><a href="javascript:void(0)">单个用户</a></li>
+            <li><a href="javascript:void(0)">批量导入</a></li>
+        </ul>
+    </div>
+<!--单笔导入 start-->
+	<div class="divs">  
+    <h3 class="formname">基本信息</h3>
+        <div class="formmain">
+            <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+                <tbody>
+                    <tr>
+                        <th><em class="redico">*</em>所属机构：</th>
+                        <td class="p_r">
+                            <input type="text" value="" class="inputstyle w320 org" disabled />
+                            <img src="images/input_select.png" class="p_a_select3" id="change_org_choose">   
+                        </td>
+                    </tr>
+                    <tr>
+                	<th><em class="redico">*</em>用户名：</th>
+                    <td class="p_r">
+                    	<input type="text" class="inputstyle w320" value="">
+                    	<span class="formmain_tip"></span>
+                        <span class="formmain_tipcon"><span style="line-height:40px;">用户的登录名。</span></span>
+                    </td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>密码：</th>
+                    <td><input type="password" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>确认密码：</th>
+                    <td><input type="password" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>姓名：</th>
+                    <td><input type="text" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>手机号码：</th>
+                    <td><input type="text" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>电子邮箱：</th>
+                    <td><input type="text" class="inputstyle w320"/></td>
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+    <h3 class="formname">数据权限</h3>
+    <div class="formmain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<tbody>
+            	<tr>
+                	<th><input type="checkbox" checked disabled/></th>
+                    <td><label>本人录入的数据和分配给本人的数据</lalbel></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox"  /></th>
+                    <td><label>分配至所属机构(部门)的数据”</label>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" /></th>
+                    <td><label>分配至其它指定机构(部门)的数据”</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>           
+    <h3 class="formname">岗位</h3>
+    <div class="formmain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<tbody>
+            	<tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>采购主管</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>采购业务员</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>销售主管</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>销售业务员</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>采购结算</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>销售结算</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>发货</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>收货</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>                                
+    <div align="center">
+    	<input type="button" value="确 认" class="surebtn mr20" id="btntg">
+        <input type="button" value="返 回" class="closebtn" onclick="javascript:history.go(-1)">
+    </div>
+    </div>
+<!--单笔导入 end-->  
+<!--批量导入 start-->
+	<div class="divs hide">    
+        <div class="upload">
+        	<div class="step">
+            	<b class="fw_b">批量导入用户信息流程：</b>
+            	<span class="blue">1、下载模板></span>
+                <span>2、导入Excel></span>
+                <span>3、导入完成></span>
+            </div>
+            <div class="stepdiv">  
+                <p>温馨提示：批量导入的模板格式不能修改，您可以先下载模板填写完再批量导入。<a href="data/用户批量模板.xls" class="blue">点击下载模板<em id="em1">>></em></a></p>
+                <input type="button" class="surebtn mr5 stepbtn" value="下一步">
+            </div>
+            <div class="stepdiv hide">
+            	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+                	<tbody>
+                    	<tr>
+                    		<th align="right"><span class="red">*</span>所属机构：</td>
+                            <td class="p_r">
+                                <input type="text" class="inputstyle w320 org" disabled />
+                                <a id="org_choose" class="choose p_a_r0">选择</a>
+                            </td>
+            			</tr>
+                        <tr>
+                    		<th align="right"><span class="red">*</span>请选择导入文件：</td>
+                            <td class="p_r">
+                                <input type="text" class="inputstyle w320" id="docname">
+                                <a class="choose p_a_r0">选择</a>
+                                <input type="file" class="inputfile p_a_r0">
+                            </td>
+                        </tr>
+                	</tbody>
+                </table>
+                <input type="button" class="closebtn mr5 stepbtn" value="上一步">
+                <input type="button" class="surebtn mr5 stepbtn" value="导 入">
+            </div>
+            <div class="stepdiv hide">
+                <h4 class="f_16 fw_b m10">导入结果</h4> 
+                <div class="tablemain">
+                    <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+                        <thead>
+                            <tr>
+                                <th width="33%">数据总数</th>
+                                <th width="33%">成功总数</th>
+                                <th width="33%">错误总数</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="33%">20</td>
+                                <td width="33%">18</td>
+                                <td width="33%">2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h4 class="f_16 fw_b m10">错误明细列表</h4>
+                <div class="tablemain">
+                    <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+                        <thead>
+                            <tr>
+                                <th width="33%">序号</th>
+                                <th width="33%">用户名</th>
+                                <th width="33%">错误信息</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="33%">1</td>
+                                <td width="33%">周波</td>
+                                <td width="33%">用户名重复</td>
+                            </tr>
+                            <tr>
+                                <td width="33%">2</td>
+                                <td width="33%">王庆</td>
+                                <td width="33%">邮箱格式错误</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="button"  class="surebtn mr5 stepbtn" value="继续导入">
+                    <input type="button" class="closebtn mr5 stepbtn" value="返回">  
+                </div>
+            </div>
+        </div>
+        </div>
+<!--批量导入 end-->  
+</div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+<!--机构选择-->
+<div id="changeOrg_choose" class="popstyle popstyle_small">
+    <h3>机构选择<a href="javascript:void(0)" class="close1">close</a></h3>
+    <div class="popmain">
+    	<div style="height:auto"> 
+            <ul>
+            	<li><div class="treebtn"></div><span> 湖北中艺电子有限公司</span>
+                	<ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华南区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80"><div class="treebtn"></div><span> 广东分公司</span>
+                                	<ul class="m10">
+                                    	<li class="m10 cp"><span> 销售部</span>
+                                        <li class="m10 cp"><span> 财务部</span>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华东区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80"><div class="treebtn"></div><span> 上海分公司</span>
+                                	<ul class="m10">
+                                    	<li class="m10 cp"><span> 销售部</span>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="取消">
+    </div>
+</div>
+
+
+<div id="tg_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>用户添加成功。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		$(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:确认*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tg_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tg_pop").css("height")))/2+"px");
+	$("#tg_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tg_pop").css("width")))/2+"px");
+});
+$("#tg_pop #close_tg,#tg_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	
+});	
+$("#tg_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+});	
+
+
+
+/*弹出框:机构选择*/
+$("#change_org_choose,#change_org_choose1,#org_choose").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#changeOrg_choose").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#changeOrg_choose").css("height")))/2+"px");
+	$("#changeOrg_choose").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#changeOrg_choose").css("width")))/2+"px");
+});
+$("#changeOrg_choose .close1,#changeOrg_choose .closebtn1").on('click', function () {
+	$(".mask").hide();
+	$("#changeOrg_choose").hide();
+});	
+$("#changeOrg_choose .surebtn1").on('click', function () {
+	$(".org").val("总部-华南区-广东分公司");
+	$(".mask").hide();
+	$("#changeOrg_choose").hide();
+});	
+$("#changeOrg_choose").on("click","span",function(){
+	var treenodes=$('#changeOrg_choose span');
+	for(var n=0;n<treenodes.length;n++){
+	treenodes[n].className="";	
+	this.className="bgcolor";
+	}	
+	
+})
+
+/*箭头效果*/
+$('#change1').mouseover(function(){
+	$('#em1').show();});
+$('#change1').mouseout(function(){
+	$('#em1').hide();});
+
+/*单个,批量切换
+var tabbox	=document.getElementsByClassName("tabbox")[0];
+var tUl= tabbox.getElementsByTagName("ul")[0];
+var tLi = tUl.getElementsByTagName("li");
+var lis	=document.getElementsByClassName("lis");
+for(var i=0;i<tLi.length;i++){
+	tLi[i].index=i;
+	tLi[i].onmouseover=function(){
+	for(var j=0;j<lis.length;j++){
+		tLi[j].className="";
+		lis[j].className="tablemain hide lis";
+		}
+	this.className="cur";
+    lis[this.index].className="tablemain lis";
+	updateRowBgColor();
+	}
+};*/
+/*单个，批量切换*/
+var tabbox	=document.getElementsByClassName("tabbox")[0];
+var tUl= tabbox.getElementsByTagName("ul")[0];
+var tLi = tUl.getElementsByTagName("li");
+var divs	=document.getElementsByClassName("divs");
+for(var i=0;i<tLi.length;i++){
+	tLi[i].index=i;
+	tLi[i].onclick=function(){
+	updateRowBgColor();
+	for(var j=0;j<divs.length;j++){
+		tLi[j].className="";
+		divs[j].className="hide divs";
+		}
+	this.className="cur";
+    divs[this.index].className="divs";
+	}
+};
+$(".formmain_tip").hover(
+	function(){$(this).next().fadeIn(1500).stop(true,true);},
+	function(){$(this).next().fadeOut(1500);}
+);
+
+/*获取并输出文件名*/
+$(".inputfile").change(function(){
+	var val = $(this).val();
+	$("#docname").val(val);
+})
+
+/*批量添加步骤切换*/
+var step=document.getElementsByClassName("step")[0];
+var sspan=step.getElementsByTagName("span");
+var stepdiv=document.getElementsByClassName("stepdiv");
+var stepbtn=document.getElementsByClassName("stepbtn");
+
+for(var p=0;p<stepbtn.length;p++){
+	stepbtn[p].index=p;
+	stepbtn[p].onclick=function(){
+		for(var q=0;q<stepdiv.length;q++){
+			sspan[q].className="";
+			stepdiv[q].className="stepdiv hide";
+		}
+		if(this.index==0){
+		sspan[1].className="blue";
+		stepdiv[1].className="stepdiv";
+		}
+		if(this.index==1){
+		sspan[0].className="blue";
+		stepdiv[0].className="stepdiv";	
+		}
+		if(this.index==2){
+		sspan[2].className="blue";
+		stepdiv[2].className="stepdiv";	
+		}
+		if(this.index==3){
+		sspan[1].className="blue";
+		stepdiv[1].className="stepdiv";
+		}
+		if(this.index==4){
+		location.href="系统管理-企业信息-机构人员.html";
+		}
+		updateRowBgColor();
+	}
+}
+		
+</script>
+</html>

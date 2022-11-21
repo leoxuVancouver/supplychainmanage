@@ -1,0 +1,325 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+#changeOrg_choose ul li span {  padding: 2px 5px; display:inline-block;}
+#changeOrg_choose ul li span:hover{ background:#0066b3; color:#FFF;}
+.treebtn{ display:inline-block; width:31px; height:16px; background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.closing{ background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.err { background: #FFF8E4 url(images/error.png) no-repeat 5px center; border: 1px solid #FFCE81; padding: 2px 6px 2px 26px; color: #666666; }
+.bgcolor{ background:#0066b3; color:#FFF;}
+.cp{ cursor:pointer;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购</span> > <span>供应商管理</span> > <span class="comtitle_cur">我的供应商</span>
+        <strong>供应商添加并绑定成功后您将可与该供应商实现交易信息在线协同。</strong>
+    </div>
+    <h3 class="tabname">编辑供应商</h3>
+    <h3 class="formname">供应商基本信息</h3>
+    <div class="formmain mb20">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th><em class="redico">*</em>供应商用户名：</th>
+                    <td class="p_r">
+                    	<input type="text" class="inputstyle w320" value="gd***qq" disabled>
+                        <span class="formmain_tip"></span>
+                    	<span class="formmain_tipcon"><span>供应商的善付通用户名，填写后将不可修改。</span></span>
+                    </td>
+                </tr>
+               <tr>
+                    <th><em class="redico">*</em>供应商名称：</th>
+                    <td class="p_r">
+						<input type="text" id="showalertvalue" class="inputstyle w320" disabled value="广东琪琪电子商务有限公司" placeholder="点击“检测”后系统自动读出" title="点击“检测”后系统自动读出">
+                        <span class="formmain_tip"></span>
+                        <span class="formmain_tipcon"><span>不可修改。</span></span>
+					</td>
+                </tr>
+                <tr>
+                    <th>供应商代码：</th>
+					<td class="p_r">
+						<input type="text" class="inputstyle w320" disabled value="qq001" placeholder="此供应商在本公司ERP中的代码" title="此供应商在本公司ERP中的代码">
+                        <span class="formmain_tip"></span>
+                        <span class="formmain_tipcon"><span>供应商在本公司ERP中设定的唯一识别代码，若不一致则无法与本公司ERP中的订单关联；填写后将不可修改。</span></span>
+					</td>
+                </tr>
+                <tr>
+                    <th>所属机构：</th>
+                    <td class="p_r">
+                    	<input type="text" disabled class="inputstyle w320" value="" readonly placeholder="点击选择本公司负责维护该供应商的机构" title="点击选择本公司负责维护该供应商的机构">
+                        <span class="formmain_tip"></span>
+                        <span class="formmain_tipcon"><span>设置组织机构后，仅该机构及具备该数据可见权限的操作员才能对该供应商进行编辑、建立订单等操作。</span></span>
+                        <img src="images/input_select.png" class="p_a_select3" id="sel_shoper">  
+                    </td>
+                </tr>
+                <tr>
+                    <th>采购业务员：</th>
+                    <td class="p_r">
+                    	<select class="selectstyle w320" style="margin:0 3px 0 0">
+                        	<option>李彦斌</option>
+                            <option>李思琳</option>
+                        </select>
+                        <span class="formmain_tip"></span>
+						<span class="formmain_tipcon"><span>设置业务员后，仅该业务员及具备该数据可见权限的操作员才能对该供应商进行建立订单操作。</span></span>
+                    </td>
+                </tr>	
+            </tbody>
+    	</table>
+    </div>
+    <h3 class="formname">期初余额信息</h3>
+    <div class="formmain mb20">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th>余额日期：</th>
+                    <td class="p_r">
+                    	<input class="addWdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text" value="2015-12-15" disabled placeholder="点击日历选择" title="点击日历选择">
+                        <span class="formmain_tip"></span>
+                        <span class="formmain_tipconA"><span>余额日期、余额类型、期初应付/预付余额，提交后不可修改。</span></span>
+                    </td>
+                </tr>
+                <tr>
+                	<th>期初余额类型：</th>
+                	<td class="p_r">
+							<label><input type="radio" name="radioname" value=""checked="checked" disabled />应付余额</label>
+                            <label>&nbsp;&nbsp;&nbsp;</label>
+							<label><input type="radio" name="radioname" value="" disabled/>预付余额</label>
+					</td>
+                </tr>
+                <tr>
+                    <th>期初余额(元)：</th>
+                    <td class="p_r">
+                    	<input type="text" class="inputstyle w320" disabled value="50,000.00" placeholder="应付或预付的余额" title="应付或预付的余额">
+                    </td>
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
+    <h3 class="formname p_r">联系人信息
+    	<span class="formmain_tip"></span>
+        <span class="formmain_tipcon l120"><span>记录供应商的联系人信息，方便采购业务员联系。</span></span>
+    </h3>
+    <div class="tablemain mb20">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+					<th width="60">序号</th>
+                	<th width="140">姓名</th>
+                    <th>手机号码</th>
+                    <th>固定电话</th>
+                    <th>QQ号码</th>
+                    <th>联系地址：</th>
+                    <th>是否首要联系人</th>
+            	</tr>
+        	</thead>
+            <tbody>
+            	<tr>
+					<td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                	<td><input type="text" value="张慧欣" class="inputstyle"></td>
+                	<td><input type="text" value="138 8283 3833" class="inputstyle"></td>
+                	<td><input type="text" value="020-85495078" class="inputstyle"></td>
+                	<td><input type="text" value="14100916" class="inputstyle"></td>
+                	<td><input type="text" value="湖北省武汉市汉阳区彭家岭366号万通工业园18号楼" class="inputstyle" style="width:320px"></td>
+                	<td><label>&nbsp;&nbsp;&nbsp;<input name="firstLinkman" type="radio" value="" checked>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+                </tr>
+                <tr>
+                    <td><img src="images/input_add.png" id="addRow" alt="addRow"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+					<td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 class="formname">备注信息</h3>
+    <div class="formmain mt10 mb20">
+    	<textarea name="deaRemark" rows="3" class="inputstyle" placeholder="最多可输入200个字符" style="width:100%; height:auto"></textarea>
+        <span id="remarkcount">最多可输入 200 字符<span>
+    </div>
+    <div align="right">
+    	<input type="button" value="保 存" class="surebtn" id="tj">
+        <input type="button" value="返 回" class="closebtn" onClick="javascript:history.go(-1)">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+<!--提交成功-->
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>资料编辑成功！</h4>
+        <p>供应商资料已经成功保存。</p>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr10" id="btntj" value="确定">
+    </div>
+</div>
+
+<!--机构选择-->
+<div id="changeOrg_choose" class="popstyle popstyle_small">
+    <h3>机构选择<a href="javascript:void(0)" class="close1">close</a></h3>
+    <div class="popmain">
+    	<div style="height:auto"> 
+            <ul class="ml20">
+            	<li><div class="treebtn"></div><span> 湖北中艺电子有限公司</span>
+                	<ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华南区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml50 cp"><span> 广东分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华东区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml50 cp"><span> 上海分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="取消">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+//备注长度不能超过200
+$("textarea[name=deaRemark]").on('keyup',function(){
+	var text = $(this).val();
+	if( text.length < 200 ) {
+		$("#remarkcount").html(text.length + "/200 字符");
+	} else {
+		$("#remarkcount").html( "<font color='red'>" + text.length + "/200 字符</font>");
+	}
+});
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*显示提示内容*/
+$(".formmain_tip").hover(
+	function(){$(this).next().fadeIn(1500).stop(true,true);},
+	function(){$(this).next().fadeOut(1500);}
+);
+
+/*弹出框:修改机构_机构选择*/
+$("#sel_shoper").click(function () {
+	//弹框绝对居中（position:fixed）
+	$("#changeOrg_choose").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#changeOrg_choose").css("height")))/2+"px");
+	$("#changeOrg_choose").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#changeOrg_choose").css("width")))/2+"px");
+});
+$("#changeOrg_choose .close1,#changeOrg_choose .closebtn1").on('click', function () {
+	$("#changeOrg_choose").hide();
+});	
+$("#changeOrg_choose .surebtn1").on('click', function () {
+	$("#changeOrg_choose").hide();
+	$("#sel_shoper").siblings(".inputstyle").val("华南区-广东分公司")
+});	
+$("#changeOrg_choose").on("click","span",function(){
+	var treenodes=$('#changeOrg_choose span');
+	for(var n=0;n<treenodes.length;n++){
+	treenodes[n].className="";	
+	this.className="bgcolor";
+	}	
+	
+})
+
+
+
+/*增加一行*/
+$('#addRow').on('click', function () {
+	var $tbody = $('.madetable tbody');
+	var $addRow_tr = $("#addRow").parent().parent();
+	$addRow_tr.before('<tr>' +
+		'<td class="p_r">' + '<span>'+($tbody.find('tr').length) +'</span>'+'<img src="images/ico_sc.gif" class="sc" title="删除" />'+'</td>' +
+        '<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle"></td>' +
+		'<td><input type="text" value="" class="inputstyle" style="width:320px"></td>' +
+		'<td><input name="" type="checkbox" value=""></td>' +
+	'</tr>');
+   // refreshRowBgColor();
+	updateRowBgColor();
+});	
+$(document).on('click','.sc',function(){
+    var tbody = $(this).parents('tbody')
+    $(this).parents('tr').remove();
+    updateRowBgColor();
+    tbody.find('tr').each(function(i){
+        $(this).find('td:eq(0)').find('span').html(i+1);
+    })
+})
+
+
+//
+$("#tj").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	$("#close_tj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btntj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		location.href= '采购-供应商列表.html';
+	});	
+});
+</script>
+</html>

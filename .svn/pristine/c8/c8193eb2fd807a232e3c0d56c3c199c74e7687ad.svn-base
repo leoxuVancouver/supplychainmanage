@@ -1,0 +1,214 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">善付通</a> > <a href="javascript:void(0)">销售</a> > <a href="javascript:void(0)">订单模板</a></div>
+	<div class="quick_titile">
+        <span class="purico">订单模板</span>
+        <a href="javascript:void(0)" class="addpage">新增模板</a>
+    </div>
+    <div class="topsearch">
+    	<p>
+            <label class="label_4">模板名称：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label class="label_4">客户名称：</label>
+            <input type="text" class="inputstyle" value="" style="margin-right:0" />
+            <input type="button" class="btn_search" value="搜索" />
+        </p>
+    </div>
+    
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th>模板名称</th>
+                    <th>客户名称</th>
+                    <th>创建日期</th>
+                    <th width="160">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">办公类用品订单模板</a></td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>2014-06-09 09:00:00</td>
+                    <td>
+                    	<a href="销售-订单模板-修改.html" class="inputbtn">修改</a>
+                    	<a href="javascript:void(0)" class="inputbtn delbtn">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">海尔集团专用订单模板</a></td>
+                    <td>海尔集团电子商务有限公司</td>
+                    <td>2014-06-08 12:30:00</td>
+                    <td>
+                    	<a href="javascript:void(0)" class="inputbtn">修改</a>
+                    	<a href="javascript:void(0)" class="inputbtn delbtn">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">电器类专用订单模板</a></td>
+                    <td>湖北光大电子商务有限公司</td>
+                    <td>2014-06-08 12:30:00</td>
+                    <td>
+                    	<a href="javascript:void(0)" class="inputbtn">修改</a>
+                    	<a href="javascript:void(0)" class="inputbtn delbtn">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <a id="prev" href="" class="nor">上一页</a>
+            <span>1</span>
+            <a id="next" href="" class="nor">下一页</a>
+            <em>共1页</em>
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+<!--查看订单日志-->
+<div id="data_pop" class="popstyle" style="display:none">
+    <h3>订单日志<a href="javascript:void(0)" id="close_data">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="80">操作时间</th>
+                    <th width="240">操作企业</th>
+                    <th width="80">操作人</th>
+                    <th width="80">操作项</th>
+                    <th>操作内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015-05-25<br />12:23:45</td>
+                    <td>深圳市南山区丁冰家用电器店</td>
+                    <td>王红艳</td>
+                    <td>收货</td>
+                    <td>商品收货，卡萨帝冰箱 BCD-356W</td>
+                </tr>
+                <tr>
+                    <td>2015-05-22<br />12:23:45</td>
+                    <td>海尔集团电子商务有限公司</td>
+                    <td>张燕妮</td>
+                    <td>发货</td>
+                    <td>商品发货，SAMSUNG三星节能四季柜式电冰箱 SS4J-24023C</td>
+                </tr>
+                <tr>
+                    <td>2015-05-21<br />12:23:45</td>
+                    <td>广西桂林韵达数码电器有限公司</td>
+                    <td>李晓斌</td>
+                    <td>付款</td>
+                    <td>收款账户：62270 01291 08248 2737，企业名称：湖北中亿电子有限公司-分公司1，本次支付金额：4,000.00</td>
+                </tr>
+                <tr>
+                    <td>2015-05-20<br />12:23:45</td>
+                    <td>珠海市金正电器有限公司</td>
+                    <td>王红艳</td>
+                    <td>建立订单</td>
+                    <td>建立订单，订单号：DBX281892421</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="###" class="nor">上一页</a>
+        <span>1</span>
+        <a id="next" href="###" class="nor">下一页</a>
+        <em>共1页</em>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndata1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btndata2"  value="关闭">
+    </div>
+</div>
+
+
+
+
+<!--取消订单-->
+<div id="del_pop" class="popstyle" style="display:none; min-height:inherit; top:30%">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="toptips" style="margin-bottom:0">
+    	<div class="whytext">
+        	<p class="suc_t">您确定要删除该模板？</p>
+            <p class="f_gray mt5 f_red">提示：如果确认要删除，需要输入删除原因，模板删除不能恢复。</p>
+        </div>
+    </div>
+    <div class="addbz">
+        <p><em class="redico">*</em><label>删除原因：</label><span><textarea cols="80" rows="5" style="width:660px;"></textarea></span></p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndel1" value="确定">
+        <input type="button" class="closebtn mr10" id="btndel2" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+
+//取消订单
+$(".delbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	$("#del_pop").show();
+	$("#close_del,#btndel2").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		
+	});	
+	$("#btndel1").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		_this.parents('tr').remove();
+		updateRowBgColor();
+	});	
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+</html>

@@ -1,0 +1,201 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style/user-setting.css" type="text/css" />
+<style>
+#CalcTable{ 
+	border: 1px solid rgb(181, 173, 241);
+}
+#CalcTable tbody>tr>td {
+	cursor: default; background-color: rgb(181, 173, 241);
+}
+.tablestyle1{ width:(100%-2)px; border:1px solid #f1f3f7; margin-top:20px;}
+
+.modify-div th { width:200px; text-align:right; font-weight:700;}
+.modify-div .inputstyle { border-color:#0066b3;}
+</style>
+</head>
+
+<body>
+<div id="softkeyboard" name="softkeyboard" align="center">
+<table id="CalcTable" cellpadding="0" cellspacing="0" align="center" bgcolor="" border="0" width="">
+	<form id="Calc" name="Calc" action="" method="post" autocomplete="off"></form>
+    <tbody>
+    	<tr>
+            <td class="table_title" title="尊敬的客户：为了保证网上交易安全,建议使用密码输入器输入密码!">
+            <input value="" name="password" type="hidden"><input value="ok" name="action2" type="hidden">&nbsp;<font style="font-weight:bold; font-size:13px; color:#075BC3">中国建设银行&nbsp;&nbsp;密码输入器</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="useKey" class="btn_letter1" style="width:115px" value="使用键盘输入" bgtype="1" onclick="OverInput();" onkeyup="if(event.keyCode==13){password1.readOnly=0;password1.focus();closekeyboard();password1.value='';setShowKeyBoard(false);}" type="button"><span style="width:2px;"></span>
+            </td>
+        </tr>
+        <tr align="center"><td align="center" bgcolor="#FFFFFF">
+        	<table id="bs_style" cellpadding="0" cellspacing="1" align="center" border="0" style="width:451px; overflow:hidden;">      
+				<tbody>
+                	<tr align="left" valign="middle"> 
+                        <td><input class="btn_letter" value=" ~ " type="button"></td>
+                        <td><input class="btn_letter" value=" ! " type="button"></td>
+                        <td><input class="btn_letter" value=" @ " type="button"></td>
+                        <td><input class="btn_letter" value=" # " type="button"></td>
+                        <td><input class="btn_letter" value=" $ " type="button"></td>
+                        <td><input class="btn_letter" value=" % " type="button"></td>
+                        <td><input class="btn_letter" value=" ^ " type="button"></td>
+                        <td><input class="btn_letter" value=" &amp; " type="button"></td>
+                        <td><input class="btn_letter" value=" * " type="button"></td>
+                        <td><input class="btn_letter" value=" ( " type="button"></td>
+                        <td><input class="btn_letter" value=" ) " type="button"></td>
+                        <td><input class="btn_letter" value=" _ " type="button"></td>
+                        <td><input class="btn_letter" value=" + " type="button"></td>
+                        <td><input class="btn_letter" value=" | " type="button"></td>
+                        <td colspan="1" rowspan="2"><input class="btn_letter1" name="button10" value=" 退格" onmouseup="setpassvalue();" style="width:100px;height:40px" type="button"> 
+                        </td>
+                    </tr>
+					<tr align="left" valign="middle"> 
+                        <td><input class="btn_letter" value=" ` " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number1" value=" 1 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number2" value=" 2 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number3" value=" 3 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number4" value=" 4 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number5" value=" 5 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number6" value=" 6 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number7" value=" 7 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number8" value=" 8 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number9" value=" 9 " type="button"></td>
+                        <td><input class="btn_letter" bgtype="2" name="button_number0" value=" 0 " type="button"></td>
+                        <td><input class="btn_letter" value=" - " type="button"></td>
+                        <td><input class="btn_letter" value=" = " type="button"></td>
+                        <td><input class="btn_letter" value=" \ " type="button"></td>
+                        <td></td>
+					</tr>
+					<tr align="left" valign="middle"> 
+                        <td><input class="btn_letter" value=" q " type="button"></td>
+                        <td><input class="btn_letter" value=" w " type="button"></td>
+                        <td><input class="btn_letter" value=" e " type="button"></td>
+                        <td><input class="btn_letter" value=" r " type="button"></td>
+                        <td><input class="btn_letter" value=" t " type="button"></td>
+                        <td><input class="btn_letter" value=" y " type="button"></td>
+                        <td><input class="btn_letter" value=" u " type="button"></td>
+                        <td><input class="btn_letter" value=" i " type="button"></td>
+                        <td><input class="btn_letter" value=" o " type="button"></td>
+                        <td><input class="btn_letter" name="button8" value=" p " type="button"></td>
+                        <td><input class="btn_letter" name="button9" value=" { " type="button"></td>
+                        <td><input class="btn_letter" value=" } " type="button"></td>
+                        <td><input class="btn_letter" value=" [ " type="button"></td>
+                        <td><input class="btn_letter" value=" ] " type="button"></td>
+                        <td><input class="btn_letter1" id="bs" name="button9" value="切换大/小写" style="width:100px;" type="button"></td>
+					</tr>
+					<tr align="left" valign="middle"> 
+                        <td><input class="btn_letter" value=" a " type="button"></td>
+                        <td><input class="btn_letter" value=" s " type="button"></td>
+                        <td><input class="btn_letter" value=" d " type="button"></td>
+                        <td><input class="btn_letter" value=" f " type="button"></td>
+                        <td><input class="btn_letter" value=" g " type="button"></td>
+                        <td><input class="btn_letter" value=" h " type="button"></td>
+                        <td><input class="btn_letter" value=" j " type="button"></td>
+                        <td><input class="btn_letter" name="button3" value=" k " type="button"></td>
+                        <td><input class="btn_letter" name="button4" value=" l " type="button"></td>
+                        <td><input class="btn_letter" name="button5" value=" : " type="button"></td>
+                        <td><input class="btn_letter" name="button7" value=" &quot; " type="button"></td>
+                        <td><input class="btn_letter" value=" ; " type="button"></td>
+                        <td><input class="btn_letter" value=" ' " type="button"></td>
+                        <td rowspan="2" colspan="2"> <input class="btn_letter1" name="button12" onclick="OverInput();" value="   确定  " style="width:126px;height:42px;" type="button"></td>
+					</tr>
+					<tr align="left" valign="middle"> 
+                        <td><input class="btn_letter" name="button2" value=" z " type="button"></td>
+                        <td><input class="btn_letter" value=" x " type="button"></td>
+                        <td><input class="btn_letter" value=" c " type="button"></td>
+                        <td><input class="btn_letter" value=" v " type="button"></td>
+                        <td><input class="btn_letter" value=" b " type="button"></td>
+                        <td><input class="btn_letter" value=" n " type="button"></td>
+                        <td><input class="btn_letter" value=" m " type="button"></td>
+                        <td><input class="btn_letter" value=" &lt; " type="button"></td>
+                        <td><input class="btn_letter" value=" &gt; " type="button"></td>
+                        <td><input class="btn_letter" value=" ? " type="button"></td>
+                        <td><input class="btn_letter" value=" , " type="button"></td>
+                        <td><input class="btn_letter" value=" . " type="button"></td>
+                        <td><input class="btn_letter" value=" / " type="button"></td>
+					</tr>
+				</tbody>
+            </table>
+       </td>
+   </tr>
+   </tbody>
+</table>
+</div>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>个人设置</span> > <span class="comtitle_cur">密码修改</span>
+    </div>
+    <h3 class="formname">密码修改</h3>
+    <div class="tablestyle">
+    	<div class="modify-div">
+            <table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+                <tbody>
+                    <tr>
+                        <th><span class="red">*</span>请输入原密码：</th>
+                        <td><input id="old_pwd" maxlength="16" type="password" class="inputstyle w320"></td>
+                        <td><div id="key1" class="softkeyboard" onclick="show_soft_keyboard(this);"></div></td>
+                        <td><span id="old_pwd_err" class="err" >请输入密码</span></td>
+                    </tr>
+                    <tr>
+                        <th><span class="red">*</span>请输入新密码：</th>
+                        <td><input id="new_pwd" maxlength="16" type="password" class="inputstyle w320" onkeyup="addBlur();" /></td>
+                        <td><div id="key2" class="softkeyboard" onclick="show_soft_keyboard(this);"></div></td>
+                        <td><span class="hint">请用英文字母（区分大小写）、数字、符号组成，<br />6-16个字符，请勿使用<a>简单密码</a></span></td>
+                    </tr>
+                    <tr>
+                        <th>密码强度：</th>
+                        <td colspan="3">
+                            <div class="safety-level">
+                                <ul>
+                                    <li id="low"></li>
+                                    <li id="auto"></li>
+                                    <li id="high"></li>
+                                </ul>
+                            </div>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th><span class="red">*</span>请再次输入新密码：</th>
+                        <td><input id="new_pwd1" maxlength="16" type="password" class="inputstyle w320" /></td>
+                        <td><div id="key3" class="softkeyboard" onclick="show_soft_keyboard(this);"></div></td>
+                        <td><span id="new_pwd1_err" class="err" >请输入密码</span></td>
+                    </tr>
+                    <tr>
+                    	<th></th>
+                        <td><input type="button" id="submit_btn" class="surebtn" onclick="modify_pwd_action();" value="提交" ></td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+      
+        <div id="modify_success">
+            <div class="prompt"> 
+                  <div class="prompt_img"></div>
+                       <span class="prompt">修改成功！</span>
+                 </div>
+                 <!--<div class="prompt_btn">
+                <input type="button" id="back_btn" style="width:140px;" class="surebtn" value="修改账户信息" onclick="javascript:window.location.href='系统管理-个人信息-个人账户信息.html'" value="返回我的账户信息" >
+                </div>-->
+            </div> 
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script src="js/user-setting.js"></script>
+<script>
+
+$(function(){
+		$("#order_query").html(tmpl("tmpl-demo", $.buyOrder));	
+	})
+
+</script>
+</html>

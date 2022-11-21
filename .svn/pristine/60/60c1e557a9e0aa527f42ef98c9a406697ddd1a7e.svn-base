@@ -1,0 +1,323 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.btnn{position:relative;left:410px; background-color:#0066b3; color:#fff; border-color:gray;}
+.cz{ text-align:center;}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售管理</span> > <span>客户</span> > <span class="comtitle_cur">销售政策</span>
+    </div>
+    <h3 class="tabname">销售政策</h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+            <label class="radio checked">
+                <input type="radio" name="zc" class="button1" checked="checked" />
+                <span>按客户查看</span>             
+            </label>
+             <label class="radio">
+                <input type="radio" class="button2" name="zc" />
+                <span>按商品查看</span>             
+            </label>
+            <input type="text" class="inputstyle" value="">
+            <input type="button" class="btn_search" value="搜索"> 
+            
+            <a href="销售-新增销售政策.html"><input type="button" class="surebtn1 btnn" value="新增" /></a>            
+            <a href="销售-修改销售政策.html"><input type="button" class="surebtn1 btnn" value="修改" /></a>           
+            <input type="button" class="surebtn1 btnn sc" value="删除" /> 
+     
+        </div>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+            <div class="clear_both"></div>
+            <table border="0" cellpadding="0" cellspacing="0" class="tablestyle kh_tableqh cz" id="kh_tableqh" style="width:400px;float:left;">
+       	<thead>
+            	<tr>
+                	<th>客户代码</th>
+                    <th>客户名称</th>
+                </tr>
+            </thead>
+            <tbody  id="test1">
+            	<tr>
+                	<td>gzhy</td>
+                    <td>广州恒远公司</td>
+                </tr>
+                <tr>
+                	<td>szlm</td>
+                    <td>深圳龙马科技</td>
+                </tr>
+                <tr>
+                	<td>cdms</td>
+                    <td>成都成华茂盛有限公司</td>
+                </tr>
+            	<tr>
+                	<td>fszy</td>
+                    <td>佛山市卓越有限公司</td>
+                </tr>
+                <tr>
+                	<td>fslh</td>
+                    <td>佛山市力豪有限公司</td>
+                </tr>
+            </tbody>
+        </table>
+        <style type="text/css">
+            .tablestyle tr td:nth-child(3){ text-align: right;}
+        </style>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle sp_tableqh cz" id="sp_tableqh" style="width:732px;float:right;" >
+        	<thead>
+            	<tr>
+                	<th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>销售价（元）</th>
+                    <th>结算方式</th>
+                    <th>账期起算日</th>
+                    <th>账期（天）</th>
+                </tr>
+            </thead>
+            <tbody id ="test2">
+            	<tr>
+                	<td>5463456453</td>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>2,488.00</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                </tr>
+            	<tr>
+                	<td>544343</td>
+                    <td>三星（SAMSUNG）Galaxy S3 I9308 3G手机 (云石白) TD-SCDMA/GSM</td>
+                    <td>2,796.00</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>              
+                </tr>
+            	<tr>
+                	<td>465463543</td>
+                    <td>华为 荣耀3 outdoor 3G手机（白色）WCDMA/GSM</td>
+                    <td>1,888.00</td>
+                    <td>先货后款</td>
+					<td>发货日</td>
+                    <td>30</td>
+                </tr>
+            	<tr>
+                	<td>778227</td>
+                    <td>诺基亚（NOKIA）Lumia 920T 3G手机（黄色）TD-SCDMA/GSM</td>
+                    <td>2,599.00</td>
+                     <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+            	<tr>
+                	<td>517592</td>
+                    <td>诺基亚（NOKIA）1010 GSM手机（黑色）双卡双待</td>
+                    <td>219.00</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="clear_both"></div>
+   <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="data_pop" class="popstyle">
+    <h3>查看流水<a href="javascript:void(0)" id="close_data">close</a></h3>
+    <div class="popt">
+    	<span class="f_l"><strong>湖北百歌电子商务有限公司</strong></span>
+        <span class="f_r">可用额度：<strong class="f_red">9,000.00</strong> 元</span>
+    </div>
+    <div class="tablemain popmain">
+    	<div class="topsearch">
+            <label>业务日期：</label>
+            <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <input type="button" class="btn_search" value="搜索">
+        </div>
+        <table class="tablestyle" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>业务单号</th>			
+                    <th>业务日期</th>			
+                    <th>业务类型</th>
+                    <th>发生额度（元）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-17</td>
+                    <td>订单付款</td>
+                    <td>500.00</td>
+                </tr>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-15</td>
+                    <td>额度调整</td>
+                    <td><strong>-200.00</strong></td>
+                </tr>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-13</td>
+                    <td>还款</td>
+                    <td>500.00</td>
+                </tr>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-10</td>
+                    <td>额度调整</td>
+                    <td><strong>-200.00</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev2" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a id="next2" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage2" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <!--<input type="button" class="surebtn mr5" id="btndata1" value="确定">-->
+        <input type="button" class="closebtn mr10" id="btndata2" value="关闭">
+    </div>
+</div>
+<!--删除弹窗-->
+<div id="chehui_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_chehui">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu.png" alt="success">
+        <h4>是否删除销售政策?</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnchehui1" value="确定" onClick="deleteRow()">
+        <input type="button" class="closebtn mr10" id="btnchehui2" value="关闭">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+//查看流水
+$(".databtn").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#data_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#data_pop").css("height")))/2+"px");
+	$("#data_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#data_pop").css("width")))/2+"px");
+});
+$("#close_data,#btndata2").on('click', function () {
+	$(".mask").hide();
+	$("#data_pop").hide();
+	
+});	
+updateRowBgColor();
+$("#btndata1").on('click', function () {
+	$(".mask").hide();
+	$("#data_pop").hide();
+});	
+
+//销售政策列表按条件筛选
+function xszc(){
+   $(".radio").on("click",function(){
+	  $(this).addClass("checked").siblings(".radio").removeClass("checked") 
+	      
+   });
+}
+$('.button1').click(function(){
+		$('.sp_tableqh').css('float','right');
+		$('.kh_tableqh').css('float','left');
+})
+$('.button2').click(function(){
+		$('.sp_tableqh').css('float','left');
+		$('.kh_tableqh').css('float','right');
+})
+//结算方式
+function a1(obj){
+  if($(obj).val()=="先款后货"){
+  	   $(obj).parent().next().children(".zqqsr").attr("disabled",true);  
+  	   $(obj).parent().next().next().children(".zc:text").attr("disabled",true);  
+  }else{
+  	   $(obj).parent().next().children(".zqqsr").attr("disabled",false);  
+  	   $(obj).parent().next().next().children(".zc:text").attr("disabled",false);  
+  }
+}
+
+/*删除弹窗*/
+$(".sc").bind('click', function () {
+	var _this = $(this);
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#chehui_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#chehui_pop").css("height")))/2+"px");
+	$("#chehui_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#chehui_pop").css("width")))/2+"px");
+
+	$("#close_chehui,#btnchehui1,#btnchehui2").bind('click', function () {
+		$(".mask").hide();
+		$("#chehui_pop").hide();
+
+	});	
+});
+//按客户名称删除销售政策
+$('#test1 tr').mouseover(function(){
+	$(this).css('background','#F2F7FC');
+	$('#test1 tr').mouseout(function(){
+		$(this).css('background','none');
+	});
+	$('#test1 tr').on('click',function(){
+		$('#test1 tr').css('background','none');
+		$('#test1 tr').unbind('mouseout');
+		$(this).css('background','#F2F7FC');
+		t = this;
+	});
+});
+var t;
+var deleteRow = function(){
+		var tdSeq = $('#test1').find("tr").index($(t)[0]);
+		if(t){
+			$('#test1').find("tr").eq(tdSeq).remove();  
+		    $('#test2').find("tr").eq(tdSeq).remove();  
+	    }
+}
+</script>
+</html>

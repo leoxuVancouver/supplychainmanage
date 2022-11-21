@@ -1,0 +1,135 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">善付通</a> > <a href="javascript:void(0)">采购</a> > <a href="javascript:void(0)">订单付款</a></div>
+    <!--<div class="quick_titile">
+        <span class="purico">订单付款</span>
+    </div>-->
+    <div class="paybox">
+    	<div class="payleft">
+        	<div class="paytitle">订单详情</div>
+        	<div class="payxq">
+            	<ul>
+                	<li><span class="lefttext">订单编号：</span><span class="rightxq"><strong>2015012406411098</strong></span></li>
+                	<li><span class="lefttext">供应商名称：</span><span class="rightxq">湖北百歌电子商务有限公司</span></li>
+                	<li><span class="lefttext">收货公司：</span><span class="rightxq">湖北中亿电子有限公司</span></li>
+                	<li><span class="lefttext">收货人：</span><span class="rightxq">张丽娜</span></li>
+                	<li><span class="lefttext">收货地址：</span><span class="rightxq">广东广州市越秀区越秀区东风中路515号东照大厦33楼</span></li>
+                	<li><span class="lefttext">手机号码：</span><span class="rightxq">135 **** 8989</span></li>
+                	<li><span class="lefttext">备注：</span><span class="rightxq">-</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="payright">
+        	<div class="ztline">支付状态：<span class="mr20 f_red">部分付款</span> 发货状态：<span class="f_red">部分发货</span></div>
+        	<ul>
+                <li><label>应付金额：</label><em>120,000.00</em> 元</li>
+                <li><label>已付金额：</label><em>90,000.00</em> 元</li>
+                <li><label>付款中：</label><em>90,000.00</em> 元 <b>温馨提示：订单付款后，未返回支付结果的金额</b></li>
+                <li><label><em class="redico" style="font-size:16px;">*</em>商业信用支付：</label><input type="text" class="inputstyle" value="" style="margin-right:0">元</li>
+                <li><label><em class="redico" style="font-size:16px;">*</em>本次支付：</label><input type="text" class="inputstyle" value="" style="margin-right:0">元</li>
+                <li><label class="f_l">附言：</label><textarea rows="3" class="inputstyle mt10" style="width:300px; height:auto"></textarea></li>
+                <li><input type="button" value="确认付款" class="surebtn" onclick="location.href= '财务-收银台.html'" style="margin-left:130px"><input type="button" value="返 回" class="closebtn ml10" onclick="javascript:history.go(-1)"></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tablemain mt30">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>单价（元）</th>
+                    <th>采购数量</th>
+                    <th>发货数量</th>
+                    <th>合计（元）</th>
+                </tr>
+             </thead>
+            <tbody>
+                <tr>
+                	<th colspan="7">
+                    	<label class="mr30">发货单号:<a href="###" class="blue">18440594</a></label>
+                        <label class="mr30">发货日期：2015-05-15</label>
+                        <label class="mr30">处理状态：已收货</label>
+                        <label>收货状态：2015-05-20</label>
+                    </th>
+                </tr>
+            	<tr class="trcol">
+                    <td>pd2014060907</td>
+                    <td>卡萨帝冰箱 BCD-356W</td>
+                    <td>BCD-220E3C</td> 
+                    <td>4,000.00</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>40,000.00</td>
+                </tr>
+                <tr>
+                	<th colspan="7">
+                    	<label class="mr30">发货单号:<a href="###" class="blue">18440578</a></label>
+                        <label class="mr30">发货日期：2015-05-20</label>
+                        <label class="mr30">处理状态：待收货</label>
+                        <label>收货状态：</label>
+                    </th>
+                </tr>
+                <tr class="trcol">
+                    <td>pd2215515658</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-24023C</td> 
+                    <td>6,000.00</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>30,000.00</td>
+                </tr>
+                <tr>
+                    <td>pd2014062322</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-22022E</td> 
+                    <td>5,000.00</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>50,000.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+</html>

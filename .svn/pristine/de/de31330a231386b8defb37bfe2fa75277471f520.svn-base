@@ -1,0 +1,558 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<link href="style/jquery.bigautocomplete.css" rel="stylesheet" type="text/css">
+<style>
+.treebtn{ display:inline-block; width:31px; height:16px; background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+#Org_pop ul li span:hover{ background:#1693f0; color:#FFF; padding:0 3px; display:inline-block;}
+.bgcolor{ background:#1693f0; color:#FFF; padding:0 3px; display:inline-block;}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购</span> > <span>订单管理</span> > <span class="comtitle_cur">我的订单</span>
+    </div>
+    <h3 class="tabname">订单列表<a href="采购-建立订单.html" class="add_dd">新增订单</a></h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+        	<label class="p_r">所属机构：
+                <input type="text" class="inputstyle w200" id="org_name" value="" />
+                <img src="images/input_select.png" class="p_a_select4" id="sel_org">
+            </label>
+            <label class="p_r">供应商名称：
+	            <input type="text" class="inputstyle w200" id="support_name" value="" />
+	            <img src="images/input_select.png" class="p_a_select4" id="sel_shoper">
+            </label>
+            <label>订单日期：</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <input type="button" class="btn_search" value="搜索" />
+            <span class="more_condition more_down">更多条件</span>
+            <div class="hideseach hide">
+                <label>订单号：</label>
+                <input type="text" class="inputstyle" value="" />
+                <label>支付状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>未支付</option>
+                    <option>部分支付</option>
+                    <option>全部支付</option>
+                    <option>已结清</option>
+                </select>
+                <label>订单状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>待复核</option>
+                    <option>待确认</option>
+                    <option>已确认</option>
+                    <option>已拒绝</option>
+                    <option>复核不通过</option>
+                    <option>已取消</option>
+                </select>
+                <label>发货状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>未发货</option>
+                    <option>部分发货</option>
+                    <option>全部发货</option>
+                    <option>已收清</option>
+                </select>
+            </div>
+        </div>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle" id="showtable1">
+        	<thead>
+            	<tr>
+                    <th width="156">订单号</th>
+                    <th width="180">供应商名称</th>
+                    <th width="140">订单日期</th>
+                    <th width="100">订单金额（元）</th>
+                    <th width="90" class="zt_text">订单状态</th>
+                    <th width="70">支付状态</th>
+                    <th width="70">发货状态</th>
+                    <th width="130" align="center">操作</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td><a href="采购-我的订单-订单详情.html" class="blue">20150817001</a>&nbsp;&nbsp;<img src="images/xhhk.png" title="账期：发货后30天" /></td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td>2015/8/17</td>
+                    <td align="right">24,880.00</td>
+                    <td class="zt_text">已确认</td>
+                    <td>已支付</td>
+                    <td>已收货</td>
+                    <td >
+                    	<div  align="center">
+	                    	<a href="采购-我的订单-订单详情.html" class="inputbtn">确认收清</a>
+	                        <a href="javascript:void(0)" class="inputbtn databtn">查看日志</a>
+                       </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20150817002</a><img src="images/xhhk.png" title="账期：发货后30天" /></td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td>2015/8/17</td>
+                    <td align="right">4,976.00</td>
+                    <td class="zt_text">已确认</td>
+                    <td>未支付</td>
+                    <td>已发货</td>
+                    <td align="center">
+                    	<a href="javascript:void(0)" class="inputbtn">确认收清</a>
+                    	<a href="javascript:void(0)" class="inputbtn databtn1">查看日志</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20150817004</a>&nbsp;&nbsp;</td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td>2015/8/17</td>
+                    <td align="right">52,840.00</td>
+                    <td>待确认</td>
+                    <td>未支付</td>
+                    <td>未发货</td>
+                    <td class="cancel_operate">
+                        <a href="javascript:void(0)" class="inputbtn">确认收清</a>
+                        <a href="javascript:void(0)" class="inputbtn databtn2">查看日志</a>
+						<a href="采购-建立订单-修改订单.html" class="inputbtn" >修改订单</a>
+						<a class="inputbtn" ></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20150817009</a><img src="images/xhhk.png" title="账期：发货后30天" /></td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>2015/8/17</td>
+                    <td align="right">25,880.00</td>
+                    <td>已确认</td>
+                    <td>已支付</td>
+                    <td>已发货</td>
+                    <td class="cancel_operate">
+                    	<a href="javascript:void(0)" class="inputbtn">确认收清</a>
+                        <a href="javascript:void(0)" class="inputbtn databtn3">查看日志</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20150718001</a><img src="images/xhhk.png" title="账期：发货后30天" /></td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td>2015/8/18</td>
+                    <td align="right">26,420.00</td>
+                    <td>已确认</td>
+                    <td>未支付</td>
+                    <td>已发货</td>
+                    <td>
+                        <a href="javascript:void(0)" class="inputbtn">确认收清</a>
+                        <a href="javascript:void(0)" class="inputbtn databtn4">查看日志</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        
+        <div class="page">
+            <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+            <a  id="page_1" class="btnpage">1</a>
+            <a  href="javascript:void(0)" class="btnpage nobg" >下一页</a>
+            <span>共1页</span>   
+            <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+            <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+        </div>
+        <div style="margin:10px 0 0 10px;">订单总数：5 待确认订单数：1</div>
+    <div style="margin:10px 0 10px 10px;color:red;">确认收清：确认该订单的商品已全部收到，确认收清后不能再进行收货操作。</div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+<div class="mask"></div>
+<!--查看订单日志-->
+<div id="data_pop" class="popstyle">
+    <h3>订单日志<a href="javascript:void(0)" id="close_data">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="120">操作时间</th>
+                    <th width="220">操作企业</th>
+                    <th width="80">操作人</th>
+                    <th width="80">操作项</th>
+                    <th>操作内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015-11-25 <br>11:58</td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td></td>
+                    <td>订单已完结</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2015-11-25<br />11:58</td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td></td>
+                    <td>收货并确认</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2015-11-25<br />10:58</td>
+                    <td>广州恒远公司</td>
+                    <td></td>
+                    <td>已发货</td>
+                    <td>发货单号: 1201673344041</td>
+                </tr>
+                <tr>
+                    <td>2015-11-25<br />12:23:45</td>
+                    <td>广州恒远公司</td>
+                    <td></td>
+                    <td>审核订单</td>
+                    <td>审核订单20150817001</td>
+                </tr>
+				<tr>
+                    <td>2015-11-25<br />09:58</td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td></td>
+                    <td>复核订单</td>
+                    <td>复核订单20150817001</td>
+                </tr>
+				<tr>
+                    <td>2015-11-25<br />09:58</td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td></td>
+                    <td>建立订单</td>
+                    <td>建立订单20150817001</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>3</a>
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndata1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btndata2"  value="关闭">
+    </div>
+</div>
+
+<!--选择所属机构-->
+<div id="org_pop" class="popstyle popstyle_small">
+    <h3>机构选择<a href="javascript:void(0)" class="close1">close</a></h3>
+    <div class="popmain">
+    	<div style="height: auto"> 
+            <ul>
+            	<li><div class="treebtn"></div><span> 湖北中艺电子有限公司</span>
+                	<ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华南区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80 cp"><span> 广东分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华东区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80 cp"><span> 上海分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="取消">
+    </div>
+</div>
+
+<!--选择供应商-->
+<div id="shoper_pop" class="popstyle">
+    <h3>供应商列表<a href="javascript:void(0)" id="close_shoper">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>供应商名称</th>
+                    <th>代码</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="radio" name="support_radio" checked="checked" class="f_l ml20" /><span>深圳市南山区丁冰家用电器店</span></td>
+                    <td>2014060905</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>深圳市生活汇贸易发展有限公司</span></td>
+                    <td>2014060904</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>深圳市南山区方艇家用电器商行</span></td>
+                    <td>2014060903</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>福建省闽宝电子商务有限公司</span></td>     
+                    <td>2014060902</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>珠海市金正电器有限公司</span></td>
+                    <td>2014060901</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnshoper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshoper2"  value="关闭">
+    </div>
+</div>
+
+
+<!--取消订单-->
+<div id="del_pop" class="popstyle">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="popmain_tall">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您确定要取消该订单？</h4>
+        <p>提示：如果确认要取消该订单，需要输入取消原因，订单取消后不能恢复。</p>
+    </div>
+    <div class="addbz">
+        <p><em class="redico">*</em><label>取消原因：</label><span><textarea cols="80" rows="5" style="width:660px;"></textarea></span></p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndel1" value="确定">
+        <input type="button" class="closebtn mr10" id="btndel2" value="关闭">
+    </div>
+</div>
+
+<!--撤回-->
+<div id="chehui_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_chehui">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu.png" alt="success">
+        <h4>撤回成功!</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnchehui1" value="确定">
+        <input type="button" class="closebtn mr10" id="btnchehui2" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script src="js/jquery.bigautocomplete.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+//查看日志
+$(".databtn").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#data_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#data_pop").css("height")))/2+"px");
+	$("#data_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#data_pop").css("width")))/2+"px");
+	$("#close_data,#btndata2").on('click', function () {
+		$(".mask").hide();
+		$("#data_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btndata1").on('click', function () {
+		$(".mask").hide();
+		$("#data_pop").hide();
+	});	
+});
+
+//取消订单
+$(".delbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#del_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#del_pop").css("height")))/2+"px");
+	$("#del_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#del_pop").css("width")))/2+"px");
+	$("#close_del,#btndel2").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		
+	});	
+	$("#btndel1").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		_this.parents('tr').remove();
+		updateRowBgColor();
+	});	
+})
+
+//撤回
+$(".chehui").bind('click', function () {
+	var _this = $(this);
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#chehui_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#chehui_pop").css("height")))/2+"px");
+	$("#chehui_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#chehui_pop").css("width")))/2+"px");
+
+	$("#close_chehui,#btnchehui1,#btnchehui2").bind('click', function () {
+		$(".mask").hide();
+		$("#chehui_pop").hide();
+		_this.unbind("click");
+		_this.removeClass("chehui").addClass("change");
+		_this.html("修改订单");
+	});	
+});
+
+//点击修改订单跳转
+$(".tablemain").on('click','.change',function(){
+	window.location.href="采购-建立订单-修改订单.html";
+});
+
+/*弹出框:选择所属机构*/
+$("#sel_org").click(function () {
+	//弹框绝对居中（position:fixed）
+	$(".mask").show().height($(document).height());
+	$("#org_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#org_pop").css("height")))/2+"px");
+	$("#org_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#org_pop").css("width")))/2+"px");
+});
+$("#org_pop .close1,#org_pop .closebtn1").on('click', function () {
+	$(".mask").hide();
+	$("#org_pop").hide();
+});	
+$("#org_pop .surebtn1").on('click', function () {
+	$("#org_name").val("总部-华南区-广东分公司");
+	$(".mask").hide();
+	$("#org_pop").hide();
+});	
+$("#org_pop").on("click","span",function(){
+	var treenodes=$('#org_pop span');
+	for(var n=0;n<treenodes.length;n++){
+	treenodes[n].className="";	
+	this.className="bgcolor";
+	}	
+	
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+//选择商户
+$("#sel_shoper").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#shoper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shoper_pop").css("height")))/2+"px");
+	$("#shoper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shoper_pop").css("width")))/2+"px");
+	$("#close_shoper,#btnshoper2").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btnshoper1").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		$("#shoper").show();
+		$("#shoper").prev().hide();
+		$(".nameinfo").show();
+		var td = $("input[name='support_radio']:checked").parent().parent().children();
+		var name= td.eq(0).children("span").html();
+		var code= td.eq(1).html();
+		$("#shoper").find('.shoperdm').html("代码："+code);
+		$("#support_name").val(name);
+		$("#sel_shoper").show();
+		
+	});	
+});
+
+</script>
+<!-- 模拟分页 -->
+<script type="text/javascript">
+    $(function(){
+        $("#next").click(function() {
+            $("#showtable1").hide();
+            $(".page a").eq(1).removeClass("btnpage");
+            $(".page a").eq(2).addClass("btnpage");
+            $("#showtable2").show();
+        });
+        $("#page_2").click(function() {
+            $("#showtable1").hide();
+            $(".page a").eq(1).removeClass("btnpage");
+            $(".page a").eq(2).addClass("btnpage");
+            $("#showtable2").show();
+        });
+        $("#page_1").click(function() {
+            $("#showtable1").show();
+            $(".page a").eq(2).removeClass("btnpage");
+            $(".page a").eq(1).addClass("btnpage");
+            $("#showtable2").hide();
+        });
+        $("#prev").click(function() {
+            $("#showtable1").show();
+            $(".page a").eq(2).removeClass("btnpage");
+            $(".page a").eq(1).addClass("btnpage");
+            $("#showtable2").hide();
+        });
+    })
+</script>
+	<script>
+		$(function(){
+			
+			$("#support_name").bigAutocomplete({data:[{title:"广东琪琪电子商务有限公司"},{title:"深圳市南山区丁冰家用电器店"},{title:"湖北美满集团电器有限公司"},{title:"湖北乐麦电器有限公司"},{title:"湖北欢尚集团电器有限公司"},{title:"北欧塞德商务有限公司"}],callback:function(data){
+				//$("this").val(data.title);
+				
+			}});
+			
+			$("#org_name").bigAutocomplete({
+				data:[{
+					title:"总部-华南区-广东分公司"},{
+					title:"总部-华东区-上海分公司"}],
+					callback:function(data){
+				
+			}});
+			
+			
+		
+		})
+	</script>
+</html>

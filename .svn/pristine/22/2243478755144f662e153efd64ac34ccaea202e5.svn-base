@@ -1,0 +1,282 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<link href="style/h.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>财务</span> > <span>采购结算</span> > <span class="comtitle_cur">预付款查询</span>
+    </div>
+    <h3 class="tabname">预付款列表</h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+            <label>供应商名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <input type="button" class="btn_search" value="搜索">
+        </div>
+        <style type="text/css">
+            .tablestyle tr td:nth-child(3),
+            .tablestyle tr td:nth-child(4),
+            .tablestyle tr td:nth-child(8),
+            .tablestyle tr td:nth-child(9){ text-align: right;}
+            .tablestyle a.inputbtn{ width: 60px; float: left;}
+        </style>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th>供应商名称</th>
+                    <th>本月流水数</th>
+                    <th>本月净增额（元）</th>
+                    <th>预付款余额（元）</th>
+                    <th width="130" align="center">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td>1</td>
+                    <td>24.880</td>
+                    <td>0.00</td>
+                    <td>
+                        <a href="财务-预付款查询.html" class="inputbtn databtn">明细</a>
+                        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>1</td>
+                    <td>38,820.00</td>
+                    <td>0.00</td>
+                    <td>
+                        <a href="财务-预付款查询.html" class="inputbtn databtn">明细</a>
+                        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>湖北乐麦电器有限公司</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>
+                        <a href="财务-预付款查询.html" class="inputbtn databtn">明细</a>
+                        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>湖北欢尚集团电器有限公司</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>
+                        <a href="财务-预付款查询.html" class="inputbtn databtn">明细</a>
+                        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+                    </td>
+                </tr>
+				<tr>
+                    <td>北欧塞德商务有限公司</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>
+                        <a href="财务-预付款查询.html" class="inputbtn databtn">明细</a>
+                        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+			
+    <div class="page">
+        
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+	<p style="margin: 10px 0px 0px 10px">
+        本月流水数2；本月净增额（元）：38,820.00；预付款余额（元）：0.00</p>
+    <!--<ul class="ul">
+    	<li class="ul_li"></li>
+    	<li class="ul_li">待复核订单数：<span>1</span></li>
+    	<li class="ul_li">待确认订单数：<span>1</span></li>
+    </ul>-->
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="data_pop" class="popstyle">
+    <h3>明细<a href="javascript:void(0)" id="close_data">close</a></h3>
+    <div class="tablemain popmain">
+        <div class="topsearch">
+            <p>
+                <label>日期：</label>
+                <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+                <label class="to">至</label>
+                <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+                <input type="button" class="btn_search" value="搜索">
+            </p>
+        </div>
+        <table class="tablestyle" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>业务单号</th>			
+                    <th>发生日期</th>
+                    <th>金额（元）</th>
+                    <th>业务类型</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>2015-02-21</td>
+                    <td>500.00</td>
+                    <td>期初录入</td>
+                </tr>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-17</td>
+                    <td>500.00</td>
+                    <td>付款</td>
+                </tr>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-15</td>
+                    <td><strong>-200.00</strong></td>
+                    <td>预付款核销</td>
+                </tr>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-13</td>
+                    <td>500.00</td>
+                    <td>预付款调整</td>
+                </tr>
+                <tr>
+                    <td>2015012410240091</td>
+                    <td>2015-02-10</td>
+                    <td><strong>-200.00</strong></td>
+                    <td>预付款调整</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev1" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a id="next1" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage1" href="javascript:void(0)" class="btnpage" >确定</a>        
+    </div>
+    <div class="bottombtn">
+    	<label>合计金额：<em>1,100.00</em></label>
+    	<label>预付款余额：<em>8,900.00</em></label>
+        <input type="button" class="closebtn mr10" id="btndata2" value="关闭">
+    </div>
+</div>
+</body>
+<script type="text/template" id="tpl1">
+<div class="popstyle" style="width:auto; border:none; min-height:inherit; position:initial; margin:0; top:0; left:0; display:block">
+    <div class="printtitle">
+        <h5>湖北中亿电子有限公司-收款单</h5>
+        <p><span class="f_l ml10">收款单号：<strong>2014060810240091</strong></span><span class="f_r mr10">收款日期：2015-05-10</span></p>
+    </div>
+    <div class="tablemain">
+        <table class="tablestyle2 print" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>数量</th>
+                    <th>金额</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>白色,黑色</td>
+                    <td>10</td>
+                    <td>24,800.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="打印" onclick="window.print();">
+        <input type="button" class="closebtn mr10" value="取消"  onclick="window.close();">
+    </div>
+</div>
+</script>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>		
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+//查看流水
+
+/*$(".databtn").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#data_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#data_pop").css("height")))/2+"px");
+	$("#data_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#data_pop").css("width")))/2+"px");
+});	
+$("#close_data,#btndata2").on('click', function () {
+	$(".mask").hide();
+	$("#data_pop").hide();
+});	
+$("#btndata1").on('click', function () {
+	$(".mask").hide();
+	$("#data_pop").hide();
+});	
+*/
+//打印
+$('.dy_btn').on('click', function (e) {
+    printHtml($('#tpl1').html(), $('#print_style').html());
+    e.preventDefault();
+});
+function printHtml(html, style) {
+    var iWidth = 1024;                          //弹出窗口的宽度;
+    var iHeight = 385;                        //弹出窗口的高度;
+    var iTop = (window.screen.availHeight-30-iHeight)/2;       //获得窗口的垂直位置;
+    var iLeft = (window.screen.availWidth-10-iWidth)/2;           //获得窗口的水平位置;
+    var params = 'height='+iHeight+',width='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no';
+    var mywindow = window.open('', 'newwindow', params);
+    mywindow.document.write('<html><head><title>打印</title>');
+    /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+    mywindow.document.write('<link href="style/css.css" rel="stylesheet" type="text/css">');
+    mywindow.document.write('</head><body>');
+    mywindow.document.write(html);
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10
+    //mywindow.print();
+    //mywindow.close();
+    return true;
+}
+
+</script>
+</html>

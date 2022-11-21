@@ -1,0 +1,373 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<link href="style/h.css" rel="stylesheet" type="text/css">
+<link href="style/jquery.bigautocomplete.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售</span> > <span>订单管理</span> > <span class="comtitle_cur">我的订单</span>
+    </div>
+    <h3 class="tabname">订单列表<a href="销售-建立订单.html" class="add_dd">新增订单</a></h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+            <label>订单号：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label>客户名称：</label>
+            <input type="text" class="inputstyle" id="org_name" value="" />
+            <label>订单日期：</label>
+            <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <input type="button" class="btn_search" value="搜索" />
+            <span class="more_condition more_down">更多条件</span>
+            <p class="hideseach hide">
+                <label>支付状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>未支付</option>
+                    <option>部分支付</option>
+                    <option>全部支付</option>
+                    <option>已结清</option>
+                </select>
+                <label>订单状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>待复核</option>
+                    <option>待确认</option>
+                    <option>已确认</option>
+                    <option>已拒绝</option>
+                    <option>复核不通过</option>
+                    <option>已取消</option>
+                </select>
+                <label>发货状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>未发货</option>
+                    <option>部分发货</option>
+                    <option>全部发货</option>
+                    <option>已收清</option>
+                </select>
+            </p>
+        </div>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th width="200">订单号</th>
+                    <th>客户名称</th>
+                    <th width="140">订单日期</th>
+                    <th width="100">订单金额（元）</th>
+                    <th width="120" class="zt_text">订单状态</th>
+                    <th width="100">支付状态</th>
+                    <th width="100">发货状态</th>
+                    <th width="160">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td><a href="销售-我的订单.html" class="blue">20150817001</a>&nbsp;&nbsp;<img src="images/xhhk.png" title="账期：发货后30天" /></td>
+                    <td>广州恒远公司</td>
+                    <td>2015-12-15</td>
+                    <td align="right">24,880.00</td>
+                    <td class="zt_text">已确认</td>
+                    <td>已支付</td>
+                    <td>已收货</td>
+                    <td>                    	
+                        <!-- <a href="销售-我的订单.html" class="inputbtn">确认结清</a> -->
+                    	<a href="javascript:void(0)" class="inputbtn databtn">查看日志</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="销售-我的订单.html" class="blue">20151215001</a>&nbsp;&nbsp;<img src="images/xhhk.png" title="账期：发货后30天" /></td>
+                    <td>广州恒远公司</td>
+                    <td>2015-12-15</td>
+                    <td align="right">24,880.00</td>
+                    <td class="zt_text">已确认</td>
+                    <td>未支付</td>
+                    <td>未收货</td>
+                    <td>                        
+                        <!-- <a href="销售-我的订单-订单处理.html" class="inputbtn">订单处理</a> -->
+                        <a href="javascript:void(0)" class="inputbtn databtn">查看日志</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td ><a href="javascript:void(0)" class="blue">20150817002</a></td>
+                    <td>广州恒远公司</td>
+                    <td>2015-12-15</td>
+                    <td align="right">4,976.00</td>
+                    <td class="zt_text">已确认</td>
+                    <td>未支付</td>
+                    <td>已发货</td>
+                    <td>
+                    	<!-- <a href="javascript:void(0)" class="inputbtn">确认结清</a> -->
+                    	<a href="javascript:void(0)" class="inputbtn databtn1">查看日志</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td ><a href="javascript:void(0)" class="blue">20150817003</a>&nbsp;&nbsp;<img src="images/xhhk.png" title="账期：发货后30天" /></td>
+                    <td>佛山市卓越电子科技有限公司</td>
+                    <td>2015-12-15</td>
+                    <td align="right">25,880.00</td>
+                    <td>已确认</td>
+                    <td>已支付</td>
+                    <td>已发货</td>
+                    <td class="cancel_operate">
+                        <!-- <a href="javascript:void(0)" class="inputbtn">确认结清</a> -->
+                        <a href="javascript:void(0)" class="inputbtn databtn2">查看日志</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td ><a href="javascript:void(0)" class="blue">20150817004</a></td>
+                    <td>广州恒远公司</td>
+                    <td>2015-12-15</td>
+                    <td align="right">52,840.00</td>
+                    <td>待确认</td>
+                    <td>未支付</td>
+                    <td>未发货</td>
+                    <td class="cancel_operate">
+						
+                    	<!-- <a href="javascript:void(0)" class="inputbtn">确认结清</a> -->
+                        <a href="javascript:void(0)" class="inputbtn databtn3">查看日志</a>
+						<a href="销售-建立订单-修改订单.html" class="inputbtn" >修改订单</a>
+				
+                    </td>
+                </tr>
+                <tr>
+                    <td ><a href="javascript:void(0)" class="blue">20150817005</a></td>
+                    <td>佛山市力豪有限公司</td>
+                    <td>2015-12-15</td>
+                    <td align="right">12,900.00</td>
+                    <td>复核不通过</td>
+                    <td>未支付</td>
+                    <td>未发货</td>
+                    <td>
+                        <a href="javascript:;" class="inputbtn inputbtn4">修改订单</a>
+                        <a href="javascript:void(0)" class="inputbtn delbtn">取消订单</a>
+                        <!-- <a href="javascript:void(0)" class="inputbtn">确认结清</a> -->
+                        <a href="javascript:void(0)" class="inputbtn databtn">查看日志</a>
+                        <a href="javascript:void(0)" class="inputbtn databtn"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <ul class="ul">
+    	<li class="ul_li">订单总数：<span>5</span></li>
+    	<li class="ul_li">复核不通过订单数：<span>1</span></li>
+    	<li class="ul_li">待确认订单数：<span>1</span></li>
+    </ul>
+    <div style="margin:40px 0 0 10px;color:red;">确认结清：确认订单的款项已全部结清，确认结清后不能再进行收付款操作。</div>
+    
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+<!--查看订单日志-->
+<div id="data_pop" class="popstyle">
+    <h3>订单日志<a href="javascript:void(0)" id="close_data">close</a></h3>
+    <div class="tablemain popmain">
+        <table class="tablestyle" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="120">操作时间</th>
+                    <th width="220">操作企业</th>
+                    <th width="80">操作人</th>
+                    <th width="80">操作项</th>
+                    <th>操作内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015-08-17 <br />11:58:45</td>
+                    <td>广州恒远公司</td>
+                    <td></td>
+                    <td>订单已完结</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2015-08-17<br />12:23:45</td>
+                    <td>广州恒远公司</td>
+                    <td></td>
+                    <td>收货并确认</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2015-08-17<br />10:58:45</td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td></td>
+                    <td>已发货</td>
+                    <td>发货单号: 1201673344041</td>
+                </tr>
+                <tr>
+                    <td>2015-08-17<br />09:58:45</td>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td></td>
+                    <td>审核订单</td>
+                    <td>审核订单20150817001</td>
+                </tr>
+				<tr>
+                    <td>2015-08-17<br />09:58:45</td>
+                    <td>广州恒远公司</td>
+                    <td></td>
+                    <td>复核订单</td>
+                    <td>复核订单20150817001</td>
+                </tr>
+				<tr>
+                    <td>2015-08-17<br />09:58:45</td>
+                    <td>广州恒远公司</td>
+                    <td></td>
+                    <td>建立订单</td>
+                    <td>建立订单20150817001</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndata1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btndata2"  value="关闭">
+    </div>
+</div>
+
+
+
+
+<!--取消订单-->
+<div id="del_pop" class="popstyle">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="popmain_tall">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您确定要取消该订单？</h4>
+        <p>提示：如果确认要取消该订单，需要输入取消原因，订单取消后不能恢复。</p>
+    </div>
+    <div class="addbz">
+        <p><em class="redico">*</em><label>取消原因：</label><span><textarea cols="80" rows="5" style="width:660px;"></textarea></span></p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndel1" value="确定">
+        <input type="button" class="closebtn mr10" id="btndel2" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script src="js/jquery.bigautocomplete.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+//查看日志
+$(".databtn").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#data_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#data_pop").css("height")))/2+"px");
+	$("#data_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#data_pop").css("width")))/2+"px");
+	$("#close_data,#btndata2").on('click', function () {
+		$(".mask").hide();
+		$("#data_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btndata1").on('click', function () {
+		$(".mask").hide();
+		$("#data_pop").hide();
+	});	
+});
+
+//取消订单
+$(".delbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#del_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#del_pop").css("height")))/2+"px");
+	$("#del_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#del_pop").css("width")))/2+"px");
+	$("#close_del,#btndel2").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		
+	});	
+	$("#btndel1").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		_this.parent().prev().html("已取消 <img src='images/ico-tips.png' class='img_ico' title='订单已取消，拒绝理由：商品缺货'>")
+		_this.hide();
+		_this.prev().hide();
+		//_this.parents('tr').remove();
+		updateRowBgColor();
+	});	
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+	<script>
+		$(function(){
+			
+			$("#org_name").bigAutocomplete({
+				width:180,
+				data:[{
+					title:"广州恒远公司"},{
+					title:"佛山市卓越电子科技有限公司"},{
+					title:"佛山市力豪有限公司"}],
+					callback:function(data){
+				
+			}});
+			
+			
+		
+		})
+	</script>
+</html>

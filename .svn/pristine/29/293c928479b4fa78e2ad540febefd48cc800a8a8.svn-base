@@ -1,0 +1,376 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通首页</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<link href="style/calendar.css" rel="stylesheet"  type="text/css" />
+<link href="style/index.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "0"}'></include>
+<div id="affair">
+	<div class="affair_main">
+    	<div class="affair_top">
+        	<ul class="wel">
+            	<li><img src="images/affair_user2.png" alt="affair_user" width="70" height="70" /></li>
+                <li>
+                	<ul>
+                    	<li><b>Nick，您好</b></li>
+                        <li><b>欢迎来到善付通！</b></li>
+                        <li><a href="系统管理-企业信息-核心会员申请.html" target="_blank">申请核心会员</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="news">
+            	<h3><span class="f_16">业务消息提醒</span><a>更多>></a></h3>
+            	<!--<marquee direction="up" scrollamount="1" height="60px" width="500px" onMouseOver="this.stop()" onMouseOut="this.start()">-->
+                <li>湖北百歌电子商务有限公司 向您提交了一笔采购订单<span>2015-12-15</span></li>
+                <li>佛山市卓越有限公司 已通过您提交的绑定申请单<span>2015-12-15</span></li>
+                <!--<a>更多>></a>-->
+                <!--</marquee>-->
+            </ul>
+        </div>
+        <div class="affair_bottom">
+        	<div class="affair_left">
+            	<ul>
+                	<h3>公告<a>更多>></a></h3>
+                	<li><a>善付通短信支付功能上线啦！</a><br /><span>2015-12-15</span></li>
+                    <li><a>7月15日善付通上线功能预告</a><br /><span>2015-12-15</span></li>
+                    <!--<a>更多>></a>-->
+                </ul>
+            </div>
+            <div class="affair_right">
+				<h3>我的待办</h3>
+                <ul>
+                    <li>
+                    	<a href="销售-客户列表.html">
+                            <ul>
+                                <li><img src="images/affair1b.png" alt="affair1" width="65" height="65" /></li>
+                                <li>待确认客户：<span>2</span></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="采购-供应商列表.html">
+                            <ul>
+                                <li><img src="images/affair2b.png" alt="affair2" width="65" height="65" /></li>
+                                <li>待确认供应商：<span>2</span></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="收发货-发货登记.html">
+                            <ul>
+                                <li><img src="images/affair3b.png" alt="affair3" width="65" height="65" /></li>
+                                <li>待发货：<span>5</span></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="财务-应付查询.html">
+                            <ul>
+                                <li><img src="images/affair4b.png" alt="affair4" width="65" height="65" /></li>
+                                <li>待付款：<span>4</span></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="收发货-收货登记.html">
+                            <ul>
+                                <li><img src="images/affair5b.png" alt="affair5" width="65" height="65" /></li>
+                                <li>待收货：<span>2</span></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main">
+	<!--快捷功能 begin-->
+    <div class="clear"></div>
+    <div class="finance-message kjgn">
+    	<div class="w1160">
+        	<div class="mess-tit"><h2>快捷功能</h2></div>
+		</div>
+        <div class="clear"></div>
+        <div class="kjgn_show">
+        	<ul>
+                <li>
+                	<a href="采购-新增供应商.html">
+                        <ul>
+                            <li><img src="images/kjgn1.png" alt="kjgn1" /></li>
+                            <li><h4>添加供应商</h4></li>
+                            <li><span>支持手工和批量导入两种方式添加供应商</span></li>
+                        </ul>
+                    </a>
+                </li>
+                <li>
+                	<a href="采购-建立订单.html">
+                        <ul>
+                            <li><img src="images/kjgn2.png" alt="kjgn2" /></li>
+                            <li><h4>新增采购订单</h4></li>
+                            <li><span>支持手工和批量导入两种方式添加订单</span></li>
+                        </ul>
+                    </a>
+                </li>
+                <li>
+                	<a href="收发货-收货登记.html">
+                        <ul>
+                            <li><img src="images/kjgn3.png" alt="kjgn3" /></li>
+                            <li><h4>收货登记</h4></li>
+                            <li><span>在线登记收货信息</span></li>
+                        </ul>
+                    </a>
+                </li>
+                <li>
+                	<a href="采购-订单列表.html">
+                        <ul>
+                            <li><img src="images/kjgn4.png" alt="kjgn4" /></li>
+                            <li><h4>采购订单查询</h4></li>
+                            <li><span>作为采购方查询订单</span></li>
+                        </ul>
+                    </a>
+                </li>
+                <li>
+                	<a>
+                        <ul>
+                            <li><img src="images/kjgn5.png" alt="kjgn5" /></li>
+                            <li><h4>添加快捷功能</h4></li>
+                            <li><span></span></li>
+                        </ul>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--快捷功能 end-->
+    <!--应用场景 begin-->
+    <div class="clear"></div>
+    <div class="finance-message yycj">
+    	<div class="w1160">
+        	<div class="mess-tit"><h2>应用场景</h2></div>
+            <div class="finance-tag">
+            	<ul>
+                	<li class="hover">在线下单</li>
+                    <li>线下订单付款</li>
+                    <li>预收预付</li>
+                </ul>
+            </div>
+		</div>
+        <div class="clear"></div>
+        <div class="fangan_show yycj_show">    	
+            <div class="finance-show zxxd">
+            	<div class="yycj_left">
+                	<ul>
+                    	<li>
+                        	<a href="采购-供应商列表.html">
+                                <ul>
+                                    <li><img src="images/yycj1_1.png" alt="yycj1_1" /></li>
+                                    <li><h4>绑定交易对手</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                    	
+                    	<li>
+                        	<a href="采购-建立订单.html">
+                                <ul>
+                                    <li><img src="images/yycj1_4.png" alt="yycj1_4" /></li>
+                                    <li><h4>新增订单</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                    	<li>
+                        	<a>
+                                <ul>
+                                    <li><img src="images/yycj1_5.png" alt="yycj1_5" /></li>
+                                    <li><h4>交易对手确认订单</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <ul>
+                                    <li><img src="images/yycj2_2.png" alt="yycj1_2" /></li>
+                                    <li><h4>交易对手付款</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="yycj_right">
+                
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="finance-show ddjsdz">
+            	<div class="yycj_left">
+                	<ul>
+                    	<li>
+                        	<a href="采购-建立订单.html">
+                                <ul>
+                                    <li><img src="images/yycj2_1.png" alt="yycj2_1" /></li>
+                                    <li><h4>上传线下订单</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                    	<li>
+                        	<a href="财务-订单付款.html">
+                                <ul>
+                                    <li><img src="images/yycj2_2.png" alt="yycj2_2" /></li>
+                                    <li><h4>交易对手付款</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                    	<li>
+                        	<a>
+                                <ul>
+                                    <li><img src="images/yycj2_3.png" alt="yycj2_3" /></li>
+                                    <li><h4>自动关联对账</h4></li>
+                                    <li><span>双方各自查看订单付款情况</span></li>
+                                </ul>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="yycj_right">
+                
+                </div>
+            </div>
+            <div class="finance-show ysyf">
+            	<div class="yycj_left">
+                	<ul>
+                    	<li>
+                        	<a href="财务-预付款余额.html">
+                                <ul>
+                                    <li><img src="images/yycj3_1.png" alt="yycj3_1" /></li>
+                                    <li><h4>预付货款</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                    	<li>
+                        	<a href="采购-建立订单.html">
+                                <ul>
+                                    <li><img src="images/yycj3_3.png" alt="yycj3_3" /></li>
+                                    <li><h4>在线下单</h4></li>
+                                    <li><h4>上传线下订单</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                    	<li>
+                        	<a href="财务-预付款余额.html">
+                                <ul>
+                                    <li><img src="images/yycj3_4.png" alt="yycj3_4" /></li>
+                                    <li><h4>预付款核销</h4></li>
+                                </ul>
+                            </a>
+                        </li>
+                    	<li>
+                        	<a>
+                                <ul>
+                                    <li><img src="images/yycj3_5.png" alt="yycj3_5" /></li>
+                                    <li><h4>自动关联对账</h4></li>
+                                    <li><span>双方各自查看订单核销情况</span></li>
+                                </ul>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="yycj_right">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--应用场景 end-->
+</div>
+<div class="clear"></div>
+<include dat-source="inc/footer.html" ></include>
+
+</body>
+<script src="js/tmpl.min.js"></script>
+<script src="js/jquery-1.7.1.js"></script>
+<script src="js/cors.js"></script>
+<script>
+/*$(function() {
+	var dater = $( ".date_show" ).datepicker({
+		inline:true,
+		showOtherMonths: true,
+		selectOtherMonths: true,
+		//gotoCurrent:true
+    
+    });
+    bwAll();
+
+    $('#today,#close_bz').on('click',function (){
+    	$( ".date_show" ).datepicker('setDate','');
+	    bwAll();
+
+    })
+
+});
+
+$(function(){
+    $("#closemess").click(function () {
+        $(".mess").slideUp();
+    });
+	
+	$(".ui-datepicker-calendar tbody td a").live('click',function () {
+		$(".mask").show().height($(document).height());
+        $("#bz_pop").show();
+		$("#close_bz,#btnbz1,#btnbz2").click(function () {
+			$(".mask").hide();
+			$("#bz_pop").hide();
+			bw();
+
+		});
+
+		bwAll();
+    });
+})
+
+
+//备忘
+function bw(){
+	$('.ui-state-active').parent().next().append('<img src="images/ico_bw.png " width="8px" class="bzimg"/>');
+	return true;
+}
+
+function bwAll(){
+	//var num = ['10','15','16','20']
+	var img = '<img src="images/ico_bw.png " width="8px" class="bzimg"/>';
+	
+	$('.ui-datepicker-calendar td:eq(10)').append(img);
+	$('.ui-datepicker-calendar td:eq(15)').append(img);
+	$('.ui-datepicker-calendar td:eq(16)').append(img);
+	$('.ui-datepicker-calendar td:eq(20)').append(img);
+	$('.ui-datepicker-calendar td:eq(26)').append(img);
+	$('.ui-datepicker-calendar td:eq(27)').append(img);
+
+}*/
+<!--应用场景切换 begin-->
+TagShow(".finance-tag ul li",".finance-show","hover");
+function TagShow(obj1,obj2,cl)
+{
+	var id;    
+	$(obj1).mouseover(function(){
+		
+		id=$(obj1).index($(this));	
+		$(obj1).removeClass(cl);
+		$(this).addClass(cl);
+		$(obj2).hide();
+		$(obj2).eq(id).show();
+	})	
+	$(obj2).hide();
+	$(obj2+":first").show();
+}
+<!--应用场景切换 end-->
+
+
+</script>
+</html>

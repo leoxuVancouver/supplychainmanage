@@ -1,0 +1,117 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售</span> > <span>订单管理</span> > <span class="comtitle_cur">建立订单</span>
+    </div>
+    <div class="toptips">
+        <h4 style=" margin-left:-24px;">订单提交成功，已发送给您的客户。</h4>
+    
+        <p style=" margin-left:168px;"><span>您可以:</span>
+           <a href="销售-建立订单.html">继续建立订单</a>
+            <a href="销售-订单列表.html">查看订单列表</a>
+            <a href="收发货-发货登记.html">进行发货登记</a>
+            <a href="财务-预收款余额.html">查看收款情况</a>
+        </p>
+    </div>
+    <h3 class="tabname"><span class="l0">结算方式：先货后款</span>销售订单<span class="r0">订单号：DBX281892472</span></h3>
+    <div class="tabinfo">
+    	<p>
+            <span class="f_l">客户名称：湖北百歌电子商务有限公司</span>
+            <span class="f_r">订单日期：2015-11-25 09:00:00</span>
+        </p>
+    </div>
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th width="60">序号</th>
+                    <th width="100">商品编码</th>
+                    <th width="340">商品名称</th>
+                    <th width="">型号</th>
+                    <th width="">单价（元）</th>
+                    <th width="">数量</th>
+                    <th width="">合计（元）</th>
+                </tr>
+             </thead>
+            <tbody>
+            	<tr>
+                    <td>1</td>
+                    <td>pd2014060907</td>
+                    <td>卡萨帝冰箱 BCD-356W</td>
+                    <td>BCD-220E3C</td> 
+                    <td>4,000.00</td>
+                    <td>10</td>
+                    <td>40,000.00</td>
+  
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+    <div class="ddinfo noborder">
+    	<!--<div class="f_l">
+            <table>
+                <tbody>
+                <tr>
+                    <th>备注：</th>
+                    <td><input type="text" class="inputstyle w320"></td>
+                </tr>
+                <tr>
+                    <th>收货人：</th>
+                    <td>张立斌</td>
+                </tr>
+                <tr>
+                    <th>联系电话：</th>
+                    <td>135****8989</td>
+                </tr>
+                <tr>
+                	<th>收货地址：</th>
+                    <td>广东省珠海市拱北区拱北商业大厦23楼</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>-->
+        <div class="f_r">
+            <ul>
+                <li><label>商品总金额：</label><span>40,000.00</span></li>
+                <li><label>费用：</label><span>0.00</span></li>
+                <li><label>订单金额：</label><span>4,000.00</span></li>
+            </ul>
+       </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+</script>
+</html>

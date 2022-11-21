@@ -1,0 +1,256 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+#changeOrg_choose ul li span {  padding: 2px 5px; display:inline-block;}
+#changeOrg_choose ul li span:hover{ background:#0066b3; color:#FFF;}
+.treebtn{ display:inline-block; width:31px; height:16px; background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.closing{ background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+.err { background: #FFF8E4 url(images/error.png) no-repeat 5px center; border: 1px solid #FFCE81; padding: 2px 6px 2px 26px; color: #666666; }
+.bgcolor{ background:#0066b3; color:#FFF;}
+.cp{ cursor:pointer;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>企业设置</span> > <span class="comtitle_cur">机构与员工管理</span>
+    </div>
+    <h3 class="formname">基本信息</h3>
+    <div class="formmain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<tbody>
+            	<tr>
+                	<th><em class="redico">*</em>所属机构：</th>
+                    <td class="p_r">
+                    	<input type="text" value="总部-华南区-广东分公司" class="inputstyle w320" disabled />
+                        <img src="images/input_select.png" class="p_a_select3" id="change_org_choose">
+                        
+                    </td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>用户名：</th>
+                    <td><input type="text" value="robin" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>密码：</th>
+                    <td><input type="password" value="******" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>确认密码：</th>
+                    <td><input type="password" value="******" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>姓名：</th>
+                    <td><input type="text" value="罗宾" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>手机号码：</th>
+                    <td><input type="text" value="13873225555" class="inputstyle w320"/></td>
+                </tr>
+                <tr>
+                	<th><em class="redico">*</em>电子邮箱：</th>
+                    <td><input type="text" value="2144874@qq.com" class="inputstyle w320"/></td>
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+    <h3 class="formname">数据权限</h3>
+    <div class="formmain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<tbody>
+            	<tr>
+                	<th><input type="radio" name="data"/></th>
+                    <td><label>分配至个人的数据</label></td>
+                </tr>
+                <tr>
+                	<th><input type="radio" name="data" checked/></th>
+                    <td><label>所属机构（部门）的数据</label><input type="text" value="总部-华南区-广东分公司" disabled /></td>
+                </tr>
+                <tr>
+                	<th><input type="radio" name="data"/></th>
+                    <td><label>指定机构（部门）的数据</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 class="formname">岗位</h3>
+    <div class="formmain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<tbody>
+            	<tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>采购主管</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>采购业务员</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>销售主管</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>销售业务员</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>采购结算</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>销售结算</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>发货</label></td>
+                </tr>
+                <tr>
+                	<th><input type="checkbox" name="data"/></th>
+                    <td><label>收货</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div align="center">
+     	<input type="button" value="确 认" class="surebtn mr20" id="btntg">
+        <input type="button" value="返 回" class="closebtn" onclick="javascript:history.go(-1)">
+    </div>
+</div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+<!--机构选择-->
+<div id="changeOrg_choose" class="popstyle popstyle_small">
+    <h3>机构选择<a href="javascript:void(0)" class="close1">close</a></h3>
+    <div class="popmain">
+    	<div style="height:auto"> 
+            <ul>
+            	<li><div class="treebtn"></div><span> 湖北中艺电子有限公司</span>
+                	<ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华南区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80"><div class="treebtn"></div><span> 广东分公司</span>
+                                	<ul class="m10">
+                                    	<li class="m10 cp"><span> 销售部</span>
+                                        <li class="m10 cp"><span> 财务部</span>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华东区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80"><div class="treebtn"></div><span> 上海分公司</span>
+                                	<ul class="m10">
+                                    	<li class="m10 cp"><span> 销售部</span>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="取消">
+    </div>
+</div>
+
+
+<div id="tg_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>用户修改成功。</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:确认*/
+$("#btntg").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tg_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tg_pop").css("height")))/2+"px");
+	$("#tg_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tg_pop").css("width")))/2+"px");
+});
+$("#tg_pop #close_tg,#tg_pop .closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	
+});	
+$("#tg_pop .surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tg_pop").hide();
+	location.href= '系统管理-企业信息-机构人员.html';
+});	
+
+
+
+/*弹出框:机构选择*/
+$("#change_org_choose").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#changeOrg_choose").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#changeOrg_choose").css("height")))/2+"px");
+	$("#changeOrg_choose").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#changeOrg_choose").css("width")))/2+"px");
+});
+$("#changeOrg_choose .close1,#changeOrg_choose .closebtn1").on('click', function () {
+	$(".mask").hide();
+	$("#changeOrg_choose").hide();
+});	
+$("#changeOrg_choose .surebtn1").on('click', function () {
+	$(".mask").hide();
+	$("#changeOrg_choose").hide();
+});	
+$("#changeOrg_choose").on("click","span",function(){
+	var treenodes=$('#changeOrg_choose span');
+	for(var n=0;n<treenodes.length;n++){
+	treenodes[n].className="";	
+	this.className="bgcolor";
+	}	
+	
+})
+
+
+</script>
+</html>

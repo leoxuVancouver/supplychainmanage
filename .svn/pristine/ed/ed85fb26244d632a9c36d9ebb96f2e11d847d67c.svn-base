@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<script src="../js/cors.js" dat-include="#footer_html"></script>
+<div id="footer_html">
+    <!-- foot begin-->
+    <div id="foot">
+        <div class="foot_con">
+            <p>
+                <span>&copy;版权所有中国建设银行</span><span>京ICP备13030780号</span><span>京公网安备：110102000450</span><br />
+                <span>总行地址：中国北京西城区金融大街25号</span><span>邮编：100033</span>
+            </p>
+            <ul>
+                <li><a>关于我们</a></li>
+                <li><a>服务条款</a></li>
+                <li><a>免责声明</a></li>
+                <li><a>联系我们</a></li>
+                <li><img src="images/pic_foot_sign.jpg" alt="foot_sign"></li>
+            </ul>
+        </div>
+    </div>
+<!-- foot end-->
+
+</div>

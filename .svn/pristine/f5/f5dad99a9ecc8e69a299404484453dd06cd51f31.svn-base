@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>收银台</title>
+	<style type="text/css">
+		*{ margin: 0px; padding: 0px;}
+		body{ font-family: "Microsoft YaHei";}
+		a{ text-decoration: none;}
+		em{ font-style: normal; color: #e00; font-weight: bold;font-family: "宋体";}
+		img{ border: 0; vertical-align: top;}
+		.warp{ width: 980px; margin: 0 auto;}
+		.header{ height: 80px; border-bottom: 4px solid #e00;}
+		.header h1{ float: left; width: 571px;}
+		.header h1 img{ margin-top: 20px;}
+		.header .info{ text-align: right;}
+		.header p{ font-size: 13px; margin-top: 20px;}
+		.header p em{ margin-right: 10px; font-size: 14px;}
+		.header a{ width: 146px; height: 32px; line-height: 32px; text-align: center; background: url(images/quit-btn.png); display: inline-block; color: #fff; font-size: 13px;}
+		.head-info{ height: 54px; border: 2px solid #fff7de; position: relative; margin-top: 8px; padding: 5px;font-size: 14px;}
+		.head-info p span{ padding-left: 100px;  }
+		.head-info em{ font-size: 24px; font-family: "宋体"; }
+		.head-info a{ text-decoration: none; margin-left: 10px;}
+		.head-info span.xq{ width: 86px; height: 21px; background: url(images/xq-bg.png); display: inline-block; position: absolute; bottom: -6px; right: 10px;}
+		.head-info span.xq a{ color: #fff; padding-left: 18px; font-size: 12px;}
+		.main{ margin-top: 15px; border: 2px solid #b5b5b5; padding: 10px;}
+		.item{ height: 140px; padding: 100px 0;}
+		.toptips{ height: 60px; background:url(images/toptips_bg.png) 30% 0% no-repeat; text-align: center;}
+		.toptips h4{ font-size: 24px; margin-bottom: 10px;}
+		.toptips a{ font-size: 14px; color: #0071bc; margin-right: 10px;}
+		.foot{ height: 64px; border-top: 4px solid #0071bc; margin-top: 15px;}
+		.foot_l{ float: left; width:640px; height:64px; padding-left:30px;  background:url(images/foot_ico2.png) no-repeat 0 10px;}
+		.foot_l span{ margin-right:40px;}
+		.foot_l img{ float:left; padding-right:20px;}
+		.foot_l p{ color: #999; font-size:13px; line-height:26px;}
+		.foot_r{ float: right;width:270px; text-align: right;}
+		.foot_r a{ font-size: 13px; text-decoration: none; margin-left: 10px; color: #0071bc;}
+	</style>
+</head>
+<body>
+<div class="warp">
+	<div class="header">
+		<h1><img src="images/logo.png"></h1>
+		<div class="info">
+			<a href="javascript:window.opener=null;window.open('','_self');window.close();">安全退出</a>
+			<p><em>陈*奋</em>欢迎您使用商城账户！</p>
+		</div>
+	</div>
+	<div class="head-info">
+		<p>善融商务 | 善付通<span>广东琪琪电子商务有限公司</span></p>
+		<p style=" text-align: right; padding-right: 70px;"><em color="red">24,880.00</em>元 <a href="#">刷新</a></p>	
+		<span class="xq"><a href="#">查看详情</a></span>
+	</div>
+	<div class="main">
+		<div class="item">
+			<div class="toptips">
+		        <h4>付款成功</h4><a href="财务-付款查询.html">请查看预付款情况</a>
+		        <a href="javascript:void(0)" class="inputbtn dy_btn">打印表单</a>
+		    </div>
+		</div>
+	</div>
+	<div class="foot">
+		<div class="foot_l">
+            <p><span>&copy;版权所有&nbsp;中国建设银行版权所有&nbsp;&nbsp;京ICP备&nbsp;13030780号</span><span>京公网安备：110102000450</span></p>
+            <p><span>总行地址：中国北京西城区金融大街25号</span><span>邮编：100033</span><span>手机网站：m.ccb.com</span></p>
+        </div>
+        <div class="foot_r">
+			<a href="#">网站声明</a>
+			<a href="#">联系我们</a>
+			<a href="#">网站地图</a>
+			<a href="#">友情链接</a>
+        </div>
+	</div>
+</div>
+<script type="text/template" id="tpl1">
+<div class="popstyle" style="width:auto; border:none; min-height:inherit; position:initial; margin:0; top:0; left:0; display:block">
+    <div class="printtitle">
+        <h5>湖北中亿电子有限公司-收款单</h5>
+        <p><span class="f_l ml10">收款单号：<strong>2014060810240091</strong></span><span class="f_r mr10">收款日期：2015-05-10</span></p>
+    </div>
+    <div class="tablemain">
+        <table class="tablestyle2 print" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>数量</th>
+                    <th>金额</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>白色,黑色</td>
+                    <td>10</td>
+                    <td>24,800.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="打印" onclick="window.print();">
+        <input type="button" class="closebtn mr10" value="取消"  onclick="window.close();">
+    </div>
+</div>
+</script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('input:radio').each(function(){
+		$(this).click(function(){
+			if(this.checked){
+				$(this).parent().parent().addClass("active").siblings().removeClass("active").find("span").hide();
+				$(this).parent().find("span").show();
+			}
+		});
+	});
+});
+//打印
+$('.dy_btn').on('click', function (e) {
+    printHtml($('#tpl1').html(), $('#print_style').html());
+    e.preventDefault();
+});
+function printHtml(html, style) {
+	var iWidth = 1024;                          //弹出窗口的宽度;
+	var iHeight = 385;                        //弹出窗口的高度;
+	var iTop = (window.screen.availHeight-30-iHeight)/2;       //获得窗口的垂直位置;
+	var iLeft = (window.screen.availWidth-10-iWidth)/2;           //获得窗口的水平位置;
+	var params = 'height='+iHeight+',width='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no';
+	var mywindow = window.open('', 'newwindow', params);
+	mywindow.document.write('<html><head><title>打印</title>');
+	/*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+	mywindow.document.write('<link href="style/css.css" rel="stylesheet" type="text/css">');
+	mywindow.document.write('</head><body>');
+	mywindow.document.write(html);
+	mywindow.document.write('</body></html>');
+
+	mywindow.document.close(); // necessary for IE >= 10
+	mywindow.focus(); // necessary for IE >= 10
+	//mywindow.print();
+	//mywindow.close();
+	return true;
+}
+</script>
+</body>
+</html>

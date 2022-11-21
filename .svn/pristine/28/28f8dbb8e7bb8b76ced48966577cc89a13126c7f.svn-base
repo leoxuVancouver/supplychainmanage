@@ -1,0 +1,229 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>财务</span> > <span>销售结算</span> > <span class="comtitle_cur">预收款核销</span>
+    </div>
+    <h3 class="tabname">预收款核销</h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+            <label>核销流水号：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>客户名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>核销日期：</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text" >
+            <input type="button" class="btn_search" value="搜索">
+            <span class="more_condition more_down">更多条件</span>
+        	<p class="hideseach hide">
+                <label class="label_5">状态：</label>
+                <select class="selectstyle">
+                    <option>全部</option>
+                    <option>待确认</option>
+                    <option>已确认</option>
+                    <option>已拒绝</option>
+                </select>
+        	</p>
+    	</div>
+        <style type="text/css">
+            .tablestyle tr td:nth-child(4){ text-align: right;}
+        </style>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                	<th width="200">核销流水号</th>
+                    <th>客户名称</th>
+                    <th>核销日期</th>
+                    <th>核销金额（元）</th>
+                    <th>状态</th>
+                    <th width="200">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014060810240090</a></td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>2015-05-21 12:45:30</td>
+                    <td>120,000.00</td>
+                    <td>已拒绝 <img src="images/ico-tips.png" class="img_ico" title="当前预收款余额不足"></td>
+                    <td></td>
+                </tr>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014060810240092</a></td>
+                    <td>海尔集团电子商务有限公司</td>
+                    <td>2015-05-15 12:45:30</td>
+                    <td>100,000.00</td>
+                    <td>已确认</td>
+                    <td></td>
+                </tr>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014060810240094</a></td>
+                    <td>湖北光大电子商务有限公司</td>
+                    <td>2015-05-13 11:45:30</td>
+                    <td>150,000.00</td>
+                    <td>待确认</td>
+                    <td>
+                    	<a href="javascript:void(0)" class="inputbtn tgbtn">确认</a>
+                    	<a href="javascript:void(0)" class="inputbtn delbtn">拒绝</a>
+                    </td>
+                </tr>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014061016040158</a></td>
+                    <td>深圳市南山区高客数码电器商行</td>
+                    <td>2015-05-10 12:45:30</td>
+                    <td>50,000.00</td>
+                    <td>待确认</td>
+                    <td>
+                    	<a href="javascript:void(0)" class="inputbtn tgbtn">确认</a>
+                    	<a href="javascript:void(0)" class="inputbtn delbtn">拒绝</a>
+                    </td>
+                </tr>
+            	<tr>
+                    <td><a href="javascript:void(0)" class="blue">2014061016040147</a></td>
+                    <td>深圳市南山区龙跃信息有限公司</td>
+                    <td>2015-05-05 12:45:30</td>
+                    <td>50,000.00</td>
+                    <td>待确认</td>
+                    <td>
+                    	<a href="javascript:void(0)" class="inputbtn tgbtn">确认</a>
+                    	<a href="javascript:void(0)" class="inputbtn delbtn">拒绝</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="f_r mr20">
+    	<input type="button" class="closebtn" value="返 回" onClick="javascript:history.go(-1)">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="del_pop" class="popstyle">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="popmain_tall">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您确定拒绝核销该信息？</h4>
+        <p>提示：如果确认拒绝核销，需要输入拒绝原因。</p>
+    </div>
+    <div class="addbz">
+        <p><em class="redico">*</em><label>删除原因：</label><span><textarea cols="80" rows="5" style="width:660px;"></textarea></span></p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btndel1" value="确定">
+        <input type="button" class="closebtn mr10" id="btndel2" value="关闭">
+    </div>
+</div>
+
+
+<div id="tg_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tg">close</a></h3>
+    <div class="popmain">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4> 您确定核销通过该信息？</h4>
+        <p>提示：一旦核销通过，将不能再修改。</p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btntg1" value="确定">
+        <input type="button" class="closebtn mr10" id="btntg2" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+//拒绝
+$(".delbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#del_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#del_pop").css("height")))/2+"px");
+	$("#del_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#del_pop").css("width")))/2+"px");
+	$("#close_del,#btndel2").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		
+	});	
+	$("#btndel1").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		_this.hide();
+		_this.prev().hide();
+		_this.parent().prev().html("已拒绝 <img src='images/ico-tips.png' class='img_ico' title='当前预收款余额不足'>");
+	});	
+	updateRowBgColor();
+})
+//通过
+$(".tgbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tg_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tg_pop").css("height")))/2+"px");
+	$("#tg_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tg_pop").css("width")))/2+"px");
+	$("#close_tgbtntg2,#btntg2").on('click', function () {
+		$(".mask").hide();
+		$("#tg_pop").hide();
+		
+	});	
+	$("#btntg1").on('click', function () {
+		$(".mask").hide();
+		$("#tg_pop").hide();
+		_this.hide();
+		_this.next().hide();
+		_this.parent().prev().html("已通过");
+	});	
+	updateRowBgColor();
+})
+</script>
+</html>

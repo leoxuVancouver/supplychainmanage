@@ -1,0 +1,119 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.vipname { margin: 10px; height: 40px; border: 1px solid #e6e6e6; background:#f2f2f2; font-size:16px; font-weight:700; color:#000; line-height:40px;}
+.vipname span { display: inline-block; margin: 0 8px 0 16px; width:21px; height:21px; border-radius:100%;
+				line-height:21px; text-align:center; color:#FFF; background:#1e90e6;}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>企业信息</s设置pan> > <span class="comtitle_cur">核心会员申请</span>
+    </div>
+    <h3 class="vipname"><span>1</span>企业信息</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                	<th>企业信息：</th>
+                    <td class="w200">广州中华摩托有限公司</td>
+                    <th>联系电话：</th>
+                    <td>020-5895648</td>  
+                </tr>
+                <tr>
+                	<th>企业证件类型：</th>
+                    <td class="w200">组织机构代码证</td>
+                    <th>证件号码：</th>
+                    <td>958648525</td>  
+                </tr>
+            </tbody>
+    	</table>	
+    </div>
+    <h3 class="vipname"><span>2</span>法定代表人/负责人/个体经营者</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                	<th>姓名：</th>
+                    <td class="w200">张丽</td>
+                    <th>手机：</th>
+                    <td>15816584865</td>  
+                </tr>
+                <tr>
+                	<th>证件类型：</th>
+                    <td class="w200">二代身份证</td>
+                    <th>证件号码：</th>
+                    <td>456215198305187384</td>  
+                </tr>
+            </tbody>
+    	</table>	
+    </div>
+    <h3 class="vipname"><span>3</span>经办人</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                	<th>姓名：</th>
+                    <td class="w200">张丽</td>
+                    <th>手机：</th>
+                    <td>15816584865</td>  
+                </tr>
+                <tr>
+                	<th>证件类型：</th>
+                    <td class="w200">二代身份证</td>
+                    <th>证件号码：</th>
+                    <td>456215198305187384</td>  
+                </tr>
+            </tbody>
+    	</table>	
+    </div>
+    
+    <div align="center" class="mb20">
+    	<input type="button" value="提 交" class="surebtn mr20" id="btntj" >
+        <input type="button" value="返回首页" class="surebtn" onclick="location.href='index.html'">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain_short">
+        <img src="images/ico_secu2.png" alt="why"><h4>确定申请成为善付通核心会员？</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script>
+$("#btntj").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+});
+$("#close_tj,.closebtn1").on('click', function () {
+	$(".mask").hide();
+	$("#tj_pop").hide();
+	
+});	
+$(".surebtn1").on('click', function () {
+	$(".mask").hide();
+	$("#tj_pop").hide();
+	location.href="系统管理-企业信息-核心会员申请成功.html";
+});
+
+</script>
+</html>

@@ -1,0 +1,225 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "3"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>销售管理</span> > <span>客户</span> > <span class="comtitle_cur">商业信用</span>
+    </div>
+    <h3 class="formname">商业信用额度管理</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablestyle2">
+            <tbody>
+                <tr>
+                    <th><em class="redico">*</em>收款方：</th>
+                    <td>湖北百歌电子商务有限公司</td>
+                </tr>
+                <tr id="hideline" class="hide" style="display: table-row;">
+                    <th>已用额度（元）：</th>
+                    <td><strong class="f_red f_16">2,000.00</strong>  元 </td>
+                </tr>
+                <tr>
+                    <th><em class="redico">*</em>本次还款金额：</th>
+                    <td><input type="text" class="inputstyle" value="" style="width:300px; margin-right:0" id="Digits" name="Digits" onkeyup="www_zzjs_net.value=convertCurrency(Digits.value);">元　<input id="www_zzjs_net" name="www_zzjs_net" size="20" class="f_red ml10" disabled="disabled" style="border:none; background:none;"></td>
+                </tr>
+                <tr>
+                    <th style="line-height:51px" valign="top">备注：</th>
+                    <td style="padding-top:3px">
+                        <textarea rows="3" class="inputstyle" style="width:600px; height:auto"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                	<th></th>
+                    <td>
+                    	<input type="button" value="确 认" class="surebtn1 mr20" id="btntj">
+        				<input type="button" value="返 回" class="closebtn1" onClick="javascript:history.go(-1)">
+                    </td>
+                </tr>	
+            </tbody>
+    	</table>
+    </div> 
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain">
+    	<img src="images/ico_secu2.png" alt="why">
+        <h4>您将确认支付<i id="print_sr" class="f_red">0.00</i>元！</h4>
+        <p>一旦确认，您的账户将把钱支付到对方账户。</p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="确定">
+        <input type="button" class="closebtn mr10" value="取消">
+    </div>
+</div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+//确认还款
+$("#btntj").click(function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	var _this =$("#Digits")
+	var jg = _this.val();
+	$("#print_sr").html(jg);
+	//alert(jg)
+});
+$("#close_tj,.closebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tj_pop").hide();
+	
+});	
+updateRowBgColor();
+$(".surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#tj_pop").hide();
+	location.href= '财务-收银台.html';
+});	
+
+//繁体转换
+
+function convertCurrency(currencyDigits) {
+	// Constants:
+	var MAXIMUM_NUMBER = 99999999999.99;
+	// Predefine the radix characters and currency symbols for output:
+	var CN_ZERO = "零";
+	var CN_ONE = "壹";
+	var CN_TWO = "贰";
+	var CN_THREE = "叁";
+	var CN_FOUR = "肆";
+	var CN_FIVE = "伍";
+	var CN_SIX = "陆";
+	var CN_SEVEN = "柒";
+	var CN_EIGHT = "捌";
+	var CN_NINE = "玖";
+	var CN_TEN = "拾";
+	var CN_HUNDRED = "佰";
+	var CN_THOUSAND = "仟";
+	var CN_TEN_THOUSAND = "万";
+	var CN_HUNDRED_MILLION = "亿";
+	var CN_SYMBOL = "人民币";
+	var CN_DOLLAR = "元";
+	var CN_TEN_CENT = "角";
+	var CN_CENT = "分";
+	var CN_INTEGER = "整";
+	// Variables:
+	var integral; // Represent integral part of digit number.
+	var decimal; // Represent decimal part of digit number.
+	var outputCharacters; // The output result.
+	var parts;
+	var digits, radices, bigRadices, decimals;
+	var zeroCount;
+	var i, p, d;
+	var quotient, modulus;
+	// Validate input string:
+	currencyDigits = currencyDigits.toString();
+	if (currencyDigits == "") {
+		return "还没有输入数字！";
+	}
+	if (currencyDigits.match(/[^,.\d]/) != null) {
+		return "请输入有效数字！";
+	}
+	if ((currencyDigits).match(/^((\d{1,3}(,\d{3})*(.((\d{3},)*\d{1,3}))?)|(\d+(.\d+)?))$/) == null) {
+		return "请输入有效格式数字！";
+	}
+	// Normalize the format of input digits:
+	currencyDigits = currencyDigits.replace(/,/g, ""); // Remove comma delimiters.
+	currencyDigits = currencyDigits.replace(/^0+/, ""); // Trim zeros at the beginning.
+	// Assert the number is not greater than the maximum number.
+	if (Number(currencyDigits) > MAXIMUM_NUMBER) {
+		return "您输入的数字太大了!";
+	}
+	// Process the coversion from currency digits to characters:
+	// Separate integral and decimal parts before processing coversion:
+	parts = currencyDigits.split(".");
+	if (parts.length > 1) {
+		integral = parts[0];
+		decimal = parts[1];
+		// Cut down redundant decimal digits that are after the second.
+		decimal = decimal.substr(0, 2);
+	}
+	else {
+		integral = parts[0];
+		decimal = "";
+	}
+	// Prepare the characters corresponding to the digits:
+	digits = new Array(CN_ZERO, CN_ONE, CN_TWO, CN_THREE, CN_FOUR, CN_FIVE, CN_SIX, CN_SEVEN, CN_EIGHT, CN_NINE);
+	radices = new Array("", CN_TEN, CN_HUNDRED, CN_THOUSAND);
+	bigRadices = new Array("", CN_TEN_THOUSAND, CN_HUNDRED_MILLION);
+	decimals = new Array(CN_TEN_CENT, CN_CENT);
+	// Start processing:
+	outputCharacters = "";
+	// Process integral part if it is larger than 0:
+	if (Number(integral) > 0) {
+		zeroCount = 0;
+		for (i = 0; i < integral.length; i++) {
+			p = integral.length - i - 1;
+			d = integral.substr(i, 1);
+			quotient = p / 4;
+			modulus = p % 4;
+			if (d == "0") {
+				zeroCount++;
+			}
+			else {
+				if (zeroCount > 0) {
+					outputCharacters += digits[0];
+				}
+				zeroCount = 0;
+				outputCharacters += digits[Number(d)] + radices[modulus];
+			}
+			if (modulus == 0 && zeroCount < 4) {
+				outputCharacters += bigRadices[quotient];
+			}
+		}
+		outputCharacters += CN_DOLLAR;
+	}
+	// Process decimal part if there is:
+	if (decimal != "") {
+		for (i = 0; i < decimal.length; i++) {
+			d = decimal.substr(i, 1);
+			if (d != "0") {
+				outputCharacters += digits[Number(d)] + decimals[i];
+			}
+		}
+	}
+	// Confirm and return the final output string:
+	if (outputCharacters == "") {
+		outputCharacters = CN_ZERO + CN_DOLLAR;
+	}
+	if (decimal == "") {
+		outputCharacters += CN_INTEGER;
+	}
+	outputCharacters = outputCharacters;
+	return outputCharacters;
+}
+</script>
+</html>

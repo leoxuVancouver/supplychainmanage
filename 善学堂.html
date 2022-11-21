@@ -1,0 +1,97 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善学堂</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css"> 
+#nav-left{float:left;width:200px;border: none} 
+#helpcontent { width:900px;margin-left:230px;margin-top: 40px;font-size: 12pt;line-height:1.5;}
+th{ cursor: hand; font-family: Tahoma; background-color: #336699; color: #FFFFFF;border-bottom: thin solid;
+font-size: 12pt;height: 45px; text-align: center;  width: 200px;} 
+td { font-family: Tahoma;  color: #FFFFFF; background-image: url(images/bg1.png);background-repeat:no-repeat;
+    font-size: 12pt;height: 44px;line-height:44px; text-indent: 2em;vertical-align:middle; width: 200px;} 
+#navl li  { background-image: url(images/libg.png);
+     color: #333; font-family: Tahoma; font-size: 12pt;
+    width: 200px;line-height:44px; text-indent: 2em; } 
+ #ia0 {background-image: url(images/bg2.png);background-repeat:no-repeat;}
+.xue {float:right;height:45px; width:120px; line-height:45px; }
+.xue img{vertical-align:middle;padding-right: 10px}
+</style>
+
+</head><body>
+<include dat-source="inc/head-help.html"></include>
+
+
+<div id="centent">
+<div id="nav-left">
+<table id="navl" border="0" width="200" cellspacing="0" cellpadding="0" > 
+<tr> 
+<th>善学堂</th>
+</tr> 
+<tr> 
+<td><div id="ia0" onclick=show("a0")  >新手指南 </div><div  id=a0 style="display:block"> 
+<li class=k  style="color:blue" >  注册登录</li> 
+<li class=k>  业务流程</li> 
+</div></td> 
+</tr>
+<tr> 
+<td><div id="ia1" onclick=show("a1")> 产品介绍</div><div  id=a1 style="display:none"> 
+<li class=k>  何为善付通</li> 
+<li class=k>  善付通的功能</li> 
+<li class=k>  善付通的优势</li> 
+</div></td> 
+</tr> 
+<tr> 
+<td><div  id="ia2" onclick=show("a2")>  常见问题</div><div  id=a2 style="display:none";> 
+<li class=k>  采购类</li> 
+<li class=k>  销售类</li> 
+<li class=k>  复核类</li> 
+<li class=k>  设置类</li> 
+</div></td> 
+</tr> 
+
+</table> 
+</div>
+    <div class="comtitle">
+         <span  class="xue" >  <img src="images/xue.png" />更多>></span>
+    </div>
+
+<div id="helpcontent">
+<h3>注册</h3>
+<p>会员注册流程和界面如下:</p>
+<p>进入企业商城的注册模块，选择个人会员注册，根据网页提示填写注册信息（带*为必填项），
+用户名限制为4~20个英文字符、数字和下划线，设置至少6位的密码，并填写手机号码获取验证码，
+即可注册成功。</p>
+<img src="images/hlogin.png" width=50%>
+<h3>登录</h3>
+<p>登录方式分为两种，网站会员和子帐号。</p>
+<h3>网站会员登录流程和界面如下:</h3>
+<p>网站会员是直接注册的账号，在登录界面，选择网站会员登录方式，
+输入用户名、密码和图片验证码后，点击登录即可。登录后能显示主账号的全部功能。</p>
+</div>         
+</div>
+
+    <!--帮助中心 end-->
+<div class="clear"></div>
+<include dat-source="inc/footer.html" ></include>
+</body>
+<script src="js/tmpl.min.js"></script>
+<script src="js/jquery-1.7.1.js"></script>
+<script src="js/cors.js"></script>
+<script> 
+function show(c_Str) 
+{  var bg="i"
+   bg +=c_Str
+ if(document.all(c_Str).style.display=='none') 
+{document.all(c_Str).style.display='block';
+document.getElementById(bg).style.backgroundImage="url(images/bg2.png)";
+document.getElementById(bg).style.backgroundRepeat="no-repeat";
+}
+else{document.all(c_Str).style.display='none';
+document.getElementById(bg).style.backgroundImage="url(images/bg1.png)";
+document.getElementById(bg).style.backgroundRepeat="no-repeat";}
+} 
+</script>
+</html>

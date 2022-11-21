@@ -1,0 +1,80 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.fh_box { width:1140px; margin: 0 10px; height:auto; overflow:hidden;}
+.fh { width:48%; height:auto; background:#fff; text-align:center;}
+.fh_cg { float:left;}
+.fh_xs { float:right;}
+.fh h3 { height:50px; line-height:50px; text-align:left; font-size:16px; font-weight:700; color:#000; border-bottom:1px solid #ccc;}
+.fh h3 span { float:right; margin-right:10px; font-size:14px; font-weight:400; color:#808080;}
+.fh ul { width:100%; margin:30px 0;}
+.fh ul li { height:50px; width:470px; margin: 0 auto; line-height:50px; background:#fff; border-bottom:1px dashed #ccc; position:relative;}
+.fh ul li:hover { background:#f2f2f2;}
+.fh ul li span { position:absolute; left:40px;}
+.fh ul li a { position:absolute; right:40px; top:12px; font-size:14px; line-height:1em; text-decoration:none; color:#0066b3;
+			  background:#FFF; padding:5px 10px; border:1px solid #0066b3; border-radius:2px; cursor:pointer;}
+.fh ul li:hover a { text-decoration:none; background:#0066b3; color:#FFF; }
+.fh ul li b { font-size:24px; font-weight:700; color:#0066b3;}
+.fh ul li b.zero { color:#808080;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "4"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>善付通</span> > <span class="comtitle_cur">复核</span>
+    </div>
+    <div class="fh_box">
+        <div class="fh_cg fh">
+            <h3>采购复核<span>单位：笔</span></h3>
+            <ul>
+                <li><span>采购订单</span><b>1</b><a>查看</a></li>
+                <li><span>预付款核销</span><b>6</b><a>查看</a></li>
+                <li><span>确认结清</span><b class="zero">0</b><a>查看</a></li>
+            </ul>
+        </div>
+        <div class="fh_xs fh">
+            <h3>销售复核<span>单位：笔</span></h3>
+            <ul>
+                <li><span>销售订单</span><b>9</b><a>查看</a></li>
+                <li><span>销售政策</span><b>8</b><a>查看</a></li>
+                <li><span>预收款调整</span><b class="zero">0</b><a>查看</a></li>
+                <li><span>确认收清</span><b>5</b><a>查看</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+</html>

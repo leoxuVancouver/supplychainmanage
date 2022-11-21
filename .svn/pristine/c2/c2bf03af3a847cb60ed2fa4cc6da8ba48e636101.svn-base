@@ -1,0 +1,420 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    .table1 .button{ float: left; width: 70px; text-align: center;}
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "3"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>财务</span> > <span>销售结算</span> > > <span class="comtitle_cur">收款查询</span>
+    </div>
+    <h3 class="tabname">收款查询</h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+                <label>订单号：</label>
+                <input type="text" class="inputstyle" value="">
+                <label>付款方：</label>
+                <input type="text" class="inputstyle" value="">
+                <label>付款日期：</label>
+                <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+                <label class="to">至</label>
+                <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text" >
+                <input type="button" class="btn_search" value="搜索">
+                <span class="more_condition more_down">更多条件</span>
+                <p class="hideseach">
+                    <!--<label>付款状态：</label>
+                    <select class="selectstyle">
+                        <option>全部</option>
+                        <option>付款中</option>
+                        <option>付款成功</option>
+                        <option>付款失败</option>
+                    </select>-->
+                    <label>付款类型：</label>
+                    <select class="selectstyle">
+                        <option>全部</option>
+                        <option>预付款</option>
+                        <option>订单付款</option>
+                    </select>
+                </p>
+            </div>
+            <style type="text/css">
+            .table1 tr td:nth-child(5){ text-align: right;}
+            .table2 tr td:nth-child(2){ text-align: right;}
+            .table2 tr td:nth-child(3){ text-align: right;}
+        </style>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle table1">
+        	<thead>
+            	<tr>
+                    <th width="100">付款单号</th>
+                	<th>付款方</th>
+                    <th>付款银行</th>
+                    <th>付款账号</th>
+                    <th>订单号</th>
+                    <th>付款金额（元）</th>
+                    <th width="80">付款日期</th>
+                    <th width="80">核实状态</th>
+                    <th width="160">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>20150817001</td>
+                    <td>广州恒远公司</td>
+                    <td>中国建设银行</td>
+                    <td>6217 0924 0641 1091</td>
+                    <td>20150817001</td>
+                    <td>24,880.00</td>
+                    <td>2015/8/17  12:00:00</td>
+
+                    <td>未核实</td>
+                    <td>
+                        <a href="javascript:void(0)" class="button" id="xqbtn">查看详情</a>
+                        <a href="javascript:void(0)" class="button" id="jl_btn">确认收款</a>
+                        <a href="javascript:void(0)" class="button" id="dy_btn">打印表单</a>
+                    </td> 
+                </tr>
+                <tr>
+                    <td>20150817003</td>
+                    <td>佛山市卓越电子科技有限公司</td>
+                    <td>中国建设银行</td>
+                    <td>6217 0924 0641 1092</td>
+                    <td>20150817003</td>
+                    <td>25,880.00</td>
+                    <td>2015-8-17 12:00:00</td>
+                     <!--<td>付款成功</td>-->
+                    <td>已核实</td>
+                    <td>
+                        <a href="javascript:void(0)" class="button">查看详情</a>
+                        <a href="javascript:void(0)" class="button ">取消确认</a>
+                        <a href="javascript:void(0)" class="button ">打印表单</a>
+                    </td> 
+                </tr>
+                <tr>
+                    <td>20150718004</td>
+                    <td>佛山市卓越电子科技有限公司</td>
+                    <td>中国建设银行</td>
+                    <td>6217 0924 0641 1092</td>
+                    <!--<td><a href="销售-我的订单.html" class="blue">2015012406411098</a></td>-->
+                    <!--<td>3,000.00</td>-->
+                    <td>20150718004</td>
+                    <td>12,940.00</td>
+                    <td>2015-8-18 12:00:00</td>
+                     <!--<td>付款成功</td>-->
+                    <td>未核实</td>
+                    <td>
+                        <a href="javascript:void(0)" class="button">查看详情</a>
+                        <a href="javascript:void(0)" class="button ">确认收款</a>
+                        <a href="javascript:void(0)" class="button " >打印表单</a>
+                    </td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page" style="margin-left:10px !important;">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+	<div class="desc" style="margin:5px 5px; padding-left: 4px; ">  
+    	收款总数：3笔
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="jl_pop" class="popstyle">
+    <h3>收款详情<a href="javascript:void(0)" id="close_jl">close</a></h3>
+    <div class="popmain_tall">
+    	<img src="images/ico_secu2.png" alt="why">	
+        <h4>您确定要记录核实该收款信息？</h4>
+        <p>请确认以下信息，以免出现错误，确认后将不能修改。</p>
+    </div>
+    <div class="tablemain popmain">
+        <table class="tablestyle2 " border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th>付款单号：</th>
+                    <td>p201510170981 </td>
+                    <th>订单号：</th>
+                    <td><a href="销售-我的订单.html" class="blue">20151128032</a></td>
+                </tr>
+                <tr>
+                    <th>付款方：</th>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <th>收款方：</th>
+                    <td>广东中忆有限公司</td>
+                </tr>
+                <tr>
+                    <th>付款金额：</th>
+                    <td>40,000.00 元</td>
+                    <th>付款日期：</th>
+                    <td>2015-11-26</td>
+                </tr>
+                <!--<tr>
+                    <th>发货备注：</th>
+                    <td colspan="3">-</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnjl1" value="确定">
+        <input type="button" class="closebtn mr10" id="btnjl2" value="关闭">
+    </div>
+</div>
+
+<div id="qx_pop" class="popstyle">
+    <h3>收款详情<a href="javascript:void(0)" id="close_qx">close</a></h3>
+    <div class="popmain_tall">
+    	<img src="images/ico_secu2.png" alt="why">	
+        <h4>您确定要取消记录核实该收款信息？</h4>
+        <p>请确认以下信息，以免出现错误，确认后将不能修改。</p>
+    </div>
+    <div class="tablemain popmain">
+        <table class="tablestyle2" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th>付款单号：</th>
+                    <td>201164381</td>
+                    <th>订单号：</th>
+                    <td><a href="销售-我的订单.html" class="blue">2015012406411098</a></td>
+                </tr>
+                <tr>
+                    <th>付款方：</th>
+                    <td>湖北永美电器有限公司</td>
+                    <th>收款方：</th>
+                    <td>湖北中亿电子有限公司</td>
+                </tr>
+                <tr>
+                    <th>付款金额：</th>
+                    <td>4,000.00 元</td>
+                    <th>付款日期：</th>
+                    <td>2015-02-21</td>
+                </tr>
+                <!--<tr>
+                    <th>发货备注：</th>
+                    <td colspan="3">-</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr5" id="btnqx1" value="确定">
+        <input type="button" class="closebtn mr10" id="btnqx2" value="关闭">
+    </div>
+</div>
+
+<div id="del_pop" class="popstyle">
+    <h3>收款详情<a href="javascript:void(0)" id="close_del">close</a></h3>
+    <div class="mycasetop" style="margin-bottom:0">
+    	<p class="top_p"><strong class="f_green mr10">付款成功</strong>付款单号：<strong>20150817001</strong></p>
+        <p class="sec_p o_h"><span class="f_l">付款方：广州恒远公司</span><span class="f_r f_14">付款日期：2015-8-17 12:00:00</span></p>
+    </div>
+    <div class="tablemain popmain">
+        <table class="tablestyle table2" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>订单号</th>							
+                    <!--<th>商业信用支付金额（元）</th>-->
+                    <th>付款金额（元）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="">
+                    <td><a href="javascript:void(0)" class="blue">20150817001</a></td>
+                    <!--<td>1,000.00</td>-->
+                    <td>24,880.00</td>
+                </tr>
+                <tr class="trcol">
+                    <td>合计</td>
+                    <!--<td>3,000.00</td>-->
+                    <td>24,880.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="l_h30 f_gray">备注：订单付款</p>
+    </div>
+    <div class="bottombtn">
+    	<!--<label>收款总金额：<em>6,000.00</em></label>-->
+        <input type="button" class="closebtn mr10" id="btndel2" value="关闭">
+    </div>
+</div>
+
+<script type="text/template" id="tpl1">
+<div class="popstyle" style="width:auto; border:none; min-height:inherit; position:initial; margin:0; top:0; left:0; display:block">
+	<div class="printtitle">
+    	<h5>广东琪琪电子有限公司-收款单</h5>
+    	<p style="line-height:40px;">
+			<span class="f_l ml10">收款单号：<strong>p201510170981</strong></span>
+			<span class="f_r mr10">收款日期：2015-11-28</span>
+		</p>
+    </div>
+    <div class="tablemain">
+        <table class="tablestyle2" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th align="right" nowrap>付款单号：</th>
+                    <td width=297>2014060810240091</td>
+                    <th align="right" nowrap>订单号：</th>
+                    <td width=297><a href="销售-我的订单.html" class="blue">2015012406411098</a></td>
+                </tr>
+                <tr>
+                    <th align="right" nowrap>付款方：</th>
+                    <td>广州恒远公司</td>
+                    <th align="right" nowrap>收款方：</th>
+                    <td>湖北中亿电子有限公司</td>
+                </tr>
+                <tr>
+                    <th align="right" nowrap>付款金额：</th>
+                    <td>3,000.00 元</td>
+                    <th align="right" nowrap>付款日期：</th>
+                    <td>2015-02-21</td>
+                </tr>
+                <!--<tr>
+                    <th align="right" nowrap>发货备注：</th>
+                    <td colspan="3">-</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" value="打印" onclick="window.print();">
+        <input type="button" class="closebtn mr10" value="取消"  onclick="window.close();">
+    </div>
+</div>
+</script>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+
+//记录核实
+$(document).on('click',"#jl_btn", function () {
+	$(".mask").show().height($(document).height());
+	_this = $(this);
+	//弹框绝对居中（position:fixed）
+	$("#jl_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#jl_pop").css("height")))/2+"px");
+	$("#jl_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#jl_pop").css("width")))/2+"px");
+	$("#close_jl,#btnjl2").unbind("click").bind('click', function () {
+		$(".mask").hide();
+		$("#jl_pop").hide();
+	});	
+	updateRowBgColor();
+	$("#btnjl1").unbind("click").bind('click', function () {
+		$(".mask").hide();
+		$("#jl_pop").hide();
+		_this.html("取消核实");
+		_this.parent().prev().html("已核实");
+		_this.removeClass("jl_btn").addClass("qx_btn");
+	});	
+});
+//取消核实
+$(document).on('click',"#qx_btn", function () {
+	$(".mask").show().height($(document).height());
+	_this = $(this);
+	//弹框绝对居中（position:fixed）
+	$("#qx_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#qx_pop").css("height")))/2+"px");
+	$("#qx_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#qx_pop").css("width")))/2+"px");
+	$("#close_qx,#btnqx2").unbind("click").bind('click', function () {
+		$(".mask").hide();
+		$("#qx_pop").hide();
+	});	
+	updateRowBgColor();
+	$("#btnqx1").unbind("click").bind('click', function () {
+		$(".mask").hide();
+		$("#qx_pop").hide();
+		_this.html("记账核实");
+		_this.parent().prev().html("未核实");
+		_this.removeClass("qx_btn").addClass("jl_btn");
+	});	
+});
+
+
+$("#xqbtn").on('click', function () {
+	var _this = $(this);
+	var tbody = _this.parents('tbody')
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#del_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#del_pop").css("height")))/2+"px");
+	$("#del_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#del_pop").css("width")))/2+"px");
+	$("#close_del,#btndel2").on('click', function () {
+		$(".mask").hide();
+		$("#del_pop").hide();
+		
+	});	
+	updateRowBgColor();
+})
+
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+	
+//打印
+$('#dy_btn').on('click', function (e) {
+	printHtml($('#tpl1').html(), $('#print_style').html());
+	e.preventDefault();
+});
+
+
+function printHtml(html, style) {
+	var iWidth = 840;                          //弹出窗口的宽度;
+	var iHeight = 325;                        //弹出窗口的高度;
+	var iTop = (window.screen.availHeight-30-iHeight)/2;       //获得窗口的垂直位置;
+	var iLeft = (window.screen.availWidth-10-iWidth)/2;           //获得窗口的水平位置;
+	var params = 'height='+iHeight+',width='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no';
+	var mywindow = window.open('', 'newwindow', params);
+	mywindow.document.write('<html><head><title>打印</title>');
+	/*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+	mywindow.document.write('<link href="style/css.css" rel="stylesheet" type="text/css">');
+	mywindow.document.write('</head><body>');
+	mywindow.document.write(html);
+	mywindow.document.write('</body></html>');
+
+	mywindow.document.close(); // necessary for IE >= 10
+	mywindow.focus(); // necessary for IE >= 10
+
+	//mywindow.print();
+	//mywindow.close();
+
+	return true;
+}
+</script>
+</html>

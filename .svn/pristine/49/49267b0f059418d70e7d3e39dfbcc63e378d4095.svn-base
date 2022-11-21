@@ -1,0 +1,717 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.treebtn{ display:inline-block; width:31px; height:16px; background:url(images/ico-folder3.gif) no-repeat 50% 50%;}
+#Org_pop ul li span:hover{ background:#1693f0; color:#FFF; padding:0 3px; display:inline-block;}
+.bgcolor{ background:#1693f0; color:#FFF; padding:0 3px; display:inline-block;}
+.bzheight{height:56px}
+.topsearch input.inputstyle{ width: 156px;}
+input.num{ border-radius: 0; margin: 0px; padding: 0px;}
+#add1,#min1{ background: #fff; cursor: pointer; margin: 0px; padding: 0px;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购</span> > <span>订单管理</span> > <span class="comtitle_cur">建立订单</span>
+    </div>
+    <h3 class="tabname">采购订单<!--<span class="r0"> &lt;使用 <a href="javascript:void(0)">订单模板</a> 快速下单&gt; </span>--></h3>
+    <div class="tabbox">
+    	<ul>
+            <li class="cur"><a href="采购-建立订单.html">单笔录入</a></li>
+            <!-- <li ><a href="采购-批量录入.html">批量录入</a></li> -->
+            <li><a href="采购-导入订单.html">批量导入</a></li>
+        </ul>
+    </div>
+
+    <div class="tabinfo">
+    	<p>
+        	<em class="redico">*</em>
+            <label class="p_r" class="autoComplete">
+            	<span>供应商名称：</span>
+            	<input type="text" list="country" class="inputstyle w320" id="support_name" placeholder="点击选择（现有）或直接录入（新的）供应商" title="点击选择（现有）或直接录入（新的）供应商公司全称">
+                <img src="images/input_select.png" class="p_a_select" id="sel_shoper">
+            </label>
+            <!--<label class="f_r">订单号：DBX281892472</label>-->
+        </p>
+        <p class="nameinfo">
+        	<span id="shoper" style="display:none;">
+                <label>预付款余额：<b class="f_red mr10">10,000,000.00</b> 待核销订单金额合计：<b class="f_red mr10">10,000,000.00</b></label>
+            </span>
+            <label id="xhhk" class="settleMethod" style="float: right;display:none;">
+            	<span>结算方式：先货后款 </span>
+                <span>账期：发货后<b id="day">&nbsp;30&nbsp;</b>天</span>
+            </label>
+        </p>
+    </div>
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<th width="60px">序号</th>
+                <th><em class="redico">*</em>商品编码</th>
+                <th><em class="redico">*</em>商品名称</th>
+                <th>型号</th>
+                <th>计量单位</th>
+                <th><em class="redico">*</em>单价（元）</th>
+                <th><em class="redico">*</em>数量</th>
+                <th>合计（元）</th>
+                <th class="hide"></th> 
+                <!-- <th>商品描述</th> -->
+             </thead>
+            <tbody id="mybody" class="mybodys">
+            	<tr>
+                    <td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <input id="min1" name=""  style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="-" />
+                        <input type="text" class="inputstyle num border" value=""/>
+                        <input id="add1" name="" style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="+" />
+                    </td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <input id="min1" name=""  style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="-" />
+                        <input type="text" class="inputstyle num border" value=""/>
+                        <input id="add1" name="" style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="+" />
+                    </td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <input id="min1" name=""  style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="-" />
+                        <input type="text" class="inputstyle num border" value=""/>
+                        <input id="add1" name="" style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="+" />
+                    </td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr>
+                    <td class="p_r"><span>1</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>
+                    <td><input type="text" value="" class="inputstyle"  placeholder="" title="点击选择（现有）或直接录入（新的）整行商品信息和数量"/><img src="images/input_change.png" class="selshop f_r" ></td>
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" /></td> 
+                    <td><input type="text" class="inputstyle" value="" /></td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"/></td> 
+                    <td>
+                        <input id="min1" name=""  style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="-" />
+                        <input type="text" class="inputstyle num border" value=""/>
+                        <input id="add1" name="" style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="+" />
+                    </td>
+                    <td><input type="text" class="inputstyle" value="" style="text-align:right;"></td>
+                    <td class="hide"></td>
+                </tr>
+                <tr>
+                    <td><img src="images/input_add.png" id="addRow" alt="addRow"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="hide"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ddinfo">
+    	<div class="f_l ">
+            <table>
+                <tbody>
+                <tr>
+                    <th>备注：</th>
+                   <td><input type="text" class="inputstyle w320 bzheight"></td>
+                </tr>
+                <!--<tr>
+                    <th><em class="redico">*</em>所属机构：</th>
+                    <td class="p_r">
+                    	<input type="text" value="" id="org_name" class="inputstyle w320">
+                        <img src="images/input_select.png" class="p_a_select2" id="sel_org">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th><em class="redico">*</em>请选择复核人：</th>
+                    <td class="p_r">
+                    	<input type="text" value="" id="peper_name" class="inputstyle w320">
+                        <img src="images/input_select.png" class="p_a_select2" id="sel_peper">
+                    </td>
+                </tr>-->
+                </tbody>
+            </table>
+        </div>
+        <div class="f_r">
+            <ul>
+                <li><label>商品总金额：</label><span id="total">0.00</span></li>
+                <li><label>费用：</label><input type="text"  value="0.00" onfocus="if(value=='0.00'){value=''}" onblur="if(value==''){value='0.00'}" class="inputstyle" style="color:red"/></li>
+                <li><label>订单金额：</label><span class="f_red" id="dindan">0.00</span></li>
+            </ul>
+       </div>
+
+    </div>
+    <div class="f_r">
+    	<!--<input name="" type="checkbox" value="" id="checksave">
+        <label id="damotext">保存为订单模板</label>-->
+        <span style="color:#A3A3A3; width:1000px; display:inline-block;">操作备注：采购订单成功提交后，需等待供应商确认才能生效，然后才能操作付款或收货。</span>
+        <input type="text" class="inputstyle hide" id="damoname">
+    	<input type="button" value="提 交" id="tj" class="surebtn ml20 mr20">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<!--选择供应商-->
+<div id="shoper_pop" class="popstyle">
+    <h3>供应商列表<a href="javascript:void(0)" id="close_shoper">close</a></h3>
+    <div class="tablemain popmain">
+        <div class="topsearch">
+            <label>供应商名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>供应商代码：</label>
+            <input type="text" class="inputstyle" value="">
+            <input type="button" class="btn_search" value="搜索">
+        </div>
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>供应商名称</th>
+                    <th>供应商登录名</th>
+                    <th>供应商代码</th>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td><input type="radio" name="support_radio" checked="checked" class="f_l ml20" /><span>广东琪琪电子商务有限公司</span></td>
+                    <td>gdqq</td>
+                    <td>hy001</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio"  class="f_l ml20" /><span>深圳市南山区丁冰家用电器店</span></td>
+                    <td>hbbg</td>
+                    <td>hy002</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>湖北美满集团电器有限公司</span></td>
+                    <td>hbmm</td>
+                    <td>hy003</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>湖北乐麦电器有限公司</span></td>
+                    <td>hbml</td>
+                    <td>hy004</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>湖北欢尚集团电器有限公司</span></td>     
+                    <td>hbhs</td>
+                    <td>hy005</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="support_radio" class="f_l ml20" /><span>北欧塞德商务有限公司</span></td>
+                    <td>boqd</td>
+                    <td>hy006</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage" style="margin:0 5px"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnshoper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshoper2"  value="关闭">
+    </div>
+</div>
+
+<!--选择商品（数量和列表的数量一样。选择商品的时候应该是不用输入数量，选择完之后再填写数量）-->
+<div id="shop_pop" class="popstyle">
+    <h3>商品列表<a href="javascript:void(0)" id="close_shop">close</a></h3>
+    <div class="tablemain popmain">
+
+        <div class="topsearch">
+            <label>商品名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>商品编码：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>商品条码：</label>
+            <input type="text" class="inputstyle" value="">
+            <input type="button" class="btn_search" value="搜索">
+        </div>
+
+        <table class="tablestyle table_order" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="60">数量</th>
+					<th width="120">商品编码</th>
+					<th width="150">商品名称</th>
+                    <th width="120">型号</th>
+					<th width="150">商品描述</th>
+					<th width="60">计量单位</th>
+					<th width="100">结算方式</th>
+					<th width="80">账期起算日</th>
+					<th width="60">账期（天）</th>
+                    <th width="80">单价（元）</th>
+					<th width="120">商品条码</th>
+                </tr>
+            </thead>
+            <tbody id="demobody">
+				<tr>
+                    <!--<td><input type="radio" name="list_radio" checked="checked" /></td>-->
+                    <td><input type="text" class="inputstyle w60"/></td>
+                    <td>5463456453</td>
+                    <td width="180px">苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>白色,黑色</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>2,488.00</td>
+                    <td>6905463456453</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio" checked="checked" /></td>-->
+                    <td><input type="text" class="inputstyle w60"/></td>
+                    <td>544343</td>
+                    <td width="180px">三星（SAMSUNG）Galaxy S3 I9308 3G手机 (云石白) TD-SCDMA/GSM</td>
+                    <td>白色,青玉蓝</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>4,000.00</td>
+                    <td>6905464564563</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio" /></td>-->
+                    <td><input type="text" class="inputstyle w60" /></td>
+                    <td>465463543</td>
+                    <td>华为 荣耀3 outdoor 3G手机（白色）WCDMA/GSM</td>
+                    <td>云石白</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>1888.00</td>
+                    <td>6905465463543</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio"  /></td>-->
+                    <td><input type="text" class="inputstyle w60" /></td>
+                    <td>778227</td>
+                    <td>诺基亚（NOKIA）Lumia 920T 3G手机（黄色）TD-SCDMA/GSM</td>
+                    <td>白色,黄色,红色,黑色,蓝色</td>
+                    <td></td>
+                    <td>部</td>
+					<td>先货后款</td>
+					<td>发货日</td>
+                    <td>30</td>
+                    <td>2599.00</td>
+                    <td>6905463778227</td>
+                </tr>
+                <tr>
+                    <!--<td><input type="radio" name="list_radio"  /></td>-->
+                    <td><input type="text" class="inputstyle w60" /></td>
+                    <td>517592</td>
+                    <td>诺基亚（NOKIA）1010 GSM手机（黑色）双卡双待</td>
+                    <td>灰黑色,红色</td>
+                    <td></td>
+                    <td>部</td>
+                    <td>先货后款</td>
+                    <td>发货日</td>
+                    <td>30</td>
+                    <td>219.00</td>
+                    <td>6905463517592</td>
+                </tr>
+        </table>
+
+    </div>
+    <div class="page">
+        <a id="prev1" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a id="next1" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage1" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnshop1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnshop2"   value="关闭">
+    </div>
+</div>
+
+<!--选择核销人员-->
+<div id="peper_pop" class="popstyle">
+    <h3>核销人员列表<a href="javascript:void(0)" id="close_peper">close</a></h3>
+    <div class="popmain" style="padding:0">
+    	<iframe src="选择核销人员.html" style="height:424px; width:800px; border:none; overflow:hidden"></iframe>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5"  id="btnpeper1"  value="确定">
+        <input type="button" class="closebtn mr10" id="btnpeper2"   value="关闭">
+    </div>
+</div>
+
+<!--选择所属机构-->
+<div id="org_pop" class="popstyle popstyle_small">
+    <h3>机构选择<a href="javascript:void(0)" class="close1">close</a></h3>
+    <div class="popmain">
+    	<div style="height: auto"> 
+            <ul>
+            	<li><div class="treebtn"></div><span> 湖北中艺电子有限公司</span>
+                	<ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华南区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80 cp"><span> 广东分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="m10">
+                    	<li class="m10"><div class="treebtn"></div><span> 华东区</span>
+                        	<ul class="m10">
+                            	<li class="m10 ml80 cp"><span> 上海分公司</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn1 mr5" value="确定">
+        <input type="button" class="closebtn1 mr10" value="取消">
+    </div>
+</div>
+<!--提交-->
+<div id="chehui_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_chehui">close</a></h3>
+    <div class="popmain_short">
+    	<img src="images/ico_secu.png" alt="success">
+        <h4>所属机构或复核人不能为空！</h4>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="btnchehui1" value="确定">
+        <input type="button" class="closebtn mr10" id="btnchehui2" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+
+<script>
+//选择商户
+$("#sel_shoper").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#shoper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shoper_pop").css("height")))/2+"px");
+	$("#shoper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shoper_pop").css("width")))/2+"px");
+	$("#close_shoper,#btnshoper2").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btnshoper1").on('click', function () {
+		$(".mask").hide();
+		$("#shoper_pop").hide();
+		$("#shoper").show();
+		$("#shoper").prev().hide();
+		$(".nameinfo").show();
+		var td = $("input[name='support_radio']:checked").parent().parent().children();
+		var name= td.eq(0).children("span").html();
+		var code= td.eq(1).html();
+		$("#shoper").find('.shoperdm').html("代码："+code);
+		$("#support_name").val(name);
+		$("#sel_shoper").show();
+		
+	});	
+});
+
+
+/*显示结算方式*/
+$("#btnshop1").on('click', function () {
+	var objVal = $("#demobody .inputstyle");
+	for(var i=0;i<objVal.length;i++){
+		if(objVal[i].value != NaN){
+			$('#xhhk').show();
+		}
+
+	}
+
+});
+
+//改变结算方式输出账期值
+/*function changeWay(){
+var selection=$("#demobody tr td select")[0];
+var val=selection.options[selection.options.selectedIndex].value;
+var objVal = $("#demobody .inputstyle");
+	if(val==2){
+		$("#demobody tr td")[7].innerHTML="30";
+	}
+	if(val==1){
+		$("#demobody tr td")[7].innerHTML="_";
+	}	
+
+}
+*/
+
+//选择核销人员
+$("#sel_peper").on('click', function () {
+	var _this = $(".selshop");
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#peper_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#peper_pop").css("height")))/2+"px");
+	$("#peper_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#peper_pop").css("width")))/2+"px");
+	$("#close_peper,#btnpeper2").on('click', function () {
+		$(".mask").hide();
+		$("#peper_pop").hide();
+	});	
+	$("#btnpeper1").on('click', function () {
+		$(".mask").hide();
+		$("#peper_pop").hide();
+		$("#peper_name").val("华南区-广州分公司-销售部-罗宾");
+	});	
+});
+/*弹出框:选择所属机构*/
+$("#sel_org").click(function () {
+	//弹框绝对居中（position:fixed）
+	$(".mask").show().height($(document).height());
+	$("#org_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#org_pop").css("height")))/2+"px");
+	$("#org_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#org_pop").css("width")))/2+"px");
+});
+$("#org_pop .close1,#org_pop .closebtn1").on('click', function () {
+	$(".mask").hide();
+	$("#org_pop").hide();
+});	
+$("#org_pop .surebtn1").on('click', function () {
+	$("#org_name").val("总部-华南区-广东分公司");
+	$(".mask").hide();
+	$("#org_pop").hide();
+});	
+$("#org_pop").on("click","span",function(){
+	var treenodes=$('#org_pop span');
+	for(var n=0;n<treenodes.length;n++){
+	treenodes[n].className="";	
+	this.className="bgcolor";
+	}	
+	
+})
+
+
+/*选择商品*/
+var btn
+$("#mybody").delegate('.selshop','click', function () {
+	var _this = $(this);
+	btn = _this;
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#shop_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#shop_pop").css("height")))/2+"px");
+	$("#shop_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#shop_pop").css("width")))/2+"px");
+	$("#close_shop,#btnshop2,#btnshop1").on('click', function () {
+		$(".mask").hide();
+		$("#shop_pop").hide();
+	});	
+	updateRowBgColor();
+	
+});
+
+
+
+$("#btnshop1").on('click', function (e) {
+	var _this = btn;
+	var _input = _this.prev();
+	var _parent = _this.parent();
+	var td =null;
+	//= $("input[name='list_radio']:checked").parent().siblings();
+	var flag = false;
+	$("#demobody input[type=text]").each(function(index, element) {
+		var val = $(this).val();
+		if(val.length>0){
+			td = $(this).parent().siblings();
+			var code= td.eq(0).html();
+			var name= td.eq(1).html();
+			var xh= td.eq(2).html();
+			var dw= td.eq(4).html();
+			var price= td.eq(8).html();
+			if(flag){
+				var _nextTr = _parent.parent();
+				var tr = '<tr>'
+                    tr+='<td class="p_r"><span>3</span><img src="images/ico_sc.gif" class="sc" title="删除" /></td>';
+                    tr+='<td><input type="text" class="inputstyle" value="'+code+'" /><img src="images/input_change.png" class="selshop f_r" ></td>';
+                    tr+='<td><input type="text"  class="inputstyle " value="'+name+'"  /></td>';
+                    tr+='<td><input type="text"  class="inputstyle " value="'+xh+'"  /></td>';
+                    tr+='<td><input type="text"  class="inputstyle " value="'+dw+'"  /></td>';
+                    tr+='<td style="text-align:right;"><input type="text"  class="inputstyle " value="'+price+'"/></td>';
+					var price = price.replace(",",'');
+					var n_price = (parseInt(price)*parseInt(val)).toFixed(2);
+                    tr+='<td><input type="text" value="'+val+'" class="inputstyle border " style="width:120px" /></td>';
+					
+                    tr+='<td><input type="text"  class="inputstyle " value="'+formatCurrency(n_price)+'"  style="width:120px;text-align:right;" /></td>';
+                    tr+='</tr>';
+					_nextTr.after($(tr));
+					updateRowBgColor();
+					btn.parents('tbody').find('tr').each(function(i){
+						$(this).find('td:eq(0)').find('span').html(i+1);
+					})
+                
+			
+			}else{
+				flag=true;
+				var _thisTd = _parent.siblings();
+				_thisTd.find(".inputstyle").removeClass("hide");
+				_thisTd.eq(1).find('input').val(name);
+				_thisTd.eq(2).find('input').val(xh);
+                _thisTd.eq(3).find('input').val(dw);
+                _thisTd.eq(5).find('input').val(val);
+                _thisTd.eq(4).find('input').val(price);
+				var price = price.replace(",",'');
+				_thisTd.eq(6).find('input').val(formatCurrency((parseInt(price)*parseInt(val)).toFixed(2)));
+				//_thisTd.eq(8).find('input').val(dw);
+				_input.removeClass("hide").val(code);
+					$("#total").html(formatCurrency((parseInt(price)*parseInt(val)).toFixed(2)));
+					$("#dindan").html(formatCurrency((parseInt(price)*parseInt(val)).toFixed(2)));
+				}
+
+			
+		}	
+    });
+});	
+
+/*增加一行*/
+$('#addRow').on('click', function () {
+	var $tbody = $(".madetable tbody")
+	var $addRow_tr = $("#addRow").parent("td").parent("tr");
+	$addRow_tr.before('<tr>' +
+		'<td class="p_r">' + '<span>'+($tbody.find('tr').length) +'</span>'+'<img src="images/ico_sc.gif" class="sc" title="删除" />'+'</td>' +
+		'<td><input type="text" value="" class="inputstyle " /><img src="images/input_change.png" class="selshop f_r" ></td>' +
+		'<td><input type="text"  class="inputstyle " value=""  /></td>' +
+		'<td><input type="text"  class="inputstyle " value=""  /></td>' +
+        '<td><input type="text" name="price"  class="inputstyle " value=""  style="width:120px" /></td>' +
+		'<td><input type="text" class="inputstyle " value="" /></td>' +
+		'<td><input id="min1" name=""  style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="-" /><input type="text" name="num"  class="inputstyle border num "/><input id="add1" name="" style=" width:20px; height:28px;border:1px solid #ccc;" type="button" value="+" /></td>' +
+		'<td><input type="text" name="total"  class="inputstyle " value=""  style="width:120px" /></td>' +
+		'<td class="hide"></td>'+
+		//'<td><input type="text"  class="inputstyle " value=""  /></td>' +
+	'</tr>');
+   // refreshRowBgColor();
+	updateRowBgColor();
+});
+
+$(document).on('click','.sc',function(){
+	var tbody = $(this).parents('tbody')
+	$(this).parents('tr').remove();
+	updateRowBgColor();
+	tbody.find('tr').each(function(i){
+		$(this).find('td:eq(0)').find('span').html(i+1);
+	})
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*保存为订单模板*/
+$("#checksave").click(function() {
+	var _this = $("#checksave");
+	//$("#checksave").attr("checked",false);
+	if ($("#checksave").prop("checked")) {
+		_this.next().html('请输入订单模板名称：');
+		$("#damoname").show();
+	}else{
+		_this.next().html('保存为订单模板');
+		$("#damoname").hide();
+	}
+});
+
+/*提交*/
+$("#tj").bind("click",function(){
+	<!--var org_name = $("#org_name").val();-->
+	if($("#org_name").val() =="" || $("#peper_name").val() ==""){
+		var _this = $(this);
+		$(".mask").show().height($(document).height());
+		//弹框绝对居中（position:fixed）
+		$("#chehui_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#chehui_pop").css("height")))/2+"px");
+		$("#chehui_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#chehui_pop").css("width")))/2+"px");
+		
+	$("#close_chehui,#btnchehui1,#btnchehui2").bind('click', function () {
+		$(".mask").hide();
+		$("#chehui_pop").hide();
+		
+	})}else{
+		   window.location.href= "采购-建立订单-提交成功.html";
+	    };	
+})
+
+/** 
+ * 将数值四舍五入(保留2位小数)后格式化成金额形式 
+ * 
+ * @param num 数值(Number或者String) 
+ * @return 金额格式的字符串,如'1,234,567.45' 
+ * @type String 
+ */  
+function formatCurrency(num) {  
+    num = num.toString().replace(/\$|\,/g,'');  
+    if(isNaN(num))  
+    num = "0";  
+    sign = (num == (num = Math.abs(num)));  
+    num = Math.floor(num*100+0.50000000001);  
+    cents = num%100;  
+    num = Math.floor(num/100).toString();  
+    if(cents<10)  
+    cents = "0" + cents;  
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)  
+    num = num.substring(0,num.length-(4*i+3))+','+  
+    num.substring(num.length-(4*i+3));  
+    return (((sign)?'':'-') + num + '.' + cents);  
+}  
+</script>
+
+</html>

@@ -1,0 +1,168 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "7"}'></include>
+<div id="centent">
+	<div class="comtitle"><a href="javascript:void(0)">复核管理</a> > <a href="javascript:void(0)">采购复核</a> > <a href="javascript:void(0)">采购订单复核</a></div>
+    <div class="quick_titile">
+        <span class="purico">采购订单复核</span>
+    </div>
+    <div class="topsearch">
+    	<p>
+            <label class="label_4">订单号：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label class="label_4">供应商名称：</label>
+            <input type="text" class="inputstyle" value="" />
+            <label class="label_4">订单日期：</label>
+            <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onClick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <input type="button" class="btn_search" value="搜索" />
+            <span class="more_condition more_down">更多条件</span>
+        </p>
+        <p class="hideseach">
+        <label class="label_4">支付状态：</label>
+            <select class="selectstyle">
+                <option>全部</option>
+                <option>未支付</option>
+                <option>部分支付</option>
+                <option>全部支付</option>
+                <option>已结清</option>
+            </select>
+        <label class="label_4">发货状态：</label>
+            <select class="selectstyle">
+                <option>全部</option>
+                <option>未发货</option>
+                <option>部分发货</option>
+                <option>全部发货</option>
+                <option>已收清</option>
+            </select>
+        </p>
+    </div>
+    
+    <div class="tablemain">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                    <th>订单号</th>
+                    <th>供应商名称</th>
+                    <th>结算金额（元）</th>
+                    <th>未付金额（元）</th>
+                    <th>订单日期</th>
+                    <th>支付状态</th>
+                    <th>发货状态</th>
+                    <th width="100">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td><a href="采购-我的订单-订单详情.html" class="blue">2014060810240093</a></td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>120,000.00</td>
+                    <td>90,000.00</td>
+                    <td>2014-06-09 09:00:00</td>
+                    <td>部分支付</td>
+                    <td>部分发货</td>
+                    <td>已复核</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">2014060810240092</a></td>
+                    <td>海尔集团电子商务有限公司</td>
+                    <td>120,000.00</td>
+                    <td>100,000.00</td>
+                    <td>2014-06-08 12:30:00</td>
+                    <td>未支付</td>
+                    <td>未发货</td>
+                    <td><a href="复核管理-采购复核-采购订单复核-复核.html" class="inputbtn">复核</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">2014060810240094</a></td>
+                    <td>湖北光大电子商务有限公司</td>
+                    <td>100,000.00</td>
+                    <td>80,000.00</td>
+                    <td>2014-06-08 12:30:00</td>
+                    <td>未支付</td>
+                    <td>未发货</td>
+                    <td><a href="复核管理-采购复核-采购订单复核-复核.html" class="inputbtn">复核</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">2014061016040158</a></td>
+                    <td>深圳市南山区高客数码电器商行</td>
+                    <td>300,000.00</td>
+                    <td>300,000.00</td>
+                    <td>2014-06-08 12:30:00</td>
+                    <td>未支付</td>
+                    <td>未发货</td>
+                    <td><a href="复核管理-采购复核-采购订单复核-复核.html" class="inputbtn">复核</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">2014061016040147</a></td>
+                    
+                    <td>深圳市南山区龙跃信息有限公司</td>
+                    <td>250,000.00</td>
+                    <td>200,000.00</td>
+                    <td>2014-06-08 12:30:00</td>
+                    <td>未支付</td>
+                    <td>未发货</td>
+                    <td><a href="复核管理-采购复核-采购订单复核-复核.html" class="inputbtn">复核</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <a id="prev" href="" class="nor">上一页</a>
+            <span>1</span>
+            <a id="next" href="" class="nor">下一页</a>
+            <em>共1页</em>
+        </div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+<div class="mask"></div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+</html>

@@ -1,0 +1,259 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购</span> > <span>订单管理</span> > <span class="comtitle_cur">我的订单</span>
+    </div> 
+   
+	    <div class="topinfo">
+	    	 <div class="topinfo_left">
+			    	<p>订单号：<span style="color:red">20151215001</span></p>
+			      <p><span>供应商：广东琪琪电子商务有限公司</span><span>订单金额：<font color="red">24,880.00</font></span><span>已付金额：<font color="red">24,880.00</font></span></p>
+			      <p><span>支付状态：己支付 </span><span>订单状态：己完成</span><span>发货状态：己发货</span></p>
+			      <p><span>结款方式：先货后款 </span><span>账期：收货30天</span></p> 
+		    </div>
+		    	
+    	</div>
+    <div class="tabbox bor_t">
+    	<ul>
+            <li class="cur"><a>商品信息</a></li>
+            <li><a>付款信息</a></li>
+            <li><a>发货信息</a></li>
+        </ul>
+    </div>
+    <h3 class="tabname">订单详情</h3>
+    <div class="tabinfo">
+    	<p>
+    		<span class="f_r">订单日期：2015-12-15</span>
+        </p>
+    </div>
+    <div class="tablemain divs">
+
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+            <thead>
+                <tr>
+                    <th width="40">序号</th>
+                    <th width="150">商品编码</th>
+                    <th width="230">商品名称</th>
+                    <th width="90">型号</th>
+                    <th width="90">计量单位</th>
+                    <th width="110">单价（元）</th>
+                    <th width="90">采购数量</th>
+                    <th width="110">合计金额（元）</th>
+                    <th width="90">已发货数量</th>
+                </tr>
+             </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>5463456453</td>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td> 
+                    <td>白色,黑色</td>
+                    <td>台</td>
+                    <td align="right">2,488.00</td>
+                    <td>10</td>
+                    <td align="right">24,880.00</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+    <div class="tablemain divs hide">
+        <table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th>付款单号</th>
+                    <th>付款方</th>
+                    <th>收款方</th>
+                    <th>付款金额（元）</th>
+                    <th>付款日期</th>
+                    <th>支付备注</th>
+                    <th>状态</th>
+                </tr>
+             </thead>
+            <tbody>
+            	<tr>
+                    <td>20151215001</td>
+                    <td>广州恒远公司</td>
+                    <td>广东琪琪电子商务有限公司</td> 
+                    <td align="right">24,880.00</td>
+                    <td>2015-12-15</td>
+                    <td></td>
+                    <td><b class="f_green">付款成功</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tablemain divs hide">
+        <table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>采购数量</th>
+                    <th>发货数量</th>
+                    <th>收货数量</th>
+                    <!--<th>发货日期</th>
+                    <th>状态</th>
+                    <th>收货日期</th>-->
+                </tr>
+             </thead>
+            <tbody>
+                <tr>
+                	<th colspan="6" align="left">
+                    	<label class="pl15">发货单号:<a href="###" class="blue">1201673344041</a></label>
+                        <label class="mr30">发货日期：2015-12-15</label>
+                        <label class="mr30">处理状态：已收货</label>
+                        <label>收货日期：2015-12-15</label>
+                    </th>
+                </tr>
+            	<tr>
+                    <td>5463456453</td>
+                    <td>苹果（APPLE）iPhone 4 8G版 3G手机（白色）WCDMA/GSM</td>
+                    <td>白色,黑色</td> 
+                    <td class="caigousl">10</td>
+                    <td class="fahuosl">10</td>
+                    <td class="fahuosl">10</td>
+                </tr>
+				<!--
+                <tr>
+                	<th colspan="6" align="left">
+                    	<label class="pl15">发货单号:<a href="###" class="blue">18440578</a></label>
+                        <label class="mr30">发货日期：2015-12-15</label>
+                        <label class="mr30">处理状态：待收货</label>
+                        <label>收货日期：</label>
+                    </th>
+                </tr>
+                <tr>
+                    <td>pd2215515658</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-24023C</td> 
+                    <td class="caigousl">5</td>
+                    <td class="fahuosl">0</td>
+                    <td class="fahuosl">0</td>
+                </tr>
+                <tr>
+                    <td>pd2014062322</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-22022E</td> 
+                    <td class="caigousl">10</td>
+                    <td class="fahuosl">10</td>
+                    <td class="fahuosl">10</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="footinfo">
+        <div class="f_l">
+        	<p style="padding-top:20px;">备注：暂无备注</p>
+      		<!-- <p><span>收货人：张丽娜</span></span>收货公司：湖北中亿电子有限公司</p> 
+            <p><span>手机号码：135****8989</span> </span>收货地址：广东广州市越秀区越秀区东风中路515号东照大厦33楼</p>  -->
+        </div>
+    </div>
+    <div class="f_r mr20">
+    	<!--<input type="button" value="确认收清" class="surebtn1" id="querensq">-->
+        <input type="button" value="返 回" class="closebtn1" onclick="javascript:history.go(-1)">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain">
+        <img src="images/ico_secu2.png" alt="why">
+        <h4>您是否确认该订单货量已全部收清？</h4>
+        <p>提示：发货数量与采购数量相差<span></span>个。</p>
+    </div>
+    <div class="bottombtn" style="margin-top:0">
+        <input type="button" class="surebtn mr10" id="btntj" value="确定">
+        <input type="button" class="closebtn mr10" value="关闭">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script>
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*3个信息切换*/
+var tabbox	=document.getElementsByClassName("tabbox")[0];
+var tUl= tabbox.getElementsByTagName("ul")[0];
+var tLi = tUl.getElementsByTagName("li");
+var divs	=document.getElementsByClassName("divs");
+for(var i=0;i<tLi.length;i++){
+	tLi[i].index=i;
+	tLi[i].onclick=function(){
+	updateRowBgColor();
+	for(var j=0;j<divs.length;j++){
+		tLi[j].className="";
+		divs[j].className="tablemain hide divs";
+		}
+	this.className="cur";
+    divs[this.index].className="tablemain divs";
+	}
+};
+
+/*确认收清*/
+$("#querensq").on("click",function(){
+	$(".mask").show().height($(document).height());
+	//登录框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	var i = 0;
+	var j = 0;
+	var caigousl = 0;
+	var fahuosl = 0;
+	var xiangchasl;
+	for(i;i<$(".caigousl").length;i++){
+		caigousl+=parseInt($(".caigousl").eq(i).text());
+	}
+	for(j;j<$(".fahuosl").length;j++){
+		fahuosl+=parseInt($(".fahuosl").eq(j).text());
+	}
+	xiangchasl = caigousl - fahuosl;
+	//alert(xiangchasl);
+	if(xiangchasl == 0){
+		$("#tj_pop p").hide();
+	}
+	$("#tj_pop p span").text(xiangchasl);
+});
+$("#close_tj,.closebtn").on("click",function(){
+	$(".mask").hide();
+	$("#tj_pop").hide();
+})
+$("#btntj").on("click",function(){
+	$(".mask").hide();
+	$("#tj_pop").hide();
+	$("#querensq").attr("disabled","true").val("已经收清");
+	$("#querensq").css("color","#fff");
+	$("#querensq").css("background","#ccc");
+})
+</script>
+<script type="text/javascript">jQuery(".tabmain").slide(); </script>
+</html>

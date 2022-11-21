@@ -1,0 +1,484 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.choose{ color:#06F; cursor:pointer; padding-left:10px; font-weight:bold}
+.choose:hover{ text-decoration:none; color:#06F; }
+.cp{ cursor:pointer;}
+.p_r{ position:relative;}
+.p_a{ position:absolute; right:-38px; top:2px;}
+.p_a_l400{ position:absolute; left:310px; }
+.p_a_l470{ position:absolute; left:470px; padding-left:0; width:40px;}
+.table_tt {
+            width: 95%;
+            margin: 0 0 20px 32px;
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+        }
+
+            .table_tt th,
+            .table_tt td {
+                height: 30px;
+                border: 1px solid #ddd;
+            }
+.table_tt th {
+                
+                padding-left: 15px;
+                cursor: pointer;
+                font-weight: normal;
+                text-align: left;
+            }
+
+                .table_tt th.on {
+                
+                }
+
+            .table_tt td input {
+                margin: 0 5px 0 20px;
+            }
+
+            .table_tt th input {
+                margin: 0 5px 0 5px;
+            }
+
+            .table_tt th,
+            .table_tt td.bold {
+                font-weight: bold;
+            }
+
+        .area2 span {
+            margin: 5px 10px 0 0;
+        }
+
+            .area2 span input {
+                float: left;
+                width: 13px;
+                height: 13px;
+                margin: 5px 5px 0 0;
+            }
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统设置</span> > <span>企业设置</span> > <span class="comtitle_cur">岗位设置</span>
+    </div>
+    <h3 class="formname">设置权限</h3>
+    <div class="tablemain mt20">
+         <table class="table_tt">
+                                    <thead class="cg_thead">
+                                        <tr>
+                                            <th colspan="3">
+                                                <input type="checkbox" class="j-menu">采购</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="cg_tbody">
+                                        <tr>
+                                            <td colspan="3">
+                                                <input type="checkbox" class="j-menu">订单管理</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">建立订单</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu" checked="checked">我的订单</td>
+                                            <td>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">确认订单</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">修改订单</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">取消订单</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">查看日志</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="cg_tbody">
+                                        <tr>
+                                            <td colspan="3">
+                                                <input type="checkbox" class="j-menu">供应商管理</td>
+                                        </tr>
+                                        <!--<tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">添加供应商</td>
+                                            <td></td>
+                                        </tr>-->
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu" checked="checked">我的供应商</td>
+                                            <td>
+                                                <!-- <span>
+                                                    <input type="checkbox" class="j-menu">新增</span> -->
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">删除</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">修改</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">确认绑定</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">申请绑定</span>														<span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">拒绝绑定</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu" checked="checked">取消绑定</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr class="xs_thead">
+                                            <th colspan="3">
+                                                <input type="checkbox" class="j-menu">销售</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="xs_tbody">
+                                        <tr>
+                                            <td colspan="3">
+                                                <input type="checkbox" class="j-menu">商品管理</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">添加商品</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">我的商品</td>
+                                            <td>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">新增</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">编辑</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">删除</span>
+                                                
+                                                
+                                    </tbody>
+                                    <tbody class="xs_tbody">
+                                        <tr>
+                                            <td colspan="3">
+                                                <input type="checkbox" class="j-menu">订单管理</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">建立订单</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">我的订单</td>
+                                            <td>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">确认订单</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">修改订单</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">取消订单</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">查看日志</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="xs_tbody">
+                                        <tr>
+                                            <td colspan="3">
+                                                <input type="checkbox" class="j-menu">客户管理</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">添加客户</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">我的客户</td>
+                                            <td>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">新增</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">删除</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">修改</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">确认绑定</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">申请绑定</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">取消绑定</span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">设置业务员</span>
+                                                <span>
+                                                <span>
+                                                    <input type="checkbox" class="j-menu">设置销售政策</span>
+                                                <span>
+                                            </td>
+                                        </tr> <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">设置业务员</td>
+                                            <td></td>
+                                        </tr> <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">设置销售政策</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <thead class="cw_thead">
+                                        <tr>
+                                            <th colspan="3"><input type="checkbox" class="j-menu">财务</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="cw_tbody">
+                                        <tr>
+                                            <td colspan="3"><input type="checkbox" class="j-menu">采购结算</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">预付货款</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">预付款余额</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">预付款核销</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">预付款调整</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">订单付款</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">付款查询</td>
+                                            <td><span><input type="checkbox" class="j-menu">付款</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">应付查询</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">短信支付签约</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="cw_tbody">
+                                        <tr>
+                                            <td colspan="3"><input type="checkbox" class="j-menu">销售结算</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">预收款余额</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">预收款核销</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">预收款调整</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">收款查询</td>
+                                            <td>
+                                                <span><input type="checkbox" class="j-menu">记账核实</span>
+                                                <span><input type="checkbox" class="j-menu">取消记账核实</span>
+                                                <span><input type="checkbox" class="j-menu">打印</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">应收查询</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">确认结清</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">短信收款</td>
+                                            <td></td>
+                                        </tr>        
+                                    </tbody>
+                                    <thead class="sfh_thead">
+                                        <tr>
+                                            <th colspan="3"><input type="checkbox" class="j-menu">收发货</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="sfh_tbody">
+                                        <tr>
+                                            <td colspan="3"><input type="checkbox" class="j-menu">发货</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">发货登记</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">发货单查询</td>
+                                            <td><span><input type="checkbox" class="j-menu">删除</span></td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="sfh_tbody">
+                                        <tr>
+                                            <td colspan="3"><input type="checkbox" class="j-menu">收货</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="150"></td>
+                                            <td width="150"><input type="checkbox" class="j-menu">收货登记</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="checkbox" class="j-menu">确认收清</td>
+                                            <td></td>
+                                        </tr>  
+                                    </tbody>  
+
+                                    <thead class="xt_thead">
+                                        <tr>
+                                            <th colspan="3">
+                                                <input type="checkbox" class="j-menu">系统管理</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="xt_tbody">
+                                        <tr>
+                                            <td colspan="3">
+                                                <input type="checkbox" class="j-menu">业务参数</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">复核业务参数</td>
+                                            <td>
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="xt_tbody">
+                                        <tr>
+                                            <td colspan="3">
+                                                <input type="checkbox" class="j-menu">企业信息</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">企业资料完善</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">商城账户管理</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">机构人员</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input type="checkbox" class="j-menu">岗位管理</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+        <div align="center">
+        	<input type="button" value="确 认" class="surebtn1 mr20" id="btnqr">
+            <input type="button" value="取 消" class="closebtn1" onclick="javascript:history.go(-1)">
+        </div>        
+	</div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+<div class="mask"></div>
+<div id="qr_pop" class="popstyle" style="min-height: inherit; top: 30%; width: 460px; margin-left: -230px; display:none">
+    <h3>温馨提示<a href="javascript:void(0)" class="close">close</a></h3>
+    <div class="toptips toptips_pop_20">
+        <h4>岗位权限设置成功。</h4>    
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr5" id="" value="确定">
+    </div>
+</div>
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*弹出框:确认*/
+$("#btnqr").click(function () {
+	$(".mask").show().height($(document).height());
+	$("#qr_pop").show();	
+	updateRowBgColor();	
+});	
+$(".close").on("click",function(){
+	$(".mask").hide();
+	$("#qr_pop").hide();
+})
+$(".surebtn").on('click', function () {
+	$(".mask").hide();
+	$("#qr_pop").hide();
+	location.href= '系统管理-企业信息-岗位管理.html';
+});	
+
+
+</script>
+</html>

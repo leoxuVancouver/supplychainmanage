@@ -1,0 +1,109 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style>
+.cp{ cursor:pointer;}
+.formmain table tbody tr td { width:200px;}
+.formmain table tbody tr td a:hover{ text-decoration:none; color:#0066b3;}
+.formmain table tbody tr td a em{ display:none;}
+</style>
+
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "6"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>系统管理</span> > <span>个人设置</span> > <span class="comtitle_cur">电子邮箱修改</span>
+    </div>
+    <h3 class="formname">个人信息维护</h3>
+    <div class="formmain">
+        <table  border="0" cellpadding="0" cellspacing="0">	
+            <tbody>
+            	<tr>
+                	<th>用户名：</th>
+                    <td>Robin</td>
+                    <td class="cp"><strong><a href="javascript:void(0)" id="change1" class="blue">修改密码<em id="em1">>></em></a></strong></td>
+                </tr>
+            	<tr>
+                	<th>姓名：</th>
+                    <td>罗宾</td>
+                
+                </tr>
+                <tr>
+                	<th>角色：</th>
+                    <td>财务</td>
+               
+                </tr>
+                <tr>
+                	<th>手机号码：</th>
+                    <td>159****3166</td>
+                    <td class="cp"><strong><a href="javascript:void(0)" id="change2" class="blue">修改手机号码<em id="em2">>></em></a></strong></td>
+                </tr>
+                <tr>
+                	<th>电子邮箱：</th>
+                    <td>21*********1@163.com</td>
+                    <td class="cp"><strong><a href="javascript:void(0)" id="change3" class="blue">修改电子邮箱<em id="em3">>></em></a></strong></td>
+                </tr>
+                <tr>
+                	<th></th>
+                    <td><input type="button" value="查看权限" class="surebtn mr20" id="btnck"></td>
+                </tr>
+            </tbody>
+		</table>   
+	</div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*查看权限页面*/
+$("#btnck").click(function () {
+	location.href= '系统管理-个人信息-修改电子邮箱-个人信息维护-查看权限.html';
+});
+
+$('#change1').mouseover(function(){
+	$('#em1').show();});
+$('#change1').mouseout(function(){
+	$('#em1').hide();});
+$('#change1').click(function(){
+	location.href='系统管理-个人信息-修改密码.html';});
+$('#change2').mouseover(function(){
+	$('#em2').show();});
+$('#change2').mouseout(function(){
+	$('#em2').hide();});
+$('#change2').click(function(){
+	location.href='系统管理-个人信息-修改手机号码.html';});
+$('#change3').mouseover(function(){
+	$('#em3').show();});
+$('#change3').mouseout(function(){
+	$('#em3').hide();});
+$('#change3').click(function(){
+	location.href='系统管理-个人信息-修改电子邮箱.html';});
+</script>
+</html>

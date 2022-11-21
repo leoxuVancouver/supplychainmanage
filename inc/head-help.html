@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/cors.js"></script>
+<script>
+   new Cors().insertToParent({
+        selectors: '#header_html',
+        data_listener: function (data) {
+            var data = JSON.parse(data);
+            var $li = $("#nav ul li").eq(data.index);
+            $li.children("a").addClass("nav_on");
+        }
+    });
+</script>
+<div id="header_html">
+	<div id="user_info">
+    	<div class="user_info_mid">
+        	<span class="f_l">
+                <a href="javascript:;">建行首页</a>
+         </span>
+         <span class="f_l">
+                在线ERP
+         </span>
+            <span class="f_r">
+            <a href="javascript:;">客服热线：95533 #056</a>      
+            </span>        
+        </div>
+        </div>
+    <div id="nav">
+    	<ul class="nav_list">        
+    </div>
+    
+</div>

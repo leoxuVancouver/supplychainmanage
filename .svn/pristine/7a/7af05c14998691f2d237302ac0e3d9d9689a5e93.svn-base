@@ -1,0 +1,594 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.addtagbtn { border-bottom: 1px solid #ddd; margin-bottom:10px; position: relative; }
+.addtagbtn ul li { border: 1px solid #ddd; height: 30px; line-height: 30px; width: 100px; display: inline-block; cursor: pointer; background: #fff; text-align: center; margin: 0 10px 0 0; padding: 0; position: absolute; bottom: -1px; }
+.addtagbtn ul li.current { background: url(../../images/tab_bg_on.png) repeat-x; border-bottom: 1px solid #fff; height: 33px; line-height: 32px; margin-top: -4px; color: #000000; font-weight: bold; }
+
+</style>
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "5"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>数据管理</span> > <span>销售分析</span> > <span class="comtitle_cur">员工业绩</span>
+    </div>
+    <h3 class="tabname">业务员总体概况</h3>
+    <div class="tabinfo">
+    
+    </div>
+    <div class="site_info mt30">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_highchar">
+            <tr>
+                <th width="60%" height="26" align="center">业务员年度销售业绩统计TOP5</th>
+                <th width="30%" align="center">业务员经销统计TOP5</th>
+            </tr>
+            <tr>
+                <td align="center"><div id="sales2" style="width:100%;height:300px"></div></td>
+                <td align="center"><div id="dealer" style="width:100%;height:300px"></div></td>
+            </tr>
+        </table>
+    </div>
+    <div class="tabbox mt30">
+    	<ul>
+            <li class="cur"><a>先款后货</a></li>
+            <li><a>先货后款</a></li>
+            <li><a>特殊商品</a></li>
+        </ul>
+    </div>
+    <h3 class="tabname">业务员销售统计<a href="javascript:void(0)" class="add_dd">导出报表</a></h3>
+    <div class="tablemain"> 
+    	<div class="topsearch">
+            <label>机构名称：</label>
+            <select name="select" class="selectstyle">
+                <option selected="selected">全部</option>
+                <option>广东广州分公司</option>
+                <option>广西桂林分公司</option>
+                <option>大连分公司</option>
+                <option>湖南分公司</option>
+            </select>
+            <label>　业务员：</label>
+            <select name="select" class="selectstyle">
+                <option selected="selected">全部</option>
+                <option>罗宾</option>
+                <option>小海</option>
+                <option>张三</option>
+                <option>欧燕飞</option>
+                <option>李四</option>
+            </select>
+            <label>订单日期：</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <label class="to">至</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <input type="button" class="btn_search" value="搜索" />
+    	</div>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+              <tr>
+                  <th height="26" width="250" colspan="2">统计对象</th>
+                  <th>订单总数</th>
+                  <th>订单总金额</th>
+                  <th>应收金额</th>
+                  <th>已收金额</th>
+                  <th>未收金额</th>
+                  <th>损失额</th>
+                  <th>订单取消笔数</th>
+                  <th>订单取消金额</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="fw_b">
+                  <td colspan="2">合计</td>
+                  <td>60</td>
+                  <td><span>¥</span>120,000.00</td>
+                  <td><span>¥</span>112,000.00</td>
+                  <td><span>¥</span>108,000.00</td>
+                  <td><span>¥</span>4,000.00</td>
+                  <td><span>¥</span>1,000.00</td>
+                  <td>6</td>
+                  <td><span>¥</span>8,000.00</td>
+              </tr>
+              <tr class="fw_b">
+                  <td rowspan="3" width="156">广东广州分公司</td>
+                  <td width="180">小计</td>
+                  <td>40</td>
+                  <td><span>¥</span>80,000.00</td>
+                  <td><span>¥</span>76,000.00</td>
+                  <td><span>¥</span>74,000.00</td>
+                  <td><span>¥</span>4,000.00</td>
+                  <td><span>¥</span>500.00</td>
+                  <td>4</td>
+                  <td><span>¥</span>4,000.00</td>
+              </tr>
+              <tr>
+                  <td>欧燕飞</td>
+                  <td>20</td>
+                  <td><span>¥</span>40,000.00</td>
+                  <td><span>¥</span>36,000.00</td>
+                  <td><span>¥</span>34,000.00</td>
+                  <td><span>¥</span>2,000.00</td>
+                  <td><span>¥</span>500.00</td>
+                  <td>2</td>
+                  <td><span>¥</span>2,000.00</td>
+              </tr>
+              <tr>
+                  <td>罗宾</td>
+                  <td>20</td>
+                  <td><span>¥</span>40,000.00</td>
+                  <td><span>¥</span>36,000.00</td>
+                  <td><span>¥</span>34,000.00</td>
+                  <td><span>¥</span>2,000.00</td>
+                  <td><span>¥</span>500.00</td>
+                  <td>2</td>
+                  <td><span>¥</span>2,000.00</td>
+              </tr>
+              <tr class="fw_b">
+                  <td rowspan="3" width="156">广西桂林分公司</td>
+                  <td width="180">小计</td>
+                  <td>20</td>
+                  <td><span>¥</span>40,000.00</td>
+                  <td><span>¥</span>36,000.00</td>
+                  <td><span>¥</span>34,000.00</td>
+                  <td><span>¥</span>2,000.00</td>
+                  <td><span>¥</span>500.00</td>
+                  <td>2</td>
+                  <td><span>¥</span>4,000.00</td>
+              </tr>
+              <tr>
+                  <td>张三</td>
+                  <td>10</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>18,000.00</td>
+                  <td><span>¥</span>16,000.00</td>
+                  <td><span>¥</span>2,000.00</td>
+                  <td><span>¥</span>500.00</td>
+                  <td>1</td>
+                  <td><span>¥</span>2,000.00</td>
+              </tr>
+              <tr>
+                  <td>小海</td>
+                  <td>10</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>18,000.00</td>
+                  <td><span>¥</span>16,000.00</td>
+                  <td><span>¥</span>2,000.00</td>
+                  <td><span>¥</span>500.00</td>
+                  <td>1</td>
+                  <td><span>¥</span>2,000.00</td>
+              </tr>
+          </tbody>
+      </table>
+      
+      <table border="0" cellpadding="0" cellspacing="0" class="tablestyle hide">
+          <thead>
+              <tr>
+                  <th height="26" width="250" colspan="2">统计对象</th>
+                  <th>订单总数</th>
+                  <th>订单总金额</th>
+                  <th>订单已付笔数</th>
+                  <th>应收金额</th>
+                  <th>已收金额</th>
+                  <th>未收金额</th>
+                  <th>损失额</th>
+                  <th>返点额</th>
+                  <th>订单取消笔数</th>
+                  <th>订单取消金额</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="fw_b">
+                  <td colspan="2">合计</td>
+                  <td>30</td>
+                  <td><span>¥</span>60,000.00</td>
+                  <td>30</td>
+                  <td><span>¥</span>60,000.00</td>
+                  <td><span>¥</span>60,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>400.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr class="fw_b">
+                  <td rowspan="3" width="156" class="bg">广东广州分公司</td>
+                  <td width="180">小计</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>200.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td> 李四</td>
+                  <td>5</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td>5</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>200.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td>罗宾</td>
+                  <td>5</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td>5</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr class="fw_b">
+                  <td rowspan="3" width="156" class="bg"> 广西桂林分公司</td>
+                  <td width="180">小计</td>
+                  <td>20</td>
+                  <td><span>¥</span>40,000.00</td>
+                  <td>20</td>
+                  <td><span>¥</span>40,000.00</td>
+                  <td><span>¥</span>40,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>200.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td>张三</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>200.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td>小海</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+          </tbody>
+      </table>
+      
+      <table border="0" cellpadding="0" cellspacing="0" class="tablestyle hide">
+          <thead>
+              <tr>
+                  <th height="26" width="250" colspan="2">统计对象</th>
+                  <th>订单总数</th>
+                  <th>订单总金额</th>
+                  <th>应收金额</th>
+                  <th>已收金额</th>
+                  <th>未收金额</th>
+                  <th>订单取消笔数</th>
+                  <th>订单取消金额</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="fw_b">
+                  <td colspan="2">合计</td>
+                  <td>40</td>
+                  <td><span>¥</span>80,000.00</td>
+                  <td><span>¥</span>80,000.00</td>
+                  <td><span>¥</span>80,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr class="fw_b">
+                  <td rowspan="3" width="156" class="bg"> 广东广州分公司</td>
+                  <td width="180">小计</td>
+                  <td>25</td>
+                  <td><span>¥</span>50,000.00</td>
+                  <td><span>¥</span>50,000.00</td>
+                  <td><span>¥</span>50,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td>罗宾</td>
+                  <td>15</td>
+                  <td><span>¥</span>30,000.00</td>
+                  <td><span>¥</span>30,000.00</td>
+                  <td><span>¥</span>30,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td>欧燕飞</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr class="fw_b">
+                  <td rowspan="3" width="156" class="bg">广西桂林分公司</td>
+                  <td width="180">小计</td>
+                  <td>15</td>
+                  <td><span>¥</span>30,000.00</td>
+                  <td><span>¥</span>30,000.00</td>
+                  <td><span>¥</span>30,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td>张三</td>
+                  <td>5</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>10,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+              <tr>
+                  <td>小海</td>
+                  <td>10</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>20,000.00</td>
+                  <td><span>¥</span>0.00</td>
+                  <td>0</td>
+                  <td><span>¥</span>0.00</td>
+              </tr>
+          </tbody>
+      </table> 
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script src="js/fa.cors.js"></script>
+<script src="js/highcharts.js"></script>
+<script>
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+	//alert( $(".tablestyle").length)
+    $(".tablestyle").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");	
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+	});
+}
+
+/*经销商销售统计 表格切换*/
+$(".tabbox ul li").each(function() {
+    $(this).mouseover(function(){
+		$(".tabbox ul li").removeClass("cur");
+		$(this).addClass("cur");
+		var tabIndex = $(".tabbox ul li").index(this);
+		//alert(tabIndex);
+		$(".tablestyle").addClass("hide");
+        $(".tablestyle").eq(tabIndex).removeClass("hide");
+		updateRowBgColor();
+	})
+});
+
+
+
+/*经销商总体概况*/
+$('#dealer').highcharts({
+		chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: ''
+        },
+        credits: {
+            text: ''
+        },
+        tooltip: {
+    	    pointFormat: ''
+        },
+		legend: {
+            enabled: true,
+            layout: 'vertical',
+            align: 'center',
+            verticalAlign: 'bottom',
+            borderWidth: 0,
+            itemStyle: {
+                //lineHeight: '20px'
+            },
+            useHTML: true,
+            labelFormat: '<span style="font-size:12px; line-height:16px;">{name}<span>'//不知道为什么FF下name=iphone时行距自行变大，bug？目前如此修复
+        },
+        plotOptions: {
+            pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                    	distance: -40,
+						color: 'white',
+						format: '{point.percentage:.1f}%',
+                    },
+                    showInLegend: true
+                }
+        },
+        series: [{
+            type: 'pie',
+            data: [
+                ['罗宾',  11],
+                ['小海',   7],
+                ['张三',      9],
+                ['欧燕飞',   12],
+                ['李四',     14],
+            ]
+        }]
+	})
+
+
+    $('#sales2').highcharts({
+        title: {
+            text: ''
+        },
+        credits: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['1月', '2月', '3月', '4月', '5月', '6月','7月', '8月', '9月', '10月', '11月', '12月']
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+			labels:{
+				formatter: function(){
+					var absValue = Math.abs(this.value);
+					if (absValue >= 10000) {
+					  absValue = (absValue / 10000) + '万元';
+					};
+					return absValue;	
+				}	
+			},
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+            borderWidth: 0
+        },
+        series: [{
+            name: '罗宾',
+            data: [730000, 710000, 680000, 710000, 750000, 730000, 735000, 740000, 726000, 698000, 702000, 735000]
+        }, {
+            name: '小海',
+            data: [630000, 610000, 640000, 610000, 650000, 630000, 635000, 623400, 626000, 633400, 602000, 635000]
+        }, {
+            name: '张三',
+            data: [720000, 680000, 665000, 735000, 740000, 790000, 765000, 753000, 716000, 678000, 712000, 705000]
+        }, { 
+			name: '欧燕飞',
+            data: [570000, 590000, 565000, 605000, 590000, 587000, 595000, 586000, 589000, 602000, 612000, 605000]
+        }, { 
+			name: '李四',
+            data: [470000, 480000, 495000, 495000, 500000, 510000, 515000, 503000, 516000, 498000, 512000, 505000]
+        }, ]
+    });
+	
+	
+	
+        $(function () {
+            //给出默认日期
+            /*var now = new Date();
+            document.getElementById("end_date").value = now.getFullYear() + "-" + addZero(now.getMonth() + 1) + "-" + addZero(now.getDate());
+            now.setDate(now.getDate() - 365);
+            document.getElementById("start_date").value = now.getFullYear() + "-" + addZero(now.getMonth() + 1) + "-" + addZero(now.getDate());
+*/
+            $(".dp_apply_nav dt").bind("click", function () {
+                $(this).toggleClass("on");
+                $(this).next("dd").slideToggle();
+            })
+
+            var all = $('.table_site th :checkbox'),
+                items = $(':checkbox[name=items]');
+            all.bind("click", function () {
+                items.add(all).attr('checked', this.checked);
+            });
+            items.click(function (e) {
+                e.stopPropagation();
+                all.attr('checked', items.size() == items.filter(':checked').size());
+            });
+
+            $(".phd_dp_sider").css("height", $(".phd_dp_main").height() - 12);
+            $(".dp_apply_nav").css("height", $(".phd_dp_sider").height() - $(".phd_dp_sider .h4_big_title").height() - 40);
+
+            
+        });
+
+        enterAccount();
+
+        $("#add_success_pop").popBox({
+            btn: ".dp_btn_export"
+        });
+
+        function dateQuery() {
+            $("#lastsevendays").click(function () {
+                getFormatDate(this, "lastsevendays");
+            });
+            $("#recentmonth").click(function () {
+                getFormatDate(this, "recentmonth");
+            });
+            $("#recentquarter").click(function () {
+                getFormatDate(this, "recentquarter");
+            });
+        }
+
+        function getFormatDate(key, specialfactor) {
+            var result = $(key).jDateFormat({ specialfactor: specialfactor });
+            var d = eval(result);
+            if (d) {
+                $("#startproductdate").val(d[0]);
+                $("#endproductdate").val(d[1]);
+            }
+        }
+
+        function addZero(num) {
+            return (num < 10 ? "0" : "") + num;
+        }
+		
+</script>
+</html>

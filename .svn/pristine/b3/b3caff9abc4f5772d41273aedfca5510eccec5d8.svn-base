@@ -1,0 +1,274 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<link href="style/h.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "3"}'></include>
+<div id="centent" style="padding-bottom:10px;">
+	<div class="comtitle">
+    	<span>财务</span> > <span>采购结算</span> > <span class="comtitle_cur">应付查询</span>
+    </div>   
+    <h3 class="tabname">待付款查询</h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+            <label>供应商名称：</label>
+            <input type="text" class="inputstyle" value="">
+            <input type="button" class="btn_search" value="搜索">
+        </div>
+        <style type="text/css">
+            .table1 tr td:nth-child(5),
+            .table1 tr td:nth-child(6){ text-align: right;}
+
+            .table2 tr td:nth-child(2),
+            .table2 tr td:nth-child(3),
+            .table2 tr td:nth-child(4){ text-align: right;}
+        </style>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle table1">
+        	<thead>
+            	<tr>
+                    <th>供应商名称</th>
+                    <th>单据笔数</th>
+                    <th>本月订单数</th>
+                    <th>本月付款单数</th>
+                    <th>本月净增额（元）</th>
+                    <th>待付余额（元）</th>
+                    <th width="100">查看详情</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>广东琪琪电子商务有限公司</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>137,076.00</td>
+                    <td>112,196.00</td>	
+                    <td><a href="javascript:void(0)" class="inputbtn databtn">查看详情</a></td>
+                </tr>
+                <tr>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>38,820.00</td>
+                    <td>0.00</td>	
+                    <td>查看详情</td>
+                </tr>
+                <!--<tr>
+                    <td>湖北光大电子商务有限公司</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>23,000.00</td>
+                    <td>85,000.00</td>	
+                    <td><a href="javascript:void(0)" class="inputbtn databtn">查看详情</a></td>
+                </tr>
+                <tr>
+                    <td>深圳市南山区高客数码电器商行</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>11,000.00</td>
+                    <td>47,000.00</td>	
+                    <td><a href="javascript:void(0)" class="inputbtn databtn">查看详情</a></td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共1页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <ul class="ul">
+    	<li class="ul_li">订单笔数：<span>2</span></li>
+    	<li class="ul_li">待付款金额（元）：<span>112,196.00</span></li>
+    	<!--<li class="ul_li">待确认订单数：<span>1</span></li>-->
+    </ul>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="data_pop" class="popstyle">
+    <h3>查看详情<a href="javascript:void(0)" id="close_data">close</a></h3>
+    <div class="popt">
+    	<span class="f_l"><strong>广东琪琪电子商务有限公司</strong></span>
+        <span class="f_r">初期日期：2015-12-15</span>
+        <span class="f_r">初期应付：<strong class="f_red mr20">0.00</strong></span></p>
+    </div>
+    <div class="tablemain popmain">
+        <table class="tablestyle table2" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>订单号</th>							
+                    <th>订单金额（元）</th>
+                    <th>已付金额（元）</th>
+                    <th>待付金额（元）</th>
+                    <th>订单日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215001</a></td>
+                    <td>24880.00</td>
+                    <td>24880.00</td>
+                    <td>0</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215002</a></td>
+                    <td>4976.00</td>
+                    <td>0</td>
+                    <td>4976.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215004</a></td>
+                    <td>52840.00</td>
+                    <td>0</td>
+                    <td>52840.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215001</a></td>
+                    <td>26420.00</td>
+                    <td>0</td>
+                    <td>26420.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215002</a></td>
+                    <td>27960.00</td>
+                    <td>0</td>
+                    <td>27960.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="data_pop" class="popstyle">
+    <h3>查看详情<a href="javascript:void(0)" id="close_data">close</a></h3>
+    <div class="popt">
+    	<span class="f_l"><strong>广东琪琪电子商务有限公司</strong></span>
+        <span class="f_r">初期日期：2015-12-15</span>
+        <span class="f_r">初期应付：<strong class="f_red mr20">0.00</strong></span></p>
+    </div>
+    <div class="tablemain popmain">
+        <table class="tablestyle table2" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>订单号</th>							
+                    <th>订单金额（元）</th>
+                    <th>已付金额（元）</th>
+                    <th>待付金额（元）</th>
+                    <th>订单日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215001</a></td>
+                    <td>24880.00</td>
+                    <td>24880.00</td>
+                    <td>0</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215002</a></td>
+                    <td>4976.00</td>
+                    <td>0</td>
+                    <td>4976.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215004</a></td>
+                    <td>52840.00</td>
+                    <td>0</td>
+                    <td>52840.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215001</a></td>
+                    <td>26420.00</td>
+                    <td>0</td>
+                    <td>26420.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:void(0)" class="blue">20151215002</a></td>
+                    <td>27960.00</td>
+                    <td>0</td>
+                    <td>27960.00</td>
+                    <td>2015-12-15</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <a id="prev1" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+        <a class="btnpage">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a id="next1" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+        <span>共3页</span>   
+        <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+        <a id="topage1" href="javascript:void(0)" class="btnpage" >确定</a>  
+    </div>
+    <div class="bottombtn">
+    	<label>合计金额：<em>137,076.00</em></label>
+    	<label>已付金额：<em>24,880.00 </em></label>
+    	<label>未付金额：<em>112,196.00</em></label>
+        <!--<input type="button" class="surebtn mr5" id="btndata1" value="确定">-->
+        <input type="button" class="closebtn mr10" id="btndata2" value="关闭">
+    </div>
+</div>
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>		
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+//查看流水
+$(".databtn").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#data_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#data_pop").css("height")))/2+"px");
+	$("#data_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#data_pop").css("width")))/2+"px");
+	$("#close_data,#btndata2").on('click', function () {
+		$(".mask").hide();
+		$("#data_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btndata1").on('click', function () {
+		$(".mask").hide();
+		$("#data_pop").hide();
+	});	
+});
+
+
+</script>
+</html>

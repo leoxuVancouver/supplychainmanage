@@ -1,0 +1,152 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "1"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>收发货</span> > <span>收货</span> > <span class="comtitle_cur">收货登记</span>
+    </div>
+    <p class="dqddzt">当前订单状态：部分发货</p>
+    <h3 class="formname">物流信息</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                	<th>发货单号:</th>
+                    <td class="w200">18440594</td>
+                    <th>发货时间:</th>
+                    <td>2015-06-09</td>  
+                </tr>
+                <tr>
+                	<th>物流公司:</th>
+                    <td class="w200">顺丰快递</td>
+                    <th>发货备注:</th>
+                    <td>-</td>  
+                </tr>
+                <tr>
+                	<th>物流单号:</th>
+                    <td>768978397433</td>
+                </tr>
+            </tbody>
+    	</table>	
+    </div>
+    <h3 class="formname">收货人详情</h3>
+    <div class="formmain">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                	<th>供应商名称:</th>
+                    <td class="w200">湖北百歌电子商务有限公司</td>
+                    <th>收货公司:</th>
+                    <td>湖北中亿电子有限公司</td>
+                </tr>
+                <tr>
+                	<th>收货人:</th>
+                    <td class="w200">张丽娜</td>
+                    <th>收货地址:</th>
+                    <td>广东广州市越秀区越秀区东风中路515号东照大厦33楼</td>  
+                </tr>
+               		<th>手机号码:</th>
+                    <td class="w200">135 **** 8989</td>
+                    <th>备注:</th>
+                    <td>-</td>  
+                </tr>
+            </tbody>
+    	</table>	
+    </div>
+    <h3 class="tabname">发货单详情</h3>
+    <div class="tabinfo"></div>
+    <div class="tablemain mt30 mb10">
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle inputline madetable">
+        	<thead>
+            	<tr>
+                    <th>商品编码</th>
+                    <th>商品名称</th>
+                    <th>型号</th>
+                    <th>单价（元）</th>
+                    <th>采购数量</th>
+                    <th>发货数量</th>
+                    <th>合计（元）</th>
+                </tr>
+             </thead>
+            <tbody>
+                <tr>
+                	<th colspan="7" class="t_a_l pl15">
+                    	<label>订单号: <a href="采购-我的订单-订单详情.html" class="blue">2014060810240090</a></label>
+                    </th>
+                </tr>
+            	<tr class="trcol">
+                    <td>pd2014060907</td>
+                    <td>卡萨帝冰箱 BCD-356W</td>
+                    <td>BCD-220E3C</td> 
+                    <td>4,000.00</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>40,000.00</td>
+                </tr>
+                <tr>
+                	<th colspan="7" class="t_a_l pl15">
+                    	<label>订单号: <a href="采购-我的订单-订单详情.html" class="blue">2014060810240012</a></label>
+                    </th>
+                </tr>
+                <tr class="trcol">
+                    <td>pd2215515658</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-24023C</td> 
+                    <td>6,000.00</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>30,000.00</td>
+                </tr>
+                <tr>
+                    <td>pd2014062322</td>
+                    <td>SAMSUNG三星节能四季柜式电冰箱</td>
+                    <td>SS4J-22022E</td> 
+                    <td>5,000.00</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>50,000.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div align="center" class="mb20">
+    	<input type="button" value="确认收货" class="surebtn" style="margin:0 10px 0 0" onclick="location.href= '收发货-收货登记-收货.html'">
+        <input type="button" value="返 回" class="closebtn" onclick="javascript:history.go(-1)" style="margin:0">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+
+</script>
+</html>

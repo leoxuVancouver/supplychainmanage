@@ -1,0 +1,302 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "2"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>财务</span> > <span>销售结算</span> > > <span class="comtitle_cur">预收款调整</span>
+    </div>
+    <h3 class="formname">核销记录</h3>
+    <div class="formmain">
+        <table class="tablestyle2">
+            <tr>
+                <th width="158"><em class="redico">*</em> 客户名称：</th>
+                <td width="458">
+                	<select class="selectstyle" style="width:250px; margin-right:0" id="selec_com">
+                        <option>请选择</option>
+                        <option selected>湖北百歌电子商务有限公司</option>
+                        <option>海尔集团电子商务有限公司</option>
+                        <option>湖北光大电子商务有限公司</option>
+                        <option>深圳市南山区高客数码电器商行</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>当前预收款余额：</th>
+                <td><strong class="print_1">20,000.00 </strong> 元</td>
+            </tr>
+            <tr>
+                <th><em class="redico">*</em>调整类型：</th>
+                <td>
+                    <input type="radio" name="plus_minus" class="add" checked="checked" value="+" ><label class="mr30"> 增加</label></span>
+                    <input type="radio" name="plus_minus" class="jian" value="-"><label> 减少</label>
+                </td>
+            </tr>
+            <tr>
+                <th><em class="redico">*</em>调整额度：</th>
+                <td><input id="Digits" class="inputstyle" name="Digits" onkeyup="value=value.replace(/[^\d.]/g,'');www_zzjs_net.value=convertCurrency(Digits.value);" style="width:250px" value="5000"><input id="www_zzjs_net" name="www_zzjs_net" size="60" disabled="disabled" style="background:none; border:none;color:#f00;" /></td>
+            </tr>
+            <tr>
+                <th>调整后预收款余额：</th>
+                <td><strong class="print_2 f_red">25,000.00</strong> 元</td>
+            </tr>
+            <tr>
+                <th valign="top" class="l_h50">备注：</th>
+                <td>
+                    <textarea rows="3" class="inputstyle mt10" style="width:600px; height:auto"></textarea><br />
+                    <b class="l_h30 f_red">最多200个字</b>
+                </td>
+            </tr>		
+        </table>
+    </div>
+    <div align="center">
+    	<input type="button" value="提 交" class="surebtn mr20" id="btn_tj">
+        <input type="button" value="返 回" class="closebtn" id="qxbtn" onclick="javascript:history.go(-1)">
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+<div class="mask"></div>
+<div id="tj_pop" class="popstyle popstyle_small">
+    <h3>温馨提示<a href="javascript:void(0)" id="close_tj">close</a></h3>
+    <div class="popmain">
+    	<img src="images/ico_secu.png" alt="sure">
+        <h4>预收款调整成功！</h4>
+        <p>预收款已经成功保存。</p>
+    </div>
+    <div class="bottombtn">
+        <input type="button" class="surebtn mr10" id="btntj" value="确定">
+    </div>
+</div>
+
+
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+$(function(){
+    $(".more_condition").click(function () {
+        var $this = $(this);
+        if ($this.hasClass('more_up')) {
+            $this.removeClass("more_up").text("更多条件");
+            $(".hideseach").slideUp();
+        } else {
+            $this.addClass("more_up").text("隐藏条件");
+            $(".hideseach").slideDown();
+        }
+    });
+})
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+//下拉
+$("#selec_com").change(function(){ 
+	if(this.selectedIndex == 0){
+		$("#hidemain").slideDown();
+		$("#tjbtn").removeClass("surebtn").addClass("closebtn_nohover"); //按钮变化;
+		$("#tjbtn").prop('disabled',true);
+	}
+	else{
+		$(".hidemain").slideDown();
+		$("#tjbtn").addClass("surebtn").removeClass("closebtn_nohover"); //按钮变化;
+		$("#tjbtn").prop('disabled',false);
+		$(".print_1").html("20,000.00");
+	}
+})
+//输入金额
+$("#Digits").keyup(function(){
+	var jg = $(".print_1").html();
+	jg = Number(jg.replace(",",""));
+	var addFlag = ($("input[name='plus_minus']:checked").val()=='+')
+	var total=0;
+	if(addFlag){
+		total = jg+parseInt($(this).val())
+	}else{
+		total = jg-parseInt($(this).val())
+	}
+	var finalTxt = formatCurrency(total)
+	$(".print_2").text(finalTxt);
+})  
+
+
+$("#btn_tj").on('click', function () {
+	$(".mask").show().height($(document).height());
+	//弹框绝对居中（position:fixed）
+	$("#tj_pop").show().css("top",(parseInt(document.documentElement.clientHeight)-parseInt($("#tj_pop").css("height")))/2+"px");
+	$("#tj_pop").show().css("left",(parseInt(document.documentElement.clientWidth)-parseInt($("#tj_pop").css("width")))/2+"px");
+	$("#close_tj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		
+	});	
+	updateRowBgColor();
+	$("#btntj").on('click', function () {
+		$(".mask").hide();
+		$("#tj_pop").hide();
+		location.href= '财务-预收款调整.html';
+	});	
+});
+
+
+
+/** 
+ * 将数值四舍五入(保留2位小数)后格式化成金额形式 
+ * 
+ * @param num 数值(Number或者String) 
+ * @return 金额格式的字符串,如'1,234,567.45' 
+ * @type String 
+ */  
+function formatCurrency(num) {  
+    num = num.toString().replace(/\$|\,/g,'');  
+    if(isNaN(num))  
+    num = "0";  
+    sign = (num == (num = Math.abs(num)));  
+    num = Math.floor(num*100+0.50000000001);  
+    cents = num%100;  
+    num = Math.floor(num/100).toString();  
+    if(cents<10)  
+    cents = "0" + cents;  
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)  
+    num = num.substring(0,num.length-(4*i+3))+','+  
+    num.substring(num.length-(4*i+3));  
+    return (((sign)?'':'-') + num + '.' + cents);  
+}  
+
+function convertCurrency(currencyDigits) {
+            // Constants:
+	var MAXIMUM_NUMBER = 99999999999.99;
+	// Predefine the radix characters and currency symbols for output:
+	var CN_ZERO = "零";
+	var CN_ONE = "壹";
+	var CN_TWO = "贰";
+	var CN_THREE = "叁";
+	var CN_FOUR = "肆";
+	var CN_FIVE = "伍";
+	var CN_SIX = "陆";
+	var CN_SEVEN = "柒";
+	var CN_EIGHT = "捌";
+	var CN_NINE = "玖";
+	var CN_TEN = "拾";
+	var CN_HUNDRED = "佰";
+	var CN_THOUSAND = "仟";
+	var CN_TEN_THOUSAND = "万";
+	var CN_HUNDRED_MILLION = "亿";
+	var CN_SYMBOL = "人民币";
+	var CN_DOLLAR = "元";
+	var CN_TEN_CENT = "角";
+	var CN_CENT = "分";
+	var CN_INTEGER = "整";
+	// Variables:
+	var integral; // Represent integral part of digit number.
+	var decimal; // Represent decimal part of digit number.
+	var outputCharacters; // The output result.
+	var parts;
+	var digits, radices, bigRadices, decimals;
+	var zeroCount;
+	var i, p, d;
+	var quotient, modulus;
+	// Validate input string:
+	currencyDigits = currencyDigits.toString();
+	if (currencyDigits == "") {
+		return "还没有输入数字！";
+	}
+	if (currencyDigits.match(/[^,.\d]/) != null) {
+		return "请输入有效数字！";
+	}
+	if ((currencyDigits).match(/^((\d{1,3}(,\d{3})*(.((\d{3},)*\d{1,3}))?)|(\d+(.\d+)?))$/) == null) {
+		return "请输入有效格式数字！";
+	}
+	// Normalize the format of input digits:
+	currencyDigits = currencyDigits.replace(/,/g, ""); // Remove comma delimiters.
+	currencyDigits = currencyDigits.replace(/^0+/, ""); // Trim zeros at the beginning.
+	// Assert the number is not greater than the maximum number.
+	if (Number(currencyDigits) > MAXIMUM_NUMBER) {
+		return "您输入的数字太大了!";
+	}
+	// Process the coversion from currency digits to characters:
+	// Separate integral and decimal parts before processing coversion:
+	parts = currencyDigits.split(".");
+	if (parts.length > 1) {
+		integral = parts[0];
+		decimal = parts[1];
+		// Cut down redundant decimal digits that are after the second.
+		decimal = decimal.substr(0, 2);
+	}
+	else {
+		integral = parts[0];
+		decimal = "";
+	}
+	// Prepare the characters corresponding to the digits:
+	digits = new Array(CN_ZERO, CN_ONE, CN_TWO, CN_THREE, CN_FOUR, CN_FIVE, CN_SIX, CN_SEVEN, CN_EIGHT, CN_NINE);
+	radices = new Array("", CN_TEN, CN_HUNDRED, CN_THOUSAND);
+	bigRadices = new Array("", CN_TEN_THOUSAND, CN_HUNDRED_MILLION);
+	decimals = new Array(CN_TEN_CENT, CN_CENT);
+	// Start processing:
+	outputCharacters = "";
+	// Process integral part if it is larger than 0:
+	if (Number(integral) > 0) {
+		zeroCount = 0;
+		for (i = 0; i < integral.length; i++) {
+			p = integral.length - i - 1;
+			d = integral.substr(i, 1);
+			quotient = p / 4;
+			modulus = p % 4;
+			if (d == "0") {
+				zeroCount++;
+			}
+			else {
+				if (zeroCount > 0) {
+					outputCharacters += digits[0];
+				}
+				zeroCount = 0;
+				outputCharacters += digits[Number(d)] + radices[modulus];
+			}
+			if (modulus == 0 && zeroCount < 4) {
+				outputCharacters += bigRadices[quotient];
+			}
+		}
+		outputCharacters += CN_DOLLAR;
+	}
+	// Process decimal part if there is:
+	if (decimal != "") {
+		for (i = 0; i < decimal.length; i++) {
+			d = decimal.substr(i, 1);
+			if (d != "0") {
+				outputCharacters += digits[Number(d)] + decimals[i];
+			}
+		}
+	}
+	// Confirm and return the final output string:
+	if (outputCharacters == "") {
+		outputCharacters = CN_ZERO + CN_DOLLAR;
+	}
+	if (decimal == "") {
+		outputCharacters += CN_INTEGER;
+	}
+	outputCharacters = outputCharacters;
+	return outputCharacters;
+}
+</script>
+</html>

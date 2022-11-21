@@ -1,0 +1,133 @@
+﻿<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="style/css.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/cors.js"></script>
+</head>
+<body>
+<div class="selpeper">
+	<div class="selarea">
+    	<h3><a href="javascript:void(0)">湖北中亿电子有限公司</a></h3>
+        <dl>
+        	<dt><a href="javascript:void(0)" class="first_level">华南区</a></dt>
+            	<dl class="hide">
+                    <dt class="second_level"><a href="javascript:void(0)">广东分公司</a></dt>
+                    <dd class="hide"><a href="javascript:void(0)">营销部</a></dd>
+                    <dd class="hide"><a href="javascript:void(0)">财务部</a></dd>
+                    <dd class="hide"><a href="javascript:void(0)">市场部</a></dd>
+                </dl>
+            	<dl class="hide">
+                	<dt class="second_level"><a href="javascript:void(0)">福建分公司</a></dt>
+                    <dd class="hide"><a href="javascript:void(0)">营销部</a></dd>
+                    <dd class="hide"><a href="javascript:void(0)">财务部</a></dd>
+                    <dd class="hide"><a href="javascript:void(0)">市场部</a></dd>
+                </dl>
+            <dt><a href="javascript:void(0)">华北区</a></dt>
+        	<dt><a href="javascript:void(0)">华东区</a></dt>
+            <dt><a href="javascript:void(0)">西北区</a></dt>
+        </dl>
+    </div>
+    <div class="peperbox">
+    	<div class="topsearch">
+            <label class="label_60">用户名：</label>
+            <input type="text" class="inputstyle" value="" >
+            <label class="label_60">姓名：</label>
+            <input type="text" class="inputstyle" value="" style="margin-right:0">
+            <input type="button" class="btn_search" value="搜索">
+    	</div>
+        <div class="tablemain">
+        	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+            	<thead id="data_head">
+                	<tr> 
+                        <th>用户名</th>
+                        <th>姓名</th>
+                        <th>手机号码</th>
+                        <th>电子邮箱</th>
+                    </tr>
+                </thead>
+                <tbody id="data_show">
+                	<tr>
+                        <td><input type="radio" name="radio" checked="checked" class="f_l ml20"><span>Adlus</span></td> 
+                        <td>张德慧</td>
+                        <td>158 ***** **36</td>
+                        <td>Ad*******@126.com</td>
+                    </tr>
+                	<tr>
+                        <td><input type="radio" name="radio" class="f_l ml20"><span>Kalis</span></td>
+                        <td>卡艳美</td>
+                        <td>135 **** **65</td>
+                        <td>Ka*******@163.com</td>
+                    </tr>
+                	<tr>
+                        <td><input type="radio" name="radio" class="f_l ml20"><span>Namie1990</span></td>
+                        <td>李梅莉</td>
+                        <td>131 **** **90</td>
+                        <td>na*******@vip.qq.com</td>
+                    </tr>
+                	<tr>
+                        <td><input type="radio" name="radio"  class="f_l ml20"><span>Mess2014</span></td>
+                        <td>王宁</td>
+                        <td>188 **** **10</td>
+                        <td>wa*******@126.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page">
+            <a id="prev" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+            <a class="btnpage">1</a>
+            <a>2</a>
+            <a>3</a>
+            <a id="next" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+            <span>共3页</span>   
+            <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+            <a id="topage" href="javascript:void(0)" class="btnpage" >确定</a>  
+    	</div>
+    </div>
+</div>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+    });
+	
+	
+	$(".first_level").click(function(){
+		$("#data_show tr").show();
+		if($(this).hasClass('exp')){
+			$(this).parent().siblings('dl').slideUp();
+			$(this).removeClass('exp')
+		}else{
+			$(this).parent().siblings('dl').slideDown();
+			$(this).addClass('exp')
+			
+		}
+		
+		
+	})
+	$(".second_level").click(function(){
+		$("#data_show tr:lt(2)").hide();
+		if($(this).hasClass('exp')){
+			$(this).siblings().slideUp();
+			$(this).removeClass('exp');
+			
+			
+		}else{
+			$(this).siblings().slideDown();
+			$(this).addClass('exp');
+			
+		}
+		
+	})
+	
+}
+</script>
+</body>
+</html>

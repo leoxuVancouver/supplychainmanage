@@ -1,0 +1,140 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>善付通</title>
+<link href="style/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<include dat-source="inc/head.html" userdata='{"index": "3"}'></include>
+<div id="centent">
+	<div class="comtitle">
+    	<span>采购管理</span> > <span>付款</span> > <span class="comtitle_cur">订单付款</span>
+    </div>
+    <div class="tabbox">
+    	<ul>
+            <li><a href="财务-订单付款（先款后货）.html">先款后货</a></li>
+            <li class="cur"><a href="财务-订单付款（先货后款）.html">先货后款</a></li>
+        </ul>
+    </div>
+    <h3 class="tabname">订单付款</h3>
+    <div class="tablemain">
+    	<div class="topsearch">
+        	<label>收款方：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>发货单号：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>订单号：</label>
+            <input type="text" class="inputstyle" value="">
+            <label>到期付款日：</label>
+            <input class="Wdate" onclick="WdatePicker({skin: 'whyGreen'})" type="text">
+            <input type="button" class="btn_search" value="搜索">
+    	</div>
+    	<table border="0" cellpadding="0" cellspacing="0" class="tablestyle">
+        	<thead>
+            	<tr>
+                	<th>订单号</th>
+                    <th width="180">发货单号</th>
+                    <th>收款方</th>
+                    <th>发货金额（元）</th>
+                    <th><img src="images/tips.png" title="订单费用金额计入第一次发货金额" />费用金额（元）</th>
+                    <th>到期付款日</th> 
+                    <th width="60">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                	<td><input name="" type="checkbox" value=""><a href="javascript:void(0)" class="blue">2015121506411098</a></td>
+                    <td>684353558</td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>120,000.00</td>
+                    <td>1,000.00</td>
+                    <td>2015-12-15 </td>
+                    <td><a href="财务-订单付款-单笔付款确认（先货后款）.html" class="blue">付款</a></td>
+                </tr>
+            	<tr>
+                	<td><input name="" type="checkbox" value=""><a href="javascript:void(0)" class="blue">2015121506411098</a></td>
+                    <td>684312648</td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>90,000.00</td>
+                    <td>0.00</td>
+                    <td>2015-12-15 </td>
+                    <td><a href="javascript:void(0)" class="blue">付款</a></td>
+                </tr>
+            	<tr>
+                	<td><input name="" type="checkbox" value=""><a href="javascript:void(0)" class="blue">2015121510240094</a></td>
+                    <td>684312648</td>
+                    <td>湖北百歌电子商务有限公司</td>
+                    <td>140,000.00</td>
+                    <td>0.00</td>
+                    <td>2015-12-15 </td>
+                    <td><a href="javascript:void(0)" class="blue">付款</a></td>
+                </tr>
+                <tr>
+                	<td><input name="" type="checkbox" value=""><a href="javascript:void(0)" class="blue">2015121516040158</a></td>
+                    <td>684312648</td>
+                    <td>深圳市南山区高客数码电器商行</td>
+                    <td>50,000.00</td>
+                    <td>0.00</td>
+                    <td>2015-12-15 </td>
+                    <td><a href="javascript:void(0)" class="blue">付款</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <div class="f_l">
+            	<label class="mr20"><input type="checkbox" value="全选" id="select_all">全选</label>
+                <input type="button" value="合并付款" class="surebtn mt0" id="sel_shoper">
+            </div>
+            <a id="prev2" href="javascript:void(0)" class="btnpage nobg">上一页</a>
+            <a class="btnpage">1</a>
+           
+            <a id="next2" href="javascript:void(0)" class="btnpage nobg">下一页</a>
+            <span>共1页</span>   
+            <label><span>到</span><input type="text" value="" class="inputpage"><span>页</span></label>
+            <a id="topage2" href="javascript:void(0)" class="btnpage" >确定</a>  
+    	</div>
+    </div>
+</div>
+<include dat-source="inc/footer.html" ></include>
+
+</body>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/cors.js"></script>
+<script src="js/fa.model.js"></script>
+<script src="js/fa.highlight.menu.js"></script>
+<script>	
+
+/*表格隔行换色*/
+updateRowBgColor();
+function updateRowBgColor() {
+    $(".tablestyle ").each(function(index, element) {
+        $(this).find("tbody tr:visible:odd").each(function () {
+			$(this).addClass("trcol");
+		});
+		 $(this).find("tbody tr:visible:even").each(function () {
+			$(this).removeClass("trcol");
+		});
+    });
+}
+
+/*全选*/
+$("#select_all").change(function(){
+	var checked = $(this).prop("checked");
+	if(checked){
+		$(".tablemain input:checkbox").prop("checked",true);
+	}
+	else{
+		$(".tablemain input:checkbox").prop("checked",false);
+	}
+})
+/*合并付款*/
+$("#sel_shoper").click(function(){
+	location.href="财务-订单付款-合并付款确认（先货后款）.html";
+	})
+
+</script>
+</html>
